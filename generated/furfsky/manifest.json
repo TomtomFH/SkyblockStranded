@@ -1,0 +1,492 @@
+{
+  "pack": "FurSky Reborn.cats.zip",
+  "generatedAt": "2026-07-17T23:54:34.678Z",
+  "icons": {
+    "PERSONAL_DELETOR_6000": {
+      "src": "/generated/furfsky/personal_deletor_6000.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 2
+          },
+          {
+            "index": 1,
+            "time": 2
+          },
+          {
+            "index": 2,
+            "time": 2
+          }
+        ],
+        "interpolate": false
+      }
+    },
+    "PERSONAL_DELETOR_5000": {
+      "src": "/generated/furfsky/personal_deletor_5000.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 3
+          },
+          {
+            "index": 1,
+            "time": 3
+          },
+          {
+            "index": 2,
+            "time": 3
+          }
+        ],
+        "interpolate": false
+      }
+    },
+    "GRAVITY_TALISMAN": {
+      "src": "/generated/furfsky/gravity_talisman.png"
+    },
+    "BAT_ARTIFACT": {
+      "src": "/generated/furfsky/bat_artifact.png"
+    },
+    "SCAVENGER_TALISMAN": {
+      "src": "/generated/furfsky/scavenger_talisman.png"
+    },
+    "WOLF_TALISMAN": {
+      "src": "/generated/furfsky/wolf_talisman.png"
+    },
+    "HEALING_TALISMAN": {
+      "src": "/generated/furfsky/healing_talisman.png"
+    },
+    "LAVA_TALISMAN": {
+      "src": "/generated/furfsky/lava_talisman.png"
+    },
+    "ZOMBIE_TALISMAN": {
+      "src": "/generated/furfsky/zombie_talisman.png"
+    },
+    "SPIDER_TALISMAN": {
+      "src": "/generated/furfsky/spider_talisman.png"
+    },
+    "CANDY_ARTIFACT": {
+      "src": "/generated/furfsky/candy_artifact.png"
+    },
+    "INTIMIDATION_TALISMAN": {
+      "src": "/generated/furfsky/intimidation_talisman.png"
+    },
+    "SPEED_TALISMAN": {
+      "src": "/generated/furfsky/speed_talisman.png"
+    },
+    "POTATO_TALISMAN": {
+      "src": "/generated/furfsky/potato_talisman.png"
+    },
+    "MAGNETIC_TALISMAN": {
+      "src": "/generated/furfsky/magnetic_talisman.png"
+    },
+    "PIGS_FOOT": {
+      "src": "/generated/furfsky/pigs_foot.png"
+    },
+    "HEALING_RING": {
+      "src": "/generated/furfsky/healing_ring.png"
+    },
+    "POTION_AFFINITY_TALISMAN": {
+      "src": "/generated/furfsky/potion_affinity_talisman.png"
+    },
+    "PERSONAL_COMPACTOR_4000": {
+      "src": "/generated/furfsky/personal_compactor_4000.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 4
+          },
+          {
+            "index": 1,
+            "time": 4
+          },
+          {
+            "index": 2,
+            "time": 4
+          },
+          {
+            "index": 3,
+            "time": 4
+          },
+          {
+            "index": 4,
+            "time": 4
+          },
+          {
+            "index": 5,
+            "time": 4
+          }
+        ],
+        "interpolate": false
+      }
+    },
+    "CAT_TALISMAN": {
+      "src": "/generated/furfsky/cat_talisman.png"
+    },
+    "ENDER_ARTIFACT": {
+      "src": "/generated/furfsky/ender_artifact.png"
+    },
+    "PERSONAL_COMPACTOR_5000": {
+      "src": "/generated/furfsky/personal_compactor_5000.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 3
+          },
+          {
+            "index": 1,
+            "time": 3
+          },
+          {
+            "index": 2,
+            "time": 3
+          },
+          {
+            "index": 3,
+            "time": 3
+          },
+          {
+            "index": 4,
+            "time": 3
+          },
+          {
+            "index": 5,
+            "time": 3
+          }
+        ],
+        "interpolate": false
+      }
+    },
+    "CHEETAH_TALISMAN": {
+      "src": "/generated/furfsky/cheetah_talisman.png"
+    },
+    "FEATHER_RING": {
+      "src": "/generated/furfsky/feather_ring.png"
+    },
+    "INTIMIDATION_RING": {
+      "src": "/generated/furfsky/intimidation_ring.png"
+    },
+    "TALISMAN_OF_COINS": {
+      "src": "/generated/furfsky/talisman_of_coins.png"
+    },
+    "NIGHT_VISION_CHARM": {
+      "src": "/generated/furfsky/night_vision_charm.png"
+    },
+    "FISH_AFFINITY_TALISMAN": {
+      "src": "/generated/furfsky/fish_affinity_talisman.png"
+    },
+    "BAIT_RING": {
+      "src": "/generated/furfsky/bait_ring.png"
+    },
+    "WOLF_RING": {
+      "src": "/generated/furfsky/wolf_ring.png"
+    },
+    "FROZEN_CHICKEN": {
+      "src": "/generated/furfsky/frozen_chicken.png"
+    },
+    "POTION_AFFINITY_ARTIFACT": {
+      "src": "/generated/furfsky/potion_affinity_artifact.png"
+    },
+    "PERSONAL_DELETOR_4000": {
+      "src": "/generated/furfsky/personal_deletor_4000.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 4
+          },
+          {
+            "index": 1,
+            "time": 4
+          },
+          {
+            "index": 2,
+            "time": 4
+          }
+        ],
+        "interpolate": false
+      }
+    },
+    "FARMER_ORB": {
+      "src": "/generated/furfsky/farmer_orb.png"
+    },
+    "VACCINE_RING": {
+      "src": "/generated/furfsky/vaccine_ring.png"
+    },
+    "FEATHER_TALISMAN": {
+      "src": "/generated/furfsky/feather_talisman.png"
+    },
+    "BLOOD_GOD_CREST": {
+      "src": "/generated/furfsky/blood_god_crest.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 3
+          },
+          {
+            "index": 1,
+            "time": 3
+          },
+          {
+            "index": 2,
+            "time": 3
+          },
+          {
+            "index": 3,
+            "time": 3
+          },
+          {
+            "index": 4,
+            "time": 3
+          },
+          {
+            "index": 5,
+            "time": 3
+          },
+          {
+            "index": 6,
+            "time": 3
+          },
+          {
+            "index": 7,
+            "time": 3
+          },
+          {
+            "index": 8,
+            "time": 3
+          },
+          {
+            "index": 9,
+            "time": 3
+          },
+          {
+            "index": 10,
+            "time": 3
+          }
+        ],
+        "interpolate": false
+      }
+    },
+    "EXPERIENCE_ARTIFACT": {
+      "src": "/generated/furfsky/experience_artifact.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 5
+          },
+          {
+            "index": 1,
+            "time": 5
+          },
+          {
+            "index": 2,
+            "time": 5
+          },
+          {
+            "index": 3,
+            "time": 5
+          },
+          {
+            "index": 4,
+            "time": 5
+          },
+          {
+            "index": 5,
+            "time": 5
+          },
+          {
+            "index": 6,
+            "time": 5
+          },
+          {
+            "index": 7,
+            "time": 5
+          },
+          {
+            "index": 8,
+            "time": 5
+          },
+          {
+            "index": 9,
+            "time": 5
+          },
+          {
+            "index": 10,
+            "time": 5
+          },
+          {
+            "index": 11,
+            "time": 5
+          },
+          {
+            "index": 12,
+            "time": 5
+          },
+          {
+            "index": 13,
+            "time": 5
+          },
+          {
+            "index": 14,
+            "time": 5
+          },
+          {
+            "index": 15,
+            "time": 5
+          },
+          {
+            "index": 16,
+            "time": 5
+          },
+          {
+            "index": 17,
+            "time": 5
+          },
+          {
+            "index": 18,
+            "time": 5
+          },
+          {
+            "index": 19,
+            "time": 5
+          }
+        ],
+        "interpolate": true
+      }
+    },
+    "PERSONAL_COMPACTOR_6000": {
+      "src": "/generated/furfsky/personal_compactor_6000.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 2
+          },
+          {
+            "index": 1,
+            "time": 2
+          },
+          {
+            "index": 2,
+            "time": 2
+          },
+          {
+            "index": 3,
+            "time": 2
+          },
+          {
+            "index": 4,
+            "time": 2
+          },
+          {
+            "index": 5,
+            "time": 2
+          }
+        ],
+        "interpolate": false
+      }
+    },
+    "WITHER_ARTIFACT": {
+      "src": "/generated/furfsky/wither_artifact.png"
+    },
+    "POTION_AFFINITY_RING": {
+      "src": "/generated/furfsky/potion_affinity_ring.png"
+    },
+    "SEA_CREATURE_RING": {
+      "src": "/generated/furfsky/sea_creature_ring.png"
+    },
+    "SKELETON_TALISMAN": {
+      "src": "/generated/furfsky/skeleton_talisman.png"
+    },
+    "CANDY_TALISMAN": {
+      "src": "/generated/furfsky/candy_talisman.png"
+    },
+    "WOOD_AFFINITY_TALISMAN": {
+      "src": "/generated/furfsky/wood_affinity_talisman.png"
+    },
+    "VACCINE_TALISMAN": {
+      "src": "/generated/furfsky/vaccine_talisman.png"
+    },
+    "INTIMIDATION_ARTIFACT": {
+      "src": "/generated/furfsky/intimidation_artifact.png"
+    },
+    "DANTE_TALISMAN": {
+      "src": "/generated/furfsky/dante_talisman.png"
+    },
+    "BAT_RING": {
+      "src": "/generated/furfsky/bat_ring.png"
+    },
+    "CANDY_RELIC": {
+      "src": "/generated/furfsky/candy_relic.png"
+    },
+    "LYNX_TALISMAN": {
+      "src": "/generated/furfsky/lynx_talisman.png"
+    },
+    "EMERALD_RING": {
+      "src": "/generated/furfsky/emerald_ring.png"
+    },
+    "SPIDER_ARTIFACT": {
+      "src": "/generated/furfsky/spider_artifact.png"
+    },
+    "FIRE_TALISMAN": {
+      "src": "/generated/furfsky/fire_talisman.png"
+    },
+    "SEA_CREATURE_TALISMAN": {
+      "src": "/generated/furfsky/sea_creature_talisman.png"
+    },
+    "SPEED_RING": {
+      "src": "/generated/furfsky/speed_ring.png"
+    },
+    "SPIDER_RING": {
+      "src": "/generated/furfsky/spider_ring.png"
+    },
+    "CANDY_RING": {
+      "src": "/generated/furfsky/candy_ring.png"
+    },
+    "CROOKED_ARTIFACT": {
+      "src": "/generated/furfsky/crooked_artifact.png"
+    },
+    "FARMING_TALISMAN": {
+      "src": "/generated/furfsky/farming_talisman.png"
+    },
+    "SPEED_ARTIFACT": {
+      "src": "/generated/furfsky/speed_artifact.png"
+    },
+    "FEATHER_ARTIFACT": {
+      "src": "/generated/furfsky/feather_artifact.png"
+    },
+    "VACCINE_ARTIFACT": {
+      "src": "/generated/furfsky/vaccine_artifact.png"
+    },
+    "WOLF_PAW": {
+      "src": "/generated/furfsky/wolf_paw.png"
+    },
+    "BAT_TALISMAN": {
+      "src": "/generated/furfsky/bat_talisman.png"
+    },
+    "SEA_CREATURE_ARTIFACT": {
+      "src": "/generated/furfsky/sea_creature_artifact.png"
+    }
+  }
+}

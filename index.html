@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A focused checklist of accessories obtainable in Hypixel SkyBlock Stranded." />
+  <title>Stranded Accessories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="status.css" />
+</head>
+<body>
+  <div class="glow glow-one"></div><div class="glow glow-two"></div>
+  <header class="site-header">
+    <a class="brand" href="#"><span class="brand-mark">S</span><span>Stranded<span class="brand-muted">Index</span></span></a>
+    <div class="header-meta"><span class="status-dot"></span> Stranded-only dataset <span class="version">BETA 0.1</span></div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span></span> HYPIXEL SKYBLOCK · STRANDED</div>
+      <h1>Every bit of power.<br><em>Nothing unobtainable.</em></h1>
+      <p>A clean, searchable index of accessories you can actually earn without ever leaving your island.</p>
+      <div class="hero-stats">
+        <div><strong id="totalCount">0</strong><span>accessories</span></div>
+        <div><strong id="familyCount">0</strong><span>unique families</span></div>
+        <div><strong id="maxMp">0</strong><span>base MP available</span></div>
+      </div>
+    </section>
+
+    <section class="catalog" aria-label="Accessory catalog">
+      <div class="toolbar">
+        <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search accessories or methods…" autocomplete="off"></label>
+        <div class="view-toggle" aria-label="View options"><button class="active" data-view="grid" title="Grid view">▦</button><button data-view="list" title="List view">☷</button></div>
+      </div>
+      <div class="filter-row">
+        <div class="filters" id="rarityFilters"></div>
+        <select id="sourceFilter" aria-label="Filter by source"><option value="all">All sources</option></select>
+      </div>
+      <div class="results-line"><span><strong id="resultCount">0</strong> obtainable results</span><span class="legend"><i></i> Verified route</span></div>
+      <div id="accessoryGrid" class="accessory-grid"></div>
+      <div id="emptyState" class="empty-state" hidden><span>◇</span><h2>No accessories found</h2><p>Try a different name, rarity, or source.</p></div>
+    </section>
+
+    <section class="research-note">
+      <div><span class="note-icon">i</span><div><h2>What “obtainable” means here</h2><p>Every item shown has a repeatable or documented Stranded route through collections, island mobs, fishing, slayers, events, Garden content, NPCs, or Stranded-exclusive villager trades. Dungeon, Rift, Kuudra, Dark Auction-only, and inaccessible-island items are excluded.</p></div></div>
+      <a href="https://wiki.hypixel.net/Stranded" target="_blank" rel="noreferrer">Read the Stranded documentation ↗</a>
+    </section>
+  </main>
+
+  <footer><span>STRANDED INDEX</span><p>Local item artwork: <a href="https://modrinth.com/resourcepack/furfsky-reborn" target="_blank" rel="noreferrer">FurfSky Reborn</a></p><p>Community tool · Not affiliated with Hypixel</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>
