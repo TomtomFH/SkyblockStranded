@@ -10,7 +10,18 @@
       "route": "Wheat IV crafting recipe",
       "family": "Farming",
       "order": 0,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "WHEAT",
+          "amount": 40
+        },
+        {
+          "type": "item",
+          "id": "SEEDS",
+          "amount": 4
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/ad7a30c82dba9f5a7befd6abc16089e29256e52e06f2a85f2461acd7a557c14a/64",
       "unlock": {
         "type": "collection",
@@ -29,7 +40,13 @@
       "route": "Potato III crafting recipe",
       "family": "Vaccine",
       "order": 1,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "POISONOUS_POTATO",
+          "amount": 9
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/71408ede8b4f444015c59abd5cd32b8769de51881edabcc15abb6519f5b49/64",
       "unlock": {
         "type": "collection",
@@ -51,7 +68,7 @@
       "requirements": [
         {
           "type": "item",
-          "id": "ARACHNES_FANG",
+          "id": "ARACHNE_FANG",
           "amount": 8
         }
       ],
@@ -84,7 +101,18 @@
       "route": "Pumpkin VI crafting recipe",
       "family": "Farmer Orb",
       "order": 4,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_PUMPKIN",
+          "amount": 8
+        },
+        {
+          "type": "item",
+          "id": "ENCHANTED_GLOWSTONE",
+          "amount": 1
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/557b354ce9bf8db0a7ed2afc79e27f28c3ccaaaf2c460a51993cac2b0564ef60/64",
       "unlock": {
         "type": "collection",
@@ -103,7 +131,18 @@
       "route": "Mushroom VII crafting recipe",
       "family": "Night Vision",
       "order": 5,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_RED_MUSHROOM",
+          "amount": 4
+        },
+        {
+          "type": "item",
+          "id": "ENCHANTED_BROWN_MUSHROOM",
+          "amount": 4
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/7c3289afd2a5e97dc29ddc01baab9ee3489348cebb9f15d4df48c3d46861fd75/64",
       "unlock": {
         "type": "collection",
@@ -122,7 +161,13 @@
       "route": "Feather IV crafting recipe",
       "family": "Feather",
       "order": 6,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "FEATHER",
+          "amount": 108
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/5120a863869320af4cfa7d1d58d0b2dd8182eb0be834b8caaeb5639421cd893b/64",
       "unlock": {
         "type": "collection",
@@ -141,7 +186,13 @@
       "route": "Feather VII crafting recipe",
       "family": "Feather",
       "order": 7,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_FEATHER",
+          "amount": 7
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/cb6851f4e9a87707ad72f5b5cd17efeca36c2c18cc99aaad7121fe72cf79b9b1/64",
       "unlock": {
         "type": "collection",
@@ -160,7 +211,13 @@
       "route": "Feather IX crafting recipe",
       "family": "Feather",
       "order": 8,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_FEATHER",
+          "amount": 128
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/da239e8b52ed91fe518d7c690b03de9dc69846a8d5c208ac1c102edd68d9ca18/64",
       "unlock": {
         "type": "collection",
@@ -179,7 +236,13 @@
       "route": "Sugar Cane II crafting recipe",
       "family": "Speed",
       "order": 9,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "SUGAR_CANE",
+          "amount": 108
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/8624bacb5f1986e6477abce4ae7dca1820a5260b6233b55ba1d9ba936c84b/64",
       "unlock": {
         "type": "collection",
@@ -248,7 +311,13 @@
       "route": "Nether Wart III crafting recipe",
       "family": "Potion Affinity",
       "order": 12,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "NETHER_STALK",
+          "amount": 144
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/d6a59f4abcf5516e50b5a9b1cf2f7eca78eaf0c07ffb254cd45131b169068a5a/64",
       "unlock": {
         "type": "collection",
@@ -267,7 +336,13 @@
       "route": "Nether Wart VII crafting recipe",
       "family": "Potion Affinity",
       "order": 13,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_NETHER_STALK",
+          "amount": 8
+        }
+      ],
       "unlock": {
         "type": "collection",
         "id": "NETHER_STALK",
@@ -284,7 +359,13 @@
       "route": "Nether Wart IX crafting recipe",
       "family": "Potion Affinity",
       "order": 14,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_NETHER_STALK",
+          "amount": 256
+        }
+      ],
       "unlock": {
         "type": "collection",
         "id": "NETHER_STALK",
@@ -301,7 +382,13 @@
       "route": "Lily Pad III crafting recipe",
       "family": "Healing",
       "order": 15,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "WATER_LILY",
+          "amount": 144
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/651eb16f22dd7505be5dae06671803633a5abf8b2beeb5c60548670df0e59214/64",
       "unlock": {
         "type": "collection",
@@ -320,7 +407,13 @@
       "route": "Lily Pad VIII crafting recipe",
       "family": "Healing",
       "order": 16,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_WATER_LILY",
+          "amount": 4
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/50247bc4a01d2a2391cd8d8543c9fc673cda74b06bfc127a72ec06ad3ed580e1/64",
       "unlock": {
         "type": "collection",
@@ -358,7 +451,13 @@
       "route": "Sponge III crafting recipe",
       "family": "Sea Creature",
       "order": 18,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "SPONGE",
+          "amount": 18
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/eb7ae4dd0384543b31623ef19c1b3f886629424efae004b6ea75194ee9b9aa32/64",
       "unlock": {
         "type": "collection",
@@ -377,7 +476,18 @@
       "route": "Sponge VI crafting recipe",
       "family": "Sea Creature",
       "order": 19,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "SPONGE",
+          "amount": 6
+        },
+        {
+          "type": "item",
+          "id": "ENCHANTED_SPONGE",
+          "amount": 2
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/7ac01f28133c16b73567a77444e29a1475202d974ace29624cb688d2491b0b58/64",
       "unlock": {
         "type": "collection",
@@ -396,7 +506,13 @@
       "route": "Sponge VIII crafting recipe",
       "family": "Sea Creature",
       "order": 20,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_SPONGE",
+          "amount": 64
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/a4270c3655178afe44597b6394708828c292455365bddef971a381f41e47d5d0/64",
       "unlock": {
         "type": "collection",
@@ -415,7 +531,13 @@
       "route": "Ink Sac VIII crafting recipe",
       "family": "Bait Ring",
       "order": 21,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_INK_SACK",
+          "amount": 288
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/5ceec5342acd3f21b2c1c8d5913277e46caec6c83b869a20ca91bfd2c867575a/64",
       "unlock": {
         "type": "collection",
@@ -434,7 +556,13 @@
       "route": "Tier 1 Stranded villager trade",
       "family": "Zombie",
       "order": 22,
-      "requirements": []
+      "requirements": [
+        {
+          "type": "item",
+          "id": "EMERALD",
+          "amount": 10
+        }
+      ]
     },
     {
       "id": "SKELETON_TALISMAN",
@@ -444,7 +572,13 @@
       "route": "Tier 1 Stranded villager trade",
       "family": "Skeleton",
       "order": 23,
-      "requirements": []
+      "requirements": [
+        {
+          "type": "item",
+          "id": "EMERALD",
+          "amount": 10
+        }
+      ]
     },
     {
       "id": "INTIMIDATION_TALISMAN",
@@ -454,7 +588,13 @@
       "route": "Tier 1 Stranded villager trade",
       "family": "Intimidation",
       "order": 24,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "EMERALD",
+          "amount": 100
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/68117c209b69eeaf2684816e16bed25e665008e7329632fdfca6523799cd7f71/64",
       "fallbackTextureType": "head"
     },
@@ -466,7 +606,13 @@
       "route": "Craft with Green Candy from island Spooky mobs",
       "family": "Intimidation",
       "order": 25,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "GREEN_CANDY",
+          "amount": 100
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/41fbc5010e8047ebc0bfd5b7635ab54772d8fd5a28099aeebc8ae2407f026b08/64",
       "fallbackTextureType": "head"
     },
@@ -478,7 +624,13 @@
       "route": "Craft with Purple Candy from island Spooky mobs",
       "family": "Intimidation",
       "order": 26,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "PURPLE_CANDY",
+          "amount": 100
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/96e977ae2f796dce6c80cb6bed9294e9ed4b11b88f9fde6c31f435dfd0382529/64",
       "fallbackTextureType": "head"
     },
@@ -490,7 +642,13 @@
       "route": "Tier 1 Stranded villager trade",
       "family": "Scavenger",
       "order": 27,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "EMERALD",
+          "amount": 100
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/211ab3a1132c9d1ef835ea81d972ed9b5cd8ddff0a07c55a749bcfcf8df5/64",
       "fallbackTextureType": "head"
     },
@@ -502,7 +660,13 @@
       "route": "Tier 1 Stranded villager trade",
       "family": "Cat",
       "order": 28,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "EMERALD",
+          "amount": 100
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/2220107a77f8eac0743ee8cca378183d256c4a89ac9660ef942cd3759467ba01/64",
       "fallbackTextureType": "head"
     },
@@ -514,7 +678,13 @@
       "route": "Tier 2 trade using Cat Talisman",
       "family": "Cat",
       "order": 29,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_EMERALD",
+          "amount": 6
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/2360f1de777efe05d272a61cfeea0006496aacadf1943573a3f0d7655016e609/64",
       "fallbackTextureType": "head"
     },
@@ -526,7 +696,13 @@
       "route": "Tier 3 trade using Lynx Talisman",
       "family": "Cat",
       "order": 30,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_EMERALD",
+          "amount": 32
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/8ca45bf11990f018f3b0b8d49a432ea4e9dcef75621126f0568d7900e169a8e2/64",
       "fallbackTextureType": "head"
     },
@@ -538,7 +714,13 @@
       "route": "Tier 1 Stranded villager trade",
       "family": "Pig's Foot",
       "order": 31,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "EMERALD",
+          "amount": 100
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/604faebefd0a8f721403e3142efecb83fbf4b7d1f705d0c9b44d91f0bf40127b/64",
       "fallbackTextureType": "head"
     },
@@ -550,7 +732,13 @@
       "route": "Tier 1 Stranded villager trade",
       "family": "Wolf Paw",
       "order": 32,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "EMERALD",
+          "amount": 100
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/7afd22704eeb5c67be649ddfe1da0c658158a7058d01739de31c94f6b9808869/64",
       "fallbackTextureType": "head"
     },
@@ -562,7 +750,13 @@
       "route": "Tier 1 Stranded villager trade",
       "family": "Potato Talisman",
       "order": 33,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "EMERALD",
+          "amount": 200
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/318476e3cf0d5fc8ab1761065cf0e372b11004ed4c97156396e17c869b4aa389/64",
       "fallbackTextureType": "head"
     },
@@ -574,7 +768,13 @@
       "route": "Tier 2 Stranded villager trade",
       "family": "Blood God Crest",
       "order": 34,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "EMERALD",
+          "amount": 100
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/5b8b51eaefe0e3a10ad7fa1627801d2ce4412b4e432685906192f83283708233/64",
       "fallbackTextureType": "head"
     },
@@ -586,7 +786,13 @@
       "route": "Tier 3 Stranded villager trade",
       "family": "Dante",
       "order": 35,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_EMERALD",
+          "amount": 35
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/cf92982f1a302310643a20ce51623f8199b7545e70dc6b93ed6bd61dc42ff213/64",
       "fallbackTextureType": "head"
     },
@@ -598,7 +804,13 @@
       "route": "Tier 3 Stranded villager trade",
       "family": "Seal",
       "order": 36,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_EMERALD",
+          "amount": 38
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/5b7ff88d154d04a8a26995c99f64e53b574c7b82ec21a12a9e448bca1e70f461/64",
       "fallbackTextureType": "head"
     },
@@ -610,7 +822,13 @@
       "route": "Tier 5 Stranded villager trade",
       "family": "Ender Artifact",
       "order": 37,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_EMERALD",
+          "amount": 312
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/288748014809862e8bd210a0a3dfcd7be6e0ddc7b453e3947ee6d73f46fde9e2/64",
       "fallbackTextureType": "head"
     },
@@ -622,7 +840,13 @@
       "route": "Tier 5 Stranded villager trade",
       "family": "Wither Artifact",
       "order": 38,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_EMERALD",
+          "amount": 375
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/17b8ef7e8e0af19399cc32485f2ee47b2bb4d5802c71b3021f4d5d6b5f3afe03/64",
       "fallbackTextureType": "head"
     },
@@ -697,13 +921,13 @@
       "requirements": [
         {
           "type": "item",
-          "id": "WEAK_WOLF_CATALYST",
-          "amount": 1
+          "id": "ENCHANTED_BONE",
+          "amount": 14
         },
         {
           "type": "item",
-          "id": "ENCHANTED_BONE",
-          "amount": 14
+          "id": "WEAK_WOLF_CATALYST",
+          "amount": 1
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/f83a2aa9d3734b919ac24c9659e5e0f86ecafbf64d4788cfa433bbec189e8/64",
@@ -729,7 +953,13 @@
       "route": "Tarantula Broodfather recipe; Maddox NPC",
       "family": "Spider",
       "order": 45,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "TARANTULA_WEB",
+          "amount": 64
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/604ada2212a38e67b6dbad2d156ee110c546dbfd7165b7f50b8ec17ff224dba5/64",
       "fallbackTextureType": "head",
       "unlock": {
@@ -747,7 +977,18 @@
       "route": "Tarantula Broodfather recipe; Maddox NPC",
       "family": "Spider",
       "order": 46,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_EMERALD",
+          "amount": 32
+        },
+        {
+          "type": "item",
+          "id": "TARANTULA_SILK",
+          "amount": 32
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/b81b5cf3a65bf9cab4bca55781721a86d567d9e106551647f35b715edf00a13f/64",
       "fallbackTextureType": "head",
       "unlock": {
@@ -765,7 +1006,13 @@
       "route": "Craft with Green Candy from island Spooky mobs",
       "family": "Candy",
       "order": 47,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "GREEN_CANDY",
+          "amount": 16
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/e6ae8c4c983ac24d93c48417a95beeb1ca055b9b49764143cc98c1392548eed3/64",
       "fallbackTextureType": "head"
     },
@@ -777,7 +1024,13 @@
       "route": "Upgrade with Green Candy",
       "family": "Candy",
       "order": 48,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "GREEN_CANDY",
+          "amount": 64
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/18c0d7034a7dac30e2b52c00eeec0eca55fe688d25faf4efd9c0a07dce9eaf30/64",
       "fallbackTextureType": "head"
     },
@@ -825,7 +1078,13 @@
       "route": "Tier 2 Stranded villager trade",
       "family": "Frozen Chicken",
       "order": 51,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_EMERALD",
+          "amount": 8
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/d61c33024246ed219a1317e2459130f2aed227655e85cf01fc513481236d8dd1/64",
       "fallbackTextureType": "head"
     },
@@ -837,7 +1096,18 @@
       "route": "Emerald II crafting recipe",
       "family": "Talisman of Coins",
       "order": 52,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "EMERALD",
+          "amount": 20
+        },
+        {
+          "type": "item",
+          "id": "GOLD_INGOT",
+          "amount": 5
+        }
+      ],
       "unlock": {
         "type": "collection",
         "id": "EMERALD",
@@ -854,7 +1124,13 @@
       "route": "Emerald V crafting recipe",
       "family": "Emerald Ring",
       "order": 53,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_EMERALD",
+          "amount": 32
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/a8e50d027da90dbea8a66088aba6f978eac8a7beb6561020f0289fcd43d89c68/64",
       "unlock": {
         "type": "collection",
@@ -873,7 +1149,18 @@
       "route": "Emerald III crafting recipe",
       "family": "Magnetic",
       "order": 54,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "EMERALD",
+          "amount": 128
+        },
+        {
+          "type": "item",
+          "id": "REDSTONE",
+          "amount": 32
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/6b76ea41b3dcf8a48202cec8ab8fb42c671b35ce648d8613859a013a4ca12480/64",
       "unlock": {
         "type": "collection",
@@ -892,7 +1179,18 @@
       "route": "Redstone Dust IX crafting recipe",
       "family": "Personal Compactor",
       "order": 55,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_REDSTONE",
+          "amount": 448
+        },
+        {
+          "type": "item",
+          "id": "SUPER_COMPACTOR_3000",
+          "amount": 1
+        }
+      ],
       "unlock": {
         "type": "collection",
         "id": "REDSTONE",
@@ -909,7 +1207,13 @@
       "route": "Redstone Dust XI crafting recipe",
       "family": "Personal Compactor",
       "order": 56,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_REDSTONE_BLOCK",
+          "amount": 14
+        }
+      ],
       "unlock": {
         "type": "collection",
         "id": "REDSTONE",
@@ -926,7 +1230,13 @@
       "route": "Redstone Dust XIII crafting recipe",
       "family": "Personal Compactor",
       "order": 57,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_REDSTONE_BLOCK",
+          "amount": 28
+        }
+      ],
       "unlock": {
         "type": "collection",
         "id": "REDSTONE",
@@ -943,7 +1253,23 @@
       "route": "Iron Ingot IX crafting recipe",
       "family": "Personal Deletor",
       "order": 58,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_IRON",
+          "amount": 112
+        },
+        {
+          "type": "item",
+          "id": "ENCHANTED_LAVA_BUCKET",
+          "amount": 1
+        },
+        {
+          "type": "item",
+          "id": "ENCHANTED_REDSTONE_BLOCK",
+          "amount": 1
+        }
+      ],
       "unlock": {
         "type": "collection",
         "id": "IRON_INGOT",
@@ -960,7 +1286,13 @@
       "route": "Iron Ingot X crafting recipe",
       "family": "Personal Deletor",
       "order": 59,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_IRON",
+          "amount": 224
+        }
+      ],
       "unlock": {
         "type": "collection",
         "id": "IRON_INGOT",
@@ -977,7 +1309,13 @@
       "route": "Iron Ingot XI crafting recipe",
       "family": "Personal Deletor",
       "order": 60,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_IRON",
+          "amount": 448
+        }
+      ],
       "unlock": {
         "type": "collection",
         "id": "IRON_INGOT",
@@ -994,7 +1332,13 @@
       "route": "Obsidian III crafting recipe",
       "family": "Gravity",
       "order": 61,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "OBSIDIAN",
+          "amount": 144
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/616f4ac8a0698ab07bb0a5ef69dc08daedd8f5972e7a1237c8c56361e3f204ca/64",
       "unlock": {
         "type": "collection",
@@ -1013,7 +1357,18 @@
       "route": "Oak Log VII crafting recipe",
       "family": "Wood Affinity",
       "order": 62,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "LEAVES",
+          "amount": 8
+        },
+        {
+          "type": "item",
+          "id": "ENCHANTED_OAK_LOG",
+          "amount": 1
+        }
+      ],
       "unlock": {
         "type": "collection",
         "id": "LOG",
@@ -1030,7 +1385,13 @@
       "route": "Blaze Rod IV crafting recipe",
       "family": "Fire",
       "order": 63,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_BLAZE_POWDER",
+          "amount": 9
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/2f6c7aa31556a12080cc36e8a28d113221eef8f738dc4756529b5b328e82981a/64",
       "unlock": {
         "type": "collection",
@@ -1049,7 +1410,13 @@
       "route": "Magma Cream VI crafting recipe",
       "family": "Lava",
       "order": 64,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_MAGMA_CREAM",
+          "amount": 9
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/e47dcba7379cb3d53530d318bb40b621271a22df3ba59aeb424a06517c1b7eaa/64",
       "unlock": {
         "type": "collection",
@@ -1068,7 +1435,13 @@
       "route": "Lapis Lazuli IX crafting recipe",
       "family": "Experience",
       "order": 65,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_LAPIS_LAZULI_BLOCK",
+          "amount": 9
+        }
+      ],
       "unlock": {
         "type": "collection",
         "id": "INK_SACK:4",
@@ -1085,7 +1458,18 @@
       "route": "Nether Quartz VIII crafting recipe",
       "family": "Day Crystal",
       "order": 66,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_QUARTZ",
+          "amount": 4
+        },
+        {
+          "type": "item",
+          "id": "ENCHANTED_QUARTZ_BLOCK",
+          "amount": 1
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/a51e52b1de97b534358b53cd2c9c45526086d2a6f0e0ae65e4ba2ff5c6290ec/64",
       "unlock": {
         "type": "collection",
@@ -1104,7 +1488,18 @@
       "route": "Nether Quartz VII crafting recipe",
       "family": "Night Crystal",
       "order": 67,
-      "requirements": [],
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_QUARTZ",
+          "amount": 4
+        },
+        {
+          "type": "item",
+          "id": "ENCHANTED_QUARTZ_BLOCK",
+          "amount": 1
+        }
+      ],
       "fallbackTexture": "https://mc-heads.net/head/8c46578ad58e976fa05478510889a58735a67c4dd022d398c04d56676f0dc171/64",
       "unlock": {
         "type": "collection",
