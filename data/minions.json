@@ -1,0 +1,7977 @@
+{
+  "schemaVersion": 1,
+  "source": "NotEnoughUpdates item recipes; filtered for Hypixel Stranded",
+  "minions": [
+    {
+      "id": "BLAZE",
+      "name": "Blaze Minion",
+      "category": "Combat",
+      "unlock": "Blaze Rod I",
+      "texture": "https://textures.minecraft.net/texture/43f32ebdc046675a936f214164dbd3c2fbd2e84b4bde737483aecd9bbbcb03f1",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "BLAZE_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "BLAZE_ROD",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_SWORD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "BLAZE_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "BLAZE_ROD",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "BLAZE_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "BLAZE_ROD",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "BLAZE_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "BLAZE_ROD",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "BLAZE_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BLAZE_POWDER",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "BLAZE_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BLAZE_POWDER",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "BLAZE_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BLAZE_POWDER",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "BLAZE_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BLAZE_POWDER",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "BLAZE_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BLAZE_POWDER",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "BLAZE_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BLAZE_POWDER",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "BLAZE_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BLAZE_ROD",
+              "amount": 8
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "BLAZE_ROD",
+        "name": "Blaze Rod",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "CAVESPIDER",
+      "name": "Cave Spider Minion",
+      "category": "Combat",
+      "unlock": "Spider Eye I",
+      "texture": "https://textures.minecraft.net/texture/5d815df973bcd01ee8dfdb3bd74f0b7cb8fef2a70559e4faa5905127bbb4a435",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "CAVESPIDER_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "SPIDER_EYE",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_SWORD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "CAVESPIDER_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "SPIDER_EYE",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "CAVESPIDER_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "SPIDER_EYE",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "CAVESPIDER_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "SPIDER_EYE",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "CAVESPIDER_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SPIDER_EYE",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "CAVESPIDER_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SPIDER_EYE",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "CAVESPIDER_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SPIDER_EYE",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "CAVESPIDER_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SPIDER_EYE",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "CAVESPIDER_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SPIDER_EYE",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "CAVESPIDER_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SPIDER_EYE",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "CAVESPIDER_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_FERMENTED_SPIDER_EYE",
+              "amount": 16
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "SPIDER_EYE",
+        "name": "Spider Eye",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "CREEPER",
+      "name": "Creeper Minion",
+      "category": "Combat",
+      "unlock": "Gunpowder I",
+      "texture": "https://textures.minecraft.net/texture/54a92c2f8c1b3774e80492200d0b2218d7b019314a73c9cb5b9f04cfcacec471",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "CREEPER_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "SULPHUR",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_SWORD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "CREEPER_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "SULPHUR",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "CREEPER_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "SULPHUR",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "CREEPER_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "SULPHUR",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "CREEPER_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GUNPOWDER",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "CREEPER_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GUNPOWDER",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "CREEPER_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GUNPOWDER",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "CREEPER_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GUNPOWDER",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "CREEPER_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GUNPOWDER",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "CREEPER_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GUNPOWDER",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "CREEPER_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_FIREWORK_ROCKET",
+              "amount": 16
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "SULPHUR",
+        "name": "Gunpowder",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "ENDERMAN",
+      "name": "Enderman Minion",
+      "category": "Combat",
+      "unlock": "Ender Pearl I",
+      "texture": "https://textures.minecraft.net/texture/e460d20ba1e9cd1d4cfd6d5fb0179ff41597ac6d2461bd7ccdb58b20291ec46e",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "ENDERMAN_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "ENDER_PEARL",
+              "amount": 64
+            },
+            {
+              "id": "WOOD_SWORD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "ENDERMAN_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "ENDER_PEARL",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "ENDERMAN_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ENDER_PEARL",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "ENDERMAN_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ENDER_PEARL",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "ENDERMAN_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ENDER_PEARL",
+              "amount": 48
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "ENDERMAN_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ENDER_PEARL",
+              "amount": 96
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "ENDERMAN_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_EYE_OF_ENDER",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "ENDERMAN_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_EYE_OF_ENDER",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "ENDERMAN_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_EYE_OF_ENDER",
+              "amount": 48
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "ENDERMAN_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_EYE_OF_ENDER",
+              "amount": 96
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "ENDERMAN_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_EYE_OF_ENDER",
+              "amount": 192
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "ENDER_PEARL",
+        "name": "Ender Pearl",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "GHAST",
+      "name": "Ghast Minion",
+      "category": "Combat",
+      "unlock": "Ghast Tear I",
+      "texture": "https://textures.minecraft.net/texture/2478547d122ec83a818b46f3b13c5230429559e40c7d144d4ec225f92c1494b3",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "GHAST_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "GHAST_TEAR",
+              "amount": 64
+            },
+            {
+              "id": "WOOD_SWORD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "GHAST_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "GHAST_TEAR",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "GHAST_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "GHAST_TEAR",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "GHAST_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "GHAST_TEAR",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "GHAST_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GHAST_TEAR",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "GHAST_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GHAST_TEAR",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "GHAST_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "SILVER_FANG",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "GHAST_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "SILVER_FANG",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "GHAST_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "SILVER_FANG",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "GHAST_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "SILVER_FANG",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "GHAST_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "SILVER_FANG",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "GHAST_TEAR",
+        "name": "Ghast Tear",
+        "tier": 1,
+        "amount": 20
+      }
+    },
+    {
+      "id": "INFERNO",
+      "name": "Inferno Minion",
+      "category": "Combat",
+      "unlock": "Blaze Slayer III",
+      "texture": "https://textures.minecraft.net/texture/665c54366f88fb3280b1c3fc500ce2b799c8dd327ab6d41c9bc959488f5cfd92",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "INFERNO_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "DERELICT_ASHE",
+              "amount": 80
+            },
+            {
+              "id": "BLAZE_GENERATOR_1",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "INFERNO_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "DERELICT_ASHE",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "INFERNO_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "MOLTEN_POWDER",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "INFERNO_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "MOLTEN_POWDER",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "INFERNO_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "MOLTEN_POWDER",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "INFERNO_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "MOLTEN_POWDER",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "INFERNO_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "MOLTEN_POWDER",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "INFERNO_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "MOLTEN_POWDER",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "INFERNO_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "MOLTEN_POWDER",
+              "amount": 256
+            },
+            {
+              "id": "INFERNO_VERTEX",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "INFERNO_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "MOLTEN_POWDER",
+              "amount": 256
+            },
+            {
+              "id": "INFERNO_VERTEX",
+              "amount": 48
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "INFERNO_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "MOLTEN_POWDER",
+              "amount": 256
+            },
+            {
+              "id": "INFERNO_APEX",
+              "amount": 1
+            },
+            {
+              "id": "INFERNO_VERTEX",
+              "amount": 48
+            },
+            {
+              "id": "INFERNO_GENERATOR_8",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "slayer",
+        "id": "blaze",
+        "name": "Blaze Slayer",
+        "level": 3
+      }
+    },
+    {
+      "id": "MAGMA_CUBE",
+      "name": "Magma Cube Minion",
+      "category": "Combat",
+      "unlock": "Magma Cream I",
+      "texture": "https://textures.minecraft.net/texture/18c9a7a24da7e3182e4f62fa62762e21e1680962197c7424144ae1d2c42174f7",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "MAGMA_CUBE_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "MAGMA_CREAM",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_SWORD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "MAGMA_CUBE_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "MAGMA_CREAM",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "MAGMA_CUBE_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "MAGMA_CREAM",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "MAGMA_CUBE_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "MAGMA_CREAM",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "MAGMA_CUBE_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MAGMA_CREAM",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "MAGMA_CUBE_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MAGMA_CREAM",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "MAGMA_CUBE_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MAGMA_CREAM",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "MAGMA_CUBE_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MAGMA_CREAM",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "MAGMA_CUBE_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MAGMA_CREAM",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "MAGMA_CUBE_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MAGMA_CREAM",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "MAGMA_CUBE_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MAGMA_CREAM",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "MAGMA_CREAM",
+        "name": "Magma Cream",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "REVENANT",
+      "name": "Revenant Minion",
+      "category": "Combat",
+      "unlock": null,
+      "texture": "https://textures.minecraft.net/texture/a3dce8555923558d8d74c2a2b261b2b2d630559db54ef97ed3f9c30e9a20aba",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "REVENANT_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "REVENANT_FLESH",
+              "amount": 80
+            },
+            {
+              "id": "CRYSTALLIZED_HEART",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "REVENANT_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "REVENANT_FLESH",
+              "amount": 140
+            },
+            {
+              "id": "ZOMBIE_GENERATOR_1",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "REVENANT_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "REVENANT_FLESH",
+              "amount": 280
+            },
+            {
+              "id": "ZOMBIE_GENERATOR_2",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "REVENANT_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "REVENANT_FLESH",
+              "amount": 448
+            },
+            {
+              "id": "ZOMBIE_GENERATOR_3",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "REVENANT_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "REVENANT_VISCERA",
+              "amount": 7
+            },
+            {
+              "id": "ZOMBIE_GENERATOR_4",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "REVENANT_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "REVENANT_VISCERA",
+              "amount": 14
+            },
+            {
+              "id": "ZOMBIE_GENERATOR_5",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "REVENANT_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "REVENANT_VISCERA",
+              "amount": 28
+            },
+            {
+              "id": "ZOMBIE_GENERATOR_6",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "REVENANT_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "REVENANT_VISCERA",
+              "amount": 56
+            },
+            {
+              "id": "ZOMBIE_GENERATOR_7",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "REVENANT_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "REVENANT_VISCERA",
+              "amount": 112
+            },
+            {
+              "id": "ZOMBIE_GENERATOR_8",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "REVENANT_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "REVENANT_VISCERA",
+              "amount": 224
+            },
+            {
+              "id": "ZOMBIE_GENERATOR_9",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "REVENANT_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "REVENANT_VISCERA",
+              "amount": 448
+            },
+            {
+              "id": "ZOMBIE_GENERATOR_10",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 12,
+          "id": "REVENANT_GENERATOR_12",
+          "requirements": [
+            {
+              "id": "GENERATOR_UPGRADE_STONE_REVENANT_12",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "slayer",
+        "id": "zombie",
+        "name": "Zombie Slayer",
+        "level": 5
+      }
+    },
+    {
+      "id": "SKELETON",
+      "name": "Skeleton Minion",
+      "category": "Combat",
+      "unlock": "Bone I",
+      "texture": "https://textures.minecraft.net/texture/2fe009c5cfa44c05c88e5df070ae2533bd682a728e0b33bfc93fd92a6e5f3f64",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "SKELETON_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "BONE",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_SWORD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "SKELETON_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "BONE",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "SKELETON_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "BONE",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "SKELETON_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "BONE",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "SKELETON_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BONE",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "SKELETON_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BONE",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "SKELETON_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BONE",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "SKELETON_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BONE",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "SKELETON_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BONE",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "SKELETON_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BONE",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "SKELETON_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BONE",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "BONE",
+        "name": "Bone",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "SLIME",
+      "name": "Slime Minion",
+      "category": "Combat",
+      "unlock": "Slimeball I",
+      "texture": "https://textures.minecraft.net/texture/c95eced85db62c922724efca804ea0060c4a87fcdedf2fd5c4f9ac1130a6eb26",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "SLIME_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "SLIME_BALL",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_SWORD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "SLIME_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "SLIME_BALL",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "SLIME_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "SLIME_BALL",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "SLIME_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "SLIME_BALL",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "SLIME_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SLIME_BALL",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "SLIME_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SLIME_BALL",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "SLIME_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SLIME_BALL",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "SLIME_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SLIME_BALL",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "SLIME_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SLIME_BALL",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "SLIME_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SLIME_BALL",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "SLIME_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SLIME_BLOCK",
+              "amount": 8
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "SLIME_BALL",
+        "name": "Slimeball",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "SPIDER",
+      "name": "Spider Minion",
+      "category": "Combat",
+      "unlock": "String I",
+      "texture": "https://textures.minecraft.net/texture/e77c4c284e10dea038f004d7eb43ac493de69f348d46b5c1f8ef8154ec2afdd0",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "SPIDER_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "STRING",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_SWORD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "SPIDER_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "STRING",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "SPIDER_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "STRING",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "SPIDER_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "STRING",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "SPIDER_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_STRING",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "SPIDER_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_STRING",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "SPIDER_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_STRING",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "SPIDER_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_STRING",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "SPIDER_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_STRING",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "SPIDER_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_STRING",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "SPIDER_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_STRING",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "SPIDER_EYE",
+        "name": "Spider Eye",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "TARANTULA",
+      "name": "Tarantula Minion",
+      "category": "Combat",
+      "unlock": null,
+      "texture": "https://textures.minecraft.net/texture/97e86007064c9ce26eb4bad8ac9aa30aac309e70a9e0b615936318dea40a721",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "TARANTULA_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "TARANTULA_WEB",
+              "amount": 80
+            },
+            {
+              "id": "ENCHANTED_FERMENTED_SPIDER_EYE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "TARANTULA_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "TARANTULA_WEB",
+              "amount": 140
+            },
+            {
+              "id": "SPIDER_GENERATOR_1",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "TARANTULA_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "TARANTULA_WEB",
+              "amount": 280
+            },
+            {
+              "id": "SPIDER_GENERATOR_2",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "TARANTULA_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "TARANTULA_WEB",
+              "amount": 448
+            },
+            {
+              "id": "SPIDER_GENERATOR_3",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "TARANTULA_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "TARANTULA_SILK",
+              "amount": 7
+            },
+            {
+              "id": "SPIDER_GENERATOR_4",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "TARANTULA_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "TARANTULA_SILK",
+              "amount": 14
+            },
+            {
+              "id": "SPIDER_GENERATOR_5",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "TARANTULA_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "TARANTULA_SILK",
+              "amount": 28
+            },
+            {
+              "id": "SPIDER_GENERATOR_6",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "TARANTULA_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "TARANTULA_SILK",
+              "amount": 56
+            },
+            {
+              "id": "SPIDER_GENERATOR_7",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "TARANTULA_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "TARANTULA_SILK",
+              "amount": 112
+            },
+            {
+              "id": "SPIDER_GENERATOR_8",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "TARANTULA_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "TARANTULA_SILK",
+              "amount": 224
+            },
+            {
+              "id": "SPIDER_GENERATOR_9",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "TARANTULA_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "TARANTULA_SILK",
+              "amount": 448
+            },
+            {
+              "id": "SPIDER_GENERATOR_10",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 12,
+          "id": "TARANTULA_GENERATOR_12",
+          "requirements": [
+            {
+              "id": "GENERATOR_UPGRADE_STONE_TARANTULA_12",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "slayer",
+        "id": "spider",
+        "name": "Spider Slayer",
+        "level": 5
+      }
+    },
+    {
+      "id": "VOIDLING",
+      "name": "Voidling Minion",
+      "category": "Combat",
+      "unlock": null,
+      "texture": "https://textures.minecraft.net/texture/3a851ed2ce5c2c0523af772d206d9555e2e1383ec87946e6ff4c51186e29ef7f",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "VOIDLING_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "NULL_SPHERE",
+              "amount": 80
+            },
+            {
+              "id": "ENDERMAN_GENERATOR_1",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "VOIDLING_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "NULL_SPHERE",
+              "amount": 140
+            },
+            {
+              "id": "OBSIDIAN_GENERATOR_1",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "VOIDLING_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "NULL_SPHERE",
+              "amount": 280
+            },
+            {
+              "id": "ENDERMAN_GENERATOR_2",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "VOIDLING_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "NULL_SPHERE",
+              "amount": 448
+            },
+            {
+              "id": "OBSIDIAN_GENERATOR_3",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "VOIDLING_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "NULL_OVOID",
+              "amount": 7
+            },
+            {
+              "id": "ENDERMAN_GENERATOR_4",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "VOIDLING_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "NULL_OVOID",
+              "amount": 14
+            },
+            {
+              "id": "OBSIDIAN_GENERATOR_5",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "VOIDLING_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "NULL_OVOID",
+              "amount": 28
+            },
+            {
+              "id": "ENDERMAN_GENERATOR_6",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "VOIDLING_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "NULL_OVOID",
+              "amount": 56
+            },
+            {
+              "id": "OBSIDIAN_GENERATOR_7",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "VOIDLING_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "NULL_OVOID",
+              "amount": 112
+            },
+            {
+              "id": "ENDERMAN_GENERATOR_8",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "VOIDLING_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "NULL_OVOID",
+              "amount": 224
+            },
+            {
+              "id": "OBSIDIAN_GENERATOR_9",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "VOIDLING_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "NULL_OVOID",
+              "amount": 448
+            },
+            {
+              "id": "ENDERMAN_GENERATOR_10",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "slayer",
+        "id": "eman",
+        "name": "Eman Slayer",
+        "level": 4
+      }
+    },
+    {
+      "id": "ZOMBIE",
+      "name": "Zombie Minion",
+      "category": "Combat",
+      "unlock": "Rotten Flesh I",
+      "texture": "https://textures.minecraft.net/texture/196063a884d3901c41f35b69a8c9f401c61ac9f6330f964f80c35352c3e8bfb0",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "ZOMBIE_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "ROTTEN_FLESH",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_SWORD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "ZOMBIE_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "ROTTEN_FLESH",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "ZOMBIE_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "ROTTEN_FLESH",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "ZOMBIE_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "ROTTEN_FLESH",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "ZOMBIE_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ROTTEN_FLESH",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "ZOMBIE_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ROTTEN_FLESH",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "ZOMBIE_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ROTTEN_FLESH",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "ZOMBIE_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ROTTEN_FLESH",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "ZOMBIE_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ROTTEN_FLESH",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "ZOMBIE_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ROTTEN_FLESH",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "ZOMBIE_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ROTTEN_FLESH",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "ROTTEN_FLESH",
+        "name": "Rotten Flesh",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "CACTUS",
+      "name": "Cactus Minion",
+      "category": "Farming",
+      "unlock": "Cactus I",
+      "texture": "https://textures.minecraft.net/texture/ef93ec6e67a6cd272c9a9684b67df62584cb084a265eee3cde141d20e70d7d72",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "CACTUS_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "CACTUS",
+              "amount": 128
+            },
+            {
+              "id": "WOOD_HOE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "CACTUS_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "CACTUS",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "CACTUS_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "CACTUS",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "CACTUS_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CACTUS_GREEN",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "CACTUS_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CACTUS_GREEN",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "CACTUS_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CACTUS_GREEN",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "CACTUS_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CACTUS_GREEN",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "CACTUS_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CACTUS_GREEN",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "CACTUS_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CACTUS_GREEN",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "CACTUS_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CACTUS",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "CACTUS_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CACTUS",
+              "amount": 16
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "CACTUS",
+        "name": "Cactus",
+        "tier": 1,
+        "amount": 100
+      }
+    },
+    {
+      "id": "CARROT",
+      "name": "Carrot Minion",
+      "category": "Farming",
+      "unlock": "Carrot I",
+      "texture": "https://textures.minecraft.net/texture/4baea990b45d330998cb0c1f8515c27b24f93bff1df0db056e647f8200d03b9d",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "CARROT_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "CARROT_ITEM",
+              "amount": 128
+            },
+            {
+              "id": "WOOD_HOE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "CARROT_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "CARROT_ITEM",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "CARROT_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "CARROT_ITEM",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "CARROT_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CARROT",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "CARROT_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CARROT",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "CARROT_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CARROT",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "CARROT_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CARROT",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "CARROT_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CARROT",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "CARROT_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CARROT",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "CARROT_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GOLDEN_CARROT",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "CARROT_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GOLDEN_CARROT",
+              "amount": 16
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "CARROT_ITEM",
+        "name": "Carrot",
+        "tier": 1,
+        "amount": 100
+      }
+    },
+    {
+      "id": "CHICKEN",
+      "name": "Chicken Minion",
+      "category": "Farming",
+      "unlock": "Raw Chicken I",
+      "texture": "https://textures.minecraft.net/texture/a04b7da13b0a97839846aa5648f5ac6736ba0ca9fbf38cd366916e417153fd7f",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "CHICKEN_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "RAW_CHICKEN",
+              "amount": 64
+            },
+            {
+              "id": "WOOD_SWORD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "CHICKEN_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "RAW_CHICKEN",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "CHICKEN_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "RAW_CHICKEN",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "CHICKEN_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "RAW_CHICKEN",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "CHICKEN_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_CHICKEN",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "CHICKEN_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_CHICKEN",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "CHICKEN_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_CHICKEN",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "CHICKEN_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_CHICKEN",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "CHICKEN_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_CHICKEN",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "CHICKEN_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_CHICKEN",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "CHICKEN_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_CHICKEN",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "RAW_CHICKEN",
+        "name": "Raw Chicken",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "COCOA",
+      "name": "Cocoa Beans Minion",
+      "category": "Farming",
+      "unlock": "Cocoa Beans I",
+      "texture": "https://textures.minecraft.net/texture/acb680e96f6177cd8ffaf27e9625d8b544d720afc50738801818d0e745c0e5f7",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "COCOA_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "INK_SACK-3",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_HOE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "COCOA_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "INK_SACK-3",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "COCOA_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "INK_SACK-3",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "COCOA_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "INK_SACK-3",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "COCOA_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COCOA",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "COCOA_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COCOA",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "COCOA_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COCOA",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "COCOA_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COCOA",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "COCOA_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COCOA",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "COCOA_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COCOA",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "COCOA_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COOKIE",
+              "amount": 8
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "INK_SACK:3",
+        "name": "Cocoa Beans",
+        "tier": 1,
+        "amount": 75
+      }
+    },
+    {
+      "id": "COW",
+      "name": "Cow Minion",
+      "category": "Farming",
+      "unlock": "Leather I",
+      "texture": "https://textures.minecraft.net/texture/c2fd8976e1b64aebfd38afbe62aa1429914253df3417ace1f589e5cf45fbd717",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "COW_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "RAW_BEEF",
+              "amount": 64
+            },
+            {
+              "id": "WOOD_SWORD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "COW_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "RAW_BEEF",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "COW_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "RAW_BEEF",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "COW_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "RAW_BEEF",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "COW_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_BEEF",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "COW_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_BEEF",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "COW_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_BEEF",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "COW_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_BEEF",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "COW_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_BEEF",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "COW_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_BEEF",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "COW_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_LEATHER",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "LEATHER",
+        "name": "Leather",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "MELON",
+      "name": "Melon Minion",
+      "category": "Farming",
+      "unlock": "Melon Slice I",
+      "texture": "https://textures.minecraft.net/texture/95d54539ac8d3fba9696c91f4dcc7f15c320ab86029d5c92f12359abd4df811e",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "MELON_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "MELON",
+              "amount": 256
+            },
+            {
+              "id": "WOOD_HOE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "MELON_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "MELON",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "MELON_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "MELON_BLOCK",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "MELON_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "MELON_BLOCK",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "MELON_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "MELON_BLOCK",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "MELON_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MELON",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "MELON_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MELON",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "MELON_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MELON",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "MELON_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MELON",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "MELON_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MELON_BLOCK",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "MELON_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MELON_BLOCK",
+              "amount": 16
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "MELON",
+        "name": "Melon Slice",
+        "tier": 1,
+        "amount": 250
+      }
+    },
+    {
+      "id": "MUSHROOM",
+      "name": "Mushroom Minion",
+      "category": "Farming",
+      "unlock": "Mushroom I",
+      "texture": "https://textures.minecraft.net/texture/4a3b58341d196a9841ef1526b367209cbc9f96767c24f5f587cf413d42b74a93",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "MUSHROOM_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "RED_MUSHROOM",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_HOE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "MUSHROOM_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "RED_MUSHROOM",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "MUSHROOM_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "RED_MUSHROOM",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "MUSHROOM_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "RED_MUSHROOM",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "MUSHROOM_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RED_MUSHROOM",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "MUSHROOM_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RED_MUSHROOM",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "MUSHROOM_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RED_MUSHROOM",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "MUSHROOM_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RED_MUSHROOM",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "MUSHROOM_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RED_MUSHROOM",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "MUSHROOM_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RED_MUSHROOM",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "MUSHROOM_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RED_MUSHROOM",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "MUSHROOM_COLLECTION",
+        "name": "Mushroom",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "NETHER_WARTS",
+      "name": "Nether Wart Minion",
+      "category": "Farming",
+      "unlock": "Nether Wart I",
+      "texture": "https://textures.minecraft.net/texture/71a4620bb3459c1c2fa74b210b1c07b4a02254351f75173e643a0e009a63f558",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "NETHER_WARTS_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "NETHER_STALK",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_HOE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "NETHER_WARTS_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "NETHER_STALK",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "NETHER_WARTS_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "NETHER_STALK",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "NETHER_WARTS_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "NETHER_STALK",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "NETHER_WARTS_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_NETHER_STALK",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "NETHER_WARTS_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_NETHER_STALK",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "NETHER_WARTS_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_NETHER_STALK",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "NETHER_WARTS_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_NETHER_STALK",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "NETHER_WARTS_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_NETHER_STALK",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "NETHER_WARTS_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_NETHER_STALK",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "NETHER_WARTS_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_NETHER_STALK",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "NETHER_STALK",
+        "name": "Nether Wart",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "PIG",
+      "name": "Pig Minion",
+      "category": "Farming",
+      "unlock": "Raw Porkchop I",
+      "texture": "https://textures.minecraft.net/texture/a9bb5f0c56408c73cfa412345c8fc51f75b6c7311ae60e7099c4781c48760562",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "PIG_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "PORK",
+              "amount": 64
+            },
+            {
+              "id": "WOOD_SWORD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "PIG_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "PORK",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "PIG_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "PORK",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "PIG_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "PORK",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "PIG_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_PORK",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "PIG_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_PORK",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "PIG_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_PORK",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "PIG_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_PORK",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "PIG_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_PORK",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "PIG_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_PORK",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "PIG_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GRILLED_PORK",
+              "amount": 8
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "PORK",
+        "name": "Raw Porkchop",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "POTATO",
+      "name": "Potato Minion",
+      "category": "Farming",
+      "unlock": "Potato I",
+      "texture": "https://textures.minecraft.net/texture/7dda35a044cb0374b516015d991a0f65bf7d0fb6566e350496642cf2059ff1d9",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "POTATO_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "POTATO_ITEM",
+              "amount": 128
+            },
+            {
+              "id": "WOOD_HOE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "POTATO_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "POTATO_ITEM",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "POTATO_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "POTATO_ITEM",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "POTATO_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "ENCHANTED_POTATO",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "POTATO_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_POTATO",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "POTATO_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_POTATO",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "POTATO_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_POTATO",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "POTATO_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_POTATO",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "POTATO_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_POTATO",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "POTATO_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BAKED_POTATO",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "POTATO_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BAKED_POTATO",
+              "amount": 16
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "POTATO_ITEM",
+        "name": "Potato",
+        "tier": 1,
+        "amount": 100
+      }
+    },
+    {
+      "id": "PUMPKIN",
+      "name": "Pumpkin Minion",
+      "category": "Farming",
+      "unlock": "Pumpkin I",
+      "texture": "https://textures.minecraft.net/texture/f3fb663e843a7da787e290f23c8af2f97f7b6f572fa59a0d4d02186db6eaabb7",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "PUMPKIN_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "PUMPKIN",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_HOE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "PUMPKIN_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "PUMPKIN",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "PUMPKIN_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "PUMPKIN",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "PUMPKIN_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "PUMPKIN",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "PUMPKIN_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_PUMPKIN",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "PUMPKIN_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_PUMPKIN",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "PUMPKIN_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_PUMPKIN",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "PUMPKIN_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_PUMPKIN",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "PUMPKIN_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_PUMPKIN",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "PUMPKIN_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_PUMPKIN",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "PUMPKIN_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_PUMPKIN",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "PUMPKIN",
+        "name": "Pumpkin",
+        "tier": 1,
+        "amount": 40
+      }
+    },
+    {
+      "id": "RABBIT",
+      "name": "Rabbit Minion",
+      "category": "Farming",
+      "unlock": "Raw Rabbit I",
+      "texture": "https://textures.minecraft.net/texture/ef59c052d339bb6305cad370fd8c52f58269a957dfaf433a255597d95e68a373",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "RABBIT_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "RABBIT",
+              "amount": 64
+            },
+            {
+              "id": "WOOD_SWORD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "RABBIT_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "RABBIT",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "RABBIT_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "RABBIT",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "RABBIT_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "RABBIT",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "RABBIT_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RABBIT",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "RABBIT_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RABBIT",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "RABBIT_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RABBIT",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "RABBIT_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RABBIT",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "RABBIT_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RABBIT",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "RABBIT_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RABBIT",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "RABBIT_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COOKED_RABBIT",
+              "amount": 8
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "RABBIT",
+        "name": "Raw Rabbit",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "SHEEP",
+      "name": "Sheep Minion",
+      "category": "Farming",
+      "unlock": "Raw Mutton I",
+      "texture": "https://textures.minecraft.net/texture/fd15d4b8bce708f77f963f1b4e87b1b969fef1766a3e9b67b249c59d5e80e8c5",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "SHEEP_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "MUTTON",
+              "amount": 64
+            },
+            {
+              "id": "WOOD_SWORD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "SHEEP_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "MUTTON",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "SHEEP_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "MUTTON",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "SHEEP_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "MUTTON",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "SHEEP_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MUTTON",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "SHEEP_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MUTTON",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "SHEEP_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MUTTON",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "SHEEP_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MUTTON",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "SHEEP_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MUTTON",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "SHEEP_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MUTTON",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "SHEEP_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COOKED_MUTTON",
+              "amount": 8
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "MUTTON",
+        "name": "Raw Mutton",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "SUGAR_CANE",
+      "name": "Sugar Cane Minion",
+      "category": "Farming",
+      "unlock": "Sugar Cane I",
+      "texture": "https://textures.minecraft.net/texture/2fced0e80f0d7a5d1f45a1a7217e6a99ea9720156c63f6efc84916d4837fabde",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "SUGAR_CANE_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "SUGAR_CANE",
+              "amount": 128
+            },
+            {
+              "id": "WOOD_HOE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "SUGAR_CANE_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "SUGAR_CANE",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "SUGAR_CANE_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "SUGAR_CANE",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "SUGAR_CANE_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SUGAR",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "SUGAR_CANE_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SUGAR",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "SUGAR_CANE_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SUGAR",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "SUGAR_CANE_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SUGAR",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "SUGAR_CANE_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SUGAR",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "SUGAR_CANE_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SUGAR",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "SUGAR_CANE_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SUGAR_CANE",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "SUGAR_CANE_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SUGAR_CANE",
+              "amount": 16
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "SUGAR_CANE",
+        "name": "Sugar Cane",
+        "tier": 1,
+        "amount": 100
+      }
+    },
+    {
+      "id": "WHEAT",
+      "name": "Wheat Minion",
+      "category": "Farming",
+      "unlock": "Wheat I",
+      "texture": "https://textures.minecraft.net/texture/bbc571c5527336352e2fee2b40a9edfa2e809f64230779aa01253c6aa535881b",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "WHEAT_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "WHEAT",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_HOE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "WHEAT_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "WHEAT",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "WHEAT_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "WHEAT",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "WHEAT_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "WHEAT",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "WHEAT_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_WHEAT",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "WHEAT_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_WHEAT",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "WHEAT_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_WHEAT",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "WHEAT_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_WHEAT",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "WHEAT_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_WHEAT",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "WHEAT_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_WHEAT",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "WHEAT_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_WHEAT",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "WHEAT",
+        "name": "Wheat",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "CLAY",
+      "name": "Clay Minion",
+      "category": "Fishing",
+      "unlock": "Clay Ball I",
+      "texture": "https://textures.minecraft.net/texture/af9b312c8f53da289060e6452855072e07971458abbf338ddec351e16c171ff8",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "CLAY_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "CLAY_BALL",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_SPADE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "CLAY_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "CLAY_BALL",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "CLAY_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "CLAY_BALL",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "CLAY_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "CLAY_BALL",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "CLAY_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CLAY_BALL",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "CLAY_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CLAY_BALL",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "CLAY_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CLAY_BALL",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "CLAY_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CLAY_BALL",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "CLAY_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CLAY_BALL",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "CLAY_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CLAY_BALL",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "CLAY_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_CLAY_BALL",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 12,
+          "id": "CLAY_GENERATOR_12",
+          "requirements": [
+            {
+              "id": "GENERATOR_UPGRADE_STONE_CLAY_12",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "CLAY_BALL",
+        "name": "Clay Ball",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "FISHING",
+      "name": "Fishing Minion",
+      "category": "Fishing",
+      "unlock": "Raw Cod II",
+      "texture": "https://textures.minecraft.net/texture/53ea0fd89524db3d7a3544904933830b4fc8899ef60c113d948bb3c4fe7aabb1",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "FISHING_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "RAW_FISH",
+              "amount": 64
+            },
+            {
+              "id": "FISHING_ROD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "FISHING_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "RAW_FISH",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "FISHING_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "RAW_FISH",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "FISHING_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "RAW_FISH",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "FISHING_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_FISH",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "FISHING_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_FISH",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "FISHING_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_FISH",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "FISHING_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_FISH",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "FISHING_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_FISH",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "FISHING_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RAW_FISH",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "FISHING_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COOKED_FISH",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 12,
+          "id": "FISHING_GENERATOR_12",
+          "requirements": [
+            {
+              "id": "GENERATOR_UPGRADE_STONE_FISHING_12",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "RAW_FISH",
+        "name": "Raw Cod",
+        "tier": 2,
+        "amount": 50
+      }
+    },
+    {
+      "id": "LILY_PAD",
+      "name": "Lily Pad Minion",
+      "category": "Fishing",
+      "unlock": null,
+      "texture": "https://textures.minecraft.net/texture/413cca52523499174e53d7719d116f2a85e5953e063e426f71b1bd9e66dc395e",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "LILY_PAD_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "WATER_LILY",
+              "amount": 64
+            },
+            {
+              "id": "FISHING_ROD",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "LILY_PAD_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "WATER_LILY",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "LILY_PAD_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "WATER_LILY",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "LILY_PAD_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "WATER_LILY",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "LILY_PAD_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_WATER_LILY",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "LILY_PAD_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_WATER_LILY",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "LILY_PAD_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_WATER_LILY",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "LILY_PAD_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_WATER_LILY",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "LILY_PAD_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_WATER_LILY",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "LILY_PAD_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_WATER_LILY",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "LILY_PAD_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "CONDENSED_WATER_LILY",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 12,
+          "id": "LILY_PAD_GENERATOR_12",
+          "requirements": [
+            {
+              "id": "GENERATOR_UPGRADE_STONE_LILY_PAD_12",
+              "amount": 1
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "WATER_LILY",
+        "name": "Lily Pad",
+        "tier": 1,
+        "amount": 10
+      }
+    },
+    {
+      "id": "ACACIA",
+      "name": "Acacia Minion",
+      "category": "Foraging",
+      "unlock": "Acacia Log I",
+      "texture": "https://textures.minecraft.net/texture/42183eaf5b133b838db13d145247e389ab4b4f33c67846363792dc3d82b524c0",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "ACACIA_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "LOG_2",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_AXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "ACACIA_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "LOG_2",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "ACACIA_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "LOG_2",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "ACACIA_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "LOG_2",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "ACACIA_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ACACIA_LOG",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "ACACIA_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ACACIA_LOG",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "ACACIA_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ACACIA_LOG",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "ACACIA_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ACACIA_LOG",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "ACACIA_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ACACIA_LOG",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "ACACIA_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ACACIA_LOG",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "ACACIA_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ACACIA_LOG",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "LOG_2",
+        "name": "Acacia Log",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "BIRCH",
+      "name": "Birch Minion",
+      "category": "Foraging",
+      "unlock": "Birch Log I",
+      "texture": "https://textures.minecraft.net/texture/eb74109dbb88178afb7a9874afc682904cedb3df75978a51f7beeb28f924251",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "BIRCH_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "LOG-2",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_AXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "BIRCH_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "LOG-2",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "BIRCH_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "LOG-2",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "BIRCH_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "LOG-2",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "BIRCH_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BIRCH_LOG",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "BIRCH_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BIRCH_LOG",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "BIRCH_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BIRCH_LOG",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "BIRCH_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BIRCH_LOG",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "BIRCH_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BIRCH_LOG",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "BIRCH_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BIRCH_LOG",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "BIRCH_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_BIRCH_LOG",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "LOG:2",
+        "name": "Birch Log",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "DARK_OAK",
+      "name": "Dark Oak Minion",
+      "category": "Foraging",
+      "unlock": "Dark Oak Log I",
+      "texture": "https://textures.minecraft.net/texture/5ecdc8d6b2b7e081ed9c36609052c91879b89730b9953adbc987e25bf16c5581",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "DARK_OAK_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "LOG_2-1",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_AXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "DARK_OAK_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "LOG_2-1",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "DARK_OAK_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "LOG_2-1",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "DARK_OAK_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "LOG_2-1",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "DARK_OAK_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DARK_OAK_LOG",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "DARK_OAK_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DARK_OAK_LOG",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "DARK_OAK_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DARK_OAK_LOG",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "DARK_OAK_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DARK_OAK_LOG",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "DARK_OAK_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DARK_OAK_LOG",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "DARK_OAK_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DARK_OAK_LOG",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "DARK_OAK_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DARK_OAK_LOG",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "LOG_2:1",
+        "name": "Dark Oak Log",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "FLOWER",
+      "name": "Flower Minion",
+      "category": "Foraging",
+      "unlock": null,
+      "texture": "https://textures.minecraft.net/texture/d719f6041aaaf6c7b55042a550d51e17af727f6b8e41af09a1aded49c9ff9e31",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "FLOWER_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "ENCHANTED_EMERALD",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "FLOWER_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "YELLOW_FLOWER",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "FLOWER_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "YELLOW_FLOWER",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "FLOWER_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "YELLOW_FLOWER",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "FLOWER_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DANDELION",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "FLOWER_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DANDELION",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "FLOWER_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DANDELION",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "FLOWER_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DANDELION",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "FLOWER_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DANDELION",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "FLOWER_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DANDELION",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "FLOWER_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_POPPY",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 12,
+          "id": "FLOWER_GENERATOR_12",
+          "requirements": [
+            {
+              "id": "ENCHANTED_POPPY",
+              "amount": 16
+            }
+          ]
+        }
+      ],
+      "acquisition": "Tier 4 Stranded Villager trade"
+    },
+    {
+      "id": "JUNGLE",
+      "name": "Jungle Minion",
+      "category": "Foraging",
+      "unlock": "Jungle Log I",
+      "texture": "https://textures.minecraft.net/texture/2fe73d981690c1be346a16331819c4e8800859fcdc3e5153718c6ad45861924c",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "JUNGLE_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "LOG-3",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_AXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "JUNGLE_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "LOG-3",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "JUNGLE_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "LOG-3",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "JUNGLE_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "LOG-3",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "JUNGLE_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_JUNGLE_LOG",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "JUNGLE_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_JUNGLE_LOG",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "JUNGLE_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_JUNGLE_LOG",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "JUNGLE_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_JUNGLE_LOG",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "JUNGLE_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_JUNGLE_LOG",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "JUNGLE_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_JUNGLE_LOG",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "JUNGLE_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_JUNGLE_LOG",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "LOG:3",
+        "name": "Jungle Log",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "OAK",
+      "name": "Oak Minion",
+      "category": "Foraging",
+      "unlock": "Oak Log I",
+      "texture": "https://textures.minecraft.net/texture/57e4a30f361204ea9cded3fbff850160731a0081cc452cfe26aed48e97f6364b",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "OAK_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "LOG",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_AXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "OAK_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "LOG",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "OAK_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "LOG",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "OAK_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "LOG",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "OAK_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_OAK_LOG",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "OAK_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_OAK_LOG",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "OAK_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_OAK_LOG",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "OAK_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_OAK_LOG",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "OAK_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_OAK_LOG",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "OAK_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_OAK_LOG",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "OAK_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_OAK_LOG",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "LOG",
+        "name": "Oak Log",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "SPRUCE",
+      "name": "Spruce Minion",
+      "category": "Foraging",
+      "unlock": "Spruce Log I",
+      "texture": "https://textures.minecraft.net/texture/7ba04bfe516955fd43932dcb33bd5eac20b38a231d9fa8415b3fb301f60f7363",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "SPRUCE_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "LOG-1",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_AXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "SPRUCE_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "LOG-1",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "SPRUCE_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "LOG-1",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "SPRUCE_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "LOG-1",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "SPRUCE_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SPRUCE_LOG",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "SPRUCE_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SPRUCE_LOG",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "SPRUCE_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SPRUCE_LOG",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "SPRUCE_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SPRUCE_LOG",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "SPRUCE_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SPRUCE_LOG",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "SPRUCE_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SPRUCE_LOG",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "SPRUCE_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SPRUCE_LOG",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "LOG:1",
+        "name": "Spruce Log",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "SUNFLOWER",
+      "name": "Sunflower Minion",
+      "category": "Foraging",
+      "unlock": "Sunflower II",
+      "texture": "https://textures.minecraft.net/texture/1400c11dd48e403faa03f930b2134b8d8b0e7716c876aa1997f2eb4e548d8a10",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "SUNFLOWER_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "DOUBLE_PLANT",
+              "amount": 128
+            },
+            {
+              "id": "WOOD_HOE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "SUNFLOWER_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "DOUBLE_PLANT",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "SUNFLOWER_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "DOUBLE_PLANT",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "SUNFLOWER_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "DOUBLE_PLANT",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "SUNFLOWER_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SUNFLOWER",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "SUNFLOWER_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SUNFLOWER",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "SUNFLOWER_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SUNFLOWER",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "SUNFLOWER_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SUNFLOWER",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "SUNFLOWER_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SUNFLOWER",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "SUNFLOWER_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "COMPACTED_SUNFLOWER",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "SUNFLOWER_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "COMPACTED_SUNFLOWER",
+              "amount": 16
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "DOUBLE_PLANT",
+        "name": "Sunflower",
+        "tier": 2,
+        "amount": 5000
+      }
+    },
+    {
+      "id": "COAL",
+      "name": "Coal Minion",
+      "category": "Mining",
+      "unlock": "Coal I",
+      "texture": "https://textures.minecraft.net/texture/425b8d2ea965c780652d29c26b1572686fd74f6fe6403b5a3800959feb2ad935",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "COAL_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "COAL",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_PICKAXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "COAL_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "COAL",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "COAL_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "COAL",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "COAL_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "COAL",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "COAL_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COAL",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "COAL_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COAL",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "COAL_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COAL",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "COAL_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COAL",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "COAL_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COAL",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "COAL_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COAL",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "COAL_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COAL_BLOCK",
+              "amount": 8
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "COAL",
+        "name": "Coal",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "COBBLESTONE",
+      "name": "Cobblestone Minion",
+      "category": "Mining",
+      "unlock": "Cobblestone I",
+      "texture": "https://textures.minecraft.net/texture/2f93289a82bd2a06cbbe61b733cfdc1f1bd93c4340f7a90abd9bdda774109071",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "COBBLESTONE_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "COBBLESTONE",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_PICKAXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "COBBLESTONE_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "COBBLESTONE",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "COBBLESTONE_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "COBBLESTONE",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "COBBLESTONE_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "COBBLESTONE",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "COBBLESTONE_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COBBLESTONE",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "COBBLESTONE_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COBBLESTONE",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "COBBLESTONE_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COBBLESTONE",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "COBBLESTONE_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COBBLESTONE",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "COBBLESTONE_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COBBLESTONE",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "COBBLESTONE_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COBBLESTONE",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "COBBLESTONE_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_COBBLESTONE",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "COBBLESTONE",
+        "name": "Cobblestone",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "DIAMOND",
+      "name": "Diamond Minion",
+      "category": "Mining",
+      "unlock": "Diamond I",
+      "texture": "https://textures.minecraft.net/texture/2354bbe604dfe58bf92e7729730d0c8e37844e831ee3816d7e8427c27a1824a2",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "DIAMOND_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "DIAMOND",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_PICKAXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "DIAMOND_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "DIAMOND",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "DIAMOND_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "DIAMOND",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "DIAMOND_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "DIAMOND",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "DIAMOND_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DIAMOND",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "DIAMOND_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DIAMOND",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "DIAMOND_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DIAMOND",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "DIAMOND_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DIAMOND",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "DIAMOND_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DIAMOND",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "DIAMOND_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DIAMOND",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "DIAMOND_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_DIAMOND_BLOCK",
+              "amount": 8
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "DIAMOND",
+        "name": "Diamond",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "EMERALD",
+      "name": "Emerald Minion",
+      "category": "Mining",
+      "unlock": "Emerald I",
+      "texture": "https://textures.minecraft.net/texture/9bf57f3401b130c6b53808f2b1e119cc7b984622dac7077bbd53454e1f65bbf0",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "EMERALD_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "EMERALD",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_PICKAXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "EMERALD_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "EMERALD",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "EMERALD_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "EMERALD",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "EMERALD_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "EMERALD",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "EMERALD_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_EMERALD",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "EMERALD_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_EMERALD",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "EMERALD_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_EMERALD",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "EMERALD_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_EMERALD",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "EMERALD_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_EMERALD",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "EMERALD_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_EMERALD",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "EMERALD_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_EMERALD_BLOCK",
+              "amount": 8
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "EMERALD",
+        "name": "Emerald",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "ENDER_STONE",
+      "name": "End Stone Minion",
+      "category": "Mining",
+      "unlock": "End Stone I",
+      "texture": "https://textures.minecraft.net/texture/7994be3dcfbb4ed0a5a7495b7335af1a3ced0b5888b5007286a790767c3b57e6",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "ENDER_STONE_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "ENDER_STONE",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_PICKAXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "ENDER_STONE_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "ENDER_STONE",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "ENDER_STONE_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "ENDER_STONE",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "ENDER_STONE_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "ENDER_STONE",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "ENDER_STONE_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ENDSTONE",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "ENDER_STONE_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ENDSTONE",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "ENDER_STONE_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ENDSTONE",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "ENDER_STONE_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ENDSTONE",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "ENDER_STONE_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ENDSTONE",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "ENDER_STONE_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ENDSTONE",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "ENDER_STONE_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ENDSTONE",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "ENDER_STONE",
+        "name": "End Stone",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "GLOWSTONE",
+      "name": "Glowstone Minion",
+      "category": "Mining",
+      "unlock": "Glowstone Dust I",
+      "texture": "https://textures.minecraft.net/texture/20f4d7c26b0310990a7d3a3b45948b95dd4ab407a16a4b6d3b7cb4fba031aeed",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "GLOWSTONE_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "GLOWSTONE_DUST",
+              "amount": 128
+            },
+            {
+              "id": "WOOD_PICKAXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "GLOWSTONE_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "GLOWSTONE_DUST",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "GLOWSTONE_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "GLOWSTONE_DUST",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "GLOWSTONE_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GLOWSTONE_DUST",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "GLOWSTONE_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GLOWSTONE_DUST",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "GLOWSTONE_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GLOWSTONE_DUST",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "GLOWSTONE_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GLOWSTONE_DUST",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "GLOWSTONE_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GLOWSTONE_DUST",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "GLOWSTONE_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GLOWSTONE_DUST",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "GLOWSTONE_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GLOWSTONE",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "GLOWSTONE_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GLOWSTONE",
+              "amount": 16
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "GLOWSTONE_DUST",
+        "name": "Glowstone Dust",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "GOLD",
+      "name": "Gold Minion",
+      "category": "Mining",
+      "unlock": "Gold Ingot I",
+      "texture": "https://textures.minecraft.net/texture/f6da04ed8c810be29bba53c62e712d65cfb25238117b94d7e85a4615775bf14f",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "GOLD_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "GOLD_INGOT",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_PICKAXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "GOLD_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "GOLD_INGOT",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "GOLD_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "GOLD_INGOT",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "GOLD_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "GOLD_INGOT",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "GOLD_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GOLD",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "GOLD_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GOLD",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "GOLD_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GOLD",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "GOLD_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GOLD",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "GOLD_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GOLD",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "GOLD_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GOLD",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "GOLD_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_GOLD_BLOCK",
+              "amount": 8
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "GOLD_INGOT",
+        "name": "Gold Ingot",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "GRAVEL",
+      "name": "Gravel Minion",
+      "category": "Mining",
+      "unlock": "Gravel I",
+      "texture": "https://textures.minecraft.net/texture/7458507ed31cf9a38986ac8795173c609637f03da653f30483a721d3fbe602d",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "GRAVEL_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "GRAVEL",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_SPADE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "GRAVEL_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "GRAVEL",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "GRAVEL_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "GRAVEL",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "GRAVEL_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "GRAVEL",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "GRAVEL_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_FLINT",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "GRAVEL_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_FLINT",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "GRAVEL_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_FLINT",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "GRAVEL_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_FLINT",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "GRAVEL_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_FLINT",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "GRAVEL_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_FLINT",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "GRAVEL_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_FLINT",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "GRAVEL",
+        "name": "Gravel",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "HARD_STONE",
+      "name": "Hard Stone Minion",
+      "category": "Mining",
+      "unlock": "Hard Stone I",
+      "texture": "https://textures.minecraft.net/texture/1e8bab9493708beda34255606d5883b8762746bcbe6c94e8ca78a77a408c8ba8",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "HARD_STONE_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "HARD_STONE",
+              "amount": 256
+            },
+            {
+              "id": "WOOD_PICKAXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "HARD_STONE_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "HARD_STONE",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "HARD_STONE_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "ENCHANTED_HARD_STONE",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "HARD_STONE_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "ENCHANTED_HARD_STONE",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "HARD_STONE_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_HARD_STONE",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "HARD_STONE_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_HARD_STONE",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "HARD_STONE_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_HARD_STONE",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "HARD_STONE_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_HARD_STONE",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "HARD_STONE_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_HARD_STONE",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "HARD_STONE_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "CONCENTRATED_STONE",
+              "amount": 4
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "HARD_STONE_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "CONCENTRATED_STONE",
+              "amount": 8
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "HARD_STONE",
+        "name": "Hard Stone",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "ICE",
+      "name": "Ice Minion",
+      "category": "Mining",
+      "unlock": "Ice I",
+      "texture": "https://textures.minecraft.net/texture/e500064321b12972f8e5750793ec1c823da4627535e9d12feaee78394b86dabe",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "ICE_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "ICE",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_PICKAXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "ICE_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "ICE",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "ICE_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "ICE",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "ICE_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "ICE",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "ICE_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "PACKED_ICE",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "ICE_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "PACKED_ICE",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "ICE_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "PACKED_ICE",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "ICE_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ICE",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "ICE_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ICE",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "ICE_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ICE",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "ICE_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ICE",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "ICE",
+        "name": "Ice",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "IRON",
+      "name": "Iron Minion",
+      "category": "Mining",
+      "unlock": "Iron Ingot I",
+      "texture": "https://textures.minecraft.net/texture/af435022cb3809a68db0fccfa8993fc1954dc697a7181494905b03fdda035e4a",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "IRON_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "IRON_INGOT",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_PICKAXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "IRON_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "IRON_INGOT",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "IRON_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "IRON_INGOT",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "IRON_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "IRON_INGOT",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "IRON_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_IRON",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "IRON_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_IRON",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "IRON_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_IRON",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "IRON_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_IRON",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "IRON_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_IRON",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "IRON_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_IRON",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "IRON_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_IRON_BLOCK",
+              "amount": 8
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "IRON_INGOT",
+        "name": "Iron Ingot",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "LAPIS",
+      "name": "Lapis Minion",
+      "category": "Mining",
+      "unlock": "Lapis Lazuli I",
+      "texture": "https://textures.minecraft.net/texture/64fd97b9346c1208c1db3957530cdfc5789e3e65943786b0071cf2b2904a6b5c",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "LAPIS_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "INK_SACK-4",
+              "amount": 256
+            },
+            {
+              "id": "WOOD_PICKAXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "LAPIS_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "INK_SACK-4",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "LAPIS_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "ENCHANTED_LAPIS_LAZULI",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "LAPIS_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "ENCHANTED_LAPIS_LAZULI",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "LAPIS_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_LAPIS_LAZULI",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "LAPIS_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_LAPIS_LAZULI",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "LAPIS_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_LAPIS_LAZULI",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "LAPIS_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_LAPIS_LAZULI",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "LAPIS_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_LAPIS_LAZULI_BLOCK",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "LAPIS_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_LAPIS_LAZULI_BLOCK",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "LAPIS_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_LAPIS_LAZULI_BLOCK",
+              "amount": 32
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "INK_SACK:4",
+        "name": "Lapis Lazuli",
+        "tier": 1,
+        "amount": 250
+      }
+    },
+    {
+      "id": "MITHRIL",
+      "name": "Mithril Minion",
+      "category": "Mining",
+      "unlock": "Mithril I",
+      "texture": "https://textures.minecraft.net/texture/c62fa670ff8599b32ab344195ba15f3ef64c3a8aa8a37821c08375950cb74cd0",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "MITHRIL_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "MITHRIL_ORE",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_PICKAXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "MITHRIL_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "MITHRIL_ORE",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "MITHRIL_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "MITHRIL_ORE",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "MITHRIL_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "MITHRIL_ORE",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "MITHRIL_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MITHRIL",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "MITHRIL_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MITHRIL",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "MITHRIL_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MITHRIL",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "MITHRIL_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MITHRIL",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "MITHRIL_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MITHRIL",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "MITHRIL_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MITHRIL",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "MITHRIL_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "REFINED_MITHRIL",
+              "amount": 8
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "MITHRIL_ORE",
+        "name": "Mithril",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "MYCELIUM",
+      "name": "Mycelium Minion",
+      "category": "Mining",
+      "unlock": "Mycelium I",
+      "texture": "https://textures.minecraft.net/texture/fc8ebad72b77df3990e07bc869a99a8f8962d3c19c76e39d99553cae4131cc8",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "MYCELIUM_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "MYCEL",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_SPADE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "MYCELIUM_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "MYCEL",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "MYCELIUM_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "MYCEL",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "MYCELIUM_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MYCELIUM",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "MYCELIUM_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MYCELIUM",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "MYCELIUM_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MYCELIUM",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "MYCELIUM_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MYCELIUM",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "MYCELIUM_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MYCELIUM",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "MYCELIUM_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MYCELIUM",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "MYCELIUM_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MYCELIUM_CUBE",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "MYCELIUM_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_MYCELIUM_CUBE",
+              "amount": 16
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "MYCEL",
+        "name": "Mycelium",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "OBSIDIAN",
+      "name": "Obsidian Minion",
+      "category": "Mining",
+      "unlock": "Obsidian I",
+      "texture": "https://textures.minecraft.net/texture/320c29ab966637cb9aecc34ee76d5a0130461e0c4fdb08cdaf80939fa1209102",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "OBSIDIAN_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "OBSIDIAN",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_PICKAXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "OBSIDIAN_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "OBSIDIAN",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "OBSIDIAN_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "OBSIDIAN",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "OBSIDIAN_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "OBSIDIAN",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "OBSIDIAN_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_OBSIDIAN",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "OBSIDIAN_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_OBSIDIAN",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "OBSIDIAN_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_OBSIDIAN",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "OBSIDIAN_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_OBSIDIAN",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "OBSIDIAN_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_OBSIDIAN",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "OBSIDIAN_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_OBSIDIAN",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "OBSIDIAN_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_OBSIDIAN",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "OBSIDIAN",
+        "name": "Obsidian",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "QUARTZ",
+      "name": "Quartz Minion",
+      "category": "Mining",
+      "unlock": "Nether Quartz I",
+      "texture": "https://textures.minecraft.net/texture/d270093be62dfd3019f908043db570b5dfd366fd5345fccf9da340e75c701a60",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "QUARTZ_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "QUARTZ",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_PICKAXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "QUARTZ_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "QUARTZ",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "QUARTZ_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "QUARTZ",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "QUARTZ_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "QUARTZ",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "QUARTZ_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_QUARTZ",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "QUARTZ_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_QUARTZ",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "QUARTZ_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_QUARTZ",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "QUARTZ_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_QUARTZ",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "QUARTZ_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_QUARTZ",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "QUARTZ_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_QUARTZ",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "QUARTZ_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_QUARTZ_BLOCK",
+              "amount": 8
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "QUARTZ",
+        "name": "Nether Quartz",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "RED_SAND",
+      "name": "Red Sand Minion",
+      "category": "Mining",
+      "unlock": "Red Sand I",
+      "texture": "https://textures.minecraft.net/texture/9d24991435e4e7fb1a9ad23db75c80aec300d003ec0c5963e0ed658634027889",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "RED_SAND_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "SAND-1",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_SPADE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "RED_SAND_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "SAND-1",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "RED_SAND_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "SAND-1",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "RED_SAND_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RED_SAND",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "RED_SAND_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RED_SAND",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "RED_SAND_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RED_SAND",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "RED_SAND_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RED_SAND",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "RED_SAND_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RED_SAND",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "RED_SAND_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RED_SAND",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "RED_SAND_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RED_SAND_CUBE",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "RED_SAND_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_RED_SAND_CUBE",
+              "amount": 16
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "SAND:1",
+        "name": "Red Sand",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "REDSTONE",
+      "name": "Redstone Minion",
+      "category": "Mining",
+      "unlock": "Redstone Dust I",
+      "texture": "https://textures.minecraft.net/texture/1edefcf1a89d687a0a4ecf1589977af1e520fc673c48a0434be426612e8faa67",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "REDSTONE_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "REDSTONE",
+              "amount": 128
+            },
+            {
+              "id": "WOOD_PICKAXE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "REDSTONE_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "REDSTONE",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "REDSTONE_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "REDSTONE",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "REDSTONE_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "ENCHANTED_REDSTONE",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "REDSTONE_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_REDSTONE",
+              "amount": 24
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "REDSTONE_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_REDSTONE",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "REDSTONE_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_REDSTONE",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "REDSTONE_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_REDSTONE",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "REDSTONE_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_REDSTONE",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "REDSTONE_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_REDSTONE_BLOCK",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "REDSTONE_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_REDSTONE_BLOCK",
+              "amount": 16
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "REDSTONE",
+        "name": "Redstone Dust",
+        "tier": 1,
+        "amount": 100
+      }
+    },
+    {
+      "id": "SAND",
+      "name": "Sand Minion",
+      "category": "Mining",
+      "unlock": "Sand I",
+      "texture": "https://textures.minecraft.net/texture/81f8e2ad021eefd1217e650e848b57622144d2bf8a39fbd50dab937a7eac10de",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "SAND_GENERATOR_1",
+          "requirements": [
+            {
+              "id": "SAND",
+              "amount": 80
+            },
+            {
+              "id": "WOOD_SPADE",
+              "amount": 1
+            }
+          ]
+        },
+        {
+          "tier": 2,
+          "id": "SAND_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "SAND",
+              "amount": 160
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "SAND_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "SAND",
+              "amount": 320
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "SAND_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "SAND",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "SAND_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SAND",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "SAND_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SAND",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "SAND_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SAND",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "SAND_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SAND",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "SAND_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SAND",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "SAND_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SAND",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "SAND_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SAND",
+              "amount": 512
+            }
+          ]
+        }
+      ],
+      "unlockGate": {
+        "type": "collection",
+        "id": "SAND",
+        "name": "Sand",
+        "tier": 1,
+        "amount": 50
+      }
+    },
+    {
+      "id": "SNOW",
+      "name": "Snow Minion",
+      "category": "Mining",
+      "unlock": null,
+      "texture": "https://textures.minecraft.net/texture/f2c498b33325cce5668a3395a262046412cfd4844b8d86ddaeb9c84e940e2af",
+      "tiers": [
+        {
+          "tier": 1,
+          "id": "SNOW_GENERATOR_1",
+          "requirements": []
+        },
+        {
+          "tier": 2,
+          "id": "SNOW_GENERATOR_2",
+          "requirements": [
+            {
+              "id": "SNOW_BLOCK",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 3,
+          "id": "SNOW_GENERATOR_3",
+          "requirements": [
+            {
+              "id": "SNOW_BLOCK",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 4,
+          "id": "SNOW_GENERATOR_4",
+          "requirements": [
+            {
+              "id": "SNOW_BLOCK",
+              "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 5,
+          "id": "SNOW_GENERATOR_5",
+          "requirements": [
+            {
+              "id": "SNOW_BLOCK",
+              "amount": 256
+            }
+          ]
+        },
+        {
+          "tier": 6,
+          "id": "SNOW_GENERATOR_6",
+          "requirements": [
+            {
+              "id": "SNOW_BLOCK",
+              "amount": 512
+            }
+          ]
+        },
+        {
+          "tier": 7,
+          "id": "SNOW_GENERATOR_7",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SNOW_BLOCK",
+              "amount": 8
+            }
+          ]
+        },
+        {
+          "tier": 8,
+          "id": "SNOW_GENERATOR_8",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SNOW_BLOCK",
+              "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 9,
+          "id": "SNOW_GENERATOR_9",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SNOW_BLOCK",
+              "amount": 32
+            }
+          ]
+        },
+        {
+          "tier": 10,
+          "id": "SNOW_GENERATOR_10",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SNOW_BLOCK",
+              "amount": 64
+            }
+          ]
+        },
+        {
+          "tier": 11,
+          "id": "SNOW_GENERATOR_11",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SNOW_BLOCK",
+              "amount": 128
+            }
+          ]
+        }
+      ],
+      "acquisition": "Obtain Snow Minion I from Winter Gifts"
+    }
+  ]
+}
