@@ -2,7 +2,7 @@
 node_modules/
 data/cache/
 *.log
-generated/furfsky/
+generated/furfsky/*.zip
 local-viewer/
 desktop-app/
 dist/

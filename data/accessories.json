@@ -1,15 +1,22 @@
 {
-  "version": 1,
-  "reviewedAt": "2026-07-18",
+  "version": 2,
+  "reviewedAt": "2026-07-23",
+  "sourceSnapshot": {
+    "hypixelItemsLastUpdated": 1784730494765,
+    "technicalAccessoryRecords": 411,
+    "canonicalFamilies": 145,
+    "strandedFamilies": 79
+  },
   "accessories": [
     {
       "id": "FARMING_TALISMAN",
       "name": "Farming Talisman",
-      "rarity": "COMMON",
+      "rarity": "UNCOMMON",
       "source": "Collection",
       "route": "Wheat IV crafting recipe",
       "family": "Farming",
       "order": 0,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -22,7 +29,6 @@
           "amount": 4
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/ad7a30c82dba9f5a7befd6abc16089e29256e52e06f2a85f2461acd7a557c14a/64",
       "unlock": {
         "type": "collection",
         "id": "WHEAT",
@@ -30,7 +36,9 @@
         "tier": 4,
         "amount": 500
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/ad7a30c82dba9f5a7befd6abc16089e29256e52e06f2a85f2461acd7a557c14a/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "VACCINE_TALISMAN",
@@ -40,6 +48,7 @@
       "route": "Potato III crafting recipe",
       "family": "Vaccine",
       "order": 1,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -47,7 +56,6 @@
           "amount": 9
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/71408ede8b4f444015c59abd5cd32b8769de51881edabcc15abb6519f5b49/64",
       "unlock": {
         "type": "collection",
         "id": "POTATO_ITEM",
@@ -55,52 +63,19 @@
         "tier": 3,
         "amount": 500
       },
-      "fallbackTextureType": "head"
-    },
-    {
-      "id": "VACCINE_RING",
-      "name": "Vaccine Ring",
-      "rarity": "UNCOMMON",
-      "source": "Crafting",
-      "route": "Vaccine Talisman + 8 Arachne's Fangs",
-      "family": "Vaccine",
-      "order": 2,
-      "requirements": [
-        {
-          "type": "item",
-          "id": "ARACHNE_FANG",
-          "amount": 8
-        }
-      ],
-      "fallbackTexture": "https://mc-heads.net/head/e48ee92b9ef1dd9f6083dab113fe1708fde4f4039ad2f85f06f317cefe49f3ad/64",
-      "fallbackTextureType": "head"
-    },
-    {
-      "id": "VACCINE_ARTIFACT",
-      "name": "Vaccine Artifact",
-      "rarity": "RARE",
-      "source": "Crafting",
-      "route": "Vaccine Ring + 8 Poison Samples",
-      "family": "Vaccine",
-      "order": 3,
-      "requirements": [
-        {
-          "type": "item",
-          "id": "POISON_SAMPLE",
-          "amount": 8
-        }
-      ],
-      "fallbackTexture": "https://mc-heads.net/head/c4332067f9fa1695c3d577c3ef264355bee161b5e3a301906a4f443b002b92fa/64",
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/71408ede8b4f444015c59abd5cd32b8769de51881edabcc15abb6519f5b49/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "FARMER_ORB",
       "name": "Farmer Orb",
-      "rarity": "UNCOMMON",
+      "rarity": "COMMON",
       "source": "Collection",
       "route": "Pumpkin VI crafting recipe",
       "family": "Farmer Orb",
-      "order": 4,
+      "order": 2,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -113,7 +88,6 @@
           "amount": 1
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/557b354ce9bf8db0a7ed2afc79e27f28c3ccaaaf2c460a51993cac2b0564ef60/64",
       "unlock": {
         "type": "collection",
         "id": "PUMPKIN",
@@ -121,7 +95,9 @@
         "tier": 6,
         "amount": 5000
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/557b354ce9bf8db0a7ed2afc79e27f28c3ccaaaf2c460a51993cac2b0564ef60/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "NIGHT_VISION_CHARM",
@@ -130,7 +106,8 @@
       "source": "Collection",
       "route": "Mushroom VII crafting recipe",
       "family": "Night Vision",
-      "order": 5,
+      "order": 3,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -143,7 +120,6 @@
           "amount": 4
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/7c3289afd2a5e97dc29ddc01baab9ee3489348cebb9f15d4df48c3d46861fd75/64",
       "unlock": {
         "type": "collection",
         "id": "MUSHROOM_COLLECTION",
@@ -151,7 +127,9 @@
         "tier": 7,
         "amount": 10000
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/7c3289afd2a5e97dc29ddc01baab9ee3489348cebb9f15d4df48c3d46861fd75/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "FEATHER_TALISMAN",
@@ -160,7 +138,8 @@
       "source": "Collection",
       "route": "Feather IV crafting recipe",
       "family": "Feather",
-      "order": 6,
+      "order": 4,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -168,7 +147,6 @@
           "amount": 108
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/5120a863869320af4cfa7d1d58d0b2dd8182eb0be834b8caaeb5639421cd893b/64",
       "unlock": {
         "type": "collection",
         "id": "FEATHER",
@@ -176,7 +154,9 @@
         "tier": 4,
         "amount": 1000
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/5120a863869320af4cfa7d1d58d0b2dd8182eb0be834b8caaeb5639421cd893b/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "FEATHER_RING",
@@ -185,7 +165,8 @@
       "source": "Collection",
       "route": "Feather VII crafting recipe",
       "family": "Feather",
-      "order": 7,
+      "order": 5,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -193,7 +174,6 @@
           "amount": 7
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/cb6851f4e9a87707ad72f5b5cd17efeca36c2c18cc99aaad7121fe72cf79b9b1/64",
       "unlock": {
         "type": "collection",
         "id": "FEATHER",
@@ -201,7 +181,9 @@
         "tier": 7,
         "amount": 10000
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/cb6851f4e9a87707ad72f5b5cd17efeca36c2c18cc99aaad7121fe72cf79b9b1/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "FEATHER_ARTIFACT",
@@ -210,7 +192,8 @@
       "source": "Collection",
       "route": "Feather IX crafting recipe",
       "family": "Feather",
-      "order": 8,
+      "order": 6,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -218,7 +201,6 @@
           "amount": 128
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/da239e8b52ed91fe518d7c690b03de9dc69846a8d5c208ac1c102edd68d9ca18/64",
       "unlock": {
         "type": "collection",
         "id": "FEATHER",
@@ -226,7 +208,9 @@
         "tier": 9,
         "amount": 50000
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/da239e8b52ed91fe518d7c690b03de9dc69846a8d5c208ac1c102edd68d9ca18/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "SPEED_TALISMAN",
@@ -235,7 +219,8 @@
       "source": "Collection",
       "route": "Sugar Cane II crafting recipe",
       "family": "Speed",
-      "order": 9,
+      "order": 7,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -243,7 +228,6 @@
           "amount": 108
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/8624bacb5f1986e6477abce4ae7dca1820a5260b6233b55ba1d9ba936c84b/64",
       "unlock": {
         "type": "collection",
         "id": "SUGAR_CANE",
@@ -251,7 +235,9 @@
         "tier": 2,
         "amount": 250
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/8624bacb5f1986e6477abce4ae7dca1820a5260b6233b55ba1d9ba936c84b/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "SPEED_RING",
@@ -260,7 +246,8 @@
       "source": "Collection",
       "route": "Sugar Cane V crafting recipe",
       "family": "Speed",
-      "order": 10,
+      "order": 8,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -268,7 +255,6 @@
           "amount": 96
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/c2da40a91f8fa7e1cbdd934da92a7668dc95d75b57c9c80a381c5e178cee6ba7/64",
       "unlock": {
         "type": "collection",
         "id": "SUGAR_CANE",
@@ -276,7 +262,9 @@
         "tier": 5,
         "amount": 2000
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/c2da40a91f8fa7e1cbdd934da92a7668dc95d75b57c9c80a381c5e178cee6ba7/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "SPEED_ARTIFACT",
@@ -285,7 +273,8 @@
       "source": "Collection",
       "route": "Sugar Cane VIII crafting recipe",
       "family": "Speed",
-      "order": 11,
+      "order": 9,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -293,7 +282,6 @@
           "amount": 48
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/f06706eecb2d558ace27abda0b0b7b801d36d17dd7a890a9520dbe522374f8a6/64",
       "unlock": {
         "type": "collection",
         "id": "SUGAR_CANE",
@@ -301,7 +289,34 @@
         "tier": 8,
         "amount": 20000
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/f06706eecb2d558ace27abda0b0b7b801d36d17dd7a890a9520dbe522374f8a6/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "SPEED_RELIC",
+      "name": "Speed Relic",
+      "rarity": "EPIC",
+      "source": "Collection",
+      "route": "Upgrade from Speed Artifact with 256 Enchanted Sugar Cane + 64 Cane Knot",
+      "family": "Speed",
+      "order": 10,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_SUGAR_CANE",
+          "amount": 256
+        },
+        {
+          "type": "item",
+          "id": "CANE_KNOT",
+          "amount": 64
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/2a2c87ae5fa03345df42c12dfc957177c67c69e1400ebef7005eb13b58be6759/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "POTION_AFFINITY_TALISMAN",
@@ -310,7 +325,8 @@
       "source": "Collection",
       "route": "Nether Wart III crafting recipe",
       "family": "Potion Affinity",
-      "order": 12,
+      "order": 11,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -318,7 +334,6 @@
           "amount": 144
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/d6a59f4abcf5516e50b5a9b1cf2f7eca78eaf0c07ffb254cd45131b169068a5a/64",
       "unlock": {
         "type": "collection",
         "id": "NETHER_STALK",
@@ -326,16 +341,19 @@
         "tier": 3,
         "amount": 250
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/d6a59f4abcf5516e50b5a9b1cf2f7eca78eaf0c07ffb254cd45131b169068a5a/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
-      "id": "POTION_AFFINITY_RING",
+      "id": "RING_POTION_AFFINITY",
       "name": "Potion Affinity Ring",
       "rarity": "UNCOMMON",
       "source": "Collection",
       "route": "Nether Wart VII crafting recipe",
       "family": "Potion Affinity",
-      "order": 13,
+      "order": 12,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -349,16 +367,24 @@
         "name": "Nether Wart",
         "tier": 7,
         "amount": 10000
-      }
+      },
+      "fallbackTexture": "https://mc-heads.net/head/46b5cfdd804d76249e7c6946b1d9afa22e9bdc72149f682e71654aee885dffbb/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM",
+      "profileIds": [
+        "RING_POTION_AFFINITY",
+        "POTION_AFFINITY_RING"
+      ]
     },
     {
-      "id": "POTION_AFFINITY_ARTIFACT",
+      "id": "ARTIFACT_POTION_AFFINITY",
       "name": "Potion Affinity Artifact",
       "rarity": "RARE",
       "source": "Collection",
       "route": "Nether Wart IX crafting recipe",
       "family": "Potion Affinity",
-      "order": 14,
+      "order": 13,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -372,7 +398,14 @@
         "name": "Nether Wart",
         "tier": 9,
         "amount": 50000
-      }
+      },
+      "fallbackTexture": "https://mc-heads.net/head/56f9119a1d1fb01bb97db89aeba56ff5ee112079e432a2b50fa3a80a8954db38/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM",
+      "profileIds": [
+        "ARTIFACT_POTION_AFFINITY",
+        "POTION_AFFINITY_ARTIFACT"
+      ]
     },
     {
       "id": "HEALING_TALISMAN",
@@ -381,7 +414,8 @@
       "source": "Collection",
       "route": "Lily Pad III crafting recipe",
       "family": "Healing",
-      "order": 15,
+      "order": 14,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -389,7 +423,6 @@
           "amount": 144
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/651eb16f22dd7505be5dae06671803633a5abf8b2beeb5c60548670df0e59214/64",
       "unlock": {
         "type": "collection",
         "id": "WATER_LILY",
@@ -397,7 +430,9 @@
         "tier": 3,
         "amount": 100
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/651eb16f22dd7505be5dae06671803633a5abf8b2beeb5c60548670df0e59214/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "HEALING_RING",
@@ -406,7 +441,8 @@
       "source": "Collection",
       "route": "Lily Pad VIII crafting recipe",
       "family": "Healing",
-      "order": 16,
+      "order": 15,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -414,7 +450,6 @@
           "amount": 4
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/50247bc4a01d2a2391cd8d8543c9fc673cda74b06bfc127a72ec06ad3ed580e1/64",
       "unlock": {
         "type": "collection",
         "id": "WATER_LILY",
@@ -422,35 +457,39 @@
         "tier": 8,
         "amount": 6000
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/50247bc4a01d2a2391cd8d8543c9fc673cda74b06bfc127a72ec06ad3ed580e1/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "FISH_AFFINITY_TALISMAN",
       "name": "Fish Affinity Talisman",
       "rarity": "RARE",
       "source": "Fishing",
-      "route": "Water Hydra drop from island fishing",
+      "route": "Drop from Water Hydras fished on the island",
       "family": "Fish Affinity",
-      "order": 17,
-      "requirements": [],
-      "fallbackTexture": "https://mc-heads.net/head/1fb18c7bfac7c7b429933374cffd76e562c8866b5eb45cf5a987a2da4a77da54/64",
-      "fallbackTextureType": "head",
+      "order": 16,
+      "canRecombobulate": true,
       "unlock": {
         "type": "skill",
         "id": "SKILL_FISHING",
         "name": "Fishing",
         "level": 19,
         "amount": 322425
-      }
+      },
+      "fallbackTexture": "https://mc-heads.net/head/1fb18c7bfac7c7b429933374cffd76e562c8866b5eb45cf5a987a2da4a77da54/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "SEA_CREATURE_TALISMAN",
       "name": "Sea Creature Talisman",
       "rarity": "COMMON",
-      "source": "Collection",
+      "source": "Fishing",
       "route": "Sponge III crafting recipe",
       "family": "Sea Creature",
-      "order": 18,
+      "order": 17,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -458,7 +497,6 @@
           "amount": 18
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/eb7ae4dd0384543b31623ef19c1b3f886629424efae004b6ea75194ee9b9aa32/64",
       "unlock": {
         "type": "collection",
         "id": "SPONGE",
@@ -466,16 +504,19 @@
         "tier": 3,
         "amount": 100
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/eb7ae4dd0384543b31623ef19c1b3f886629424efae004b6ea75194ee9b9aa32/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "SEA_CREATURE_RING",
       "name": "Sea Creature Ring",
       "rarity": "UNCOMMON",
-      "source": "Collection",
+      "source": "Fishing",
       "route": "Sponge VI crafting recipe",
       "family": "Sea Creature",
-      "order": 19,
+      "order": 18,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -488,7 +529,6 @@
           "amount": 2
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/7ac01f28133c16b73567a77444e29a1475202d974ace29624cb688d2491b0b58/64",
       "unlock": {
         "type": "collection",
         "id": "SPONGE",
@@ -496,16 +536,19 @@
         "tier": 6,
         "amount": 1000
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/7ac01f28133c16b73567a77444e29a1475202d974ace29624cb688d2491b0b58/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "SEA_CREATURE_ARTIFACT",
       "name": "Sea Creature Artifact",
       "rarity": "RARE",
-      "source": "Collection",
+      "source": "Fishing",
       "route": "Sponge VIII crafting recipe",
       "family": "Sea Creature",
-      "order": 20,
+      "order": 19,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -513,7 +556,6 @@
           "amount": 64
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/a4270c3655178afe44597b6394708828c292455365bddef971a381f41e47d5d0/64",
       "unlock": {
         "type": "collection",
         "id": "SPONGE",
@@ -521,16 +563,19 @@
         "tier": 8,
         "amount": 2000
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/a4270c3655178afe44597b6394708828c292455365bddef971a381f41e47d5d0/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "BAIT_RING",
       "name": "Bait Ring",
       "rarity": "RARE",
-      "source": "Collection",
+      "source": "Slayer",
       "route": "Ink Sac VIII crafting recipe",
       "family": "Bait Ring",
-      "order": 21,
+      "order": 20,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -538,7 +583,6 @@
           "amount": 288
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/5ceec5342acd3f21b2c1c8d5913277e46caec6c83b869a20ca91bfd2c867575a/64",
       "unlock": {
         "type": "collection",
         "id": "INK_SACK",
@@ -546,23 +590,102 @@
         "tier": 8,
         "amount": 2500
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/5ceec5342acd3f21b2c1c8d5913277e46caec6c83b869a20ca91bfd2c867575a/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "SPIKED_ATROCITY",
+      "name": "Spiked Atrocity",
+      "rarity": "EPIC",
+      "source": "Slayer",
+      "route": "Upgrade from Bait Ring with 128 Enchanted Ink Sack + 128 Spiked Bait",
+      "family": "Bait Ring",
+      "order": 21,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_INK_SACK",
+          "amount": 128
+        },
+        {
+          "type": "item",
+          "id": "SPIKED_BAIT",
+          "amount": 128
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/df4eeca825dddb7f861352ecb0be2df4615728b63894b7c54418af0105a39172/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "ZOMBIE_TALISMAN",
       "name": "Zombie Talisman",
       "rarity": "COMMON",
-      "source": "Villager",
+      "source": "Slayer",
       "route": "Tier 1 Stranded villager trade",
       "family": "Zombie",
       "order": 22,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
           "id": "EMERALD",
           "amount": 10
         }
-      ]
+      ],
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ZOMBIE_RING",
+      "name": "Zombie Ring",
+      "rarity": "UNCOMMON",
+      "source": "Slayer",
+      "route": "Upgrade from Zombie Talisman with 64 Revenant Flesh",
+      "family": "Zombie",
+      "order": 23,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "REVENANT_FLESH",
+          "amount": 64
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/55d996cb5a8e5a71a274275f46944b944eeeacd2e1cadef918b05b879a03336f/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ZOMBIE_ARTIFACT",
+      "name": "Zombie Artifact",
+      "rarity": "RARE",
+      "source": "Slayer",
+      "route": "Upgrade from Zombie Ring with 32 Enchanted Iron + 16 Enchanted Diamond + 48 Revenant Viscera",
+      "family": "Zombie",
+      "order": 24,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_IRON",
+          "amount": 32
+        },
+        {
+          "type": "item",
+          "id": "ENCHANTED_DIAMOND",
+          "amount": 16
+        },
+        {
+          "type": "item",
+          "id": "REVENANT_VISCERA",
+          "amount": 48
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/da8ecb39160fb33714e7a1df418dda43b58598068f6052676328b267d03187fc/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "SKELETON_TALISMAN",
@@ -571,14 +694,16 @@
       "source": "Villager",
       "route": "Tier 1 Stranded villager trade",
       "family": "Skeleton",
-      "order": 23,
+      "order": 25,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
           "id": "EMERALD",
           "amount": 10
         }
-      ]
+      ],
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "INTIMIDATION_TALISMAN",
@@ -587,7 +712,8 @@
       "source": "Villager",
       "route": "Tier 1 Stranded villager trade",
       "family": "Intimidation",
-      "order": 24,
+      "order": 26,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -596,16 +722,18 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/68117c209b69eeaf2684816e16bed25e665008e7329632fdfca6523799cd7f71/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "INTIMIDATION_RING",
       "name": "Intimidation Ring",
       "rarity": "UNCOMMON",
-      "source": "Events",
+      "source": "Villager",
       "route": "Craft with Green Candy from island Spooky mobs",
       "family": "Intimidation",
-      "order": 25,
+      "order": 27,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -614,16 +742,18 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/41fbc5010e8047ebc0bfd5b7635ab54772d8fd5a28099aeebc8ae2407f026b08/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "INTIMIDATION_ARTIFACT",
       "name": "Intimidation Artifact",
       "rarity": "RARE",
-      "source": "Events",
+      "source": "Villager",
       "route": "Craft with Purple Candy from island Spooky mobs",
       "family": "Intimidation",
-      "order": 26,
+      "order": 28,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -632,7 +762,8 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/96e977ae2f796dce6c80cb6bed9294e9ed4b11b88f9fde6c31f435dfd0382529/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "SCAVENGER_TALISMAN",
@@ -641,7 +772,8 @@
       "source": "Villager",
       "route": "Tier 1 Stranded villager trade",
       "family": "Scavenger",
-      "order": 27,
+      "order": 29,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -650,7 +782,8 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/211ab3a1132c9d1ef835ea81d972ed9b5cd8ddff0a07c55a749bcfcf8df5/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "CAT_TALISMAN",
@@ -659,7 +792,8 @@
       "source": "Villager",
       "route": "Tier 1 Stranded villager trade",
       "family": "Cat",
-      "order": 28,
+      "order": 30,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -668,7 +802,8 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/2220107a77f8eac0743ee8cca378183d256c4a89ac9660ef942cd3759467ba01/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "LYNX_TALISMAN",
@@ -677,7 +812,8 @@
       "source": "Villager",
       "route": "Tier 2 trade using Cat Talisman",
       "family": "Cat",
-      "order": 29,
+      "order": 31,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -686,7 +822,8 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/2360f1de777efe05d272a61cfeea0006496aacadf1943573a3f0d7655016e609/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "CHEETAH_TALISMAN",
@@ -695,7 +832,8 @@
       "source": "Villager",
       "route": "Tier 3 trade using Lynx Talisman",
       "family": "Cat",
-      "order": 30,
+      "order": 32,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -704,7 +842,8 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/8ca45bf11990f018f3b0b8d49a432ea4e9dcef75621126f0568d7900e169a8e2/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "PIGS_FOOT",
@@ -713,7 +852,8 @@
       "source": "Villager",
       "route": "Tier 1 Stranded villager trade",
       "family": "Pig's Foot",
-      "order": 31,
+      "order": 33,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -722,7 +862,8 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/604faebefd0a8f721403e3142efecb83fbf4b7d1f705d0c9b44d91f0bf40127b/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "WOLF_PAW",
@@ -731,7 +872,8 @@
       "source": "Villager",
       "route": "Tier 1 Stranded villager trade",
       "family": "Wolf Paw",
-      "order": 32,
+      "order": 34,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -740,16 +882,18 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/7afd22704eeb5c67be649ddfe1da0c658158a7058d01739de31c94f6b9808869/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "POTATO_TALISMAN",
       "name": "Potato Talisman",
       "rarity": "COMMON",
       "source": "Villager",
-      "route": "Tier 1 Stranded villager trade",
-      "family": "Potato Talisman",
-      "order": 33,
+      "route": "Tier 1 Stranded villager trade for 200 Emeralds",
+      "family": "Potato",
+      "order": 35,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -758,16 +902,38 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/318476e3cf0d5fc8ab1761065cf0e372b11004ed4c97156396e17c869b4aa389/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "POTATO_RING",
+      "name": "Potato Ring",
+      "rarity": "UNCOMMON",
+      "source": "Villager",
+      "route": "Upgrade from Potato Talisman with 64 Enchanted Baked Potato",
+      "family": "Potato",
+      "order": 36,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_BAKED_POTATO",
+          "amount": 64
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/262da1758391f34a3b822e38fec7ce53988ff2f391657072208c8de4b9065701/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "BLOOD_GOD_CREST",
       "name": "Blood God Crest",
       "rarity": "COMMON",
       "source": "Villager",
-      "route": "Tier 2 Stranded villager trade",
-      "family": "Blood God Crest",
-      "order": 34,
+      "route": "Tier 2 Stranded villager trade for 100 Emeralds",
+      "family": "Blood God",
+      "order": 37,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -776,16 +942,43 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/5b8b51eaefe0e3a10ad7fa1627801d2ce4412b4e432685906192f83283708233/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "BLOOD_GOD_SIGIL",
+      "name": "Blood God Sigil",
+      "rarity": "UNCOMMON",
+      "source": "Villager",
+      "route": "Upgrade from Blood God Crest with 32 Enchanted Grilled Pork + 64 Enchanted Baked Potato",
+      "family": "Blood God",
+      "order": 38,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_GRILLED_PORK",
+          "amount": 32
+        },
+        {
+          "type": "item",
+          "id": "ENCHANTED_BAKED_POTATO",
+          "amount": 64
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/fb3f340828cdcaf4502e79d0f4fc6da438be966ac2fd6bc7b972bb71be5b93b1/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "DANTE_TALISMAN",
-      "name": "Dante Talisman",
+      "name": "Dante's Talisman",
       "rarity": "COMMON",
       "source": "Villager",
       "route": "Tier 3 Stranded villager trade",
       "family": "Dante",
-      "order": 35,
+      "order": 39,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -794,7 +987,8 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/cf92982f1a302310643a20ce51623f8199b7545e70dc6b93ed6bd61dc42ff213/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "CROOKED_ARTIFACT",
@@ -802,8 +996,9 @@
       "rarity": "RARE",
       "source": "Villager",
       "route": "Tier 3 Stranded villager trade",
-      "family": "Seal",
-      "order": 36,
+      "family": "Shady",
+      "order": 40,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -812,7 +1007,8 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/5b7ff88d154d04a8a26995c99f64e53b574c7b82ec21a12a9e448bca1e70f461/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "ENDER_ARTIFACT",
@@ -820,8 +1016,9 @@
       "rarity": "EPIC",
       "source": "Villager",
       "route": "Tier 5 Stranded villager trade",
-      "family": "Ender Artifact",
-      "order": 37,
+      "family": "Ender",
+      "order": 41,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -830,7 +1027,38 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/288748014809862e8bd210a0a3dfcd7be6e0ddc7b453e3947ee6d73f46fde9e2/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ENDER_RELIC",
+      "name": "Ender Relic",
+      "rarity": "LEGENDARY",
+      "source": "Villager",
+      "route": "Upgrade from Ender Artifact with 128 Enchanted Obsidian + 96 Enchanted Eye Of Ender + 1 Exceedingly Rare Ender Artifact Upgrader",
+      "family": "Ender",
+      "order": 42,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_OBSIDIAN",
+          "amount": 128
+        },
+        {
+          "type": "item",
+          "id": "ENCHANTED_EYE_OF_ENDER",
+          "amount": 96
+        },
+        {
+          "type": "item",
+          "id": "EXCEEDINGLY_RARE_ENDER_ARTIFACT_UPGRADER",
+          "amount": 1
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/288748014809862e8bd210a0a3dfcd7be6e0ddc7b453e3947ee6d73f46fde9e2/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "WITHER_ARTIFACT",
@@ -838,8 +1066,9 @@
       "rarity": "EPIC",
       "source": "Villager",
       "route": "Tier 5 Stranded villager trade",
-      "family": "Wither Artifact",
-      "order": 38,
+      "family": "Wither",
+      "order": 43,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -848,19 +1077,21 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/17b8ef7e8e0af19399cc32485f2ee47b2bb4d5802c71b3021f4d5d6b5f3afe03/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "BAT_TALISMAN",
       "name": "Bat Talisman",
       "rarity": "RARE",
-      "source": "Mob drop",
+      "source": "Events",
       "route": "Bat drop in Roofed Forest biome",
       "family": "Bat",
-      "order": 39,
-      "requirements": [],
+      "order": 44,
+      "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/4f89fc5137631f6b543931bf7af1dde0aef8c69cbe5b8bafe2166f3b1c7e1a69/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "BAT_RING",
@@ -869,7 +1100,8 @@
       "source": "Events",
       "route": "Fear Mongerer: Bat Talisman + 64 Green Candy",
       "family": "Bat",
-      "order": 40,
+      "order": 45,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -878,7 +1110,8 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/bc78314255d8864a753fe95622564046f0dee2a82c6e4e2e7f452fcb95af318c/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "BAT_ARTIFACT",
@@ -887,7 +1120,8 @@
       "source": "Events",
       "route": "Fear Mongerer: Bat Ring + 64 Purple Candy",
       "family": "Bat",
-      "order": 41,
+      "order": 46,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -896,28 +1130,31 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/377ade8afb257086fb1861da43c8ae468b8eb0578fada84303858517ba17217e/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "WOLF_TALISMAN",
       "name": "Wolf Talisman",
       "rarity": "UNCOMMON",
-      "source": "Mob drop",
+      "source": "Slayer",
       "route": "Old Wolf drop in Taiga biome",
       "family": "Wolf",
-      "order": 42,
-      "requirements": [],
+      "order": 47,
+      "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/f4cb7a6bf6c32c49f2589147e6f0f888e9e35875dd1ea2a8af379ca710589e6b/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "WOLF_RING",
       "name": "Wolf Ring",
       "rarity": "RARE",
-      "source": "Crafting",
+      "source": "Slayer",
       "route": "Wolf Talisman + Weak Wolf Catalyst + 14 Enchanted Bone",
       "family": "Wolf",
-      "order": 43,
+      "order": 48,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -931,19 +1168,21 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/f83a2aa9d3734b919ac24c9659e5e0f86ecafbf64d4788cfa433bbec189e8/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "SPIDER_TALISMAN",
       "name": "Spider Talisman",
       "rarity": "UNCOMMON",
-      "source": "Mob drop",
+      "source": "Slayer",
       "route": "Brood Mother drop from island spiders",
       "family": "Spider",
-      "order": 44,
-      "requirements": [],
+      "order": 49,
+      "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/9d83d0494939dba5f27a1dcba7031d5feff44d6efe8d8623e12052470d0a6674/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "SPIDER_RING",
@@ -952,7 +1191,8 @@
       "source": "Slayer",
       "route": "Tarantula Broodfather recipe; Maddox NPC",
       "family": "Spider",
-      "order": 45,
+      "order": 50,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -960,14 +1200,15 @@
           "amount": 64
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/604ada2212a38e67b6dbad2d156ee110c546dbfd7165b7f50b8ec17ff224dba5/64",
-      "fallbackTextureType": "head",
       "unlock": {
         "type": "slayer",
         "id": "spider",
         "name": "Spider Slayer",
         "level": 1
-      }
+      },
+      "fallbackTexture": "https://mc-heads.net/head/604ada2212a38e67b6dbad2d156ee110c546dbfd7165b7f50b8ec17ff224dba5/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "SPIDER_ARTIFACT",
@@ -976,7 +1217,8 @@
       "source": "Slayer",
       "route": "Tarantula Broodfather recipe; Maddox NPC",
       "family": "Spider",
-      "order": 46,
+      "order": 51,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -989,14 +1231,15 @@
           "amount": 32
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/b81b5cf3a65bf9cab4bca55781721a86d567d9e106551647f35b715edf00a13f/64",
-      "fallbackTextureType": "head",
       "unlock": {
         "type": "slayer",
         "id": "spider",
         "name": "Spider Slayer",
         "level": 6
-      }
+      },
+      "fallbackTexture": "https://mc-heads.net/head/b81b5cf3a65bf9cab4bca55781721a86d567d9e106551647f35b715edf00a13f/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "CANDY_TALISMAN",
@@ -1005,7 +1248,8 @@
       "source": "Events",
       "route": "Craft with Green Candy from island Spooky mobs",
       "family": "Candy",
-      "order": 47,
+      "order": 52,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1014,7 +1258,8 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/e6ae8c4c983ac24d93c48417a95beeb1ca055b9b49764143cc98c1392548eed3/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "CANDY_RING",
@@ -1023,7 +1268,8 @@
       "source": "Events",
       "route": "Upgrade with Green Candy",
       "family": "Candy",
-      "order": 48,
+      "order": 53,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1032,7 +1278,8 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/18c0d7034a7dac30e2b52c00eeec0eca55fe688d25faf4efd9c0a07dce9eaf30/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "CANDY_ARTIFACT",
@@ -1041,7 +1288,8 @@
       "source": "Events",
       "route": "Upgrade with Purple Candy",
       "family": "Candy",
-      "order": 49,
+      "order": 54,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1050,7 +1298,8 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/b797add1b3ae64d510bcc6ac16c2fa1dd69369edf59821239c955f7f11e1177b/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "CANDY_RELIC",
@@ -1059,7 +1308,8 @@
       "source": "Events",
       "route": "Upgrade with Purple Candy",
       "family": "Candy",
-      "order": 50,
+      "order": 55,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1068,16 +1318,18 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/1717a118f4b19386a8284dccb986d8da159b00457b72ddbf00d827bf7fac4de4/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "FROZEN_CHICKEN",
       "name": "Frozen Chicken",
       "rarity": "RARE",
       "source": "Villager",
-      "route": "Tier 2 Stranded villager trade",
+      "route": "Tier 2 Stranded villager trade for 8 Enchanted Emeralds",
       "family": "Frozen Chicken",
-      "order": 51,
+      "order": 56,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1086,16 +1338,18 @@
         }
       ],
       "fallbackTexture": "https://mc-heads.net/head/d61c33024246ed219a1317e2459130f2aed227655e85cf01fc513481236d8dd1/64",
-      "fallbackTextureType": "head"
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
-      "id": "TALISMAN_OF_COINS",
+      "id": "COIN_TALISMAN",
       "name": "Talisman of Coins",
       "rarity": "COMMON",
       "source": "Collection",
       "route": "Emerald II crafting recipe",
-      "family": "Talisman of Coins",
-      "order": 52,
+      "family": "Coins",
+      "order": 57,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1114,7 +1368,14 @@
         "name": "Emerald",
         "tier": 2,
         "amount": 100
-      }
+      },
+      "fallbackTexture": "https://mc-heads.net/head/35a12dc77e8969fb775b9159c9d7e1999ea31a6a6e39a729b5ef8c876fc63c6a/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM",
+      "profileIds": [
+        "COIN_TALISMAN",
+        "TALISMAN_OF_COINS"
+      ]
     },
     {
       "id": "EMERALD_RING",
@@ -1122,8 +1383,9 @@
       "rarity": "UNCOMMON",
       "source": "Collection",
       "route": "Emerald V crafting recipe",
-      "family": "Emerald Ring",
-      "order": 53,
+      "family": "Emerald",
+      "order": 58,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1131,7 +1393,6 @@
           "amount": 32
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/a8e50d027da90dbea8a66088aba6f978eac8a7beb6561020f0289fcd43d89c68/64",
       "unlock": {
         "type": "collection",
         "id": "EMERALD",
@@ -1139,7 +1400,9 @@
         "tier": 5,
         "amount": 5000
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/a8e50d027da90dbea8a66088aba6f978eac8a7beb6561020f0289fcd43d89c68/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "MAGNETIC_TALISMAN",
@@ -1148,7 +1411,8 @@
       "source": "Collection",
       "route": "Emerald III crafting recipe",
       "family": "Magnetic",
-      "order": 54,
+      "order": 59,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1161,7 +1425,6 @@
           "amount": 32
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/6b76ea41b3dcf8a48202cec8ab8fb42c671b35ce648d8613859a013a4ca12480/64",
       "unlock": {
         "type": "collection",
         "id": "EMERALD",
@@ -1169,21 +1432,24 @@
         "tier": 3,
         "amount": 250
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/6b76ea41b3dcf8a48202cec8ab8fb42c671b35ce648d8613859a013a4ca12480/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "PERSONAL_COMPACTOR_4000",
       "name": "Personal Compactor 4000",
       "rarity": "UNCOMMON",
       "source": "Collection",
-      "route": "Redstone Dust IX crafting recipe",
+      "route": "Redstone Dust VI crafting recipe",
       "family": "Personal Compactor",
-      "order": 55,
+      "order": 60,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
           "id": "ENCHANTED_REDSTONE",
-          "amount": 448
+          "amount": 28
         },
         {
           "type": "item",
@@ -1195,55 +1461,85 @@
         "type": "collection",
         "id": "REDSTONE",
         "name": "Redstone Dust",
-        "tier": 9,
-        "amount": 50000
-      }
+        "tier": 6,
+        "amount": 5000
+      },
+      "fallbackMaterial": "DROPPER"
     },
     {
       "id": "PERSONAL_COMPACTOR_5000",
       "name": "Personal Compactor 5000",
       "rarity": "RARE",
       "source": "Collection",
-      "route": "Redstone Dust XI crafting recipe",
+      "route": "Redstone Dust VII crafting recipe",
       "family": "Personal Compactor",
-      "order": 56,
+      "order": 61,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
-          "id": "ENCHANTED_REDSTONE_BLOCK",
-          "amount": 14
+          "id": "ENCHANTED_REDSTONE",
+          "amount": 84
         }
       ],
       "unlock": {
         "type": "collection",
         "id": "REDSTONE",
         "name": "Redstone Dust",
-        "tier": 11,
-        "amount": 400000
-      }
+        "tier": 7,
+        "amount": 25000
+      },
+      "fallbackMaterial": "DROPPER"
     },
     {
       "id": "PERSONAL_COMPACTOR_6000",
       "name": "Personal Compactor 6000",
       "rarity": "EPIC",
       "source": "Collection",
-      "route": "Redstone Dust XIII crafting recipe",
+      "route": "Redstone Dust VIII crafting recipe",
       "family": "Personal Compactor",
-      "order": 57,
+      "order": 62,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
           "id": "ENCHANTED_REDSTONE_BLOCK",
-          "amount": 28
+          "amount": 7
         }
       ],
       "unlock": {
         "type": "collection",
         "id": "REDSTONE",
         "name": "Redstone Dust",
-        "tier": 13,
-        "amount": 800000
-      }
+        "tier": 8,
+        "amount": 100000
+      },
+      "fallbackMaterial": "DROPPER"
+    },
+    {
+      "id": "PERSONAL_COMPACTOR_7000",
+      "name": "Personal Compactor 7000",
+      "rarity": "LEGENDARY",
+      "source": "Collection",
+      "route": "Redstone Dust IX crafting recipe",
+      "family": "Personal Compactor",
+      "order": 63,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_REDSTONE_BLOCK",
+          "amount": 21
+        }
+      ],
+      "unlock": {
+        "type": "collection",
+        "id": "REDSTONE",
+        "name": "Redstone Dust",
+        "tier": 9,
+        "amount": 250000
+      },
+      "fallbackMaterial": "DROPPER"
     },
     {
       "id": "PERSONAL_DELETOR_4000",
@@ -1252,7 +1548,8 @@
       "source": "Collection",
       "route": "Iron Ingot IX crafting recipe",
       "family": "Personal Deletor",
-      "order": 58,
+      "order": 64,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1276,7 +1573,8 @@
         "name": "Iron Ingot",
         "tier": 9,
         "amount": 50000
-      }
+      },
+      "fallbackMaterial": "DISPENSER"
     },
     {
       "id": "PERSONAL_DELETOR_5000",
@@ -1285,7 +1583,8 @@
       "source": "Collection",
       "route": "Iron Ingot X crafting recipe",
       "family": "Personal Deletor",
-      "order": 59,
+      "order": 65,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1299,7 +1598,8 @@
         "name": "Iron Ingot",
         "tier": 10,
         "amount": 100000
-      }
+      },
+      "fallbackMaterial": "DISPENSER"
     },
     {
       "id": "PERSONAL_DELETOR_6000",
@@ -1308,7 +1608,8 @@
       "source": "Collection",
       "route": "Iron Ingot XI crafting recipe",
       "family": "Personal Deletor",
-      "order": 60,
+      "order": 66,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1322,7 +1623,26 @@
         "name": "Iron Ingot",
         "tier": 11,
         "amount": 200000
-      }
+      },
+      "fallbackMaterial": "DISPENSER"
+    },
+    {
+      "id": "PERSONAL_DELETOR_7000",
+      "name": "Personal Deletor 7000",
+      "rarity": "LEGENDARY",
+      "source": "Collection",
+      "route": "Upgrade from Personal Deletor 6000 with 7 Enchanted Iron Block",
+      "family": "Personal Deletor",
+      "order": 67,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_IRON_BLOCK",
+          "amount": 7
+        }
+      ],
+      "fallbackMaterial": "DISPENSER"
     },
     {
       "id": "GRAVITY_TALISMAN",
@@ -1331,7 +1651,8 @@
       "source": "Collection",
       "route": "Obsidian III crafting recipe",
       "family": "Gravity",
-      "order": 61,
+      "order": 68,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1339,7 +1660,6 @@
           "amount": 144
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/616f4ac8a0698ab07bb0a5ef69dc08daedd8f5972e7a1237c8c56361e3f204ca/64",
       "unlock": {
         "type": "collection",
         "id": "OBSIDIAN",
@@ -1347,16 +1667,19 @@
         "tier": 3,
         "amount": 250
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/616f4ac8a0698ab07bb0a5ef69dc08daedd8f5972e7a1237c8c56361e3f204ca/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
-      "id": "WOOD_AFFINITY_TALISMAN",
+      "id": "WOOD_TALISMAN",
       "name": "Wood Affinity Talisman",
       "rarity": "UNCOMMON",
       "source": "Collection",
       "route": "Oak Log VII crafting recipe",
       "family": "Wood Affinity",
-      "order": 62,
+      "order": 69,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1375,7 +1698,14 @@
         "name": "Oak Log",
         "tier": 7,
         "amount": 5000
-      }
+      },
+      "fallbackTexture": "https://mc-heads.net/head/907a913471a5bbbb4c0a7f233d78c27628cf0e516a2fb46360cd0e370c508345/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM",
+      "profileIds": [
+        "WOOD_TALISMAN",
+        "WOOD_AFFINITY_TALISMAN"
+      ]
     },
     {
       "id": "FIRE_TALISMAN",
@@ -1384,7 +1714,8 @@
       "source": "Collection",
       "route": "Blaze Rod IV crafting recipe",
       "family": "Fire",
-      "order": 63,
+      "order": 70,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1392,7 +1723,6 @@
           "amount": 9
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/2f6c7aa31556a12080cc36e8a28d113221eef8f738dc4756529b5b328e82981a/64",
       "unlock": {
         "type": "collection",
         "id": "BLAZE_ROD",
@@ -1400,7 +1730,9 @@
         "tier": 4,
         "amount": 2500
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/2f6c7aa31556a12080cc36e8a28d113221eef8f738dc4756529b5b328e82981a/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "LAVA_TALISMAN",
@@ -1409,7 +1741,8 @@
       "source": "Collection",
       "route": "Magma Cream VI crafting recipe",
       "family": "Lava",
-      "order": 64,
+      "order": 71,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1417,7 +1750,6 @@
           "amount": 9
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/e47dcba7379cb3d53530d318bb40b621271a22df3ba59aeb424a06517c1b7eaa/64",
       "unlock": {
         "type": "collection",
         "id": "MAGMA_CREAM",
@@ -1425,7 +1757,9 @@
         "tier": 6,
         "amount": 10000
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/e47dcba7379cb3d53530d318bb40b621271a22df3ba59aeb424a06517c1b7eaa/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "EXPERIENCE_ARTIFACT",
@@ -1434,7 +1768,8 @@
       "source": "Collection",
       "route": "Lapis Lazuli IX crafting recipe",
       "family": "Experience",
-      "order": 65,
+      "order": 72,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1448,7 +1783,8 @@
         "name": "Lapis Lazuli",
         "tier": 9,
         "amount": 150000
-      }
+      },
+      "fallbackMaterial": "ENCHANTED_BOOK"
     },
     {
       "id": "DAY_CRYSTAL",
@@ -1457,7 +1793,8 @@
       "source": "Collection",
       "route": "Nether Quartz VIII crafting recipe",
       "family": "Day Crystal",
-      "order": 66,
+      "order": 73,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1470,7 +1807,6 @@
           "amount": 1
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/a51e52b1de97b534358b53cd2c9c45526086d2a6f0e0ae65e4ba2ff5c6290ec/64",
       "unlock": {
         "type": "collection",
         "id": "QUARTZ",
@@ -1478,7 +1814,29 @@
         "tier": 8,
         "amount": 25000
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/a51e52b1de97b534358b53cd2c9c45526086d2a6f0e0ae65e4ba2ff5c6290ec/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "SUNSHINE_CRYSTAL",
+      "name": "Sunshine Crystal",
+      "rarity": "EPIC",
+      "source": "Collection",
+      "route": "Upgrade from Day Crystal with 32 Compacted Sunflower",
+      "family": "Day Crystal",
+      "order": 74,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "COMPACTED_SUNFLOWER",
+          "amount": 32
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/13cfc3cbc0cf6f81774fa37b1f6608417c36aa19e5a429c97698ff94dafb3a6/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "NIGHT_CRYSTAL",
@@ -1487,7 +1845,8 @@
       "source": "Collection",
       "route": "Nether Quartz VII crafting recipe",
       "family": "Night Crystal",
-      "order": 67,
+      "order": 75,
+      "canRecombobulate": true,
       "requirements": [
         {
           "type": "item",
@@ -1500,7 +1859,6 @@
           "amount": 1
         }
       ],
-      "fallbackTexture": "https://mc-heads.net/head/8c46578ad58e976fa05478510889a58735a67c4dd022d398c04d56676f0dc171/64",
       "unlock": {
         "type": "collection",
         "id": "QUARTZ",
@@ -1508,7 +1866,1551 @@
         "tier": 7,
         "amount": 10000
       },
-      "fallbackTextureType": "head"
+      "fallbackTexture": "https://mc-heads.net/head/8c46578ad58e976fa05478510889a58735a67c4dd022d398c04d56676f0dc171/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "MOONLIGHT_CRYSTAL",
+      "name": "Moonlight Crystal",
+      "rarity": "EPIC",
+      "source": "Collection",
+      "route": "Upgrade from Night Crystal with 32 Compacted Moonflower",
+      "family": "Night Crystal",
+      "order": 76,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "COMPACTED_MOONFLOWER",
+          "amount": 32
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/e853cfdb50497486f25ea07e4c6f2a75203fb17a2b5c8482b389478400800de6/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ABICASE",
+      "name": "Abicase",
+      "rarity": "RARE",
+      "source": "Bits",
+      "route": "Buy an Abicase from Elizabeth's Bits Shop",
+      "family": "Abicase",
+      "order": 77,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/b2128f48d997186563fbc5b47a88c0d0aac92fa2c285cd1fae420c34fa8f2010/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ANGUISH_TALISMAN",
+      "name": "Anguish Talisman",
+      "rarity": "RARE",
+      "source": "Mob Drop",
+      "route": "Craft with 16 Sorrow + 16 Plasma",
+      "family": "Anguish",
+      "order": 78,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "SORROW",
+          "amount": 16
+        },
+        {
+          "type": "item",
+          "id": "PLASMA",
+          "amount": 16
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/8d4793f4c7df5dbb7c67ac6cc551ee0d9998e15e35a737bc27ee453103a00b14/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ANGUISH_RING",
+      "name": "Anguish Ring",
+      "rarity": "EPIC",
+      "source": "Mob Drop",
+      "route": "Upgrade from Anguish Talisman with 32 Sorrow + 32 Plasma",
+      "family": "Anguish",
+      "order": 79,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "SORROW",
+          "amount": 32
+        },
+        {
+          "type": "item",
+          "id": "PLASMA",
+          "amount": 32
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/73de3d0e0d7d2345a902305196012874411040ebe2c4e95fb2587dd4d1c09f37/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ANGUISH_ARTIFACT",
+      "name": "Anguish Artifact",
+      "rarity": "LEGENDARY",
+      "source": "Mob Drop",
+      "route": "Upgrade from Anguish Ring with 64 Sorrow + 64 Plasma",
+      "family": "Anguish",
+      "order": 80,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "SORROW",
+          "amount": 64
+        },
+        {
+          "type": "item",
+          "id": "PLASMA",
+          "amount": 64
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/215e22698071bc74bdfde25f61d8f69028c0e7b8ed82366c287315e56a233efc/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ANITA_TALISMAN",
+      "name": "Anita's Talisman",
+      "rarity": "COMMON",
+      "source": "Garden",
+      "route": "Buy from Anita with Jacob's Tickets and a Bronze Medal",
+      "family": "Anita",
+      "order": 81,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/bb8ec57b37fdf093fe66efe2ac070a8f5181949970a4458d56ec9701eded8cff/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ANITA_RING",
+      "name": "Anita's Ring",
+      "rarity": "UNCOMMON",
+      "source": "Garden",
+      "route": "Garden acquisition available on Stranded",
+      "family": "Anita",
+      "order": 82,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/59a1035bc6f00fddc8e0291c38319408babc84ae10648cb5258ed8b55d60e0c3/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ANITA_ARTIFACT",
+      "name": "Anita's Artifact",
+      "rarity": "RARE",
+      "source": "Garden",
+      "route": "Garden acquisition available on Stranded",
+      "family": "Anita",
+      "order": 83,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/8feabdadd5f593771fa23c94fc6816091917371fd5a1c74723e716210d6e6efb/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ATMOSPHERIC_FILTER",
+      "name": "Atmospheric Filter",
+      "rarity": "RARE",
+      "source": "Garden",
+      "route": "0.25% drop from Mite Pests in the Garden",
+      "family": "Atmospheric Filter",
+      "order": 84,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/d3cf5cd92c1ba0a7d7bb1f872ccdb951ca897d340040457a324271606c5bbc56/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "BAT_PERSON_TALISMAN",
+      "name": "Bat Person Talisman",
+      "rarity": "COMMON",
+      "source": "Events",
+      "route": "Drop from Trick or Treat Chests during the Spooky Festival",
+      "family": "Bat Person",
+      "order": 85,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/b841a49b199a59c431bf3fc3783f6b6545ce78c38042617f66ebd87cdd548e8c/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "BAT_PERSON_RING",
+      "name": "Bat Person Ring",
+      "rarity": "UNCOMMON",
+      "source": "Events",
+      "route": "Upgrade from Bat Person Talisman with 4 Spooky Shard + 32 Ectoplasm",
+      "family": "Bat Person",
+      "order": 86,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "SPOOKY_SHARD",
+          "amount": 4
+        },
+        {
+          "type": "item",
+          "id": "ECTOPLASM",
+          "amount": 32
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/b4451ecf2584a36de4297031c6d852977d3e249e85a3f0add967fcd7d6bde953/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "BAT_PERSON_ARTIFACT",
+      "name": "Bat Person Artifact",
+      "rarity": "RARE",
+      "source": "Events",
+      "route": "Upgrade from Bat Person Ring with 16 Spooky Shard + 128 Ectoplasm",
+      "family": "Bat Person",
+      "order": 87,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "SPOOKY_SHARD",
+          "amount": 16
+        },
+        {
+          "type": "item",
+          "id": "ECTOPLASM",
+          "amount": 128
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/c4444c3982720b30938f504c4374232b11a4f6f56cd57c973d8abb07fd0dcff7/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "BITS_TALISMAN",
+      "name": "Bits Talisman",
+      "rarity": "RARE",
+      "source": "Bits",
+      "route": "Buy from Elizabeth's Bits Shop for 15,000 Bits",
+      "family": "Bits",
+      "order": 88,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/2ebadb1725aa85bb2810d0b73bf7cd74db3d9d8fc61c4cf9e543dbcc199187cc/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "BLAZE_TALISMAN",
+      "name": "Blaze Talisman",
+      "rarity": "RARE",
+      "source": "Slayer",
+      "route": "Craft from Inferno Demonlord materials available on Stranded",
+      "family": "Blaze",
+      "order": 89,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "MILLENIA_OLD_BLAZE_ASHES",
+          "amount": 8
+        },
+        {
+          "type": "item",
+          "id": "ENCHANTED_BLAZE_ROD",
+          "amount": 8
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/9de3a407d2be387b45bebdd52d3d4d75a6a1b479e2b8c03267d021d4af31e072/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "BOOK_OF_PROGRESSION",
+      "name": "Book of Progression",
+      "rarity": "COMMON",
+      "source": "Levels",
+      "route": "Claim at SkyBlock Level 25; upgrades through Level 400",
+      "family": "Book of Progression",
+      "order": 90,
+      "canRecombobulate": false,
+      "fallbackMaterial": "BOOK",
+      "maxRarity": "MYTHIC"
+    },
+    {
+      "id": "PIGGY_BANK",
+      "name": "Piggy Bank",
+      "rarity": "UNCOMMON",
+      "source": "Collection",
+      "route": "Craft from Raw Porkchop collection materials",
+      "family": "Piggy Bank",
+      "order": 91,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_PORK",
+          "amount": 40
+        },
+        {
+          "type": "item",
+          "id": "CHEST",
+          "amount": 1
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/3298cd257027d67a1bb20f7a5bc328a3debb78a9dfbf1e1e92af2f23aa640d89/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM",
+      "profileIds": [
+        "PIGGY_BANK",
+        "CRACKED_PIGGY_BANK",
+        "BROKEN_PIGGY_BANK"
+      ]
+    },
+    {
+      "id": "COPPER_TALISMAN",
+      "name": "Copper Talisman",
+      "rarity": "COMMON",
+      "source": "Garden",
+      "route": "Buy from SkyMart for Copper",
+      "family": "Copper",
+      "order": 92,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/856cba11ca1258258e903f2586fe19ecf20f4a99ef5870347cf32c2ba76e59cf/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "COPPER_RING",
+      "name": "Copper Ring",
+      "rarity": "UNCOMMON",
+      "source": "Garden",
+      "route": "Garden acquisition available on Stranded",
+      "family": "Copper",
+      "order": 93,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/f83a812525faf3499c3294634398b5e0e967489f2ee63e14490c1440553af065/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "COPPER_ARTIFACT",
+      "name": "Copper Artifact",
+      "rarity": "RARE",
+      "source": "Garden",
+      "route": "Garden acquisition available on Stranded",
+      "family": "Copper",
+      "order": 94,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/2933e519fc6b29c930bf74d426a2f4888a9994fe2892c6d5585fd6a3a8e52689/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "PARTY_HAT_CRAB",
+      "name": "Celebration Hat",
+      "rarity": "SPECIAL",
+      "source": "Events",
+      "route": "Claim from Simon during a SkyBlock Anniversary",
+      "family": "Celebration Hat",
+      "order": 95,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/2d87a59abdc12fd9a5ec865be6fc4d571c8c9a278f434214a442b18ed7b0457c/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM",
+      "profileIds": [
+        "BALLOON_HAT_2024_AQUA",
+        "BALLOON_HAT_2024_BLACK",
+        "BALLOON_HAT_2024_GREEN",
+        "BALLOON_HAT_2024_LIME",
+        "BALLOON_HAT_2024_ORANGE",
+        "BALLOON_HAT_2024_PINK",
+        "BALLOON_HAT_2024_PURPLE",
+        "BALLOON_HAT_2024_RED",
+        "BALLOON_HAT_2024_YELLOW",
+        "BALLOON_HAT_2025_AQUA",
+        "BALLOON_HAT_2025_BLACK",
+        "BALLOON_HAT_2025_GREEN",
+        "BALLOON_HAT_2025_LIME",
+        "BALLOON_HAT_2025_ORANGE",
+        "BALLOON_HAT_2025_PINK",
+        "BALLOON_HAT_2025_PURPLE",
+        "BALLOON_HAT_2025_RED",
+        "BALLOON_HAT_2025_YELLOW",
+        "CAKE_HAT_2026",
+        "CAKE_HAT_2026_AQUA",
+        "CAKE_HAT_2026_BLACK",
+        "CAKE_HAT_2026_GREEN",
+        "CAKE_HAT_2026_LIME",
+        "CAKE_HAT_2026_ORANGE",
+        "CAKE_HAT_2026_PINK",
+        "CAKE_HAT_2026_PURPLE",
+        "CAKE_HAT_2026_RED",
+        "CAKE_HAT_2026_YELLOW",
+        "PARTY_HAT_CRAB",
+        "PARTY_HAT_CRAB_ANIMATED",
+        "PARTY_HAT_CRAB_AQUA",
+        "PARTY_HAT_CRAB_AQUA_ANIMATED",
+        "PARTY_HAT_CRAB_BLACK",
+        "PARTY_HAT_CRAB_BLACK_ANIMATED",
+        "PARTY_HAT_CRAB_GREEN",
+        "PARTY_HAT_CRAB_GREEN_ANIMATED",
+        "PARTY_HAT_CRAB_LIME",
+        "PARTY_HAT_CRAB_LIME_ANIMATED",
+        "PARTY_HAT_CRAB_ORANGE",
+        "PARTY_HAT_CRAB_ORANGE_ANIMATED",
+        "PARTY_HAT_CRAB_PINK",
+        "PARTY_HAT_CRAB_PINK_ANIMATED",
+        "PARTY_HAT_CRAB_PURPLE",
+        "PARTY_HAT_CRAB_PURPLE_ANIMATED",
+        "PARTY_HAT_CRAB_RED",
+        "PARTY_HAT_CRAB_RED_ANIMATED",
+        "PARTY_HAT_CRAB_YELLOW",
+        "PARTY_HAT_CRAB_YELLOW_ANIMATED",
+        "PARTY_HAT_SLOTH",
+        "PARTY_HAT_SLOTH_CHEEKY",
+        "PARTY_HAT_SLOTH_COOL",
+        "PARTY_HAT_SLOTH_CUTE",
+        "PARTY_HAT_SLOTH_DERP",
+        "PARTY_HAT_SLOTH_FLUSHED",
+        "PARTY_HAT_SLOTH_GRUMPY",
+        "PARTY_HAT_SLOTH_HAPPY",
+        "PARTY_HAT_SLOTH_REGULAR",
+        "PARTY_HAT_SLOTH_SHOCK",
+        "PARTY_HAT_SLOTH_TEARS"
+      ]
+    },
+    {
+      "id": "CROPIE_TALISMAN",
+      "name": "Cropie Talisman",
+      "rarity": "COMMON",
+      "source": "Garden",
+      "route": "Craft with 256 Cropie",
+      "family": "Cropie",
+      "order": 96,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "CROPIE",
+          "amount": 256
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/ac7d5520a73e1d6d785496b5f5af8c9e14b40d6f6ebd629231ddbce27d422214/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "SQUASH_RING",
+      "name": "Squash Ring",
+      "rarity": "UNCOMMON",
+      "source": "Garden",
+      "route": "Upgrade from Cropie Talisman with 128 Squash",
+      "family": "Cropie",
+      "order": 97,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "SQUASH",
+          "amount": 128
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/f881a38800a1c867d2a1a8a10c8543ae8a3b8a9a87c1ac58ba1e283bb0dc3d68/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "FERMENTO_ARTIFACT",
+      "name": "Fermento Artifact",
+      "rarity": "RARE",
+      "source": "Garden",
+      "route": "Upgrade from Squash Ring with 8 Condensed Fermento",
+      "family": "Cropie",
+      "order": 98,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "CONDENSED_FERMENTO",
+          "amount": 8
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/e1add7231c97e77a169be764a41f981cc9f542aa8c6a1336d8be2d817211bbfd/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "HELIANTHUS_RELIC",
+      "name": "Helianthus Relic",
+      "rarity": "EPIC",
+      "source": "Garden",
+      "route": "Upgrade from Fermento Artifact with 8 Condensed Helianthus",
+      "family": "Cropie",
+      "order": 99,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "CONDENSED_HELIANTHUS",
+          "amount": 8
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/2e6c711f74f92bcbe486ec7e67810a16f0d1eaaac39b80d7a650cd81d611a2e7/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "DEVOUR_RING",
+      "name": "Devour Ring",
+      "rarity": "RARE",
+      "source": "Slayer",
+      "route": "Craft from Revenant Horror materials",
+      "family": "Devour",
+      "order": 100,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_RAW_CHICKEN",
+          "amount": 2
+        },
+        {
+          "type": "item",
+          "id": "ENCHANTED_RAW_SALMON",
+          "amount": 8
+        },
+        {
+          "type": "item",
+          "id": "REVENANT_VISCERA",
+          "amount": 39
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/8a7d1a52e8c8ddaaf0c428e1fe4901ef33eff251f289de2716395cad20bf309b/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "GRATITUDE_TALISMAN",
+      "name": "Gratitude Talisman",
+      "rarity": "COMMON",
+      "source": "Garden",
+      "route": "Craft with Visitors' Gratitude from the Garden",
+      "family": "Gratitude",
+      "order": 101,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "VISITORS_GRATITUDE",
+          "amount": 5
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/70e12ec8547a5450332657b5d2e85504c841386cce2a6a2434cca3d310d14a2/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "GRATITUDE_RING",
+      "name": "Gratitude Ring",
+      "rarity": "UNCOMMON",
+      "source": "Garden",
+      "route": "Upgrade from Gratitude Talisman with 8 Visitors Gratitude",
+      "family": "Gratitude",
+      "order": 102,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "VISITORS_GRATITUDE",
+          "amount": 8
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/f003c523dfa6ad51411cedaa1c1b287a1d331e3ec1e7cedaff135e0a0167a619/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "GRATITUDE_ARTIFACT",
+      "name": "Gratitude Artifact",
+      "rarity": "RARE",
+      "source": "Garden",
+      "route": "Upgrade from Gratitude Ring with 16 Visitors Gratitude",
+      "family": "Gratitude",
+      "order": 103,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "VISITORS_GRATITUDE",
+          "amount": 16
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/9fba844ff692f1de46d6664a9c6c4d29bbfb862c67df7455f47dee2152ea4c80/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "JERRY_TALISMAN_GREEN",
+      "name": "Green Jerry Talisman",
+      "rarity": "UNCOMMON",
+      "source": "Events",
+      "route": "Events acquisition available on Stranded",
+      "family": "Jerry",
+      "order": 104,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/2567251d71b6f3a4dc03fa01e441de7edf9354794e74aec16c04f141ddf31c70/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "JERRY_TALISMAN_BLUE",
+      "name": "Blue Jerry Talisman",
+      "rarity": "RARE",
+      "source": "Events",
+      "route": "Events acquisition available on Stranded",
+      "family": "Jerry",
+      "order": 105,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/d3b919f040922eb17733b42d216b7cdefeaea366be14c1ae6993ca7e5909e0f0/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "JERRY_TALISMAN_PURPLE",
+      "name": "Purple Jerry Talisman",
+      "rarity": "EPIC",
+      "source": "Events",
+      "route": "Events acquisition available on Stranded",
+      "family": "Jerry",
+      "order": 106,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/ff8bd61b60a425d2e0deb1df9665327750ceba822a0be85e2f4a3a722e20f7d6/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "JERRY_TALISMAN_GOLDEN",
+      "name": "Golden Jerry Artifact",
+      "rarity": "LEGENDARY",
+      "source": "Events",
+      "route": "Events acquisition available on Stranded",
+      "family": "Jerry",
+      "order": 107,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/7964f606fecc32451fbded1b6f5d4f22db8f018f7d8db78b122ca75f9d1c0574/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "HANDY_BLOOD_CHALICE",
+      "name": "Handy Blood Chalice",
+      "rarity": "COMMON",
+      "source": "Slayer",
+      "route": "Enderman Slayer level 4 reward",
+      "family": "Handy Blood Chalice",
+      "order": 108,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/431cd7ed4e4bf07c3dfd9ba498708e730e69d807335affabc12d87ff542f6a88/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "HASTE_RING",
+      "name": "Haste Ring",
+      "rarity": "RARE",
+      "source": "Collection",
+      "route": "Craft with 128 Enchanted Cobblestone",
+      "family": "Haste",
+      "order": 109,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_COBBLESTONE",
+          "amount": 128
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/174b0c35491b660fc9138868bbcb5f02b539cb56b7ab63d6c53a9af2f63d061a/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "HASTE_ARTIFACT",
+      "name": "Haste Artifact",
+      "rarity": "EPIC",
+      "source": "Collection",
+      "route": "Upgrade from Haste Ring with 256 Enchanted Cobblestone",
+      "family": "Haste",
+      "order": 110,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_COBBLESTONE",
+          "amount": 256
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/2fe7a882ffe0d0dd245d91bd8e6dcc1ed450ae13880b12276fbaf66d4a4164c9/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "HUNTER_TALISMAN",
+      "name": "Hunter Talisman",
+      "rarity": "UNCOMMON",
+      "source": "Slayer",
+      "route": "Craft with 64 Golden Tooth + 32 Enchanted Rotten Flesh",
+      "family": "Hunter",
+      "order": 111,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "GOLDEN_TOOTH",
+          "amount": 64
+        },
+        {
+          "type": "item",
+          "id": "ENCHANTED_ROTTEN_FLESH",
+          "amount": 32
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/5c577e7d31e5e04c2ce71e13e3962192d80bd54b55efaacaaea12966fe27bf9/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "HUNTER_RING",
+      "name": "Hunter Ring",
+      "rarity": "RARE",
+      "source": "Slayer",
+      "route": "Upgrade from Hunter Talisman with 224 Golden Tooth + 1 Grizzly Bait",
+      "family": "Hunter",
+      "order": 112,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "GOLDEN_TOOTH",
+          "amount": 224
+        },
+        {
+          "type": "item",
+          "id": "GRIZZLY_BAIT",
+          "amount": 1
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/5c577e7d31e5e04c2ce71e13e3962192d80bd54b55efaacaaea12966fe27bf9/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "JACOBUS_REGISTER",
+      "name": "Jacobus Register",
+      "rarity": "LEGENDARY",
+      "source": "NPC",
+      "route": "Spend 1,000,000,000 coins on Accessory Bag slots at Jacobus",
+      "family": "Jacobus Register",
+      "order": 113,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/3b648b9a44e280bcdf25f4a66a97bd5c33542e5e82415e15b475c6b999b8d635/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "LUCKY_HOOF",
+      "name": "Lucky Hoof",
+      "rarity": "UNCOMMON",
+      "source": "Events",
+      "route": "Rare drop from Nightmares during the Spooky Festival",
+      "family": "Lucky Hoof",
+      "order": 114,
+      "canRecombobulate": true,
+      "fallbackMaterial": "IRON_BARDING"
+    },
+    {
+      "id": "ETERNAL_HOOF",
+      "name": "Eternal Hoof",
+      "rarity": "RARE",
+      "source": "Events",
+      "route": "Upgrade from Lucky Hoof with 8 Soul Fragment",
+      "family": "Lucky Hoof",
+      "order": 115,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "SOUL_FRAGMENT",
+          "amount": 8
+        }
+      ],
+      "fallbackMaterial": "GOLD_BARDING"
+    },
+    {
+      "id": "MELODY_HAIR",
+      "name": "Melody's Hair",
+      "rarity": "EPIC",
+      "source": "Quest",
+      "route": "Complete Melody's Harp through the Stranded Melody NPC",
+      "family": "Melody's Hair",
+      "order": 116,
+      "canRecombobulate": true,
+      "fallbackMaterial": "STRING"
+    },
+    {
+      "id": "MINERAL_TALISMAN",
+      "name": "Mineral Talisman",
+      "rarity": "RARE",
+      "source": "Villager",
+      "route": "Craft with Refined Mineral bought from a Stranded villager",
+      "family": "Mineral",
+      "order": 117,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "REFINED_MINERAL",
+          "amount": 9
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/5ab7b04dbba61cc0e10907ca11f84f871b7aa234dde0e4f1ad8bbe4914fbc513/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "NETHERRACK_LOOKING_SUNSHADE",
+      "name": "Netherrack-Looking Sunshade",
+      "rarity": "COMMON",
+      "source": "Mob Drop",
+      "route": "Rare drop from Smoldering or Millennia-Aged Blazes spawned on Stranded",
+      "family": "Netherrack-Looking Sunshade",
+      "order": 118,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/6c930b0a2d87f2dddb409a302f9591897184f29ecc97b5ca5cdec1cd69839597/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "NEW_YEAR_CAKE_BAG",
+      "name": "New Year Cake Bag",
+      "rarity": "UNCOMMON",
+      "source": "Events",
+      "route": "Buy from the Stranded Baker NPC during New Year",
+      "family": "New Year Cake Bag",
+      "order": 119,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/cde7cdeb9713a6f9cfedaaddcffb355721911f49f2fa1cf1189b949e2f0d5b28/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "NIBBLE_CHOCOLATE_STICK",
+      "name": "Nibble Chocolate Stick",
+      "rarity": "COMMON",
+      "source": "Events",
+      "route": "Chocolate Factory milestone; Hoppity works on Stranded",
+      "family": "Chocolate",
+      "order": 120,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/888188d62908af6e114f73a109e15ac7f1faded39abd6a2054034ec5cc70c727/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "SMOOTH_CHOCOLATE_BAR",
+      "name": "Smooth Chocolate Bar",
+      "rarity": "UNCOMMON",
+      "source": "Events",
+      "route": "Events acquisition available on Stranded",
+      "family": "Chocolate",
+      "order": 121,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/a9372efd2ca1a6c6dfc066f1ec83f9456575c3850a0e7d01109c4f1af300ba8/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "RICH_CHOCOLATE_CHUNK",
+      "name": "Rich Chocolate Chunk",
+      "rarity": "RARE",
+      "source": "Events",
+      "route": "Events acquisition available on Stranded",
+      "family": "Chocolate",
+      "order": 122,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/6f942717364c0fecf7ad11bac8cd98dd7ad4dbd72e3d3ce2b57eb48713824ff/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "GANACHE_CHOCOLATE_SLAB",
+      "name": "Ganache Chocolate Slab",
+      "rarity": "EPIC",
+      "source": "Events",
+      "route": "Events acquisition available on Stranded",
+      "family": "Chocolate",
+      "order": 123,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/f89512331edfdc27cb7d4e80f3e0db460d05caf66c7c1c42e0e712130a9b690/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "PRESTIGE_CHOCOLATE_REALM",
+      "name": "Prestige Chocolate Realm",
+      "rarity": "LEGENDARY",
+      "source": "Events",
+      "route": "Events acquisition available on Stranded",
+      "family": "Chocolate",
+      "order": 124,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/af19ceeabf2ecb020610b8aabc9299264fa670048c010c9699ce687fc9bf351e/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ODGERS_BRONZE_TOOTH",
+      "name": "Odger's Bronze Tooth",
+      "rarity": "COMMON",
+      "source": "Fishing",
+      "route": "Reach Novice Trophy Fisher with the Stranded Odger NPC",
+      "family": "Odger's Tooth",
+      "order": 125,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/accc4432efe08c88530ac084fea6526641a207d78e637e41f7a4e5dcfdaaa162/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ODGERS_SILVER_TOOTH",
+      "name": "Odger's Silver Tooth",
+      "rarity": "UNCOMMON",
+      "source": "Fishing",
+      "route": "Fishing acquisition available on Stranded",
+      "family": "Odger's Tooth",
+      "order": 126,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/c2d41b2279abce5fd626923b61e3ab98dce4972417289ee2b73214c0aaba841e/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ODGERS_GOLD_TOOTH",
+      "name": "Odger's Gold Tooth",
+      "rarity": "RARE",
+      "source": "Fishing",
+      "route": "Fishing acquisition available on Stranded",
+      "family": "Odger's Tooth",
+      "order": 127,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/42024901024636f1c074e6562285f4cc9fd3da2885d4010cee52cc0696d2f96a/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ODGERS_DIAMOND_TOOTH",
+      "name": "Odger's Diamond Tooth",
+      "rarity": "EPIC",
+      "source": "Fishing",
+      "route": "Fishing acquisition available on Stranded",
+      "family": "Odger's Tooth",
+      "order": 128,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/a2680a28962e9ad2d4872d06fba2cc60824fbb2d0824e42d958575b7563884aa/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "PESTHUNTER_BADGE",
+      "name": "Pesthunter Badge",
+      "rarity": "UNCOMMON",
+      "source": "Garden",
+      "route": "Buy from Pesthunter Phillip after exchanging 25 Pests",
+      "family": "Pesthunter",
+      "order": 129,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/b4f1f0cf3adb4adc6b996ff9cb4e6d9d8912e0a5ab851c366c8bfbdaf8b2ef04/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "PESTHUNTER_RING",
+      "name": "Pesthunter Ring",
+      "rarity": "RARE",
+      "source": "Garden",
+      "route": "Garden acquisition available on Stranded",
+      "family": "Pesthunter",
+      "order": 130,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/1d06b74d6bd02b795f7bcbf17ac3b77d3bc57b695a8d54a1770c76e84896c8f8/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "PESTHUNTER_ARTIFACT",
+      "name": "Pesthunter Artifact",
+      "rarity": "EPIC",
+      "source": "Garden",
+      "route": "Garden acquisition available on Stranded",
+      "family": "Pesthunter",
+      "order": 131,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/b3aefd8bca236d315920d53bea1fe4892c8f1f308d6d57630677f059a3b0293f/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "PESTHUNTER_RELIC",
+      "name": "Pesthunter Relic",
+      "rarity": "LEGENDARY",
+      "source": "Garden",
+      "route": "Garden acquisition available on Stranded",
+      "family": "Pesthunter",
+      "order": 132,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/7b36c204f50a11f7fe22c1d16e6a85777b24b4ad316140c666295721214d1310/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "POCKET_ESPRESSO_MACHINE",
+      "name": "Pocket Espresso Machine",
+      "rarity": "COMMON",
+      "source": "Slayer",
+      "route": "Enderman Slayer level 4 reward",
+      "family": "Pocket Espresso",
+      "order": 133,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/666070ce03a545ee4d263bcf27f36338d249d7cb7a2376f92c1673ae134e04b6/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "PULSE_RING",
+      "name": "Pulse Ring",
+      "rarity": "UNCOMMON",
+      "source": "Fishing",
+      "route": "Craft with Orbs of Energy from Thunder lava sea creatures; charge to Legendary",
+      "family": "Pulse Ring",
+      "order": 134,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ORB_OF_ENERGY",
+          "amount": 256
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/e5ebf6f14301d3ebd14533587d2a2d48234433b17c9d2f13934b7cab458ee267/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM",
+      "maxRarity": "LEGENDARY"
+    },
+    {
+      "id": "RAGGEDY_SHARK_TOOTH_NECKLACE",
+      "name": "Raggedy Shark Tooth Necklace",
+      "rarity": "COMMON",
+      "source": "Events",
+      "route": "Craft from Shark Teeth during the Fishing Festival",
+      "family": "Shark Tooth Necklace",
+      "order": 135,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "SHARK_FIN",
+          "amount": 8
+        },
+        {
+          "type": "item",
+          "id": "NURSE_SHARK_TOOTH",
+          "amount": 1
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/d77309ddebbdc278ee2772d92fa4905dd850c5f213a77ffaed5a67eecb23984a/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "DULL_SHARK_TOOTH_NECKLACE",
+      "name": "Dull Shark Tooth Necklace",
+      "rarity": "UNCOMMON",
+      "source": "Events",
+      "route": "Upgrade from Raggedy Shark Tooth Necklace with 4 Nurse Shark Tooth",
+      "family": "Shark Tooth Necklace",
+      "order": 136,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "NURSE_SHARK_TOOTH",
+          "amount": 4
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/f3ab3aa1ade74915dacd298613904361c18877eebfa81d9f936309f271e1389a/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "HONED_SHARK_TOOTH_NECKLACE",
+      "name": "Honed Shark Tooth Necklace",
+      "rarity": "RARE",
+      "source": "Events",
+      "route": "Upgrade from Dull Shark Tooth Necklace with 4 Blue Shark Tooth",
+      "family": "Shark Tooth Necklace",
+      "order": 137,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "BLUE_SHARK_TOOTH",
+          "amount": 4
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/e6b120938d83bf49ddab3a78666a0bf37a3de7b46b9d97b984da3be62ce3e5e3/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "SHARP_SHARK_TOOTH_NECKLACE",
+      "name": "Sharp Shark Tooth Necklace",
+      "rarity": "EPIC",
+      "source": "Events",
+      "route": "Upgrade from Honed Shark Tooth Necklace with 4 Tiger Shark Tooth",
+      "family": "Shark Tooth Necklace",
+      "order": 138,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "TIGER_SHARK_TOOTH",
+          "amount": 4
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/228e3fb6bd9887d60434ccd279ec3e59227826c9a2f8dd9ce9899ea6683d4ee8/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "RAZOR_SHARP_SHARK_TOOTH_NECKLACE",
+      "name": "Razor-sharp Shark Tooth Necklace",
+      "rarity": "LEGENDARY",
+      "source": "Events",
+      "route": "Upgrade from Sharp Shark Tooth Necklace with 4 Great White Shark Tooth",
+      "family": "Shark Tooth Necklace",
+      "order": 139,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "GREAT_WHITE_SHARK_TOOTH",
+          "amount": 4
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/7792676664ac711488641f72b25961835613da9ffd43ea3bdd163cb365343a6/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "REAPER_ORB",
+      "name": "Reaper Orb",
+      "rarity": "LEGENDARY",
+      "source": "Slayer",
+      "route": "Zombie Slayer level 8 reward",
+      "family": "Reaper Orb",
+      "order": 140,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "SCYTHE_BLADE",
+          "amount": 8
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/3a7cda9004fc197d66afbc2b003a5b9ef13cf4600b1fc7490067590f047181e/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "RED_CLAW_TALISMAN",
+      "name": "Red Claw Talisman",
+      "rarity": "UNCOMMON",
+      "source": "Slayer",
+      "route": "Craft with 8 Wolf Tooth + 1 Enchanted Bone",
+      "family": "Red Claw",
+      "order": 141,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "WOLF_TOOTH",
+          "amount": 8
+        },
+        {
+          "type": "item",
+          "id": "ENCHANTED_BONE",
+          "amount": 1
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/317b51e086f201448a4b45b0b91e97faf4d1739071480be6d5cab0a054512164/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "RED_CLAW_RING",
+      "name": "Red Claw Ring",
+      "rarity": "RARE",
+      "source": "Slayer",
+      "route": "Upgrade from Red Claw Talisman with 96 Enchanted Leather + 8 Golden Tooth",
+      "family": "Red Claw",
+      "order": 142,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_LEATHER",
+          "amount": 96
+        },
+        {
+          "type": "item",
+          "id": "GOLDEN_TOOTH",
+          "amount": 8
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/59d9b327ff82f6e109b8746c48bfb7f641e1552855493dd4118be24d5b02bc0a/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "RED_CLAW_ARTIFACT",
+      "name": "Red Claw Artifact",
+      "rarity": "EPIC",
+      "source": "Slayer",
+      "route": "Upgrade from Red Claw Ring with 256 Enchanted Leather + 54 Golden Tooth + 1 Red Claw Egg",
+      "family": "Red Claw",
+      "order": 143,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "ENCHANTED_LEATHER",
+          "amount": 256
+        },
+        {
+          "type": "item",
+          "id": "GOLDEN_TOOTH",
+          "amount": 54
+        },
+        {
+          "type": "item",
+          "id": "RED_CLAW_EGG",
+          "amount": 1
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/caf59b8aa0f83546ef0d178ccf87e7ed88cf7858caae79b3633cbd75b650525f/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "RUNEBOOK",
+      "name": "Runebook",
+      "rarity": "COMMON",
+      "source": "Mob Drop",
+      "route": "0.1% drop from Runic Mobs; upgrades to Legendary with kills",
+      "family": "Runebook",
+      "order": 144,
+      "canRecombobulate": false,
+      "fallbackTexture": "https://mc-heads.net/head/b05cd67221faa4b91f6847157398787f1b00365ba2b4a7a62ea2f63270401489/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM",
+      "maxRarity": "LEGENDARY"
+    },
+    {
+      "id": "SOULFLOW_PILE",
+      "name": "Soulflow Pile",
+      "rarity": "UNCOMMON",
+      "source": "Slayer",
+      "route": "Craft with 90 Null Sphere",
+      "family": "Soulflow",
+      "order": 145,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "NULL_SPHERE",
+          "amount": 90
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/468c1fa4a21ba4f27dcb30ab3bfab0dc22a1e4fcf9ed12c1d7a70feb07f8d7ae/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "SOULFLOW_BATTERY",
+      "name": "Soulflow Battery",
+      "rarity": "RARE",
+      "source": "Slayer",
+      "route": "Upgrade from Soulflow Pile with 8 Null Ovoid",
+      "family": "Soulflow",
+      "order": 146,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "NULL_OVOID",
+          "amount": 8
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/468c1fa4a21ba4f27dcb30ab3bfab0dc22a1e4fcf9ed12c1d7a70feb07f8d7ae/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "SOULFLOW_SUPERCELL",
+      "name": "Soulflow Supercell",
+      "rarity": "EPIC",
+      "source": "Slayer",
+      "route": "Upgrade from Soulflow Battery with 192 Null Ovoid + 2 Null Atom",
+      "family": "Soulflow",
+      "order": 147,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "NULL_OVOID",
+          "amount": 192
+        },
+        {
+          "type": "item",
+          "id": "NULL_ATOM",
+          "amount": 2
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/468c1fa4a21ba4f27dcb30ab3bfab0dc22a1e4fcf9ed12c1d7a70feb07f8d7ae/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "SURVIVOR_CUBE",
+      "name": "Survivor Cube",
+      "rarity": "RARE",
+      "source": "Slayer",
+      "route": "Spider Slayer level 7 reward",
+      "family": "Survivor Cube",
+      "order": 148,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/215b1c76966a29f499219d4c62a85327a8cb64a66e80f79bd66dfb70a109ba5e/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "TARANTULA_TALISMAN",
+      "name": "Tarantula Talisman",
+      "rarity": "EPIC",
+      "source": "Slayer",
+      "route": "Rare Tarantula Broodfather drop",
+      "family": "Tarantula",
+      "order": 149,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/2f0f123f10c9a19665d5561792d2c9aea067418a0f92dc20490dade70ed38cb1/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "TARANTULA_RING",
+      "name": "Tarantula Ring",
+      "rarity": "LEGENDARY",
+      "source": "Slayer",
+      "route": "Upgrade from Tarantula Talisman with 64 Tarantula Silk + 1 Tarantula Catalyst + 64 Soul String + 1 Digested Mosquito",
+      "family": "Tarantula",
+      "order": 150,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "TARANTULA_SILK",
+          "amount": 64
+        },
+        {
+          "type": "item",
+          "id": "TARANTULA_CATALYST",
+          "amount": 1
+        },
+        {
+          "type": "item",
+          "id": "SOUL_STRING",
+          "amount": 64
+        },
+        {
+          "type": "item",
+          "id": "DIGESTED_MOSQUITO",
+          "amount": 1
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/5b522024a992d60a5a8e8911941d143082a304e05107321b09b0b5704b85e8cc/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "VOTER_BADGE",
+      "name": "Voter's Badge",
+      "rarity": "COMMON",
+      "source": "Garden",
+      "route": "Accept one unique mayor Garden visitor; upgrades with more unique mayors",
+      "family": "Voter Badge",
+      "order": 151,
+      "canRecombobulate": false,
+      "fallbackTexture": "https://mc-heads.net/head/1f88702bd5bce0293f30411ff43c72dfe2f756d7852fa25606e0fe50ee08ce87/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "VOTER_BADGE_VIP",
+      "name": "VIP Voter's Badge",
+      "rarity": "UNCOMMON",
+      "source": "Garden",
+      "route": "Garden acquisition available on Stranded",
+      "family": "Voter Badge",
+      "order": 152,
+      "canRecombobulate": false,
+      "fallbackTexture": "https://mc-heads.net/head/92ace792c26e79a1c624fa0daf547a028ca59cb63ce187c2477610868f5748fa/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "VOTER_BADGE_ELITE",
+      "name": "Elite Voter's Badge",
+      "rarity": "RARE",
+      "source": "Garden",
+      "route": "Garden acquisition available on Stranded",
+      "family": "Voter Badge",
+      "order": 153,
+      "canRecombobulate": false,
+      "fallbackTexture": "https://mc-heads.net/head/2a2100a53245bfb4d1d99acf4af506252b57ac147b7eb9e1af505d35e160714e/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "VOTER_BADGE_SUPREME",
+      "name": "Supreme Voter's Badge",
+      "rarity": "EPIC",
+      "source": "Garden",
+      "route": "Garden acquisition available on Stranded",
+      "family": "Voter Badge",
+      "order": 154,
+      "canRecombobulate": false,
+      "fallbackTexture": "https://mc-heads.net/head/433cbf75ff40d1bfc8146528ca3e1bdac3d670ac77ee1c8d98af174ca19feb19/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "WHITE_GIFT_TALISMAN",
+      "name": "White Gift Talisman",
+      "rarity": "COMMON",
+      "source": "Events",
+      "route": "Buy from Einary with North Stars earned from opened Gifts",
+      "family": "Gift",
+      "order": 155,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/e47b37e67a89159bf4acc4a44d4328f4efc0181605142288e5eed1ab8aed913c/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "GREEN_GIFT_TALISMAN",
+      "name": "Green Gift Talisman",
+      "rarity": "UNCOMMON",
+      "source": "Events",
+      "route": "Events acquisition available on Stranded",
+      "family": "Gift",
+      "order": 156,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/28dc3c84491c4ff103de6ea01880e2d83432cd4878b84d6b43253cc51fd978e7/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "BLUE_GIFT_TALISMAN",
+      "name": "Blue Gift Talisman",
+      "rarity": "RARE",
+      "source": "Events",
+      "route": "Events acquisition available on Stranded",
+      "family": "Gift",
+      "order": 157,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/5b85e29f29ec9a90e482ea5b8391bcb4560bbae0dcd15d7ce1d86016b4356e98/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "PURPLE_GIFT_TALISMAN",
+      "name": "Purple Gift Talisman",
+      "rarity": "EPIC",
+      "source": "Events",
+      "route": "Events acquisition available on Stranded",
+      "family": "Gift",
+      "order": 158,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/e9e39d91c04c30cc1f530fee798eed279dde60f95c2e1d155c0fdd361d0962ed/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "GOLD_GIFT_TALISMAN",
+      "name": "Gold Gift Talisman",
+      "rarity": "LEGENDARY",
+      "source": "Events",
+      "route": "Events acquisition available on Stranded",
+      "family": "Gift",
+      "order": 159,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/abd98792dd92d9719894341ac9012a584c4428558fd2c712f78e5f0d4da85470/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     }
-  ]
+  ],
+  "familyUpgrades": {
+    "Vaccine": [
+      "VACCINE_RING",
+      "VACCINE_ARTIFACT"
+    ],
+    "Dante": [
+      "DANTE_RING"
+    ],
+    "Emerald": [
+      "EMERALD_ARTIFACT"
+    ],
+    "Intimidation": [
+      "INTIMIDATION_RELIC"
+    ],
+    "Frozen Chicken": [
+      "FRIED_FROZEN_CHICKEN"
+    ],
+    "Mineral": [
+      "GLOSSY_MINERAL_TALISMAN"
+    ],
+    "Scavenger": [
+      "SCAVENGER_RING",
+      "SCAVENGER_ARTIFACT"
+    ],
+    "Shady": [
+      "SHADY_RING",
+      "SEAL_OF_THE_FAMILY"
+    ],
+    "Coins": [
+      "RING_OF_COINS",
+      "ARTIFACT_OF_COINS",
+      "RELIC_OF_COINS"
+    ],
+    "Wither": [
+      "WITHER_RELIC"
+    ]
+  }
 }

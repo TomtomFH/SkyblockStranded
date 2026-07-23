@@ -1,56 +1,46 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="A focused checklist of accessories obtainable in Hypixel SkyBlock Stranded." />
-  <title>Stranded Accessories</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="A live Stranded profile, accessory, minion, and emerald-route index for Hypixel SkyBlock.">
+  <title>Stranded Index</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="status.css" />
+  <link rel="stylesheet" href="./styles.css"><link rel="stylesheet" href="./profile.css"><link rel="stylesheet" href="./status.css">
 </head>
 <body>
   <div class="glow glow-one"></div><div class="glow glow-two"></div>
-  <header class="site-header">
-    <a class="brand" href="#"><span class="brand-mark">S</span><span>Stranded<span class="brand-muted">Index</span></span></a>
-    <div class="header-meta"><span class="status-dot"></span> Stranded-only dataset <span class="version">BETA 0.1</span></div>
-  </header>
-
+  <header class="site-header"><a class="brand" href="./"><span class="brand-mark">S</span><span>Stranded<span class="brand-muted">Index</span></span></a><div class="header-meta"><span class="status-dot"></span> Web profile viewer <span class="version">LIVE</span></div></header>
   <main>
     <section class="hero">
-      <div class="eyebrow"><span></span> HYPIXEL SKYBLOCK · STRANDED</div>
-      <h1>Every bit of power.<br><em>Nothing unobtainable.</em></h1>
-      <p>A clean, searchable index of accessories you can actually earn without ever leaving your island.</p>
-      <div class="hero-stats">
-        <div><strong id="totalCount">0</strong><span>accessories</span></div>
-        <div><strong id="familyCount">0</strong><span>unique families</span></div>
-        <div><strong id="maxMp">0</strong><span>base MP available</span></div>
-      </div>
+      <div class="eyebrow"><span></span> HYPIXEL SKYBLOCK · STRANDED</div><h1>Build your island.<br><em>Know your next move.</em></h1><p>Search a Stranded profile and track obtainable accessories, minion progression, and emerald trade income.</p>
+      <div class="hero-stats"><div><strong id="totalCount">0</strong><span>accessories</span></div><div><strong id="familyCount">0</strong><span>unique families</span></div><div title="Includes the rarity increase from recombobulating every eligible family maximum. Special accessory bonuses are separate."><strong id="maxMp">0</strong><span id="maxMpLabel">max rarity AP</span></div></div>
+      <form id="profileForm" class="profile-search"><div><label for="playerInput">Analyze a Stranded profile</label><p>Public SkyBlock profile data · no API key required</p></div><label class="player-field"><span>⌕</span><input id="playerInput" name="username" placeholder="Minecraft username" maxlength="16" required pattern="[A-Za-z0-9_]{1,16}"></label><button type="submit">Check profile <span>→</span></button></form>
+      <div id="profileError" class="profile-error" hidden></div>
+      <section id="profilePanel" class="profile-panel" hidden><div class="player-card"><div id="playerAvatar" class="player-avatar"></div><div><span>STRANDED PROFILE</span><h2 id="playerName"></h2><p id="profileMeta"></p></div><button id="clearProfile" type="button">Clear</button></div><div class="progress-summary"><div><strong id="ownedCount">0</strong><span>Owned</span></div><div><strong id="upgradeCount">0</strong><span>Upgrades ready</span></div><div><strong id="missingCount">0</strong><span>Still missing</span></div><div><strong id="magicPower">—</strong><span>Accessory Power</span></div><div class="summary-bar"><span id="completionText"></span><i><b id="completionBar"></b></i></div></div><section id="recombPanel" class="recomb-panel" hidden><div class="recomb-heading"><div><strong id="recombReadyCount">0</strong><span>Can still be recombobulated</span></div><div><strong id="recombinedCount">0</strong><span>Already recombobulated</span></div></div><div id="recombCandidates" class="recomb-candidates"></div></section><div id="apiNotice" class="api-notice"></div></section>
     </section>
-
-    <section class="catalog" aria-label="Accessory catalog">
-      <div class="toolbar">
-        <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search accessories or methods…" autocomplete="off"></label>
-        <div class="view-toggle" aria-label="View options"><button class="active" data-view="grid" title="Grid view">▦</button><button data-view="list" title="List view">☷</button></div>
+    <nav class="feature-tabs" aria-label="Stranded tools"><button class="active" data-tab="accessories">Accessories</button><button data-tab="minions">Minions</button><button data-tab="money">Money Calculator</button></nav>
+    <section id="accessoriesTab" class="catalog feature-panel"><div class="toolbar"><label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search accessories or methods…"></label><div class="view-toggle"><button class="active" data-view="grid">▦</button><button data-view="list">☷</button></div></div><div class="filter-row"><div class="filters" id="rarityFilters"></div><select id="statusFilter" hidden><option value="all">All statuses</option><option value="owned">Owned</option><option value="recomb">Can recombobulate</option><option value="upgrades">Upgrades</option><option value="ready">Ready to upgrade</option><option value="blocked">Requirements not met</option><option value="missing">Missing</option></select><select id="sourceFilter"><option value="all">All sources</option></select></div><div class="results-line"><span><strong id="resultCount">0</strong> obtainable results</span><span class="legend"><i></i> Verified route</span></div><div id="accessoryGrid" class="accessory-grid"></div><div id="emptyState" class="empty-state" hidden><span>◇</span><h2>No accessories found</h2></div></section>
+    <section id="minionsTab" class="catalog feature-panel" hidden><div class="minion-overview"><div><strong id="minionUnlocked">0</strong><span>families unlocked</span></div><div><strong id="minionReady">0</strong><span>crafts ready now</span></div><div><strong id="minionUnique">0</strong><span>unique tiers crafted</span></div></div><div class="toolbar"><label class="search"><span>⌕</span><input id="minionSearch" type="search" placeholder="Search minions…"></label></div><div class="filter-row"><div class="filters" id="minionCategories"></div><div class="minion-selects"><select id="minionSort" aria-label="Sort minions"><option value="progression">Sort: Progression</option><option value="lowest-tier">Sort: Lowest crafted tier</option><option value="name">Sort: Name</option><option value="category">Sort: Category</option></select><select id="minionStatus"><option value="all">All statuses</option><option value="ready">Craftable now</option><option value="unlocked">Unlocked</option><option value="blocked">Not unlocked</option><option value="maxed">Maxed</option></select></div></div><div class="results-line"><span><strong id="minionResultCount">0</strong> obtainable minion families</span><span class="legend minion-legend"><i></i> Crafted history + API-visible materials checked</span></div><div id="minionGrid" class="accessory-grid minion-grid"></div><div id="minionEmpty" class="empty-state" hidden><span>◇</span><h2>No minions found</h2></div></section>
+    <section id="moneyTab" class="catalog feature-panel money-calculator" hidden>
+      <div class="calculator-heading"><div><span class="calculator-kicker">EMERALD VILLAGER ROUTE</span><h2 id="calculatorTitle">Small Pocket Black Hole calculator</h2><p id="calculatorDescription">Convert Cocoa Beans into Emeralds, buy a Small Pocket Black Hole for 16 Emeralds, then sell it to an NPC for 50,000 coins.</p></div><div class="route-badge"><strong id="coinsPerEmerald">3,125</strong><span>coins per emerald</span></div></div>
+      <div class="calculator-layout">
+        <form id="moneyCalculator" class="calculator-inputs">
+          <label for="saleItem"><span>Item to sell</span><small>Best NPC conversions, ranked</small><select id="saleItem" name="saleItem" required></select></label>
+          <label for="cocoaPerEmerald"><span>Cocoa Beans per Emerald</span><small>Your villager's exact trade cost</small><input id="cocoaPerEmerald" name="cocoaPerEmerald" type="number" min="0.01" step="any" inputmode="decimal" value="87" required></label>
+          <label for="cocoaPerMinute"><span>Cocoa Beans per minute</span><small>Your measured farming or processing rate</small><input id="cocoaPerMinute" name="cocoaPerMinute" type="number" min="0" step="any" inputmode="decimal" value="25000" required></label>
+          <div class="route-formula"><span id="routeCost">16 Emeralds</span><i></i><span id="routeItem">1 Small Pocket Black Hole</span><i></i><span id="routeSell">50,000 coins</span></div>
+          <p id="calculatorError" class="calculator-error" hidden>Enter a Cocoa Beans per Emerald value above zero and a non-negative Cocoa Beans per minute rate.</p>
+        </form>
+        <div class="calculator-results" aria-live="polite">
+          <div class="primary-profit"><span>Estimated gross income</span><strong id="coinsPerHour">0</strong><small>coins per hour</small></div>
+          <div class="result-grid"><div><span>Emeralds / min</span><strong id="emeraldsPerMinute">0</strong></div><div><span id="itemsPerHourLabel">Items / hour</span><strong id="itemsPerHour">0</strong></div><div><span>Coins / minute</span><strong id="coinsPerMinute">0</strong></div><div><span>Coins / day</span><strong id="coinsPerDay">0</strong></div></div>
+          <p id="calculatorNote" class="calculator-note">Long-run gross value before any NPC sell limit. Partial items are treated as average value.</p>
+        </div>
       </div>
-      <div class="filter-row">
-        <div class="filters" id="rarityFilters"></div>
-        <select id="sourceFilter" aria-label="Filter by source"><option value="all">All sources</option></select>
-      </div>
-      <div class="results-line"><span><strong id="resultCount">0</strong> obtainable results</span><span class="legend"><i></i> Verified route</span></div>
-      <div id="accessoryGrid" class="accessory-grid"></div>
-      <div id="emptyState" class="empty-state" hidden><span>◇</span><h2>No accessories found</h2><p>Try a different name, rarity, or source.</p></div>
-    </section>
-
-    <section class="research-note">
-      <div><span class="note-icon">i</span><div><h2>What “obtainable” means here</h2><p>Every item shown has a repeatable or documented Stranded route through collections, island mobs, fishing, slayers, events, Garden content, NPCs, or Stranded-exclusive villager trades. Dungeon, Rift, Kuudra, Dark Auction-only, and inaccessible-island items are excluded.</p></div></div>
-      <a href="https://wiki.hypixel.net/Stranded" target="_blank" rel="noreferrer">Read the Stranded documentation ↗</a>
     </section>
   </main>
-
-  <footer><span>STRANDED INDEX</span><p>Local item artwork: <a href="https://modrinth.com/resourcepack/furfsky-reborn" target="_blank" rel="noreferrer">FurfSky Reborn</a></p><p>Community tool · Not affiliated with Hypixel</p></footer>
+  <footer><span>STRANDED INDEX · WEB</span><p>Artwork: <a href="https://modrinth.com/resourcepack/furfsky-reborn">FurfSky Reborn</a></p><p>Community tool · Not affiliated with Hypixel</p></footer>
   <script src="app.js"></script>
 </body>
 </html>
