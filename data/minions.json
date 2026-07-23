@@ -1095,6 +1095,7 @@
         {
           "tier": 12,
           "id": "REVENANT_GENERATOR_12",
+          "strandedObtainable": false,
           "requirements": [
             {
               "id": "GENERATOR_UPGRADE_STONE_REVENANT_12",
@@ -1664,6 +1665,7 @@
         {
           "tier": 12,
           "id": "TARANTULA_GENERATOR_12",
+          "strandedObtainable": false,
           "requirements": [
             {
               "id": "GENERATOR_UPGRADE_STONE_TARANTULA_12",
@@ -4052,6 +4054,7 @@
         {
           "tier": 12,
           "id": "CLAY_GENERATOR_12",
+          "strandedObtainable": false,
           "requirements": [
             {
               "id": "GENERATOR_UPGRADE_STONE_CLAY_12",
@@ -4192,6 +4195,7 @@
         {
           "tier": 12,
           "id": "FISHING_GENERATOR_12",
+          "strandedObtainable": false,
           "requirements": [
             {
               "id": "GENERATOR_UPGRADE_STONE_FISHING_12",
@@ -4332,6 +4336,7 @@
         {
           "tier": 12,
           "id": "LILY_PAD_GENERATOR_12",
+          "strandedObtainable": false,
           "requirements": [
             {
               "id": "GENERATOR_UPGRADE_STONE_LILY_PAD_12",
@@ -4858,6 +4863,8 @@
         {
           "tier": 12,
           "id": "FLOWER_GENERATOR_12",
+          "strandedObtainable": false,
+          "legacy": true,
           "requirements": [
             {
               "id": "ENCHANTED_POPPY",
@@ -5376,6 +5383,17 @@
             {
               "id": "COMPACTED_SUNFLOWER",
               "amount": 16
+            }
+          ]
+        },
+        {
+          "tier": 12,
+          "id": "SUNFLOWER_GENERATOR_12",
+          "acquisition": "Buy from SkyMart with Tier XI and 32 Compacted Sunflowers",
+          "requirements": [
+            {
+              "id": "COMPACTED_SUNFLOWER",
+              "amount": 32
             }
           ]
         }
@@ -6678,6 +6696,17 @@
               "amount": 512
             }
           ]
+        },
+        {
+          "tier": 12,
+          "id": "ICE_GENERATOR_12",
+          "acquisition": "Buy from Einary with Tier XI, 1,024 Enchanted Ice, 1,000,000 Coins, and 300 North Stars",
+          "requirements": [
+            {
+              "id": "ENCHANTED_ICE",
+              "amount": 1024
+            }
+          ]
         }
       ],
       "unlockGate": {
@@ -7062,6 +7091,7 @@
         {
           "tier": 11,
           "id": "MITHRIL_GENERATOR_11",
+          "strandedObtainable": false,
           "requirements": [
             {
               "id": "REFINED_MITHRIL",
@@ -7967,6 +7997,17 @@
             {
               "id": "ENCHANTED_SNOW_BLOCK",
               "amount": 128
+            }
+          ]
+        },
+        {
+          "tier": 12,
+          "id": "SNOW_GENERATOR_12",
+          "acquisition": "Buy from Einary with Tier XI, 1,024 Enchanted Snow Blocks, 2,000,000 Coins, and 500 North Stars",
+          "requirements": [
+            {
+              "id": "ENCHANTED_SNOW_BLOCK",
+              "amount": 1024
             }
           ]
         }

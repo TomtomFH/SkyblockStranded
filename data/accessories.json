@@ -3384,6 +3384,19 @@
       "fallbackTexture": "https://mc-heads.net/head/abd98792dd92d9719894341ac9012a584c4428558fd2c712f78e5f0d4da85470/64",
       "fallbackTextureType": "head",
       "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "BINGO_RELIC",
+      "name": "Bingo Relic",
+      "rarity": "EPIC",
+      "source": "Events",
+      "route": "Annual SkyBlock Anniversary event on Stranded",
+      "family": "Bingo Relic",
+      "order": 175,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/c515acf4a6ac698736e54def0bc78143c14449978e750afbb8d7ade0adf0ef00/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     }
   ],
   "legacyAccessories": [
@@ -3616,20 +3629,6 @@
       "legacy": true,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/53415667de3fb89c5f40c880c39e4971a0caa7f3a9d2c8f712ba37fadcee/64",
-      "fallbackTextureType": "head",
-      "fallbackMaterial": "SKULL_ITEM"
-    },
-    {
-      "id": "BINGO_RELIC",
-      "name": "Bingo Relic",
-      "rarity": "EPIC",
-      "source": "Legacy",
-      "route": "Unavailable on current Stranded profiles; shown only when owned",
-      "family": "Bingo Relic",
-      "order": 175,
-      "legacy": true,
-      "canRecombobulate": true,
-      "fallbackTexture": "https://mc-heads.net/head/c515acf4a6ac698736e54def0bc78143c14449978e750afbb8d7ade0adf0ef00/64",
       "fallbackTextureType": "head",
       "fallbackMaterial": "SKULL_ITEM"
     },
