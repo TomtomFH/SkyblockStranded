@@ -51,6 +51,7 @@
 .card.recombined-complete .rarity{text-shadow:0 0 10px currentColor}
 .card.recombined-complete .card-status.completed{color:#a8f2ff;border-color:rgba(125,234,255,.48);background:linear-gradient(100deg,rgba(79,211,231,.14),rgba(176,102,240,.12));box-shadow:0 0 13px rgba(105,225,255,.1)}
 .card.recombined-complete.profiled .card-foot{padding-right:96px}
+.card.legacy-card{border-style:dashed}
 @keyframes recombinedPulse{0%,100%{box-shadow:0 0 0 1px rgba(255,218,118,.08),0 9px 30px rgba(69,200,231,.12),inset 0 0 22px rgba(117,101,255,.06)}50%{box-shadow:0 0 0 1px rgba(255,218,118,.18),0 11px 42px rgba(69,200,231,.23),inset 0 0 29px rgba(117,101,255,.1)}}
 @keyframes recombinedScroll{to{background-position:-100px -100px}}
 @media(prefers-reduced-motion:reduce){.card.recombined-complete,.card.recombined-complete:after{animation:none}}
