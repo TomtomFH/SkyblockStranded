@@ -2665,26 +2665,6 @@
       "fallbackMaterial": "STRING"
     },
     {
-      "id": "MINERAL_TALISMAN",
-      "name": "Mineral Talisman",
-      "rarity": "RARE",
-      "source": "Villager",
-      "route": "Craft with Refined Mineral bought from a Stranded villager",
-      "family": "Mineral",
-      "order": 117,
-      "canRecombobulate": true,
-      "requirements": [
-        {
-          "type": "item",
-          "id": "REFINED_MINERAL",
-          "amount": 9
-        }
-      ],
-      "fallbackTexture": "https://mc-heads.net/head/5ab7b04dbba61cc0e10907ca11f84f871b7aa234dde0e4f1ad8bbe4914fbc513/64",
-      "fallbackTextureType": "head",
-      "fallbackMaterial": "SKULL_ITEM"
-    },
-    {
       "id": "NETHERRACK_LOOKING_SUNSHADE",
       "name": "Netherrack-Looking Sunshade",
       "rarity": "COMMON",
@@ -3392,9 +3372,6 @@
     ],
     "Frozen Chicken": [
       "FRIED_FROZEN_CHICKEN"
-    ],
-    "Mineral": [
-      "GLOSSY_MINERAL_TALISMAN"
     ],
     "Scavenger": [
       "SCAVENGER_RING",
