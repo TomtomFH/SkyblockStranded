@@ -766,13 +766,33 @@
       "fallbackMaterial": "SKULL_ITEM"
     },
     {
+      "id": "INTIMIDATION_RELIC",
+      "name": "Intimidation Relic",
+      "rarity": "EPIC",
+      "source": "Events",
+      "route": "Great Spook: buy Scare Fragments through /openvargulmenu and craft",
+      "family": "Intimidation",
+      "order": 29,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "SCARE_FRAGMENT",
+          "amount": 8
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/c066fd07683989e66bf752398c4861c71ae6fe228a493f2fdf427381650a1280/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
       "id": "SCAVENGER_TALISMAN",
       "name": "Scavenger Talisman",
       "rarity": "COMMON",
       "source": "Villager",
       "route": "Tier 1 Stranded villager trade",
       "family": "Scavenger",
-      "order": 29,
+      "order": 30,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -792,7 +812,7 @@
       "source": "Villager",
       "route": "Tier 1 Stranded villager trade",
       "family": "Cat",
-      "order": 30,
+      "order": 31,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -812,7 +832,7 @@
       "source": "Villager",
       "route": "Tier 2 trade using Cat Talisman",
       "family": "Cat",
-      "order": 31,
+      "order": 32,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -832,7 +852,7 @@
       "source": "Villager",
       "route": "Tier 3 trade using Lynx Talisman",
       "family": "Cat",
-      "order": 32,
+      "order": 33,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -852,7 +872,7 @@
       "source": "Villager",
       "route": "Tier 1 Stranded villager trade",
       "family": "Pig's Foot",
-      "order": 33,
+      "order": 34,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -872,7 +892,7 @@
       "source": "Villager",
       "route": "Tier 1 Stranded villager trade",
       "family": "Wolf Paw",
-      "order": 34,
+      "order": 35,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -892,7 +912,7 @@
       "source": "Villager",
       "route": "Tier 1 Stranded villager trade for 200 Emeralds",
       "family": "Potato",
-      "order": 35,
+      "order": 36,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -912,7 +932,7 @@
       "source": "Villager",
       "route": "Upgrade from Potato Talisman with 64 Enchanted Baked Potato",
       "family": "Potato",
-      "order": 36,
+      "order": 37,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -932,7 +952,7 @@
       "source": "Villager",
       "route": "Tier 2 Stranded villager trade for 100 Emeralds",
       "family": "Blood God",
-      "order": 37,
+      "order": 38,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -952,7 +972,7 @@
       "source": "Villager",
       "route": "Upgrade from Blood God Crest with 32 Enchanted Grilled Pork + 64 Enchanted Baked Potato",
       "family": "Blood God",
-      "order": 38,
+      "order": 39,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -977,7 +997,7 @@
       "source": "Villager",
       "route": "Tier 3 Stranded villager trade",
       "family": "Dante",
-      "order": 39,
+      "order": 40,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -997,7 +1017,7 @@
       "source": "Villager",
       "route": "Tier 3 Stranded villager trade",
       "family": "Shady",
-      "order": 40,
+      "order": 41,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1017,7 +1037,7 @@
       "source": "Villager",
       "route": "Tier 5 Stranded villager trade",
       "family": "Ender",
-      "order": 41,
+      "order": 42,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1037,7 +1057,7 @@
       "source": "Villager",
       "route": "Upgrade from Ender Artifact with 128 Enchanted Obsidian + 96 Enchanted Eye Of Ender + 1 Exceedingly Rare Ender Artifact Upgrader",
       "family": "Ender",
-      "order": 42,
+      "order": 43,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1067,7 +1087,7 @@
       "source": "Villager",
       "route": "Tier 5 Stranded villager trade",
       "family": "Wither",
-      "order": 43,
+      "order": 44,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1087,7 +1107,7 @@
       "source": "Events",
       "route": "Bat drop in Roofed Forest biome",
       "family": "Bat",
-      "order": 44,
+      "order": 45,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/4f89fc5137631f6b543931bf7af1dde0aef8c69cbe5b8bafe2166f3b1c7e1a69/64",
       "fallbackTextureType": "head",
@@ -1100,7 +1120,7 @@
       "source": "Events",
       "route": "Fear Mongerer: Bat Talisman + 64 Green Candy",
       "family": "Bat",
-      "order": 45,
+      "order": 46,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1120,7 +1140,7 @@
       "source": "Events",
       "route": "Fear Mongerer: Bat Ring + 64 Purple Candy",
       "family": "Bat",
-      "order": 46,
+      "order": 47,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1140,7 +1160,7 @@
       "source": "Slayer",
       "route": "Old Wolf drop in Taiga biome",
       "family": "Wolf",
-      "order": 47,
+      "order": 48,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/f4cb7a6bf6c32c49f2589147e6f0f888e9e35875dd1ea2a8af379ca710589e6b/64",
       "fallbackTextureType": "head",
@@ -1153,7 +1173,7 @@
       "source": "Slayer",
       "route": "Wolf Talisman + Weak Wolf Catalyst + 14 Enchanted Bone",
       "family": "Wolf",
-      "order": 48,
+      "order": 49,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1178,7 +1198,7 @@
       "source": "Slayer",
       "route": "Brood Mother drop from island spiders",
       "family": "Spider",
-      "order": 49,
+      "order": 50,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/9d83d0494939dba5f27a1dcba7031d5feff44d6efe8d8623e12052470d0a6674/64",
       "fallbackTextureType": "head",
@@ -1191,7 +1211,7 @@
       "source": "Slayer",
       "route": "Tarantula Broodfather recipe; Maddox NPC",
       "family": "Spider",
-      "order": 50,
+      "order": 51,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1217,7 +1237,7 @@
       "source": "Slayer",
       "route": "Tarantula Broodfather recipe; Maddox NPC",
       "family": "Spider",
-      "order": 51,
+      "order": 52,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1248,7 +1268,7 @@
       "source": "Events",
       "route": "Craft with Green Candy from island Spooky mobs",
       "family": "Candy",
-      "order": 52,
+      "order": 53,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1268,7 +1288,7 @@
       "source": "Events",
       "route": "Upgrade with Green Candy",
       "family": "Candy",
-      "order": 53,
+      "order": 54,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1288,7 +1308,7 @@
       "source": "Events",
       "route": "Upgrade with Purple Candy",
       "family": "Candy",
-      "order": 54,
+      "order": 55,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1308,7 +1328,7 @@
       "source": "Events",
       "route": "Upgrade with Purple Candy",
       "family": "Candy",
-      "order": 55,
+      "order": 56,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1328,7 +1348,7 @@
       "source": "Villager",
       "route": "Tier 2 Stranded villager trade for 8 Enchanted Emeralds",
       "family": "Frozen Chicken",
-      "order": 56,
+      "order": 57,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1348,7 +1368,7 @@
       "source": "Collection",
       "route": "Emerald II crafting recipe",
       "family": "Coins",
-      "order": 57,
+      "order": 58,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1384,7 +1404,7 @@
       "source": "Collection",
       "route": "Emerald V crafting recipe",
       "family": "Emerald",
-      "order": 58,
+      "order": 59,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1411,7 +1431,7 @@
       "source": "Collection",
       "route": "Emerald III crafting recipe",
       "family": "Magnetic",
-      "order": 59,
+      "order": 60,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1443,7 +1463,7 @@
       "source": "Collection",
       "route": "Redstone Dust VI crafting recipe",
       "family": "Personal Compactor",
-      "order": 60,
+      "order": 61,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1473,7 +1493,7 @@
       "source": "Collection",
       "route": "Redstone Dust VII crafting recipe",
       "family": "Personal Compactor",
-      "order": 61,
+      "order": 62,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1498,7 +1518,7 @@
       "source": "Collection",
       "route": "Redstone Dust VIII crafting recipe",
       "family": "Personal Compactor",
-      "order": 62,
+      "order": 63,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1523,7 +1543,7 @@
       "source": "Collection",
       "route": "Redstone Dust IX crafting recipe",
       "family": "Personal Compactor",
-      "order": 63,
+      "order": 64,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1548,7 +1568,7 @@
       "source": "Collection",
       "route": "Iron Ingot IX crafting recipe",
       "family": "Personal Deletor",
-      "order": 64,
+      "order": 65,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1583,7 +1603,7 @@
       "source": "Collection",
       "route": "Iron Ingot X crafting recipe",
       "family": "Personal Deletor",
-      "order": 65,
+      "order": 66,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1608,7 +1628,7 @@
       "source": "Collection",
       "route": "Iron Ingot XI crafting recipe",
       "family": "Personal Deletor",
-      "order": 66,
+      "order": 67,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1633,7 +1653,7 @@
       "source": "Collection",
       "route": "Upgrade from Personal Deletor 6000 with 7 Enchanted Iron Block",
       "family": "Personal Deletor",
-      "order": 67,
+      "order": 68,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1651,7 +1671,7 @@
       "source": "Collection",
       "route": "Obsidian III crafting recipe",
       "family": "Gravity",
-      "order": 68,
+      "order": 69,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1678,7 +1698,7 @@
       "source": "Collection",
       "route": "Oak Log VII crafting recipe",
       "family": "Wood Affinity",
-      "order": 69,
+      "order": 70,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1714,7 +1734,7 @@
       "source": "Collection",
       "route": "Blaze Rod IV crafting recipe",
       "family": "Fire",
-      "order": 70,
+      "order": 71,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1741,7 +1761,7 @@
       "source": "Collection",
       "route": "Magma Cream VI crafting recipe",
       "family": "Lava",
-      "order": 71,
+      "order": 72,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1768,7 +1788,7 @@
       "source": "Collection",
       "route": "Lapis Lazuli IX crafting recipe",
       "family": "Experience",
-      "order": 72,
+      "order": 73,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1793,7 +1813,7 @@
       "source": "Collection",
       "route": "Nether Quartz VIII crafting recipe",
       "family": "Day Crystal",
-      "order": 73,
+      "order": 74,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1825,7 +1845,7 @@
       "source": "Collection",
       "route": "Upgrade from Day Crystal with 32 Compacted Sunflower",
       "family": "Day Crystal",
-      "order": 74,
+      "order": 75,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1845,7 +1865,7 @@
       "source": "Collection",
       "route": "Nether Quartz VII crafting recipe",
       "family": "Night Crystal",
-      "order": 75,
+      "order": 76,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1877,7 +1897,7 @@
       "source": "Collection",
       "route": "Upgrade from Night Crystal with 32 Compacted Moonflower",
       "family": "Night Crystal",
-      "order": 76,
+      "order": 77,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1897,7 +1917,7 @@
       "source": "Bits",
       "route": "Buy an Abicase from Elizabeth's Bits Shop",
       "family": "Abicase",
-      "order": 77,
+      "order": 78,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/b2128f48d997186563fbc5b47a88c0d0aac92fa2c285cd1fae420c34fa8f2010/64",
       "fallbackTextureType": "head",
@@ -1910,7 +1930,7 @@
       "source": "Mob Drop",
       "route": "Craft with 16 Sorrow + 16 Plasma",
       "family": "Anguish",
-      "order": 78,
+      "order": 79,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1935,7 +1955,7 @@
       "source": "Mob Drop",
       "route": "Upgrade from Anguish Talisman with 32 Sorrow + 32 Plasma",
       "family": "Anguish",
-      "order": 79,
+      "order": 80,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1960,7 +1980,7 @@
       "source": "Mob Drop",
       "route": "Upgrade from Anguish Ring with 64 Sorrow + 64 Plasma",
       "family": "Anguish",
-      "order": 80,
+      "order": 81,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -1985,7 +2005,7 @@
       "source": "Garden",
       "route": "Buy from Anita with Jacob's Tickets and a Bronze Medal",
       "family": "Anita",
-      "order": 81,
+      "order": 82,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/bb8ec57b37fdf093fe66efe2ac070a8f5181949970a4458d56ec9701eded8cff/64",
       "fallbackTextureType": "head",
@@ -1998,7 +2018,7 @@
       "source": "Garden",
       "route": "Garden acquisition available on Stranded",
       "family": "Anita",
-      "order": 82,
+      "order": 83,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/59a1035bc6f00fddc8e0291c38319408babc84ae10648cb5258ed8b55d60e0c3/64",
       "fallbackTextureType": "head",
@@ -2011,7 +2031,7 @@
       "source": "Garden",
       "route": "Garden acquisition available on Stranded",
       "family": "Anita",
-      "order": 83,
+      "order": 84,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/8feabdadd5f593771fa23c94fc6816091917371fd5a1c74723e716210d6e6efb/64",
       "fallbackTextureType": "head",
@@ -2024,7 +2044,7 @@
       "source": "Garden",
       "route": "0.25% drop from Mite Pests in the Garden",
       "family": "Atmospheric Filter",
-      "order": 84,
+      "order": 85,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/d3cf5cd92c1ba0a7d7bb1f872ccdb951ca897d340040457a324271606c5bbc56/64",
       "fallbackTextureType": "head",
@@ -2037,7 +2057,7 @@
       "source": "Events",
       "route": "Drop from Trick or Treat Chests during the Spooky Festival",
       "family": "Bat Person",
-      "order": 85,
+      "order": 86,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/b841a49b199a59c431bf3fc3783f6b6545ce78c38042617f66ebd87cdd548e8c/64",
       "fallbackTextureType": "head",
@@ -2050,7 +2070,7 @@
       "source": "Events",
       "route": "Upgrade from Bat Person Talisman with 4 Spooky Shard + 32 Ectoplasm",
       "family": "Bat Person",
-      "order": 86,
+      "order": 87,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2075,7 +2095,7 @@
       "source": "Events",
       "route": "Upgrade from Bat Person Ring with 16 Spooky Shard + 128 Ectoplasm",
       "family": "Bat Person",
-      "order": 87,
+      "order": 88,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2100,7 +2120,7 @@
       "source": "Bits",
       "route": "Buy from Elizabeth's Bits Shop for 15,000 Bits",
       "family": "Bits",
-      "order": 88,
+      "order": 89,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/2ebadb1725aa85bb2810d0b73bf7cd74db3d9d8fc61c4cf9e543dbcc199187cc/64",
       "fallbackTextureType": "head",
@@ -2113,7 +2133,7 @@
       "source": "Slayer",
       "route": "Craft from Inferno Demonlord materials available on Stranded",
       "family": "Blaze",
-      "order": 89,
+      "order": 90,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2138,7 +2158,7 @@
       "source": "Levels",
       "route": "Claim at SkyBlock Level 25; upgrades through Level 400",
       "family": "Book of Progression",
-      "order": 90,
+      "order": 91,
       "canRecombobulate": false,
       "fallbackMaterial": "BOOK",
       "maxRarity": "MYTHIC"
@@ -2150,7 +2170,7 @@
       "source": "Collection",
       "route": "Craft from Raw Porkchop collection materials",
       "family": "Piggy Bank",
-      "order": 91,
+      "order": 92,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2180,7 +2200,7 @@
       "source": "Garden",
       "route": "Buy from SkyMart for Copper",
       "family": "Copper",
-      "order": 92,
+      "order": 93,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/856cba11ca1258258e903f2586fe19ecf20f4a99ef5870347cf32c2ba76e59cf/64",
       "fallbackTextureType": "head",
@@ -2193,7 +2213,7 @@
       "source": "Garden",
       "route": "Garden acquisition available on Stranded",
       "family": "Copper",
-      "order": 93,
+      "order": 94,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/f83a812525faf3499c3294634398b5e0e967489f2ee63e14490c1440553af065/64",
       "fallbackTextureType": "head",
@@ -2206,7 +2226,7 @@
       "source": "Garden",
       "route": "Garden acquisition available on Stranded",
       "family": "Copper",
-      "order": 94,
+      "order": 95,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/2933e519fc6b29c930bf74d426a2f4888a9994fe2892c6d5585fd6a3a8e52689/64",
       "fallbackTextureType": "head",
@@ -2219,12 +2239,13 @@
       "source": "Events",
       "route": "Claim from Simon during a SkyBlock Anniversary",
       "family": "Celebration Hat",
-      "order": 95,
+      "order": 96,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/2d87a59abdc12fd9a5ec865be6fc4d571c8c9a278f434214a442b18ed7b0457c/64",
       "fallbackTextureType": "head",
       "fallbackMaterial": "SKULL_ITEM",
       "profileIds": [
+        "BALLOON_HAT_2024",
         "BALLOON_HAT_2024_AQUA",
         "BALLOON_HAT_2024_BLACK",
         "BALLOON_HAT_2024_GREEN",
@@ -2234,6 +2255,7 @@
         "BALLOON_HAT_2024_PURPLE",
         "BALLOON_HAT_2024_RED",
         "BALLOON_HAT_2024_YELLOW",
+        "BALLOON_HAT_2025",
         "BALLOON_HAT_2025_AQUA",
         "BALLOON_HAT_2025_BLACK",
         "BALLOON_HAT_2025_GREEN",
@@ -2293,7 +2315,7 @@
       "source": "Garden",
       "route": "Craft with 256 Cropie",
       "family": "Cropie",
-      "order": 96,
+      "order": 97,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2313,7 +2335,7 @@
       "source": "Garden",
       "route": "Upgrade from Cropie Talisman with 128 Squash",
       "family": "Cropie",
-      "order": 97,
+      "order": 98,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2333,7 +2355,7 @@
       "source": "Garden",
       "route": "Upgrade from Squash Ring with 8 Condensed Fermento",
       "family": "Cropie",
-      "order": 98,
+      "order": 99,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2353,7 +2375,7 @@
       "source": "Garden",
       "route": "Upgrade from Fermento Artifact with 8 Condensed Helianthus",
       "family": "Cropie",
-      "order": 99,
+      "order": 100,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2373,7 +2395,7 @@
       "source": "Slayer",
       "route": "Craft from Revenant Horror materials",
       "family": "Devour",
-      "order": 100,
+      "order": 101,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2403,7 +2425,7 @@
       "source": "Garden",
       "route": "Craft with Visitors' Gratitude from the Garden",
       "family": "Gratitude",
-      "order": 101,
+      "order": 102,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2423,7 +2445,7 @@
       "source": "Garden",
       "route": "Upgrade from Gratitude Talisman with 8 Visitors Gratitude",
       "family": "Gratitude",
-      "order": 102,
+      "order": 103,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2443,7 +2465,7 @@
       "source": "Garden",
       "route": "Upgrade from Gratitude Ring with 16 Visitors Gratitude",
       "family": "Gratitude",
-      "order": 103,
+      "order": 104,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2463,7 +2485,7 @@
       "source": "Events",
       "route": "Events acquisition available on Stranded",
       "family": "Jerry",
-      "order": 104,
+      "order": 105,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/2567251d71b6f3a4dc03fa01e441de7edf9354794e74aec16c04f141ddf31c70/64",
       "fallbackTextureType": "head",
@@ -2476,7 +2498,7 @@
       "source": "Events",
       "route": "Events acquisition available on Stranded",
       "family": "Jerry",
-      "order": 105,
+      "order": 106,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/d3b919f040922eb17733b42d216b7cdefeaea366be14c1ae6993ca7e5909e0f0/64",
       "fallbackTextureType": "head",
@@ -2489,7 +2511,7 @@
       "source": "Events",
       "route": "Events acquisition available on Stranded",
       "family": "Jerry",
-      "order": 106,
+      "order": 107,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/ff8bd61b60a425d2e0deb1df9665327750ceba822a0be85e2f4a3a722e20f7d6/64",
       "fallbackTextureType": "head",
@@ -2502,7 +2524,7 @@
       "source": "Events",
       "route": "Events acquisition available on Stranded",
       "family": "Jerry",
-      "order": 107,
+      "order": 108,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/7964f606fecc32451fbded1b6f5d4f22db8f018f7d8db78b122ca75f9d1c0574/64",
       "fallbackTextureType": "head",
@@ -2515,7 +2537,7 @@
       "source": "Slayer",
       "route": "Enderman Slayer level 4 reward",
       "family": "Handy Blood Chalice",
-      "order": 108,
+      "order": 109,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/431cd7ed4e4bf07c3dfd9ba498708e730e69d807335affabc12d87ff542f6a88/64",
       "fallbackTextureType": "head",
@@ -2528,7 +2550,7 @@
       "source": "Collection",
       "route": "Craft with 128 Enchanted Cobblestone",
       "family": "Haste",
-      "order": 109,
+      "order": 110,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2548,7 +2570,7 @@
       "source": "Collection",
       "route": "Upgrade from Haste Ring with 256 Enchanted Cobblestone",
       "family": "Haste",
-      "order": 110,
+      "order": 111,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2568,7 +2590,7 @@
       "source": "Slayer",
       "route": "Craft with 64 Golden Tooth + 32 Enchanted Rotten Flesh",
       "family": "Hunter",
-      "order": 111,
+      "order": 112,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2593,7 +2615,7 @@
       "source": "Slayer",
       "route": "Upgrade from Hunter Talisman with 224 Golden Tooth + 1 Grizzly Bait",
       "family": "Hunter",
-      "order": 112,
+      "order": 113,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2618,7 +2640,7 @@
       "source": "NPC",
       "route": "Spend 1,000,000,000 coins on Accessory Bag slots at Jacobus",
       "family": "Jacobus Register",
-      "order": 113,
+      "order": 114,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/3b648b9a44e280bcdf25f4a66a97bd5c33542e5e82415e15b475c6b999b8d635/64",
       "fallbackTextureType": "head",
@@ -2631,7 +2653,7 @@
       "source": "Events",
       "route": "Rare drop from Nightmares during the Spooky Festival",
       "family": "Lucky Hoof",
-      "order": 114,
+      "order": 115,
       "canRecombobulate": true,
       "fallbackMaterial": "IRON_BARDING"
     },
@@ -2642,7 +2664,7 @@
       "source": "Events",
       "route": "Upgrade from Lucky Hoof with 8 Soul Fragment",
       "family": "Lucky Hoof",
-      "order": 115,
+      "order": 116,
       "canRecombobulate": true,
       "requirements": [
         {
@@ -2660,9 +2682,29 @@
       "source": "Quest",
       "route": "Complete Melody's Harp through the Stranded Melody NPC",
       "family": "Melody's Hair",
-      "order": 116,
+      "order": 117,
       "canRecombobulate": true,
       "fallbackMaterial": "STRING"
+    },
+    {
+      "id": "MINERAL_TALISMAN",
+      "name": "Mineral Talisman",
+      "rarity": "RARE",
+      "source": "Events",
+      "route": "Craft with 9 Refined Mineral obtainable on Stranded",
+      "family": "Mineral",
+      "order": 118,
+      "canRecombobulate": true,
+      "requirements": [
+        {
+          "type": "item",
+          "id": "REFINED_MINERAL",
+          "amount": 9
+        }
+      ],
+      "fallbackTexture": "https://mc-heads.net/head/5ab7b04dbba61cc0e10907ca11f84f871b7aa234dde0e4f1ad8bbe4914fbc513/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
     },
     {
       "id": "NETHERRACK_LOOKING_SUNSHADE",
@@ -2671,7 +2713,7 @@
       "source": "Mob Drop",
       "route": "Rare drop from Smoldering or Millennia-Aged Blazes spawned on Stranded",
       "family": "Netherrack-Looking Sunshade",
-      "order": 118,
+      "order": 119,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/6c930b0a2d87f2dddb409a302f9591897184f29ecc97b5ca5cdec1cd69839597/64",
       "fallbackTextureType": "head",
@@ -2684,7 +2726,7 @@
       "source": "Events",
       "route": "Buy from the Stranded Baker NPC during New Year",
       "family": "New Year Cake Bag",
-      "order": 119,
+      "order": 120,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/cde7cdeb9713a6f9cfedaaddcffb355721911f49f2fa1cf1189b949e2f0d5b28/64",
       "fallbackTextureType": "head",
@@ -2697,7 +2739,7 @@
       "source": "Events",
       "route": "Chocolate Factory milestone; Hoppity works on Stranded",
       "family": "Chocolate",
-      "order": 120,
+      "order": 121,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/888188d62908af6e114f73a109e15ac7f1faded39abd6a2054034ec5cc70c727/64",
       "fallbackTextureType": "head",
@@ -2710,7 +2752,7 @@
       "source": "Events",
       "route": "Events acquisition available on Stranded",
       "family": "Chocolate",
-      "order": 121,
+      "order": 122,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/a9372efd2ca1a6c6dfc066f1ec83f9456575c3850a0e7d01109c4f1af300ba8/64",
       "fallbackTextureType": "head",
@@ -2723,7 +2765,7 @@
       "source": "Events",
       "route": "Events acquisition available on Stranded",
       "family": "Chocolate",
-      "order": 122,
+      "order": 123,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/6f942717364c0fecf7ad11bac8cd98dd7ad4dbd72e3d3ce2b57eb48713824ff/64",
       "fallbackTextureType": "head",
@@ -2736,7 +2778,7 @@
       "source": "Events",
       "route": "Events acquisition available on Stranded",
       "family": "Chocolate",
-      "order": 123,
+      "order": 124,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/f89512331edfdc27cb7d4e80f3e0db460d05caf66c7c1c42e0e712130a9b690/64",
       "fallbackTextureType": "head",
@@ -2749,7 +2791,7 @@
       "source": "Events",
       "route": "Events acquisition available on Stranded",
       "family": "Chocolate",
-      "order": 124,
+      "order": 125,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/af19ceeabf2ecb020610b8aabc9299264fa670048c010c9699ce687fc9bf351e/64",
       "fallbackTextureType": "head",
@@ -2762,7 +2804,7 @@
       "source": "Fishing",
       "route": "Reach Novice Trophy Fisher with the Stranded Odger NPC",
       "family": "Odger's Tooth",
-      "order": 125,
+      "order": 126,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/accc4432efe08c88530ac084fea6526641a207d78e637e41f7a4e5dcfdaaa162/64",
       "fallbackTextureType": "head",
@@ -2775,7 +2817,7 @@
       "source": "Fishing",
       "route": "Fishing acquisition available on Stranded",
       "family": "Odger's Tooth",
-      "order": 126,
+      "order": 127,
       "canRecombobulate": true,
       "fallbackTexture": "https://mc-heads.net/head/c2d41b2279abce5fd626923b61e3ab98dce4972417289ee2b73214c0aaba841e/64",
       "fallbackTextureType": "head",
@@ -2788,22 +2830,9 @@
       "source": "Fishing",
       "route": "Fishing acquisition available on Stranded",
       "family": "Odger's Tooth",
-      "order": 127,
-      "canRecombobulate": true,
-      "fallbackTexture": "https://mc-heads.net/head/42024901024636f1c074e6562285f4cc9fd3da2885d4010cee52cc0696d2f96a/64",
-      "fallbackTextureType": "head",
-      "fallbackMaterial": "SKULL_ITEM"
-    },
-    {
-      "id": "ODGERS_DIAMOND_TOOTH",
-      "name": "Odger's Diamond Tooth",
-      "rarity": "EPIC",
-      "source": "Fishing",
-      "route": "Fishing acquisition available on Stranded",
-      "family": "Odger's Tooth",
       "order": 128,
       "canRecombobulate": true,
-      "fallbackTexture": "https://mc-heads.net/head/a2680a28962e9ad2d4872d06fba2cc60824fbb2d0824e42d958575b7563884aa/64",
+      "fallbackTexture": "https://mc-heads.net/head/42024901024636f1c074e6562285f4cc9fd3da2885d4010cee52cc0696d2f96a/64",
       "fallbackTextureType": "head",
       "fallbackMaterial": "SKULL_ITEM"
     },
@@ -3366,9 +3395,6 @@
     ],
     "Emerald": [
       "EMERALD_ARTIFACT"
-    ],
-    "Intimidation": [
-      "INTIMIDATION_RELIC"
     ],
     "Frozen Chicken": [
       "FRIED_FROZEN_CHICKEN"
