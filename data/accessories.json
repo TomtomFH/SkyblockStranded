@@ -5,7 +5,8 @@
     "hypixelItemsLastUpdated": 1784730494765,
     "technicalAccessoryRecords": 411,
     "canonicalFamilies": 145,
-    "strandedFamilies": 79
+    "strandedFamilies": 79,
+    "legacyRecords": 19
   },
   "accessories": [
     {
@@ -3385,35 +3386,295 @@
       "fallbackMaterial": "SKULL_ITEM"
     }
   ],
-  "familyUpgrades": {
-    "Vaccine": [
-      "VACCINE_RING",
-      "VACCINE_ARTIFACT"
-    ],
-    "Dante": [
-      "DANTE_RING"
-    ],
-    "Emerald": [
-      "EMERALD_ARTIFACT"
-    ],
-    "Frozen Chicken": [
-      "FRIED_FROZEN_CHICKEN"
-    ],
-    "Scavenger": [
-      "SCAVENGER_RING",
-      "SCAVENGER_ARTIFACT"
-    ],
-    "Shady": [
-      "SHADY_RING",
-      "SEAL_OF_THE_FAMILY"
-    ],
-    "Coins": [
-      "RING_OF_COINS",
-      "ARTIFACT_OF_COINS",
-      "RELIC_OF_COINS"
-    ],
-    "Wither": [
-      "WITHER_RELIC"
-    ]
-  }
+  "legacyAccessories": [
+    {
+      "id": "VACCINE_RING",
+      "name": "Vaccine Ring",
+      "rarity": "UNCOMMON",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Vaccine",
+      "order": 160,
+      "familyOrder": 1.1,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/e48ee92b9ef1dd9f6083dab113fe1708fde4f4039ad2f85f06f317cefe49f3ad/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "VACCINE_ARTIFACT",
+      "name": "Vaccine Artifact",
+      "rarity": "RARE",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Vaccine",
+      "order": 161,
+      "familyOrder": 1.2,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/c4332067f9fa1695c3d577c3ef264355bee161b5e3a301906a4f443b002b92fa/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "DANTE_RING",
+      "name": "Dante's Ring",
+      "rarity": "COMMON",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Dante",
+      "order": 162,
+      "familyOrder": 40.1,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/a375dfabb5a764c31810e160ce3dceafe5bd6e99c10f9cb77db01fbd3e2c0e28/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "EMERALD_ARTIFACT",
+      "name": "Emerald Artifact",
+      "rarity": "RARE",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Emerald",
+      "order": 163,
+      "familyOrder": 59.1,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/fd88161a7da12461e260dc7678b94b9c5e62fcd38213d1f808e36b4335808094/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "FRIED_FROZEN_CHICKEN",
+      "name": "Fried Frozen Chicken",
+      "rarity": "EPIC",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Frozen Chicken",
+      "order": 164,
+      "familyOrder": 57.1,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/adf30116f254f60167cee4137122783d2b4a4ccc36373077d507352424045ce4/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "SCAVENGER_RING",
+      "name": "Scavenger Ring",
+      "rarity": "UNCOMMON",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Scavenger",
+      "order": 165,
+      "familyOrder": 30.1,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/4c52a30ee53cf2b33a474625ffb5ccde4ec38871a42999db4e72b63089acf072/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "SCAVENGER_ARTIFACT",
+      "name": "Scavenger Artifact",
+      "rarity": "RARE",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Scavenger",
+      "order": 166,
+      "familyOrder": 30.2,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/2e011f648de37e49171e267252472b2130007e632db7358220ca546712f79a81/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "SHADY_RING",
+      "name": "Shady Ring",
+      "rarity": "UNCOMMON",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Shady",
+      "order": 167,
+      "familyOrder": 40.5,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/da8524274a65d8a80a0f44e103e2021e27c8916e965aa11f665ac0c49be40ec6/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "SEAL_OF_THE_FAMILY",
+      "name": "Seal of the Family",
+      "rarity": "EPIC",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Shady",
+      "order": 168,
+      "familyOrder": 41.1,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/7ab83858ebc8ee85c3e54ab13aabfcc1ef2ad446d6a900e471c3f33b78906a5b/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "RING_OF_COINS",
+      "name": "Ring of Coins",
+      "rarity": "UNCOMMON",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Coins",
+      "order": 169,
+      "familyOrder": 58.1,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/41a3e7c7699bf8378f582c1d3eb9af068b85db235ba78ebb253a04af3ec565a3/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ARTIFACT_OF_COINS",
+      "name": "Artifact of Coins",
+      "rarity": "RARE",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Coins",
+      "order": 170,
+      "familyOrder": 58.2,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/4d7318c21c2a53693222cd60191518a8e2a885956dd0823b6142c9ce77d13811/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "RELIC_OF_COINS",
+      "name": "Relic of Coins",
+      "rarity": "EPIC",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Coins",
+      "order": 171,
+      "familyOrder": 58.3,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/a4285382178f7abd9ee8291340aafbe3f616785cee39dab654e135c9525f1a87/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "WITHER_RELIC",
+      "name": "Wither Relic",
+      "rarity": "LEGENDARY",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Wither",
+      "order": 172,
+      "familyOrder": 44.1,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/17b8ef7e8e0af19399cc32485f2ee47b2bb4d5802c71b3021f4d5d6b5f3afe03/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "ODGERS_DIAMOND_TOOTH",
+      "name": "Odger's Diamond Tooth",
+      "rarity": "EPIC",
+      "source": "Legacy",
+      "route": "No longer obtainable on Stranded because Hard Stone is unavailable",
+      "family": "Odger's Tooth",
+      "order": 173,
+      "familyOrder": 128.1,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/a2680a28962e9ad2d4872d06fba2cc60824fbb2d0824e42d958575b7563884aa/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "BEASTMASTER_CREST_COMMON",
+      "name": "Beastmaster Crest",
+      "rarity": "COMMON",
+      "maxRarity": "LEGENDARY",
+      "profileIds": [
+        "BEASTMASTER_CREST_COMMON",
+        "BEASTMASTER_CREST_UNCOMMON",
+        "BEASTMASTER_CREST_RARE",
+        "BEASTMASTER_CREST_EPIC",
+        "BEASTMASTER_CREST_LEGENDARY"
+      ],
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Beastmaster Crest",
+      "order": 174,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/53415667de3fb89c5f40c880c39e4971a0caa7f3a9d2c8f712ba37fadcee/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "BINGO_RELIC",
+      "name": "Bingo Relic",
+      "rarity": "EPIC",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Bingo Relic",
+      "order": 175,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/c515acf4a6ac698736e54def0bc78143c14449978e750afbb8d7ade0adf0ef00/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "EMPEROR_TALISMAN",
+      "name": "Emperor's Talisman",
+      "rarity": "UNCOMMON",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Emperor's Artifact",
+      "order": 176,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/4038b3fabec7e8bb9ee83f03d9284af72abe3d4a204f6220673292086b5619af/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "EMPEROR_RING",
+      "name": "Emperor's Ring",
+      "rarity": "RARE",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Emperor's Artifact",
+      "order": 177,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/7d6dd941ce3917d757fbd6ab288c87a236602fd94d4920f6ec3ac344c5faac33/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    },
+    {
+      "id": "EMPEROR_ARTIFACT",
+      "name": "Emperor's Artifact",
+      "rarity": "EPIC",
+      "source": "Legacy",
+      "route": "Unavailable on current Stranded profiles; shown only when owned",
+      "family": "Emperor's Artifact",
+      "order": 178,
+      "legacy": true,
+      "canRecombobulate": true,
+      "fallbackTexture": "https://mc-heads.net/head/e9b1d718e24a8cdd52252102cc7c7a94c73a15d3faf3bc3a8315daa2b947c539/64",
+      "fallbackTextureType": "head",
+      "fallbackMaterial": "SKULL_ITEM"
+    }
+  ],
+  "familyUpgrades": {}
 }
