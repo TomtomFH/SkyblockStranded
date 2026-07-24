@@ -1,0 +1,93 @@
+{
+  "source": {
+    "name": "Hypixel SkyBlock Wiki attribute shard renders",
+    "url": "https://hypixelskyblock.minecraft.wiki/w/Attributes"
+  },
+  "generatedAt": "2026-07-24T22:41:58.716272+00:00",
+  "icons": {
+    "BEZAL": {
+      "src": "/generated/attributes/bezal.png"
+    },
+    "INKLING": {
+      "src": "/generated/attributes/inkling.png"
+    },
+    "ZEALOT": {
+      "src": "/generated/attributes/zealot.png"
+    },
+    "BRUISER": {
+      "src": "/generated/attributes/bruiser.png"
+    },
+    "FLAMING_SPIDER": {
+      "src": "/generated/attributes/flaming_spider.png"
+    },
+    "MAGMA_SLUG": {
+      "src": "/generated/attributes/magma_slug.png"
+    },
+    "OBSIDIAN_DEFENDER": {
+      "src": "/generated/attributes/obsidian_defender.png"
+    },
+    "PEST": {
+      "src": "/generated/attributes/pest.png"
+    },
+    "RAIN_SLIME": {
+      "src": "/generated/attributes/rain_slime.png"
+    },
+    "SEER": {
+      "src": "/generated/attributes/seer.png"
+    },
+    "SOUL_OF_THE_ALPHA": {
+      "src": "/generated/attributes/soul_of_the_alpha.png"
+    },
+    "SYCOPHANT": {
+      "src": "/generated/attributes/sycophant.png"
+    },
+    "BITBUG": {
+      "src": "/generated/attributes/bitbug.png"
+    },
+    "CARROT_KING": {
+      "src": "/generated/attributes/carrot_king.png"
+    },
+    "GLACITE_WALKER": {
+      "src": "/generated/attributes/glacite_walker.png"
+    },
+    "KADA_KNIGHT": {
+      "src": "/generated/attributes/kada_knight.png"
+    },
+    "LAVA_FLAME": {
+      "src": "/generated/attributes/lava_flame.png"
+    },
+    "REVENANT": {
+      "src": "/generated/attributes/revenant.png"
+    },
+    "STAR_SENTRY": {
+      "src": "/generated/attributes/star_sentry.png"
+    },
+    "WITHER_SPECTRE": {
+      "src": "/generated/attributes/wither_spectre.png"
+    },
+    "FIRE_EEL": {
+      "src": "/generated/attributes/fire_eel.png"
+    },
+    "FLARE": {
+      "src": "/generated/attributes/flare.png"
+    },
+    "GHOST": {
+      "src": "/generated/attributes/ghost.png"
+    },
+    "WATER_HYDRA": {
+      "src": "/generated/attributes/water_hydra.png"
+    },
+    "BURNINGSOUL": {
+      "src": "/generated/attributes/burningsoul.png"
+    },
+    "COCOALEECH": {
+      "src": "/generated/attributes/cocoaleech.png"
+    },
+    "LORD_JAWBUS": {
+      "src": "/generated/attributes/lord_jawbus.png"
+    },
+    "TAURUS": {
+      "src": "/generated/attributes/taurus.png"
+    }
+  }
+}
