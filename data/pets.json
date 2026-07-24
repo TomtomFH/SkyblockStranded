@@ -33,7 +33,7 @@
     {"id":"MOSQUITO","name":"Mosquito","targetRarity":"LEGENDARY","texture":"https://textures.minecraft.net/texture/52a9fe05bc663efcd12e56a3ccc5ec035bf577b78708548b6f4ffcf1d30eccfe"},
     {"id":"OCELOT","name":"Ocelot","targetRarity":"LEGENDARY","texture":"https://textures.minecraft.net/texture/5657cd5c2989ff97570fec4ddcdc6926a68a3393250c1be1f0b114a1db1"},
     {"id":"PARROT","name":"Parrot","targetRarity":"LEGENDARY","texture":"https://textures.minecraft.net/texture/5df4b3401a4d06ad66ac8b5c4d189618ae617f9c143071c8ac39a563cf4e4208"},
-    {"id":"PHOENIX","name":"Phoenix","targetRarity":"LEGENDARY","texture":"https://textures.minecraft.net/texture/66b1b59bc890c9c97527787dde20600c8b86f6b9912d51a6bfcdb0e4c2aa3c97"},
+    {"id":"PHOENIX","name":"Phoenix","targetRarity":"LEGENDARY","legacyMaxRarity":"LEGENDARY","legacy":true,"note":"No Phoenix pet rarity is currently obtainable on Stranded because it only drops on public islands or in Dungeons; shown only when owned.","texture":"https://textures.minecraft.net/texture/66b1b59bc890c9c97527787dde20600c8b86f6b9912d51a6bfcdb0e4c2aa3c97"},
     {"id":"PIG","name":"Pig","targetRarity":"COMMON","legacyMaxRarity":"LEGENDARY","legacy":true,"note":"No Pig pet rarity is currently obtainable on Stranded; shown only when owned.","texture":"https://textures.minecraft.net/texture/621668ef7cb79dd9c22ce3d1f3f4cb6e2559893b6df4a469514e667c16aa4"},
     {"id":"PIGMAN","name":"Pigman","targetRarity":"LEGENDARY","texture":"https://textures.minecraft.net/texture/d15afad53d1726fae86b3fb11ba01e51112b1055e8e5af8b7df86ef956f1d4a1"},
     {"id":"RABBIT","name":"Rabbit","targetRarity":"MYTHIC","texture":"https://textures.minecraft.net/texture/63438555e899bd9a051a95dbea49eb2ecfa52a69dbba8998f3673819e277fdf5"},
