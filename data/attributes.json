@@ -6,7 +6,7 @@
   "maxLevel": 10,
   "attributes": [
     {"id":"BEZAL","name":"Bezal","rarity":"COMMON"},
-    {"id":"NIGHT_SQUID","name":"Night Squid","rarity":"COMMON"},
+    {"id":"INKLING","name":"Inkling","rarity":"COMMON","legacy":true,"levelAliases":["NIGHT_SQUID"],"note":"Legacy on Stranded; Inkling is only available through public-island fishing content."},
     {"id":"ZEALOT","name":"Zealot","rarity":"COMMON"},
     {"id":"BRUISER","name":"Bruiser","rarity":"UNCOMMON"},
     {"id":"FLAMING_SPIDER","name":"Flaming Spider","rarity":"UNCOMMON"},
@@ -29,9 +29,9 @@
     {"id":"FLARE","name":"Flare","rarity":"EPIC"},
     {"id":"GHOST","name":"Ghost","rarity":"EPIC"},
     {"id":"WATER_HYDRA","name":"Water Hydra","rarity":"EPIC"},
-    {"id":"BURNINGSOUL","name":"Burningsoul","rarity":"LEGENDARY"},
+    {"id":"BURNINGSOUL","name":"Burningsoul","rarity":"EPIC","note":"Rarity changed from LEGENDARY to EPIC in the 0.24.5 shard adjustments."},
     {"id":"COCOALEECH","name":"Cocoaleech","rarity":"LEGENDARY"},
-    {"id":"LORD_JAWBUS","name":"Lord Jawbus","rarity":"LEGENDARY"},
+    {"id":"LORD_JAWBUS","name":"Lord Jawbus","rarity":"LEGENDARY","legacy":true,"note":"Legacy on Stranded; Lord Jawbus requires Adept Trophy Fisher, which is blocked by the unobtainable Silver Trophy Fisher progression."},
     {"id":"TAURUS","name":"Taurus","rarity":"LEGENDARY"}
   ]
 }
