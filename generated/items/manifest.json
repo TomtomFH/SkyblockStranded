@@ -1,0 +1,352 @@
+{
+  "source": {
+    "skyblockMetadata": "Hypixel SkyBlock Resources API",
+    "vanillaSprites": "Minecraft Java Edition 1.8.9",
+    "customHeads": "textures.minecraft.net player-head skins"
+  },
+  "generatedAt": "2026-07-24T22:33:37.164128+00:00",
+  "icons": {
+    "ATTRIBUTE_SHARD": {
+      "src": "/generated/items/attribute_shard.png"
+    },
+    "ANCIENT_CLAW": {
+      "src": "/generated/items/ancient_claw.png"
+    },
+    "ANVIL": {
+      "src": "/generated/items/anvil.png"
+    },
+    "BLAZE_ROD": {
+      "src": "/generated/items/blaze_rod.png"
+    },
+    "BLOOD_GOD_CREST": {
+      "src": "/generated/furfsky/blood_god_crest.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 3
+          },
+          {
+            "index": 1,
+            "time": 3
+          },
+          {
+            "index": 2,
+            "time": 3
+          },
+          {
+            "index": 3,
+            "time": 3
+          },
+          {
+            "index": 4,
+            "time": 3
+          },
+          {
+            "index": 5,
+            "time": 3
+          },
+          {
+            "index": 6,
+            "time": 3
+          },
+          {
+            "index": 7,
+            "time": 3
+          },
+          {
+            "index": 8,
+            "time": 3
+          },
+          {
+            "index": 9,
+            "time": 3
+          },
+          {
+            "index": 10,
+            "time": 3
+          }
+        ],
+        "interpolate": false
+      }
+    },
+    "BONE": {
+      "src": "/generated/items/bone.png"
+    },
+    "BOTTLE_OF_JYRRE": {
+      "src": "/generated/items/bottle_of_jyrre.png"
+    },
+    "CAT_TALISMAN": {
+      "src": "/generated/furfsky/cat_talisman.png"
+    },
+    "CHALLENGING_ROD": {
+      "src": "/generated/items/challenging_rod.png"
+    },
+    "CHEETAH_TALISMAN": {
+      "src": "/generated/furfsky/cheetah_talisman.png"
+    },
+    "CLAY_BALL": {
+      "src": "/generated/items/clay_ball.png"
+    },
+    "COAL": {
+      "src": "/generated/items/coal.png"
+    },
+    "COCOA_BEANS": {
+      "src": "/generated/items/cocoa_beans.png"
+    },
+    "CROOKED_ARTIFACT": {
+      "src": "/generated/furfsky/crooked_artifact.png"
+    },
+    "DANTE_TALISMAN": {
+      "src": "/generated/furfsky/dante_talisman.png"
+    },
+    "DESERT_ISLAND": {
+      "src": "/generated/items/desert_island.png"
+    },
+    "DIAMOND": {
+      "src": "/generated/items/diamond.png"
+    },
+    "EMERALD": {
+      "src": "/generated/items/emerald.png"
+    },
+    "ENCHANTED_ANCIENT_CLAW": {
+      "src": "/generated/items/enchanted_ancient_claw.png"
+    },
+    "ENCHANTED_EMERALD": {
+      "src": "/generated/items/enchanted_emerald.png"
+    },
+    "ENDERMAN_MASK": {
+      "src": "/generated/items/enderman_mask.png"
+    },
+    "ENDER_ARTIFACT": {
+      "src": "/generated/furfsky/ender_artifact.png"
+    },
+    "ENDER_PEARL": {
+      "src": "/generated/items/ender_pearl.png"
+    },
+    "ENDER_STONE": {
+      "src": "/generated/items/ender_stone.png"
+    },
+    "FALLEN_STAR_HELMET": {
+      "src": "/generated/items/fallen_star_helmet.png"
+    },
+    "FLINT": {
+      "src": "/generated/items/flint.png"
+    },
+    "FLOWER_GENERATOR_1": {
+      "src": "/generated/items/flower_generator_1.png"
+    },
+    "FROZEN_CHICKEN": {
+      "src": "/generated/furfsky/frozen_chicken.png"
+    },
+    "GHAST_TEAR": {
+      "src": "/generated/items/ghast_tear.png"
+    },
+    "GLOWSTONE_DUST": {
+      "src": "/generated/items/glowstone_dust.png"
+    },
+    "GOLD_INGOT": {
+      "src": "/generated/items/gold_ingot.png"
+    },
+    "GRAVITY": {
+      "src": "/generated/items/gravity.png"
+    },
+    "HAPPY_MASK": {
+      "src": "/generated/items/happy_mask.png"
+    },
+    "HELLFIRE_ROD": {
+      "src": "/generated/items/hellfire_rod.png"
+    },
+    "HUNTER_KNIFE": {
+      "src": "/generated/items/hunter_knife.png"
+    },
+    "ICE_BAIT": {
+      "src": "/generated/items/ice_bait.png"
+    },
+    "INFERNO_ROD": {
+      "src": "/generated/items/inferno_rod.png"
+    },
+    "INK_SACK:4": {
+      "src": "/generated/items/ink_sack_4.png"
+    },
+    "INTIMIDATION_TALISMAN": {
+      "src": "/generated/furfsky/intimidation_talisman.png"
+    },
+    "IRON_INGOT": {
+      "src": "/generated/items/iron_ingot.png"
+    },
+    "JELLYFISH;4": {
+      "src": "/generated/items/jellyfish_4.png"
+    },
+    "JINGLE_BELLS": {
+      "src": "/generated/items/jingle_bells.png"
+    },
+    "LOG": {
+      "src": "/generated/items/log.png"
+    },
+    "LOG:1": {
+      "src": "/generated/items/log_1.png"
+    },
+    "LOG:2": {
+      "src": "/generated/items/log_2.png"
+    },
+    "LOG:3": {
+      "src": "/generated/items/log_3.png"
+    },
+    "LOG_2": {
+      "src": "/generated/items/log_2.png"
+    },
+    "LOG_2:1": {
+      "src": "/generated/items/log_2_1.png"
+    },
+    "LYNX_TALISMAN": {
+      "src": "/generated/furfsky/lynx_talisman.png"
+    },
+    "MAGMA_CREAM": {
+      "src": "/generated/items/magma_cream.png"
+    },
+    "MAGMA_ROD": {
+      "src": "/generated/items/magma_rod.png"
+    },
+    "MEDIUM_POCKET_BLACK_HOLE": {
+      "src": "/generated/items/medium_pocket_black_hole.png"
+    },
+    "MOODY_GRAPPLESHOT": {
+      "src": "/generated/items/moody_grappleshot.png"
+    },
+    "MUTTON": {
+      "src": "/generated/items/mutton.png"
+    },
+    "MYCEL": {
+      "src": "/generated/items/mycel.png"
+    },
+    "NOPE_THE_FISH": {
+      "src": "/generated/items/nope_the_fish.png"
+    },
+    "PARROT;4": {
+      "src": "/generated/items/parrot_4.png"
+    },
+    "PET_ITEM_FARMING_SKILL_BOOST_EPIC": {
+      "src": "/generated/items/pet_item_farming_skill_boost_epic.png"
+    },
+    "PIGS_FOOT": {
+      "src": "/generated/furfsky/pigs_foot.png"
+    },
+    "PIG_MASK": {
+      "src": "/generated/items/pig_mask.png"
+    },
+    "POLISHED_PEBBLE": {
+      "src": "/generated/items/polished_pebble.png"
+    },
+    "POTATO_ITEM": {
+      "src": "/generated/items/potato_item.png"
+    },
+    "POTATO_SPREADING": {
+      "src": "/generated/items/potato_spreading.png"
+    },
+    "POTATO_TALISMAN": {
+      "src": "/generated/furfsky/potato_talisman.png"
+    },
+    "QUARTZ": {
+      "src": "/generated/items/quartz.png"
+    },
+    "RABBIT": {
+      "src": "/generated/items/rabbit.png"
+    },
+    "RECOMBOBULATOR_3000": {
+      "src": "/generated/items/recombobulator_3000.png"
+    },
+    "REDSTONE": {
+      "src": "/generated/items/redstone.png"
+    },
+    "RED_SAND": {
+      "src": "/generated/items/red_sand.png"
+    },
+    "ROD_OF_LEGENDS": {
+      "src": "/generated/items/rod_of_legends.png"
+    },
+    "ROD_OF_THE_SEA": {
+      "src": "/generated/items/rod_of_the_sea.png"
+    },
+    "ROGUE_SWORD": {
+      "src": "/generated/items/rogue_sword.png"
+    },
+    "SCAVENGER_TALISMAN": {
+      "src": "/generated/furfsky/scavenger_talisman.png"
+    },
+    "SHINY_ROD": {
+      "src": "/generated/items/shiny_rod.png"
+    },
+    "SHRIMP_THE_FISH": {
+      "src": "/generated/items/shrimp_the_fish.png"
+    },
+    "SILENT_PEARL": {
+      "src": "/generated/items/silent_pearl.png"
+    },
+    "SILKY_LICHEN": {
+      "src": "/generated/items/silky_lichen.png"
+    },
+    "SKELETON_TALISMAN": {
+      "src": "/generated/furfsky/skeleton_talisman.png"
+    },
+    "SLIME_BALL": {
+      "src": "/generated/items/slime_ball.png"
+    },
+    "SMALL_POCKET_BLACK_HOLE": {
+      "src": "/generated/items/small_pocket_black_hole.png"
+    },
+    "SOUL_STRING": {
+      "src": "/generated/items/soul_string.png"
+    },
+    "SPIDER_EYE": {
+      "src": "/generated/items/spider_eye.png"
+    },
+    "SPIRIT_MASK": {
+      "src": "/generated/items/spirit_mask.png"
+    },
+    "STONK_PICKAXE": {
+      "src": "/generated/items/stonk_pickaxe.png"
+    },
+    "SUGAR_CANE": {
+      "src": "/generated/items/sugar_cane.png"
+    },
+    "SULPHUR": {
+      "src": "/generated/items/sulphur.png"
+    },
+    "TACTICIAN_SWORD": {
+      "src": "/generated/items/tactician_sword.png"
+    },
+    "TRUE_ESSENCE": {
+      "src": "/generated/items/true_essence.png"
+    },
+    "TRUE_PROTECTION": {
+      "src": "/generated/items/true_protection.png"
+    },
+    "TURTLE;4": {
+      "src": "/generated/items/turtle_4.png"
+    },
+    "WINTER_ROD": {
+      "src": "/generated/items/winter_rod.png"
+    },
+    "WINTER_SACK": {
+      "src": "/generated/items/winter_sack.png"
+    },
+    "WITHER_ARTIFACT": {
+      "src": "/generated/furfsky/wither_artifact.png"
+    },
+    "WOLF_PAW": {
+      "src": "/generated/furfsky/wolf_paw.png"
+    },
+    "WOOD_SINGULARITY": {
+      "src": "/generated/items/wood_singularity.png"
+    },
+    "WOOL": {
+      "src": "/generated/items/wool.png"
+    },
+    "ZOMBIE_TALISMAN": {
+      "src": "/generated/furfsky/zombie_talisman.png"
+    }
+  }
+}
