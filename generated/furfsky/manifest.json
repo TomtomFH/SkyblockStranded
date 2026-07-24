@@ -1,6 +1,6 @@
 {
   "pack": "FurSky Reborn.cats.zip",
-  "generatedAt": "2026-07-23T08:56:56.979Z",
+  "generatedAt": "2026-07-24T22:59:43.831Z",
   "icons": {
     "SOULFLOW_PILE": {
       "src": "/generated/furfsky/soulflow_pile.png"
@@ -1187,6 +1187,494 @@
     },
     "VOTER_BADGE_SUPREME": {
       "src": "/generated/furfsky/voter_badge_supreme.png"
+    },
+    "CHALLENGING_ROD": {
+      "src": "/generated/furfsky/trade_challenging_rod.png"
+    },
+    "MAGMA_ROD": {
+      "src": "/generated/furfsky/trade_magma_rod.png"
+    },
+    "POLISHED_PEBBLE": {
+      "src": "/generated/furfsky/trade_polished_pebble.png"
+    },
+    "JINGLE_BELLS": {
+      "src": "/generated/furfsky/trade_jingle_bells.png"
+    },
+    "ROGUE_SWORD": {
+      "src": "/generated/furfsky/trade_rogue_sword.png"
+    },
+    "SHINY_ROD": {
+      "src": "/generated/furfsky/trade_shiny_rod.png"
+    },
+    "ICE_BAIT": {
+      "src": "/generated/furfsky/trade_ice_bait.png"
+    },
+    "SOUL_STRING": {
+      "src": "/generated/furfsky/trade_soul_string.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 1
+          },
+          {
+            "index": 1,
+            "time": 1
+          },
+          {
+            "index": 2,
+            "time": 1
+          },
+          {
+            "index": 3,
+            "time": 1
+          },
+          {
+            "index": 4,
+            "time": 1
+          },
+          {
+            "index": 5,
+            "time": 1
+          },
+          {
+            "index": 6,
+            "time": 1
+          },
+          {
+            "index": 7,
+            "time": 1
+          },
+          {
+            "index": 8,
+            "time": 1
+          },
+          {
+            "index": 9,
+            "time": 1
+          },
+          {
+            "index": 10,
+            "time": 1
+          },
+          {
+            "index": 11,
+            "time": 1
+          },
+          {
+            "index": 12,
+            "time": 1
+          },
+          {
+            "index": 13,
+            "time": 1
+          }
+        ],
+        "interpolate": false
+      }
+    },
+    "POTATO_SPREADING": {
+      "src": "/generated/furfsky/trade_potato_spreading.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 2
+          },
+          {
+            "index": 1,
+            "time": 2
+          },
+          {
+            "index": 2,
+            "time": 2
+          },
+          {
+            "index": 3,
+            "time": 2
+          },
+          {
+            "index": 4,
+            "time": 2
+          },
+          {
+            "index": 5,
+            "time": 2
+          },
+          {
+            "index": 6,
+            "time": 2
+          },
+          {
+            "index": 7,
+            "time": 2
+          },
+          {
+            "index": 8,
+            "time": 2
+          }
+        ],
+        "interpolate": false
+      }
+    },
+    "HUNTER_KNIFE": {
+      "src": "/generated/furfsky/trade_hunter_knife.png"
+    },
+    "TRUE_ESSENCE": {
+      "src": "/generated/furfsky/trade_true_essence.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 2
+          },
+          {
+            "index": 1,
+            "time": 2
+          },
+          {
+            "index": 2,
+            "time": 2
+          },
+          {
+            "index": 3,
+            "time": 2
+          },
+          {
+            "index": 4,
+            "time": 2
+          },
+          {
+            "index": 5,
+            "time": 2
+          },
+          {
+            "index": 6,
+            "time": 2
+          },
+          {
+            "index": 7,
+            "time": 2
+          },
+          {
+            "index": 8,
+            "time": 2
+          },
+          {
+            "index": 9,
+            "time": 2
+          },
+          {
+            "index": 10,
+            "time": 2
+          },
+          {
+            "index": 11,
+            "time": 2
+          }
+        ],
+        "interpolate": false
+      }
+    },
+    "WOOD_SINGULARITY": {
+      "src": "/generated/furfsky/trade_wood_singularity.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 2
+          },
+          {
+            "index": 1,
+            "time": 2
+          },
+          {
+            "index": 2,
+            "time": 2
+          },
+          {
+            "index": 3,
+            "time": 2
+          },
+          {
+            "index": 4,
+            "time": 2
+          },
+          {
+            "index": 5,
+            "time": 2
+          },
+          {
+            "index": 6,
+            "time": 2
+          },
+          {
+            "index": 7,
+            "time": 2
+          },
+          {
+            "index": 8,
+            "time": 2
+          },
+          {
+            "index": 9,
+            "time": 2
+          },
+          {
+            "index": 10,
+            "time": 2
+          },
+          {
+            "index": 11,
+            "time": 2
+          },
+          {
+            "index": 12,
+            "time": 2
+          },
+          {
+            "index": 13,
+            "time": 2
+          },
+          {
+            "index": 14,
+            "time": 2
+          },
+          {
+            "index": 15,
+            "time": 2
+          }
+        ],
+        "interpolate": false
+      }
+    },
+    "INFERNO_ROD": {
+      "src": "/generated/furfsky/trade_inferno_rod.png"
+    },
+    "TACTICIAN_SWORD": {
+      "src": "/generated/furfsky/trade_tactician_sword.png"
+    },
+    "STONK_PICKAXE": {
+      "src": "/generated/furfsky/trade_stonk_pickaxe.png"
+    },
+    "MOODY_GRAPPLESHOT": {
+      "src": "/generated/furfsky/trade_moody_grappleshot.png"
+    },
+    "ANCIENT_CLAW": {
+      "src": "/generated/furfsky/trade_ancient_claw.png"
+    },
+    "PET_ITEM_FARMING_SKILL_BOOST_EPIC": {
+      "src": "/generated/furfsky/trade_pet_item_farming_skill_boost_epic.png"
+    },
+    "RECOMBOBULATOR_3000": {
+      "src": "/generated/furfsky/trade_recombobulator_3000.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 2
+          },
+          {
+            "index": 1,
+            "time": 2
+          },
+          {
+            "index": 2,
+            "time": 2
+          },
+          {
+            "index": 3,
+            "time": 2
+          },
+          {
+            "index": 4,
+            "time": 2
+          },
+          {
+            "index": 5,
+            "time": 2
+          },
+          {
+            "index": 6,
+            "time": 2
+          },
+          {
+            "index": 7,
+            "time": 2
+          },
+          {
+            "index": 8,
+            "time": 2
+          },
+          {
+            "index": 9,
+            "time": 2
+          },
+          {
+            "index": 10,
+            "time": 2
+          },
+          {
+            "index": 11,
+            "time": 2
+          },
+          {
+            "index": 12,
+            "time": 2
+          },
+          {
+            "index": 13,
+            "time": 2
+          },
+          {
+            "index": 14,
+            "time": 2
+          },
+          {
+            "index": 15,
+            "time": 2
+          },
+          {
+            "index": 16,
+            "time": 2
+          },
+          {
+            "index": 17,
+            "time": 2
+          }
+        ],
+        "interpolate": false
+      }
+    },
+    "ROD_OF_THE_SEA": {
+      "src": "/generated/furfsky/trade_rod_of_the_sea.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 2
+          },
+          {
+            "index": 1,
+            "time": 2
+          },
+          {
+            "index": 2,
+            "time": 2
+          },
+          {
+            "index": 3,
+            "time": 2
+          },
+          {
+            "index": 4,
+            "time": 2
+          },
+          {
+            "index": 5,
+            "time": 2
+          },
+          {
+            "index": 6,
+            "time": 2
+          },
+          {
+            "index": 7,
+            "time": 2
+          },
+          {
+            "index": 8,
+            "time": 2
+          },
+          {
+            "index": 9,
+            "time": 2
+          },
+          {
+            "index": 10,
+            "time": 2
+          },
+          {
+            "index": 11,
+            "time": 2
+          },
+          {
+            "index": 12,
+            "time": 2
+          },
+          {
+            "index": 13,
+            "time": 2
+          },
+          {
+            "index": 14,
+            "time": 2
+          },
+          {
+            "index": 15,
+            "time": 2
+          },
+          {
+            "index": 16,
+            "time": 2
+          }
+        ],
+        "interpolate": false
+      }
+    },
+    "HELLFIRE_ROD": {
+      "src": "/generated/furfsky/trade_hellfire_rod.png",
+      "animation": {
+        "frameWidth": 16,
+        "frameHeight": 16,
+        "frames": [
+          {
+            "index": 0,
+            "time": 2
+          },
+          {
+            "index": 1,
+            "time": 2
+          },
+          {
+            "index": 2,
+            "time": 2
+          },
+          {
+            "index": 3,
+            "time": 2
+          },
+          {
+            "index": 4,
+            "time": 2
+          },
+          {
+            "index": 5,
+            "time": 2
+          },
+          {
+            "index": 6,
+            "time": 2
+          }
+        ],
+        "interpolate": false
+      }
     }
+  },
+  "tradeTextures": {
+    "source": "FurSky Reborn.cats.zip",
+    "count": 21
   }
 }
