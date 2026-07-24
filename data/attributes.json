@@ -1,0 +1,37 @@
+{
+  "source": {
+    "name": "Stranded Stuff",
+    "url": "https://app.notion.com/p/Attributes-33fb3a8f4549800484e4db47b31fd8e2"
+  },
+  "maxLevel": 10,
+  "attributes": [
+    {"id":"BEZAL","name":"Bezal","rarity":"COMMON"},
+    {"id":"NIGHT_SQUID","name":"Night Squid","rarity":"COMMON"},
+    {"id":"ZEALOT","name":"Zealot","rarity":"COMMON"},
+    {"id":"BRUISER","name":"Bruiser","rarity":"UNCOMMON"},
+    {"id":"FLAMING_SPIDER","name":"Flaming Spider","rarity":"UNCOMMON"},
+    {"id":"MAGMA_SLUG","name":"Magma Slug","rarity":"UNCOMMON"},
+    {"id":"OBSIDIAN_DEFENDER","name":"Obsidian Defender","rarity":"UNCOMMON"},
+    {"id":"PEST","name":"Pest","rarity":"UNCOMMON"},
+    {"id":"RAIN_SLIME","name":"Rain Slime","rarity":"UNCOMMON"},
+    {"id":"SEER","name":"Seer","rarity":"UNCOMMON"},
+    {"id":"SOUL_OF_THE_ALPHA","name":"Soul of the Alpha","rarity":"UNCOMMON"},
+    {"id":"SYCOPHANT","name":"Sycophant","rarity":"UNCOMMON"},
+    {"id":"BITBUG","name":"Bitbug","rarity":"RARE"},
+    {"id":"CARROT_KING","name":"Carrot King","rarity":"RARE"},
+    {"id":"GLACITE_WALKER","name":"Glacite Walker","rarity":"RARE"},
+    {"id":"KADA_KNIGHT","name":"Kada Knight","rarity":"RARE"},
+    {"id":"LAVA_FLAME","name":"Lava Flame","rarity":"RARE"},
+    {"id":"REVENANT","name":"Revenant","rarity":"RARE"},
+    {"id":"STAR_SENTRY","name":"Star Sentry","rarity":"RARE","note":"Drown it to deal less than 1 damage for the hunt."},
+    {"id":"WITHER_SPECTRE","name":"Wither Spectre","rarity":"RARE"},
+    {"id":"FIRE_EEL","name":"Fire Eel","rarity":"EPIC"},
+    {"id":"FLARE","name":"Flare","rarity":"EPIC"},
+    {"id":"GHOST","name":"Ghost","rarity":"EPIC"},
+    {"id":"WATER_HYDRA","name":"Water Hydra","rarity":"EPIC"},
+    {"id":"BURNINGSOUL","name":"Burningsoul","rarity":"LEGENDARY"},
+    {"id":"COCOALEECH","name":"Cocoaleech","rarity":"LEGENDARY"},
+    {"id":"LORD_JAWBUS","name":"Lord Jawbus","rarity":"LEGENDARY"},
+    {"id":"TAURUS","name":"Taurus","rarity":"LEGENDARY"}
+  ]
+}
