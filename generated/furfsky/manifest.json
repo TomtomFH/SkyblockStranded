@@ -1677,10 +1677,13 @@
     },
     "GRIFFIN_FEATHER": {
       "src": "/generated/furfsky/trade_griffin_feather.png"
+    },
+    "REFINED_MINERAL": {
+      "src": "/generated/furfsky/trade_refined_mineral.png"
     }
   },
   "tradeTextures": {
     "source": "FurSky Reborn.cats.zip",
-    "count": 23
+    "count": 24
   }
 }
