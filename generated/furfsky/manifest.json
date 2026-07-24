@@ -1671,10 +1671,16 @@
         ],
         "interpolate": false
       }
+    },
+    "FESTIVE_SINKER": {
+      "src": "/generated/furfsky/trade_festive_sinker.png"
+    },
+    "GRIFFIN_FEATHER": {
+      "src": "/generated/furfsky/trade_griffin_feather.png"
     }
   },
   "tradeTextures": {
     "source": "FurSky Reborn.cats.zip",
-    "count": 21
+    "count": 23
   }
 }
