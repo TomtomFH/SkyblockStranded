@@ -16,7 +16,7 @@
     {"id":"ELEPHANT","name":"Elephant","targetRarity":"LEGENDARY","texture":"https://textures.minecraft.net/texture/4ef8efea450632d2753a38a23a4f1502a8a685f6e99bf69205ec04420fd64f6"},
     {"id":"ENDERMAN","name":"Enderman","targetRarity":"MYTHIC","texture":"https://textures.minecraft.net/texture/9f31c9b5a2bfe7443645b4e7e8ea408b04d554a9200b00afd574ce924b555ecb"},
     {"id":"ENDERMITE","name":"Endermite","targetRarity":"RARE","legacyMaxRarity":"LEGENDARY","note":"RARE is the current Stranded maximum; EPIC and LEGENDARY are no longer obtainable.","texture":"https://textures.minecraft.net/texture/18ae7046da98dcb33f3ed42f1dc41d08ac8dfa5db3a3860de5b1b5c056804187"},
-    {"id":"FLYING_FISH","name":"Flying Fish","targetRarity":"MYTHIC","texture":"https://textures.minecraft.net/texture/b0e2363c2d41a9d323ba625de8c0637063a36fe85a045de275a7b7739ded6051"},
+    {"id":"FLYING_FISH","name":"Flying Fish","targetRarity":"MYTHIC","legacyMaxRarity":"MYTHIC","legacy":true,"note":"No Flying Fish pet rarity is currently obtainable on Stranded after the Emperor source was removed; shown only when owned.","texture":"https://textures.minecraft.net/texture/b0e2363c2d41a9d323ba625de8c0637063a36fe85a045de275a7b7739ded6051"},
     {"id":"GHOUL","name":"Ghoul","targetRarity":"LEGENDARY","texture":"https://textures.minecraft.net/texture/1e1109bbd1f82c182363ed53b624b688924447f9f68b929674ad37f3cef762a8"},
     {"id":"GIRAFFE","name":"Giraffe","targetRarity":"LEGENDARY","texture":"https://textures.minecraft.net/texture/2528ce6ad51fcb6e27c85566e70da351075185f184d910f4996e4311d4a1bfa5"},
     {"id":"GUARDIAN","name":"Guardian","targetRarity":"LEGENDARY","texture":"https://textures.minecraft.net/texture/221025434045bda7025b3e514b316a4b770c6faa4ba9adb4be3809526db77f9d"},
