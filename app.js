@@ -193,18 +193,30 @@ function normalizePublicProfile(data){
   const crafted=[];for(const record of member.minions||[]){const minion=minions.find(candidate=>normalizedName(candidate.id)===normalizedName(record.name));if(!minion)continue;(record.levels||[]).forEach((done,index)=>{if(done&&minion.tiers[index])crafted.push(minion.tiers[index].id)})}
   const petRecords=(member.pets?.list||[]).map(pet=>({id:String(pet.id||'').toUpperCase(),tier:normalizeRarity(pet.tier),level:Math.max(1,Number(pet.level)||1),xp:Number(pet.xp)||0,skin:pet.skin||null,item:pet.item||null})).filter(pet=>pet.id&&rarityMeta[pet.tier]);
   const magicalPower=accessoryRecords.reduce((sum,record)=>sum+(record.magicalPower||magicalPowerFor(record.rarity)),0);
-  return{source:'public-web',player:{username:member.username,uuid:member.uuid},profile:{id:data.profile?.uuid,name:data.profile?.name,mode:data.profile?.mode||'stranded',lastSave:member.lastSave||null},stats:{magicalPower},items:{ids:[...ids],accessoryIds,counts,accessories:accessoryRecords},collections,collectionLevels,slayers,skills,minions:{crafted},pets:petRecords,cache:{hit:false,ageSeconds:0},rawSignals:{inventoryAvailable:ids.size>0,accessoryMetadataAvailable:accessoryRecords.length>0,collectionsAvailable:Object.keys(collections).length>0,collectionLevelsAvailable:Object.keys(collectionLevels).length>0,slayersAvailable:Object.keys(slayers).length>0,minionsAvailable:crafted.length>0,petsAvailable:Array.isArray(member.pets?.list),sacksAvailable:false}};
+  return{source:'public-web',player:{username:member.username,uuid:member.uuid},profile:{id:data.profile?.uuid,name:data.profile?.name,mode:data.profile?.mode||'stranded',lastSave:member.lastSave||null,memberUuids:(data.profile?.members||[]).filter(candidate=>candidate.left!==true).map(candidate=>normalizedUuid(candidate.uuid))},stats:{magicalPower},items:{ids:[...ids],accessoryIds,counts,accessories:accessoryRecords},collections,collectionLevels,slayers,skills,minions:{crafted},pets:petRecords,cache:{hit:false,ageSeconds:0},rawSignals:{inventoryAvailable:ids.size>0,accessoryMetadataAvailable:accessoryRecords.length>0,collectionsAvailable:Object.keys(collections).length>0,collectionLevelsAvailable:Object.keys(collectionLevels).length>0,slayersAvailable:Object.keys(slayers).length>0,minionsAvailable:crafted.length>0,petsAvailable:Array.isArray(member.pets?.list),sacksAvailable:false}};
 }
-function mergeSoopySacks(target,data){
+function mergeSoopyCollections(target,memberEntries){
+  const totals={},levels={};
+  for(const [,member] of memberEntries){
+    const collections=member?.collections;if(collections&&typeof collections==='object'&&!Array.isArray(collections))for(const [rawId,value] of Object.entries(collections)){const id=String(rawId).toUpperCase(),amount=Number(value);if(Number.isFinite(amount))totals[id]=(totals[id]||0)+amount}
+    for(const rawTier of member?.unlocked_coll_tiers||[]){const match=String(rawTier).toUpperCase().match(/^(.*)_(-?\d+)$/);if(!match)continue;const id=match[1],level=Math.max(0,Number(match[2])||0);levels[id]=Math.max(levels[id]||0,level)}
+  }
+  const keysFor=id=>[id,...Object.entries(collectionAliases).filter(([,mapped])=>mapped===id).map(([alias])=>alias)];
+  for(const [id,amount] of Object.entries(totals))for(const key of keysFor(id))target.collections[key]=Math.max(Number(target.collections[key]||0),amount);
+  for(const [id,level] of Object.entries(levels))for(const key of keysFor(id))target.collectionLevels[key]=Math.max(Number(target.collectionLevels[key]||0),level);
+  if(Object.keys(totals).length)target.rawSignals.collectionsAvailable=true;
+  if(Object.keys(levels).length)target.rawSignals.collectionLevelsAvailable=true;
+  return Object.keys(totals).length>0||Object.keys(levels).length>0
+}
+function mergeSoopyProfile(target,data){
   const profiles=data?.data?.profiles;
   if(!profiles||typeof profiles!=='object')return target;
   const entries=Array.isArray(profiles)?profiles.map(candidate=>[candidate.profile_id||candidate.uuid,candidate]):Object.entries(profiles),profileId=normalizedUuid(target.profile.id),profileName=String(target.profile.name||'').toLowerCase();
   const selected=entries.find(([id])=>normalizedUuid(id)===profileId)?.[1]||entries.find(([,candidate])=>String(candidate?.cute_name||candidate?.name||'').toLowerCase()===profileName)?.[1];
-  const members=selected?.members||{},playerUuid=normalizedUuid(target.player.uuid),member=members[playerUuid]||Object.entries(members).find(([id])=>normalizedUuid(id)===playerUuid)?.[1],sacks=member?.sack;
-  if(!sacks||typeof sacks!=='object'||Array.isArray(sacks))return target;
-  for(const [id,amount] of Object.entries(sacks))addItemCount(target.items.counts,id,amount);
-  target.rawSignals.sacksAvailable=true;
-  target.source='public-web+soopy-sacks';
+  if(!selected)return target;
+  const members=selected.members||{},allowedMembers=new Set(target.profile.memberUuids||[]),memberEntries=(Array.isArray(members)?members.map(member=>[member.uuid,member]):Object.entries(members)).filter(([id])=>!allowedMembers.size||allowedMembers.has(normalizedUuid(id))),collectionsMerged=mergeSoopyCollections(target,memberEntries),playerUuid=normalizedUuid(target.player.uuid),member=memberEntries.find(([id])=>normalizedUuid(id)===playerUuid)?.[1],sacks=member?.sack;
+  if(sacks&&typeof sacks==='object'&&!Array.isArray(sacks)){for(const [id,amount] of Object.entries(sacks))addItemCount(target.items.counts,id,amount);target.rawSignals.sacksAvailable=true}
+  if(collectionsMerged||target.rawSignals.sacksAvailable)target.source='public-web+soopy';
   return target
 }
 async function fetchSoopyProfile(uuid){
@@ -225,7 +237,7 @@ async function fetchPublicStrandedProfile(username,profileName=''){
   const detailRequest=fetch(`${PUBLIC_PROFILE_API}/player/${encodeURIComponent(username)}/${encodeURIComponent(chosen.name)}?customization=true`),soopyRequest=fetchSoopyProfile(summary.player?.uuid);
   const [detailResponse,soopyData]=await Promise.all([detailRequest,soopyRequest]),detail=await detailResponse.json().catch(()=>null);
   if(!detailResponse.ok)throw new Error(detail?.error||'The Stranded profile could not be loaded.');
-  return mergeSoopySacks(normalizePublicProfile(detail),soopyData);
+  return mergeSoopyProfile(normalizePublicProfile(detail),soopyData);
 }
 function showProfileChoices(username,profiles){profileOptionsUsername=username.toLowerCase();$('#profileSelect').innerHTML=profiles.map(candidate=>`<option value="${escapeHtml(candidate.name)}">${escapeHtml(candidate.name)}</option>`).join('');$('#profileChoiceField').hidden=false}
 function hideProfileChoices(){profileOptionsUsername='';$('#profileChoiceField').hidden=true;$('#profileSelect').innerHTML=''}
