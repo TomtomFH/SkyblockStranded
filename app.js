@@ -165,6 +165,7 @@ function updateRecombobulationSummary(){const records=profile.items?.accessories
 const PUBLIC_PROFILE_API='https://statsapi.tem.cx';
 const SOOPY_PROFILE_API='https://soopy.dev/api/v2/player_skyblock';
 const PROFILE_ENRICHMENT_TIMEOUT_MS=8000;
+const LAST_PROFILE_STORAGE_KEY='stranded-index-last-profile';
 const collectionAliases={OAK_LOG:'LOG',SPRUCE_LOG:'LOG:1',BIRCH_LOG:'LOG:2',JUNGLE_LOG:'LOG:3',ACACIA_LOG:'LOG_2',DARK_OAK_LOG:'LOG_2:1',COCOA_BEANS:'INK_SACK:3',LAPIS_LAZULI:'INK_SACK:4',POTATO:'POTATO_ITEM',PORKCHOP:'PORK',CHICKEN:'RAW_CHICKEN',COD:'RAW_FISH',END_STONE:'ENDER_STONE',NETHER_WART:'NETHER_STALK',CLAY:'CLAY_BALL',GLOWSTONE:'GLOWSTONE_DUST'};
 const stripFormatting=value=>String(value||'').replace(/§[0-9A-FK-OR]/gi,'');
 const accessoryRarityPattern=/(VERY SPECIAL|SPECIAL|DIVINE|MYTHIC|LEGENDARY|EPIC|RARE|UNCOMMON|COMMON)\s+(?:ACCESSORY|HATC?CESSORY)/i;
@@ -188,12 +189,13 @@ function validateSkyOceanStorage(input){
   return{...input,playerUuid:String(input.playerUuid||''),profile:String(input.profile||''),counts,source:input.source&&typeof input.source==='object'?input.source:{}}
 }
 function updateSkyOceanStorageUi(){
-  const imported=profile?.skyOceanStorage,status=$('#skyOceanStorageStatus'),clear=$('#clearSkyOceanImport'),open=$('#openSkyOceanImport');
-  if(!status||!clear||!open)return;
-  if(!imported){status.textContent='No chest index imported';clear.hidden=true;open.textContent='Import chest data';return}
+  const imported=profile?.skyOceanStorage,status=$('#skyOceanStorageStatus'),clear=$('#clearSkyOceanImport'),importButton=$('#importSkyOceanStorage');
+  if(!status||!clear||!importButton)return;
+  status.classList.remove('error');
+  if(!imported){status.textContent='Run \\exportstorage, then click Import';clear.disabled=true;return}
   const itemTypes=Object.keys(imported.counts||{}).length,slots=Number(imported.source?.nonemptySlots)||0,indexedAt=Date.parse(imported.source?.indexedAt||'');
   status.textContent=`${itemTypes.toLocaleString()} item types · ${slots.toLocaleString()} occupied slots${Number.isFinite(indexedAt)?` · indexed ${new Date(indexedAt).toLocaleString()}`:''}`;
-  clear.hidden=false;open.textContent='Refresh chest data'
+  clear.disabled=false
 }
 function applySkyOceanStorage(raw,{persist=true,refresh=true}={}){
   if(!profile)throw new Error('Load the matching Stranded profile first.');
@@ -217,6 +219,18 @@ function removeSkyOceanStorage(){
   delete profile.items.skyOceanBaseCounts;delete profile.skyOceanStorage;profile.rawSignals.skyOceanStorageAvailable=false;
   try{localStorage.removeItem(key)}catch{}
   updateProfileSummary()
+}
+async function importSkyOceanStorageFromClipboard(){
+  const button=$('#importSkyOceanStorage'),status=$('#skyOceanStorageStatus');
+  button.disabled=true;button.textContent='Importing…';status.classList.remove('error');
+  try{
+    const text=(await navigator.clipboard.readText()).trim();
+    if(!text)throw new Error('The clipboard is empty. Run \\exportstorage in Minecraft first.');
+    applySkyOceanStorage(JSON.parse(text))
+  }catch(problem){
+    status.textContent=problem instanceof SyntaxError?'The clipboard does not contain a valid \\exportstorage result.':problem.message;
+    status.classList.add('error')
+  }finally{button.disabled=false;button.textContent='Import'}
 }
 function catalogItemForProfileId(id){const direct=accessories.find(item=>(item.profileIds||[item.id]).includes(id));if(direct)return direct;const family=Object.entries(familyUpgrades).find(([,ids])=>ids.includes(id))?.[0];return family?familyMembers(family).at(-1)||null:null}
 function normalizePublicProfile(data){
@@ -284,14 +298,30 @@ function showProfileChoices(username,profiles){profileOptionsUsername=username.t
 function hideProfileChoices(){profileOptionsUsername='';$('#profileChoiceField').hidden=true;$('#profileSelect').innerHTML=''}
 function updateProfileSubmitLabel(button=$('#profileForm').querySelector('button')){button.innerHTML=$('#profileChoiceField').hidden?'Check profile <span>→</span>':'Load profile <span>→</span>'}
 function updateProfileSummary(){const obtainable=obtainableAccessories(),statuses=obtainable.map(itemStatus),ownedObtainable=statuses.filter(status=>status==='owned').length,ownedLegacy=accessories.filter(item=>item.legacy&&ownsItem(item)).length,ready=statuses.filter(status=>status==='ready').length;$('#ownedCount').textContent=ownedObtainable+ownedLegacy;$('#upgradeCount').textContent=ready;$('#missingCount').textContent=obtainable.length-ownedObtainable;$('#magicPower').textContent=Number.isFinite(profile.stats?.magicalPower)?profile.stats.magicalPower.toLocaleString():'—';const percent=Math.round(ownedObtainable/obtainable.length*100),legacyNote=ownedLegacy?` · ${ownedLegacy} legacy owned`:'';$('#completionText').textContent=`${percent}% of obtainable accessories found${legacyNote}`;$('#completionBar').style.width=`${percent}%`;$('#playerName').textContent=profile.player.username;$('#profileMeta').textContent=`${profile.profile.name} · ${profile.profile.mode} · live web data`;$('#playerAvatar').style.backgroundImage=`url(https://mc-heads.net/avatar/${profile.player.uuid}/64)`;const sackNotice=profile.rawSignals.sacksAvailable?' Sack contents are included through Soopy for material and crafting checks.':' Sack contents could not be loaded, so material and crafting checks may be incomplete.',chestNotice=profile.rawSignals.skyOceanStorageAvailable?' SkyOcean’s cached island-chest materials are also included.':' Island chests are not included unless you import a SkyOcean chest index.';$('#apiNotice').textContent=profile.rawSignals.inventoryAvailable?`Ownership and craft checks use the profile’s API-visible inventory, Ender Chest, Accessory Bag, and Personal Vault.${sackNotice}${chestNotice} Accessory Power and recombobulation use only the highest tier in each family; duplicate and lower-tier copies are ignored. Legacy accessories are excluded from availability totals and appear only when owned. Pet rarity and level come from the live profile. Hunting Box Attribute levels remain user-entered.${profile.rawSignals.accessoryMetadataAvailable?' Recombobulation checks use each accessory’s decoded rarity marker.':''}`:'Inventory data was not returned, so ownership and material checks may be incomplete.';$('#profilePanel').hidden=false;statusFilter.hidden=false;updateSkyOceanStorageUi();updateRecombobulationSummary();render();renderMinions();renderPets();renderAttributes();renderVillagerTrades()}
-$('#profileForm').addEventListener('submit',async event=>{event.preventDefault();const button=event.currentTarget.querySelector('button'),error=$('#profileError'),username=$('#playerInput').value.trim(),chosenProfile=profileOptionsUsername===username.toLowerCase()?$('#profileSelect').value:'';button.disabled=true;button.textContent='Checking…';error.hidden=true;try{const result=await fetchPublicStrandedProfile(username,chosenProfile);if(result.selectionRequired){showProfileChoices(username,result.profiles);$('#profilePanel').hidden=true;updateProfileSubmitLabel(button);return}profile=result;restoreSavedSkyOceanStorage();updateProfileSummary()}catch(problem){error.textContent=problem.message;error.hidden=false}finally{button.disabled=false;updateProfileSubmitLabel(button)}});
+async function loadProfile(username,chosenProfile=''){
+  const button=$('#profileForm').querySelector('button'),error=$('#profileError');
+  $('#playerInput').value=username;button.disabled=true;button.textContent='Checking…';error.hidden=true;
+  try{
+    const result=await fetchPublicStrandedProfile(username,chosenProfile);
+    if(result.selectionRequired){showProfileChoices(username,result.profiles);$('#profilePanel').hidden=true;updateProfileSubmitLabel(button);return false}
+    profile=result;hideProfileChoices();restoreSavedSkyOceanStorage();updateProfileSummary();
+    try{localStorage.setItem(LAST_PROFILE_STORAGE_KEY,JSON.stringify({username:profile.player.username,profile:profile.profile.name}))}catch{}
+    return true
+  }catch(problem){error.textContent=problem.message;error.hidden=false;return false}
+  finally{button.disabled=false;updateProfileSubmitLabel(button)}
+}
+async function restoreLastProfile(){
+  try{
+    const saved=JSON.parse(localStorage.getItem(LAST_PROFILE_STORAGE_KEY)||'null');
+    if(!saved||!/^[A-Za-z0-9_]{1,16}$/.test(saved.username)||typeof saved.profile!=='string')return false;
+    return await loadProfile(saved.username,saved.profile)
+  }catch{return false}
+}
+$('#profileForm').addEventListener('submit',async event=>{event.preventDefault();const username=$('#playerInput').value.trim(),chosenProfile=profileOptionsUsername===username.toLowerCase()?$('#profileSelect').value:'';await loadProfile(username,chosenProfile)});
 $('#playerInput').addEventListener('input',()=>{if(profileOptionsUsername&&profileOptionsUsername!==$('#playerInput').value.trim().toLowerCase()){hideProfileChoices();updateProfileSubmitLabel()}});
-$('#clearProfile').addEventListener('click',()=>{profile=null;hideProfileChoices();updateProfileSubmitLabel();$('#profilePanel').hidden=true;$('#recombPanel').hidden=true;statusFilter.hidden=true;statusFilter.value='all';render();renderMinions();renderPets();renderAttributes();renderVillagerTrades()});$('#rarityFilters').addEventListener('click',event=>{if(!event.target.dataset.rarity)return;activeRarity=event.target.dataset.rarity;document.querySelectorAll('#rarityFilters button').forEach(button=>button.classList.toggle('active',button===event.target));render()});[search,sourceFilter,statusFilter].forEach(element=>element.addEventListener('input',render));document.querySelectorAll('.view-toggle button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.view-toggle button').forEach(candidate=>candidate.classList.toggle('active',button===candidate));grid.classList.toggle('list-view',button.dataset.view==='list')}));
-$('#openSkyOceanImport').addEventListener('click',()=>{const dialog=$('#skyOceanImportDialog');$('#skyOceanImportText').value='';$('#skyOceanImportError').hidden=true;if(typeof dialog.showModal==='function')dialog.showModal()});
-$('#pasteSkyOceanImport').addEventListener('click',async()=>{const error=$('#skyOceanImportError');error.hidden=true;try{$('#skyOceanImportText').value=await navigator.clipboard.readText()}catch{error.textContent='Clipboard access was blocked. Click the text box and press Ctrl+V instead.';error.hidden=false}});
-$('#applySkyOceanImport').addEventListener('click',()=>{const error=$('#skyOceanImportError');error.hidden=true;try{const text=$('#skyOceanImportText').value.trim();if(!text)throw new Error('Paste the data copied by \\exportstorage first.');applySkyOceanStorage(JSON.parse(text));$('#skyOceanImportDialog').close()}catch(problem){error.textContent=problem instanceof SyntaxError?'The pasted text is not valid JSON. Run \\exportstorage again and copy the full result.':problem.message;error.hidden=false}});
-$('#clearSkyOceanImport').addEventListener('click',()=>{if(confirm('Remove the imported SkyOcean chest materials from this profile?'))removeSkyOceanStorage()});
-$('#skyOceanImportDialog').addEventListener('click',event=>{if(event.target===event.currentTarget)event.currentTarget.close()});
+$('#clearProfile').addEventListener('click',()=>{profile=null;try{localStorage.removeItem(LAST_PROFILE_STORAGE_KEY)}catch{}hideProfileChoices();updateProfileSubmitLabel();$('#profilePanel').hidden=true;$('#recombPanel').hidden=true;statusFilter.hidden=true;statusFilter.value='all';render();renderMinions();renderPets();renderAttributes();renderVillagerTrades()});$('#rarityFilters').addEventListener('click',event=>{if(!event.target.dataset.rarity)return;activeRarity=event.target.dataset.rarity;document.querySelectorAll('#rarityFilters button').forEach(button=>button.classList.toggle('active',button===event.target));render()});[search,sourceFilter,statusFilter].forEach(element=>element.addEventListener('input',render));document.querySelectorAll('.view-toggle button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.view-toggle button').forEach(candidate=>candidate.classList.toggle('active',button===candidate));grid.classList.toggle('list-view',button.dataset.view==='list')}));
+$('#importSkyOceanStorage').addEventListener('click',importSkyOceanStorageFromClipboard);
+$('#clearSkyOceanImport').addEventListener('click',removeSkyOceanStorage);
 $('.feature-tabs').addEventListener('click',event=>{const tab=event.target.dataset.tab;if(!tab)return;document.querySelectorAll('.feature-tabs button').forEach(button=>button.classList.toggle('active',button===event.target));$('#accessoriesTab').hidden=tab!=='accessories';$('#petsTab').hidden=tab!=='pets';$('#attributesTab').hidden=tab!=='attributes';$('#tradesTab').hidden=tab!=='trades';$('#minionsTab').hidden=tab!=='minions';$('#moneyTab').hidden=tab!=='money'});$('#minionCategories').addEventListener('click',event=>{if(!event.target.dataset.category)return;activeMinionCategory=event.target.dataset.category;document.querySelectorAll('#minionCategories button').forEach(button=>button.classList.toggle('active',button===event.target));renderMinions()});[$('#minionSearch'),$('#minionStatus'),$('#minionSort')].forEach(element=>element.addEventListener('input',renderMinions));
 $('#petRarities').addEventListener('click',event=>{if(!event.target.dataset.petRarity)return;activePetRarity=event.target.dataset.petRarity;document.querySelectorAll('#petRarities button').forEach(button=>button.classList.toggle('active',button===event.target));renderPets()});[$('#petSearch'),$('#petStatus'),$('#petSort')].forEach(element=>element.addEventListener('input',renderPets));
 $('#attributeRarities').addEventListener('click',event=>{if(!event.target.dataset.attributeRarity)return;activeAttributeRarity=event.target.dataset.attributeRarity;document.querySelectorAll('#attributeRarities button').forEach(button=>button.classList.toggle('active',button===event.target));renderAttributes()});[$('#attributeSearch'),$('#attributeStatus')].forEach(element=>element.addEventListener('input',renderAttributes));$('#attributeGrid').addEventListener('click',event=>{const button=event.target.closest('[data-attribute-id]');if(button)setAttributeLevel(button.dataset.attributeId,button.dataset.level)});$('#resetAttributes').addEventListener('click',()=>{if(confirm('Reset every saved Attribute level for this profile?')){try{localStorage.removeItem(attributeStorageKey())}catch{}renderAttributes()}});
@@ -315,4 +345,4 @@ function setCornerCatHidden(hidden,persist=true){const cat=$('#cornerCat'),toggl
 function initializeCornerCat(){let hidden=true;try{const saved=localStorage.getItem(CAT_VISIBILITY_KEY);if(saved!==null)hidden=saved==='true'}catch{}setCornerCatHidden(hidden,false);$('#catToggle').addEventListener('click',()=>setCornerCatHidden(!$('#cornerCat').hidden));$('#cornerCat').addEventListener('click',()=>setCornerCatHidden(true))}
 initializeMoneyCalculator();
 initializeCornerCat();
-loadCatalog().then(()=>{document.documentElement.dataset.appReady='ready'}).catch(error=>{document.documentElement.dataset.appReady='error';grid.innerHTML=`<div class="profile-error">${error.message}. Reload the page and try again.</div>`});
+loadCatalog().then(async()=>{document.documentElement.dataset.appReady='ready';await restoreLastProfile()}).catch(error=>{document.documentElement.dataset.appReady='error';grid.innerHTML=`<div class="profile-error">${error.message}. Reload the page and try again.</div>`});
