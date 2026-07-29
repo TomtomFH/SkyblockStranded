@@ -59,15 +59,15 @@
 .card.recombable:before{background:#b784ff;box-shadow:0 0 15px rgba(183,132,255,.55)}
 .card-status.recomb{color:#d0adff;padding:5px 8px;border:1px solid rgba(183,132,255,.38);border-radius:4px;background:rgba(154,94,225,.11)}
 .card.recombable.profiled .card-foot{padding-right:112px}
-.card.recombined-complete{border-color:rgba(119,233,255,.76);background:radial-gradient(circle at 12% 0,rgba(98,235,255,.2),transparent 42%),radial-gradient(circle at 92% 100%,rgba(190,116,255,.16),transparent 44%),linear-gradient(145deg,#102429,#141628);box-shadow:0 0 0 1px rgba(255,218,118,.14),0 10px 37px rgba(69,200,231,.18),inset 0 0 26px rgba(117,101,255,.08)}
-.card.recombined-complete:before{z-index:2;width:3px;background:linear-gradient(#ffe07c,#6eeaff,#bf83ff);box-shadow:0 0 18px rgba(112,231,255,.82)}
-.card.recombined-complete:after{content:"";position:absolute;z-index:0;inset:-142px;border-radius:inherit;background-image:repeating-linear-gradient(135deg,transparent 0 34px,rgba(112,231,255,.045) 48px,rgba(112,231,255,.1) 58px,rgba(255,222,122,.085) 70px,rgba(190,125,255,.08) 82px,transparent 106px,transparent 141.421px);transform:translate3d(0,0,0);will-change:transform;animation:recombinedScroll 4.2s linear infinite;pointer-events:none}
-.card.recombined-complete .item-icon{border-color:rgba(126,235,255,.55);box-shadow:0 0 21px rgba(105,226,255,.28),0 0 34px rgba(190,125,255,.12)}
-.card.recombined-complete .rarity{text-shadow:0 0 10px currentColor}
-.card.recombined-complete .card-status.completed{color:#a8f2ff;border-color:rgba(125,234,255,.48);background:linear-gradient(100deg,rgba(79,211,231,.14),rgba(176,102,240,.12));box-shadow:0 0 13px rgba(105,225,255,.1)}
-.card.recombined-complete.profiled .card-foot{padding-right:96px}
+.card.completion-gradient{border-color:rgba(119,233,255,.76);background:radial-gradient(circle at 12% 0,rgba(98,235,255,.2),transparent 42%),radial-gradient(circle at 92% 100%,rgba(190,116,255,.16),transparent 44%),linear-gradient(145deg,#102429,#141628);box-shadow:0 0 0 1px rgba(255,218,118,.14),0 10px 37px rgba(69,200,231,.18),inset 0 0 26px rgba(117,101,255,.08)}
+.card.completion-gradient:before{z-index:2;width:3px;background:linear-gradient(#ffe07c,#6eeaff,#bf83ff);box-shadow:0 0 18px rgba(112,231,255,.82)}
+.card.completion-gradient:after{content:"";position:absolute;z-index:0;inset:-142px;border-radius:inherit;background-image:repeating-linear-gradient(135deg,transparent 0 34px,rgba(112,231,255,.045) 48px,rgba(112,231,255,.1) 58px,rgba(255,222,122,.085) 70px,rgba(190,125,255,.08) 82px,transparent 106px,transparent 141.421px);transform:translate3d(0,0,0);will-change:transform;animation:recombinedScroll 4.2s linear infinite;pointer-events:none}
+.card.completion-gradient .item-icon{border-color:rgba(126,235,255,.55);box-shadow:0 0 21px rgba(105,226,255,.28),0 0 34px rgba(190,125,255,.12)}
+.card.completion-gradient .rarity{text-shadow:0 0 10px currentColor}
+.card.completion-gradient .card-status.completed{color:#a8f2ff;border-color:rgba(125,234,255,.48);background:linear-gradient(100deg,rgba(79,211,231,.14),rgba(176,102,240,.12));box-shadow:0 0 13px rgba(105,225,255,.1)}
+.card.completion-gradient.profiled .card-foot{padding-right:96px}
 .card.legacy-card{border-style:dashed}
 @keyframes recombinedScroll{to{transform:translate3d(-141.421px,-141.421px,0)}}
-.card.recombined-complete.recomb-animation-paused:after{animation-play-state:paused;will-change:auto}
-@media(prefers-reduced-motion:reduce){.card.recombined-complete,.card.recombined-complete:after{animation:none}}
+.card.completion-gradient.completion-animation-paused:after{animation-play-state:paused;will-change:auto}
+@media(prefers-reduced-motion:reduce){.card.completion-gradient,.card.completion-gradient:after{animation:none}}
 @media(max-width:700px){.recomb-heading{align-items:flex-start;flex-direction:column;gap:7px}.recomb-candidate{width:100%;justify-content:space-between}}
