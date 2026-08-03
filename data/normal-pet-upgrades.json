@@ -1,0 +1,2871 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-03T05:46:29.679Z",
+  "sourceSnapshot": "NotEnoughUpdates Kat recipes",
+  "upgrades": {
+    "ARMADILLO": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 10000,
+        "timeSeconds": 10800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 30000,
+        "timeSeconds": 36000,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 250000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 1000000,
+        "timeSeconds": 432000,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 1000000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "FROZEN_SCUTE",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "BABY_YETI": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 50000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ICE_HUNK",
+            "amount": 32
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 100000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ICE_HUNK",
+            "amount": 64
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 250000,
+        "timeSeconds": 259200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ICE_HUNK",
+            "amount": 128
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 500000,
+        "timeSeconds": 345600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "BLUE_ICE_HUNK",
+            "amount": 8
+          }
+        ]
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 1000000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "POCKET_SIZED_IGLOO",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "BAL": [
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 2000000,
+        "timeSeconds": 864000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "YOGGIE",
+            "amount": 100
+          }
+        ]
+      }
+    ],
+    "BAT": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 5000,
+        "timeSeconds": 300,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "RED_MUSHROOM",
+            "amount": 256
+          },
+          {
+            "id": "BROWN_MUSHROOM",
+            "amount": 256
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 10000,
+        "timeSeconds": 600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RED_MUSHROOM",
+            "amount": 4
+          },
+          {
+            "id": "ENCHANTED_BROWN_MUSHROOM",
+            "amount": 4
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 25000,
+        "timeSeconds": 900,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RED_MUSHROOM",
+            "amount": 8
+          },
+          {
+            "id": "ENCHANTED_BROWN_MUSHROOM",
+            "amount": 8
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 50000,
+        "timeSeconds": 1800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RED_MUSHROOM",
+            "amount": 16
+          },
+          {
+            "id": "ENCHANTED_BROWN_MUSHROOM",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 100000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RED_MUSHROOM",
+            "amount": 32
+          },
+          {
+            "id": "ENCHANTED_BROWN_MUSHROOM",
+            "amount": 32
+          },
+          {
+            "id": "PET_ITEM_VAMPIRE_FANG",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "BEE": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 0,
+        "timeSeconds": 60,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "SMALL_HONEY_DIPPER",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 0,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "MEDIUM_HONEY_DIPPER",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 0,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "LARGE_HONEY_DIPPER",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 0,
+        "timeSeconds": 259200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "GIANT_HONEY_DIPPER",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 10000000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ROYAL_JELLY",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "BLACK_CAT": [
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 1000000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "BLACK_WOOLEN_YARN",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "BLAZE": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 250000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_BLAZE_POWDER",
+            "amount": 128
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 500000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_BLAZE_POWDER",
+            "amount": 256
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 1000000,
+        "timeSeconds": 259200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_BLAZE_POWDER",
+            "amount": 512
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 2500000,
+        "timeSeconds": 432000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_BLAZE_ROD",
+            "amount": 8
+          }
+        ]
+      }
+    ],
+    "BLUE_WHALE": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 15000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 75000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 900000,
+        "timeSeconds": 604800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_COOKED_FISH",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 9000000,
+        "timeSeconds": 1036800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_COOKED_FISH",
+            "amount": 8
+          }
+        ]
+      }
+    ],
+    "CHICKEN": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 500,
+        "timeSeconds": 10,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "RAW_CHICKEN",
+            "amount": 128
+          },
+          {
+            "id": "FEATHER",
+            "amount": 128
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 2500,
+        "timeSeconds": 20,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "RAW_CHICKEN",
+            "amount": 256
+          },
+          {
+            "id": "FEATHER",
+            "amount": 256
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 5000,
+        "timeSeconds": 30,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "RAW_CHICKEN",
+            "amount": 512
+          },
+          {
+            "id": "FEATHER",
+            "amount": 512
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 10000,
+        "timeSeconds": 45,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RAW_CHICKEN",
+            "amount": 8
+          },
+          {
+            "id": "ENCHANTED_FEATHER",
+            "amount": 8
+          }
+        ]
+      }
+    ],
+    "CROW": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 250000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_MOONFLOWER",
+            "amount": 128
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 1000000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "COMPACTED_MOONFLOWER",
+            "amount": 4
+          },
+          {
+            "id": "VEILSHROOM",
+            "amount": 2
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 5000000,
+        "timeSeconds": 259200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "COMPACTED_MOONFLOWER",
+            "amount": 8
+          },
+          {
+            "id": "DUSKBLOOM",
+            "amount": 4
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 10000000,
+        "timeSeconds": 432000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "COMPACTED_MOONFLOWER",
+            "amount": 16
+          },
+          {
+            "id": "DO_NOT_EAT_SHROOM",
+            "amount": 8
+          }
+        ]
+      }
+    ],
+    "DOLPHIN": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 100000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 1000000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 10000000,
+        "timeSeconds": 604800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 50000000,
+        "timeSeconds": 1209600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RAW_FISH",
+            "amount": 16
+          }
+        ]
+      }
+    ],
+    "ELEPHANT": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 15000,
+        "timeSeconds": 21600,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 75000,
+        "timeSeconds": 72000,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 900000,
+        "timeSeconds": 432000,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 14000000,
+        "timeSeconds": 864000,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 12500000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "TRUNK_POLISH",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "ENDER_DRAGON": [
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 400000000,
+        "timeSeconds": 1728000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "SUMMONING_EYE",
+            "amount": 8
+          }
+        ]
+      }
+    ],
+    "ENDERMAN": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 1000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 5000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 10000,
+        "timeSeconds": 518400,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 40000000,
+        "timeSeconds": 1036800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_EYE_OF_ENDER",
+            "amount": 8
+          }
+        ]
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 1000000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENDERMAN_CORTEX_REWRITER",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "ENDERMITE": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 5000,
+        "timeSeconds": 300,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENDER_STONE",
+            "amount": 512
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 10000,
+        "timeSeconds": 600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_ENDSTONE",
+            "amount": 8
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 25000,
+        "timeSeconds": 900,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_ENDSTONE",
+            "amount": 16
+          },
+          {
+            "id": "MITE_GEL",
+            "amount": 32
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 50000,
+        "timeSeconds": 1800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_ENDSTONE",
+            "amount": 32
+          },
+          {
+            "id": "MITE_GEL",
+            "amount": 64
+          }
+        ]
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 100000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "MIXED_MITE_GEL",
+            "amount": 1
+          },
+          {
+            "id": "ENCHANTED_ENDSTONE",
+            "amount": 64
+          }
+        ]
+      }
+    ],
+    "FLYING_FISH": [
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 250000,
+        "timeSeconds": 432000,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 1000000,
+        "timeSeconds": 864000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RAW_FISH",
+            "amount": 64
+          }
+        ]
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 1000000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "RADIOACTIVE_VIAL",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "FROG": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 10000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "SMALL_FROG_TREAT",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 50000,
+        "timeSeconds": 7200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "MEDIUM_FROG_TREAT",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 100000,
+        "timeSeconds": 10800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "LARGE_FROG_TREAT",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 200000,
+        "timeSeconds": 14400,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "GIANT_FROG_TREAT",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 1000000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": []
+      }
+    ],
+    "GHOUL": [
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 5000000,
+        "timeSeconds": 864000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "REVENANT_FLESH",
+            "amount": 512
+          }
+        ]
+      }
+    ],
+    "GIRAFFE": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 15000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_ACACIA_LOG",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 75000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_ACACIA_LOG",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 900000,
+        "timeSeconds": 604800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_ACACIA_LOG",
+            "amount": 128
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 9000000,
+        "timeSeconds": 1036800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_ACACIA_LOG",
+            "amount": 512
+          }
+        ]
+      }
+    ],
+    "GLACIAL_WISP": [
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 0,
+        "timeSeconds": 0,
+        "method": "Wisp Upgrade Stone",
+        "requirements": [
+          {
+            "id": "UPGRADE_STONE_FROST",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 0,
+        "timeSeconds": 0,
+        "method": "Wisp Upgrade Stone",
+        "requirements": [
+          {
+            "id": "UPGRADE_STONE_GLACIAL",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "GLACITE_GOLEM": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 250000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_GLACITE",
+            "amount": 128
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 500000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_GLACITE",
+            "amount": 256
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 1000000,
+        "timeSeconds": 259200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_GLACITE",
+            "amount": 512
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 2500000,
+        "timeSeconds": 432000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "GLACITE_AMALGAMATION",
+            "amount": 8
+          }
+        ]
+      }
+    ],
+    "GOLEM": [
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 10000000,
+        "timeSeconds": 1728000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_IRON_BLOCK",
+            "amount": 8
+          }
+        ]
+      }
+    ],
+    "GRIFFIN": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 100,
+        "timeSeconds": 60,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "GRIFFIN_UPGRADE_STONE_UNCOMMON",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 10000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "GRIFFIN_UPGRADE_STONE_RARE",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 250000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "GRIFFIN_UPGRADE_STONE_EPIC",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 500000,
+        "timeSeconds": 259200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "GRIFFIN_UPGRADE_STONE_LEGENDARY",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 1000000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "GRIFFIN_UPGRADE_STONE_MYTHIC",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "GUARDIAN": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 20000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 100000,
+        "timeSeconds": 21600,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 500000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 3000000,
+        "timeSeconds": 432000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_PRISMARINE_SHARD",
+            "amount": 64
+          }
+        ]
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 1000000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "GUARDIAN_LUCKY_BLOCK",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "HERMIT_CRAB": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 10000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "RUSTY_COIN",
+            "amount": 4
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 50000,
+        "timeSeconds": 7200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "RUSTY_COIN",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 200000,
+        "timeSeconds": 21600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "BUSTED_BELT_BUCKLE",
+            "amount": 8
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 1000000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "OLD_LEATHER_BOOT",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 1000000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "SCUTTLER_SHELL",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "HORSE": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 500,
+        "timeSeconds": 10,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "LEATHER",
+            "amount": 128
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 2500,
+        "timeSeconds": 20,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "LEATHER",
+            "amount": 256
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 5000,
+        "timeSeconds": 30,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "LEATHER",
+            "amount": 512
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 10000,
+        "timeSeconds": 45,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_LEATHER",
+            "amount": 8
+          }
+        ]
+      }
+    ],
+    "HOUND": [
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 5000000,
+        "timeSeconds": 864000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "WOLF_TOOTH",
+            "amount": 512
+          }
+        ]
+      }
+    ],
+    "JELLYFISH": [
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 15000000,
+        "timeSeconds": 864000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_SLIME_BALL",
+            "amount": 16
+          }
+        ]
+      }
+    ],
+    "JERRY": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 500,
+        "timeSeconds": 10,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ASSISTANT",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 2500,
+        "timeSeconds": 20,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ASSISTANT",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 5000,
+        "timeSeconds": 30,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ASSISTANT",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 10000,
+        "timeSeconds": 45,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ASSISTANT",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 25000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "PET_ITEM_TOY_JERRY",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "LION": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 15000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 75000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 900000,
+        "timeSeconds": 604800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 14000000,
+        "timeSeconds": 1036800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RAW_BEEF",
+            "amount": 1024
+          }
+        ]
+      }
+    ],
+    "MAGMA_CUBE": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 2500,
+        "timeSeconds": 7200,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 5000,
+        "timeSeconds": 72000,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 100000,
+        "timeSeconds": 432000,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 500000,
+        "timeSeconds": 864000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_MAGMA_CREAM",
+            "amount": 16
+          }
+        ]
+      }
+    ],
+    "MEGALODON": [
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 10000000,
+        "timeSeconds": 1728000,
+        "method": "Kat",
+        "requirements": []
+      }
+    ],
+    "MITHRIL_GOLEM": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 5000,
+        "timeSeconds": 300,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "MITHRIL_ORE",
+            "amount": 512
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 10000,
+        "timeSeconds": 600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_MITHRIL",
+            "amount": 8
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 25000,
+        "timeSeconds": 900,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_MITHRIL",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 50000,
+        "timeSeconds": 1800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_MITHRIL",
+            "amount": 32
+          }
+        ]
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 100000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "PET_ITEM_PURE_MITHRIL_GEM",
+            "amount": 1
+          },
+          {
+            "id": "ENCHANTED_MITHRIL",
+            "amount": 64
+          }
+        ]
+      }
+    ],
+    "MONKEY": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 15000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 75000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 900000,
+        "timeSeconds": 604800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 17000000,
+        "timeSeconds": 1036800,
+        "method": "Kat",
+        "requirements": []
+      }
+    ],
+    "MOOSHROOM_COW": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 25000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_MYCELIUM",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 50000,
+        "timeSeconds": 10800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_MYCELIUM",
+            "amount": 32
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 100000,
+        "timeSeconds": 21600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "DIGESTED_MUSHROOMS",
+            "amount": 32
+          },
+          {
+            "id": "ENCHANTED_MYCELIUM",
+            "amount": 64
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 250000,
+        "timeSeconds": 43200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_MYCELIUM",
+            "amount": 128
+          },
+          {
+            "id": "DIGESTED_MUSHROOMS",
+            "amount": 64
+          }
+        ]
+      }
+    ],
+    "MOSQUITO": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 250000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "TARANTULA_SILK",
+            "amount": 8
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 500000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "TARANTULA_SILK",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 1000000,
+        "timeSeconds": 259200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "TARANTULA_SILK",
+            "amount": 32
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 2500000,
+        "timeSeconds": 432000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "TARANTULA_SILK",
+            "amount": 64
+          }
+        ]
+      }
+    ],
+    "OCELOT": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 5000,
+        "timeSeconds": 300,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "LOG-3",
+            "amount": 512
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 10000,
+        "timeSeconds": 600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_JUNGLE_LOG",
+            "amount": 8
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 25000,
+        "timeSeconds": 900,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_JUNGLE_LOG",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 50000,
+        "timeSeconds": 1800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_JUNGLE_LOG",
+            "amount": 32
+          }
+        ]
+      }
+    ],
+    "ORCHID_MANTIS": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 250000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "FLORAL_GELATIN",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 500000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "FLORAL_GELATIN",
+            "amount": 32
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 1000000,
+        "timeSeconds": 259200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "FLORAL_GELATIN",
+            "amount": 48
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 2500000,
+        "timeSeconds": 432000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "FLORAL_GELATIN",
+            "amount": 64
+          }
+        ]
+      }
+    ],
+    "PARROT": [
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 15000000,
+        "timeSeconds": 864000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_FEATHER",
+            "amount": 16
+          }
+        ]
+      }
+    ],
+    "PHOENIX": [
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 100000000,
+        "timeSeconds": 1728000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_BLAZE_POWDER",
+            "amount": 1024
+          }
+        ]
+      }
+    ],
+    "PIG": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 100,
+        "timeSeconds": 60,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "SMALL_PIG_EAR",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 10000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "MEDIUM_PIG_EAR",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 250000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "LARGE_PIG_EAR",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 500000,
+        "timeSeconds": 259200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "GIANT_PIG_EAR",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "PIGMAN": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 25000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_PORK",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 50000,
+        "timeSeconds": 10800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_PORK",
+            "amount": 32
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 100000,
+        "timeSeconds": 21600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_PORK",
+            "amount": 64
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 250000,
+        "timeSeconds": 43200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_PORK",
+            "amount": 128
+          }
+        ]
+      }
+    ],
+    "RABBIT": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 5000,
+        "timeSeconds": 300,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "RABBIT",
+            "amount": 512
+          },
+          {
+            "id": "RABBIT_HIDE",
+            "amount": 256
+          },
+          {
+            "id": "RABBIT_FOOT",
+            "amount": 256
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 10000,
+        "timeSeconds": 600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RABBIT",
+            "amount": 8
+          },
+          {
+            "id": "ENCHANTED_RABBIT_HIDE",
+            "amount": 4
+          },
+          {
+            "id": "ENCHANTED_RABBIT_FOOT",
+            "amount": 4
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 25000,
+        "timeSeconds": 900,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RABBIT",
+            "amount": 16
+          },
+          {
+            "id": "ENCHANTED_RABBIT_HIDE",
+            "amount": 8
+          },
+          {
+            "id": "ENCHANTED_RABBIT_FOOT",
+            "amount": 8
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 50000,
+        "timeSeconds": 1800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RABBIT",
+            "amount": 32
+          },
+          {
+            "id": "ENCHANTED_RABBIT_HIDE",
+            "amount": 16
+          },
+          {
+            "id": "ENCHANTED_RABBIT_FOOT",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 100000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RABBIT",
+            "amount": 64
+          },
+          {
+            "id": "ENCHANTED_RABBIT_HIDE",
+            "amount": 32
+          },
+          {
+            "id": "ENCHANTED_RABBIT_FOOT",
+            "amount": 32
+          },
+          {
+            "id": "PET_ITEM_CHOCOLATE_SYRINGE",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "RAT": [
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 1000000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "RAT_JETPACK",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "ROCK": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 100000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 1000000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 10000000,
+        "timeSeconds": 604800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 50000000,
+        "timeSeconds": 1209600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_COBBLESTONE",
+            "amount": 64
+          }
+        ]
+      }
+    ],
+    "SCATHA": [
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 125000000,
+        "timeSeconds": 604800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_HARD_STONE",
+            "amount": 64
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 250000000,
+        "timeSeconds": 1209600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_HARD_STONE",
+            "amount": 256
+          }
+        ]
+      }
+    ],
+    "SEAL": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 100,
+        "timeSeconds": 60,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "SMALL_SEAL_PLUSHIE",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 10000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "MEDIUM_SEAL_PLUSHIE",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 250000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "LARGE_SEAL_PLUSHIE",
+            "amount": 1
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 500000,
+        "timeSeconds": 259200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "GIANT_SEAL_PLUSHIE",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "SHEEP": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 5000,
+        "timeSeconds": 300,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "MUTTON",
+            "amount": 512
+          },
+          {
+            "id": "WOOL",
+            "amount": 512
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 10000,
+        "timeSeconds": 600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_MUTTON",
+            "amount": 8
+          },
+          {
+            "id": "ENCHANTED_WOOL",
+            "amount": 8
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 25000,
+        "timeSeconds": 900,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_MUTTON",
+            "amount": 16
+          },
+          {
+            "id": "ENCHANTED_WOOL",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 50000,
+        "timeSeconds": 1800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_MUTTON",
+            "amount": 32
+          },
+          {
+            "id": "ENCHANTED_WOOL",
+            "amount": 32
+          }
+        ]
+      }
+    ],
+    "SILVERFISH": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 500,
+        "timeSeconds": 10,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "COBBLESTONE",
+            "amount": 128
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 1000,
+        "timeSeconds": 20,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "COBBLESTONE",
+            "amount": 256
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 5000,
+        "timeSeconds": 30,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "COBBLESTONE",
+            "amount": 512
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 10000,
+        "timeSeconds": 45,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_COBBLESTONE",
+            "amount": 8
+          }
+        ]
+      }
+    ],
+    "SKELETON": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 5000,
+        "timeSeconds": 300,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "BONE",
+            "amount": 512
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 10000,
+        "timeSeconds": 600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_BONE",
+            "amount": 8
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 25000,
+        "timeSeconds": 900,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_BONE",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 50000,
+        "timeSeconds": 1800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_BONE",
+            "amount": 32
+          }
+        ]
+      }
+    ],
+    "SLUG": [
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 10000000,
+        "timeSeconds": 604800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_COMPOST",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "SNAIL": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 25000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RED_SAND",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 50000,
+        "timeSeconds": 10800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RED_SAND",
+            "amount": 32
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 100000,
+        "timeSeconds": 21600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "BURNING_EYE",
+            "amount": 32
+          },
+          {
+            "id": "ENCHANTED_RED_SAND",
+            "amount": 64
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 250000,
+        "timeSeconds": 43200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "BURNING_EYE",
+            "amount": 64
+          },
+          {
+            "id": "ENCHANTED_RED_SAND",
+            "amount": 128
+          }
+        ]
+      }
+    ],
+    "SNOWMAN": [
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 1000000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "MAGIC_TOP_HAT",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "SPIDER": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 5000,
+        "timeSeconds": 300,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "STRING",
+            "amount": 512
+          },
+          {
+            "id": "SPIDER_EYE",
+            "amount": 256
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 10000,
+        "timeSeconds": 600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_STRING",
+            "amount": 8
+          },
+          {
+            "id": "ENCHANTED_SPIDER_EYE",
+            "amount": 4
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 25000,
+        "timeSeconds": 900,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_STRING",
+            "amount": 16
+          },
+          {
+            "id": "ENCHANTED_SPIDER_EYE",
+            "amount": 8
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 50000,
+        "timeSeconds": 1800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_STRING",
+            "amount": 32
+          },
+          {
+            "id": "ENCHANTED_SPIDER_EYE",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 100000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_STRING",
+            "amount": 64
+          },
+          {
+            "id": "ENCHANTED_SPIDER_EYE",
+            "amount": 32
+          },
+          {
+            "id": "FAKE_NEUROSCIENCE_DEGREE",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "SPIRIT": [
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 5000000,
+        "timeSeconds": 864000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_GHAST_TEAR",
+            "amount": 64
+          }
+        ]
+      }
+    ],
+    "SQUID": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 20000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 100000,
+        "timeSeconds": 21600,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 500000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 3000000,
+        "timeSeconds": 432000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_INK_SACK",
+            "amount": 64
+          }
+        ]
+      }
+    ],
+    "TARANTULA": [
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 5000000,
+        "timeSeconds": 864000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "TARANTULA_WEB",
+            "amount": 512
+          }
+        ]
+      },
+      {
+        "from": "LEGENDARY",
+        "to": "MYTHIC",
+        "coins": 1000000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "FAKE_NEUROSCIENCE_DEGREE",
+            "amount": 1
+          }
+        ]
+      }
+    ],
+    "TIGER": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 15000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 75000,
+        "timeSeconds": 172800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 900000,
+        "timeSeconds": 604800,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 14000000,
+        "timeSeconds": 1036800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RAW_CHICKEN",
+            "amount": 1024
+          }
+        ]
+      }
+    ],
+    "TURTLE": [
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 15000000,
+        "timeSeconds": 864000,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_RAW_FISH",
+            "amount": 16
+          }
+        ]
+      }
+    ],
+    "WITCH": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 100,
+        "timeSeconds": 60,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 10000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 250000,
+        "timeSeconds": 86400,
+        "method": "Kat",
+        "requirements": []
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 500000,
+        "timeSeconds": 259200,
+        "method": "Kat",
+        "requirements": []
+      }
+    ],
+    "WITHER_SKELETON": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 25000,
+        "timeSeconds": 3600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_COAL",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 50000,
+        "timeSeconds": 10800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_COAL",
+            "amount": 32
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 100000,
+        "timeSeconds": 21600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_COAL",
+            "amount": 64
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 250000,
+        "timeSeconds": 43200,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_COAL",
+            "amount": 128
+          }
+        ]
+      }
+    ],
+    "WOLF": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 5000,
+        "timeSeconds": 300,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "LOG-1",
+            "amount": 512
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 10000,
+        "timeSeconds": 600,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_SPRUCE_LOG",
+            "amount": 8
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 25000,
+        "timeSeconds": 900,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_SPRUCE_LOG",
+            "amount": 16
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 50000,
+        "timeSeconds": 1800,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_SPRUCE_LOG",
+            "amount": 32
+          }
+        ]
+      }
+    ],
+    "ZOMBIE": [
+      {
+        "from": "COMMON",
+        "to": "UNCOMMON",
+        "coins": 500,
+        "timeSeconds": 10,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ROTTEN_FLESH",
+            "amount": 128
+          }
+        ]
+      },
+      {
+        "from": "UNCOMMON",
+        "to": "RARE",
+        "coins": 1000,
+        "timeSeconds": 20,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ROTTEN_FLESH",
+            "amount": 256
+          }
+        ]
+      },
+      {
+        "from": "RARE",
+        "to": "EPIC",
+        "coins": 2500,
+        "timeSeconds": 30,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ROTTEN_FLESH",
+            "amount": 512
+          }
+        ]
+      },
+      {
+        "from": "EPIC",
+        "to": "LEGENDARY",
+        "coins": 5000,
+        "timeSeconds": 45,
+        "method": "Kat",
+        "requirements": [
+          {
+            "id": "ENCHANTED_ROTTEN_FLESH",
+            "amount": 8
+          }
+        ]
+      }
+    ]
+  }
+}

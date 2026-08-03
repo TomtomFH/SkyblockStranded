@@ -1,0 +1,703 @@
+{
+  "version": 1,
+  "generatedAt": "2026-08-03T05:46:29.679Z",
+  "sourceSnapshot": "NotEnoughUpdates pet data",
+  "pets": [
+    {
+      "id": "AMMONITE",
+      "name": "Ammonite",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/a074a7bd976fe6aba1624161793be547d54c835cf422243a851ba09d1e650553",
+      "note": "Fishing pet available on Normal profiles"
+    },
+    {
+      "id": "ANKYLOSAURUS",
+      "name": "Ankylosaurus",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/c1aa836b9096c417903299a6c5ab41738c19648ac439fed4bcbe6c32605338dc",
+      "note": "Skyblock pet available on Normal profiles"
+    },
+    {
+      "id": "ARMADILLO",
+      "name": "Armadillo",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/c1eb6df4736ae24dd12a3d00f91e6e3aa7ade6bbefb0978afef2f0f92461018f",
+      "note": "Mining pet available on Normal profiles"
+    },
+    {
+      "id": "BABY_YETI",
+      "name": "Baby Yeti",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/ef9f6a57d8f686fedd5185d178550913f48f91b57c9162d70d368b1fd9fe2b52",
+      "note": "Fishing pet available on Normal profiles"
+    },
+    {
+      "id": "BAL",
+      "name": "Bal",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/c469ba2047122e0a2de3c7437ad3dd5d31f1ac2d27abde9f8841e1d92a8c5b75",
+      "note": "Mining pet available on Normal profiles"
+    },
+    {
+      "id": "BAT",
+      "name": "Bat",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/377ade8afb257086fb1861da43c8ae468b8eb0578fada84303858517ba17217e",
+      "note": "Mining pet available on Normal profiles"
+    },
+    {
+      "id": "BEE",
+      "name": "Bee",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/9c72c132073ec5a058218d6fbfb4a9970652ced9214d53f4f614b3902fd99a7a",
+      "note": "Farming pet available on Normal profiles"
+    },
+    {
+      "id": "BINGO",
+      "name": "Bingo",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/d4cd9c707c7092d4759fe2b2b6a713215b6e39919ec4e7afb1ae2b6f8576674c",
+      "note": "All pet available on Normal profiles"
+    },
+    {
+      "id": "BLACK_CAT",
+      "name": "Black Cat",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/8282b5a9bbe2cd3223724023cd4f6ad413f5bb9e0edef81700b8afc3072d04a5",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "BLAZE",
+      "name": "Blaze",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/b78ef2e4cf2c41a2d14bfde9caff10219f5b1bf5b35a49eb51c6467882cb5f0",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "BLUE_WHALE",
+      "name": "Blue Whale",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/9ee72d3435c183dbdda2290cc8fcc9054b6e4d6e8f5338db4f4c1d9a30854b5d",
+      "note": "Fishing pet available on Normal profiles"
+    },
+    {
+      "id": "CHICKEN",
+      "name": "Chicken",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/c6e573262297df2bfa81562498a22a90478e5c96e80d05885d87084de24d2b18",
+      "note": "Farming pet available on Normal profiles"
+    },
+    {
+      "id": "CROW",
+      "name": "Crow",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/c31e7e1c614639bbc95a0d81ff7e5f7f606d9b33115cf2bf2a40cdcbbb531324",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "DOLPHIN",
+      "name": "Dolphin",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/1415d2c543e34bb88ede94d79b9427691fc9be72daad8831a9ef297180546e18",
+      "note": "Fishing pet available on Normal profiles"
+    },
+    {
+      "id": "DROPLET_WISP",
+      "name": "Droplet Wisp",
+      "targetRarity": "UNCOMMON",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/b412e70375ec99ee38ae94b30e9b10752d459662b54794dfe66fe6a183c672d3",
+      "note": "Skyblock pet available on Normal profiles"
+    },
+    {
+      "id": "EERIE",
+      "name": "Eerie",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/c3af70c6ff76ba48f24ee8a2063a5b50bbfabf409f4795248a292f8289f47c98",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "ELEPHANT",
+      "name": "Elephant",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/4ef8efea450632d2753a38a23a4f1502a8a685f6e99bf69205ec04420fd64f6",
+      "note": "Farming pet available on Normal profiles"
+    },
+    {
+      "id": "ENDER_DRAGON",
+      "name": "Ender Dragon",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/aec3ff563290b13ff3bcc36898af7eaa988b6cc18dc254147f58374afe9b21b9",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "ENDERMAN",
+      "name": "Enderman",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/9f31c9b5a2bfe7443645b4e7e8ea408b04d554a9200b00afd574ce924b555ecb",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "ENDERMITE",
+      "name": "Endermite",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/18ae7046da98dcb33f3ed42f1dc41d08ac8dfa5db3a3860de5b1b5c056804187",
+      "note": "Mining pet available on Normal profiles"
+    },
+    {
+      "id": "FLYING_FISH",
+      "name": "Flying Fish",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/b0e2363c2d41a9d323ba625de8c0637063a36fe85a045de275a7b7739ded6051",
+      "note": "Fishing pet available on Normal profiles"
+    },
+    {
+      "id": "FROG",
+      "name": "Frog",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/45852a95928897746012988fbd5dbaa1b70b7a5fb65157016f4ff3f245374c08",
+      "note": "Foraging pet available on Normal profiles"
+    },
+    {
+      "id": "FROST_WISP",
+      "name": "Frost Wisp",
+      "targetRarity": "RARE",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/1d8ad9936d758c5ea30b0b7cc7c67c2bfcea829ecf2425c0b50fc92a26ae23d0",
+      "note": "Skyblock pet available on Normal profiles"
+    },
+    {
+      "id": "GHOUL",
+      "name": "Ghoul",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/1e1109bbd1f82c182363ed53b624b688924447f9f68b929674ad37f3cef762a8",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "GIRAFFE",
+      "name": "Giraffe",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/2528ce6ad51fcb6e27c85566e70da351075185f184d910f4996e4311d4a1bfa5",
+      "note": "Foraging pet available on Normal profiles"
+    },
+    {
+      "id": "GLACIAL_WISP",
+      "name": "Glacial Wisp",
+      "targetRarity": "EPIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/3e2018feebe1a99177b3cb196d4e44521268b4b3eb56e6419cb0253cdbf0456c",
+      "note": "Skyblock pet available on Normal profiles"
+    },
+    {
+      "id": "GLACITE_GOLEM",
+      "name": "Glacite Golem",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/af132a6593876d3c377d503fd66eca3fb938743251f7b16a9870c60b7388c8a3",
+      "note": "Mining pet available on Normal profiles"
+    },
+    {
+      "id": "GOBLIN",
+      "name": "Goblin",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/7309d8dc35a638a04b915a3b15a1452ceeae0d7ea42bcdadb21b03046987515c",
+      "note": "Skyblock pet available on Normal profiles"
+    },
+    {
+      "id": "GOLDEN_DRAGON",
+      "name": "Golden Dragon",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 200,
+      "texture": "https://textures.minecraft.net/texture/2e9f9b1fc014166cb46a093e5349b2bf6edd201b680d62e48dbf3af9b0459116",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "GOLEM",
+      "name": "Golem",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/89091d79ea0f59ef7ef94d7bba6e5f17f2f7d4572c44f90f76c4819a714",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "GRANDMA_WOLF",
+      "name": "Grandma Wolf",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/4e794274c1bb197ad306540286a7aa952974f5661bccf2b725424f6ed79c7884",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "GRIFFIN",
+      "name": "Griffin",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/4c27e3cb52a64968e60c861ef1ab84e0a0cb5f07be103ac78da67761731f00c8",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "GUARDIAN",
+      "name": "Guardian",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/221025434045bda7025b3e514b316a4b770c6faa4ba9adb4be3809526db77f9d",
+      "note": "Enchanting pet available on Normal profiles"
+    },
+    {
+      "id": "HEDGEHOG",
+      "name": "Hedgehog",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/5f5e835c116e8e200e2e06aa593cab8f1a9f8c40e7f005a9c76f12e24f4c6370",
+      "note": "Skyblock pet available on Normal profiles"
+    },
+    {
+      "id": "HERMIT_CRAB",
+      "name": "Hermit Crab",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/26629dfa3fdfef04054024e0156d5e19da5401b1911f59b4bd3982685fe54c2c",
+      "note": "Fishing pet available on Normal profiles"
+    },
+    {
+      "id": "HORSE",
+      "name": "Horse",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/36fcd3ec3bc84bafb4123ea479471f9d2f42d8fb9c5f11cf5f4e0d93226",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "HOUND",
+      "name": "Hound",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/1290ad550c376d0108b5be22dd5a4082a8621cf9d40b2807156ca1950d246207",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "JADE_DRAGON",
+      "name": "Jade Dragon",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 200,
+      "texture": "https://textures.minecraft.net/texture/4099589796de185787ab92c3066d0d0af832ffad7153a42bb2e2d23598e7ea60",
+      "note": "Foraging pet available on Normal profiles"
+    },
+    {
+      "id": "JELLYFISH",
+      "name": "Jellyfish",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/64c9ad5400fa660cbd121d4415a33e07fdf20ecf212a6bd4e68a43c7f646f5c4",
+      "note": "Alchemy pet available on Normal profiles"
+    },
+    {
+      "id": "JERRY",
+      "name": "Jerry",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/822d8e751c8f2fd4c8942c44bdb2f5ca4d8ae8e575ed3eb34c18a86e93b",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "KUUDRA",
+      "name": "Kuudra",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/1f0239fb498e5907ede12ab32629ee95f0064574a9ffdff9fc3a1c8e2ec17587",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "LION",
+      "name": "Lion",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/38ff473bd52b4db2c06f1ac87fe1367bce7574fac330ffac7956229f82efba1",
+      "note": "Foraging pet available on Normal profiles"
+    },
+    {
+      "id": "MAGMA_CUBE",
+      "name": "Magma Cube",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/38957d5023c937c4c41aa2412d43410bda23cf79a9f6ab36b76fef2d7c429",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "MAMMOTH",
+      "name": "Mammoth",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/6b10715732cd1fd49fa1b6187947c307dd4687105cf033840607f9d6234743ad",
+      "note": "Skyblock pet available on Normal profiles"
+    },
+    {
+      "id": "MEGALODON",
+      "name": "Megalodon",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/a94ae433b301c7fb7c68cba625b0bd36b0b14190f20e34a7c8ee0d9de06d53b9",
+      "note": "Fishing pet available on Normal profiles"
+    },
+    {
+      "id": "MITHRIL_GOLEM",
+      "name": "Mithril Golem",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/c1b2dfe8ed5dffc5b1687bc1c249c39de2d8a6c3d90305c95f6d1a1a330a0b1",
+      "note": "Mining pet available on Normal profiles"
+    },
+    {
+      "id": "MOLE",
+      "name": "Mole",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/727baaafc09978d4bda73e16afdde85ec13b0f95ad989524c5fcaa717cf06b4a",
+      "note": "Skyblock pet available on Normal profiles"
+    },
+    {
+      "id": "MONKEY",
+      "name": "Monkey",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/96e1836c73af42cf3c299fcb56d7342bf305f720be3c8cce2a0fae199794207a",
+      "note": "Foraging pet available on Normal profiles"
+    },
+    {
+      "id": "MOOSHROOM_COW",
+      "name": "Mooshroom Cow",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/47f1bc3fa91cd86cf4ba7745586d67207b58e7cf27bdf7a717780843785bf9b5",
+      "note": "Farming pet available on Normal profiles"
+    },
+    {
+      "id": "MOSQUITO",
+      "name": "Mosquito",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/52a9fe05bc663efcd12e56a3ccc5ec035bf577b78708548b6f4ffcf1d30eccfe",
+      "note": "Farming pet available on Normal profiles"
+    },
+    {
+      "id": "OCELOT",
+      "name": "Ocelot",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/5657cd5c2989ff97570fec4ddcdc6926a68a3393250c1be1f0b114a1db1",
+      "note": "Foraging pet available on Normal profiles"
+    },
+    {
+      "id": "ORCHID_MANTIS",
+      "name": "Orchid Mantis",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/36903a9520564c22bc66b05d2161b23e54ff961284e63e684065ae0781c9cd97",
+      "note": "Farming pet available on Normal profiles"
+    },
+    {
+      "id": "OWL",
+      "name": "Owl",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/da3216da54e7368fb40b721239ad95e07ef4f97d93f1c42ff319bab9a53882af",
+      "note": "Taming pet available on Normal profiles"
+    },
+    {
+      "id": "PARROT",
+      "name": "Parrot",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/5df4b3401a4d06ad66ac8b5c4d189618ae617f9c143071c8ac39a563cf4e4208",
+      "note": "Alchemy pet available on Normal profiles"
+    },
+    {
+      "id": "PENGUIN",
+      "name": "Penguin",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/37534e97f36e5a8335928e171ec99608bee7fb16e260afb301025b3b17eeefc4",
+      "note": "Skyblock pet available on Normal profiles"
+    },
+    {
+      "id": "PHOENIX",
+      "name": "Phoenix",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/66b1b59bc890c9c97527787dde20600c8b86f6b9912d51a6bfcdb0e4c2aa3c97",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "PIG",
+      "name": "Pig",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/621668ef7cb79dd9c22ce3d1f3f4cb6e2559893b6df4a469514e667c16aa4",
+      "note": "Farming pet available on Normal profiles"
+    },
+    {
+      "id": "PIGMAN",
+      "name": "Pigman",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/d15afad53d1726fae86b3fb11ba01e51112b1055e8e5af8b7df86ef956f1d4a1",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "PRECURSOR_DRONE",
+      "name": "Precursor Drone",
+      "targetRarity": "COMMON",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/51aae288ab9d5354fda4e395a36421bd261a9b6213dbb786d7ab39465e479ce9",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "RABBIT",
+      "name": "Rabbit",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/63438555e899bd9a051a95dbea49eb2ecfa52a69dbba8998f3673819e277fdf5",
+      "note": "Farming pet available on Normal profiles"
+    },
+    {
+      "id": "RAT",
+      "name": "Rat",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/250de7097d939e447ca2d398441cba1d2a5e1a69052ac99c19ff20ad5a3f01ab",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "REINDEER",
+      "name": "Reindeer",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/a2df65c6fd19a58bee38252192ac7ce2cf1dc8632c3547a9228b6b697240d098",
+      "note": "Fishing pet available on Normal profiles"
+    },
+    {
+      "id": "RIFT_FERRET",
+      "name": "Rift Ferret",
+      "targetRarity": "EPIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/b6b11399448260185da1d17e54c984515faab6d8585f00972451ec2b43d46f94",
+      "note": "Skyblock pet available on Normal profiles"
+    },
+    {
+      "id": "ROCK",
+      "name": "Rock",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/7df8aab57136df2296c7c6f969ff25d58116fe2ec59b96a85ba4927e1f6779e6",
+      "note": "Mining pet available on Normal profiles"
+    },
+    {
+      "id": "ROSE_DRAGON",
+      "name": "Rose Dragon",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 200,
+      "texture": "https://textures.minecraft.net/texture/9b7c3de075a2bb238ef51431206b10d586cb2a5b1cc41fe851cc5f0b02d357c7",
+      "note": "Farming pet available on Normal profiles"
+    },
+    {
+      "id": "SCATHA",
+      "name": "Scatha",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/df03ad96092f3f789902436709cdf69de6b727c121b3c2daef9ffa1ccaed186c",
+      "note": "Mining pet available on Normal profiles"
+    },
+    {
+      "id": "SEAL",
+      "name": "Seal",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/3a7728bbf6f53f6c1e3b121778e2c2175f6c27032dbd9a5fb3a0d8747e104f67",
+      "note": "Fishing pet available on Normal profiles"
+    },
+    {
+      "id": "SHEEP",
+      "name": "Sheep",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/64e22a46047d272e89a1cfa13e9734b7e12827e235c2012c1a95962874da0",
+      "note": "Alchemy pet available on Normal profiles"
+    },
+    {
+      "id": "SILVERFISH",
+      "name": "Silverfish",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/811a1173af3bead305e6339f555662e990d5faadb87e07299fa68ca828a6d2fb",
+      "note": "Mining pet available on Normal profiles"
+    },
+    {
+      "id": "SKELETON",
+      "name": "Skeleton",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/fca445749251bdd898fb83f667844e38a1dff79a1529f79a42447a0599310ea4",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "SKELETON_HORSE",
+      "name": "Skeleton Horse",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/abc63ba27357898cf2e64da94802c74efc17ffd24064b5327fbc59694bc5e3dc",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "SLUG",
+      "name": "Slug",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/7a79d0fd677b54530961117ef84adc206e2cc5045c1344d61d776bf8ac2fe1ba",
+      "note": "Farming pet available on Normal profiles"
+    },
+    {
+      "id": "SNAIL",
+      "name": "Snail",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/50a9933a3b10489d38f6950c4e628bfcf9f7a27f8d84666f04f14d5374252972",
+      "note": "Mining pet available on Normal profiles"
+    },
+    {
+      "id": "SNOWMAN",
+      "name": "Snowman",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/903485cb1cd882fdd7faaf1359ffc3bd4d5341c81c17e95527204e554dad8188",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "SPIDER",
+      "name": "Spider",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/cd541541daaff50896cd258bdbdd4cf80c3ba816735726078bfe393927e57f1",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "SPINOSAURUS",
+      "name": "Spinosaurus",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/d3c9d479471a2f13f22548315159591720992e70c920fef83a901b7186720e3c",
+      "note": "Skyblock pet available on Normal profiles"
+    },
+    {
+      "id": "SPIRIT",
+      "name": "Spirit",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/8d9ccc670677d0cebaad4058d6aaf9acfab09abea5d86379a059902f2fe22655",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "SQUID",
+      "name": "Squid",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/01433be242366af126da434b8735df1eb5b3cb2cede39145974e9c483607bac",
+      "note": "Fishing pet available on Normal profiles"
+    },
+    {
+      "id": "SUBZERO_WISP",
+      "name": "Subzero Wisp",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/7a0eb37e58c942eca4d33ab44e26eb1910c783788510b0a53b6f4d18881e237e",
+      "note": "Skyblock pet available on Normal profiles"
+    },
+    {
+      "id": "TARANTULA",
+      "name": "Tarantula",
+      "targetRarity": "MYTHIC",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/b81b5cf3a65bf9cab4bca55781721a86d567d9e106551647f35b715edf00a13f",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "TIGER",
+      "name": "Tiger",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/fc42638744922b5fcf62cd9bf27eeab91b2e72d6c70e86cc5aa3883993e9d84",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "TURTLE",
+      "name": "Turtle",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/242f86b51c8992b3758e85fe35bb2a20399ad4685095466e7feb54c6902fad8e",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "TYRANNOSAURUS",
+      "name": "T-Rex",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/93f28ec96df59c67e9d2fc2e7e3d055fa31646e4111add9fe26a692801964126",
+      "note": "Skyblock pet available on Normal profiles"
+    },
+    {
+      "id": "WITCH",
+      "name": "Witch",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/baf818b04d6ae98a69ad8d9463d8d0379921d3eb79222e1c6272f65372d80775",
+      "note": "Alchemy pet available on Normal profiles"
+    },
+    {
+      "id": "WITHER_SKELETON",
+      "name": "Wither Skeleton",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/d50e972d26c3dbc4e1663aaf583388ff321e958d195f8a465b71a596a736fe9c",
+      "note": "Mining pet available on Normal profiles"
+    },
+    {
+      "id": "WOLF",
+      "name": "Wolf",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/81483105ab8c33f04c97c7493c9871c8a51cc49df6d9b5e23b26652094bf3030",
+      "note": "Combat pet available on Normal profiles"
+    },
+    {
+      "id": "ZOMBIE",
+      "name": "Zombie",
+      "targetRarity": "LEGENDARY",
+      "maxLevel": 100,
+      "texture": "https://textures.minecraft.net/texture/56fc854bb84cf4b7697297973e02b79bc10698460b51a639c60e5e417734e11",
+      "note": "Combat pet available on Normal profiles"
+    }
+  ]
+}

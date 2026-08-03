@@ -1,398 +1,2631 @@
-const rarityMeta={COMMON:{mp:3,color:'#aeb7c3',rank:1},UNCOMMON:{mp:5,color:'#62e899',rank:2},RARE:{mp:8,color:'#57a6ff',rank:3},EPIC:{mp:12,color:'#b878ff',rank:4},LEGENDARY:{mp:16,color:'#ffb84d',rank:5},MYTHIC:{mp:22,color:'#ff6ca8',rank:6},SPECIAL:{mp:3,color:'#ff6868',rank:7},VERY_SPECIAL:{mp:5,color:'#ff6868',rank:8}};
-const $=selector=>document.querySelector(selector);let accessories=[],familyUpgrades={},minions=[],pets=[],attributes=[],villagerTrades=[],textures={},activeRarity='ALL',activeMinionCategory='ALL',activePetRarity='ALL',activeAttributeRarity='ALL',activeTradeLevel='ALL',profile=null,profileOptionsUsername='',completionAnimationObserver=null;
-const grid=$('#accessoryGrid'),search=$('#searchInput'),sourceFilter=$('#sourceFilter'),statusFilter=$('#statusFilter'),empty=$('#emptyState');
-async function loadCatalog(){
-  const [catalogResponse,minionResponse,petResponse,petUpgradeResponse,attributeResponse,tradeResponse,textureResponse,itemTextureResponse,attributeTextureResponse]=await Promise.all([
-    fetch('./data/accessories.json'),
-    fetch('./data/minions.json'),
-    fetch('./data/pets.json?v=20260725-orchid-mantis'),
-    fetch('./data/pet-upgrades.json?v=20260729-material-readiness'),
-    fetch('./data/attributes.json'),
-    fetch('./data/villager-trades.json?v=20260725-log-range-54'),
-    fetch('./generated/furfsky/manifest.json?v=20260725-refined-mineral'),
-    fetch('./generated/items/manifest.json'),
-    fetch('./generated/attributes/manifest.json')
+const rarityMeta = {
+  COMMON: { mp: 3, color: "#aeb7c3", rank: 1 },
+  UNCOMMON: { mp: 5, color: "#62e899", rank: 2 },
+  RARE: { mp: 8, color: "#57a6ff", rank: 3 },
+  EPIC: { mp: 12, color: "#b878ff", rank: 4 },
+  LEGENDARY: { mp: 16, color: "#ffb84d", rank: 5 },
+  MYTHIC: { mp: 22, color: "#ff6ca8", rank: 6 },
+  SPECIAL: { mp: 3, color: "#ff6868", rank: 7 },
+  VERY_SPECIAL: { mp: 5, color: "#ff6868", rank: 8 },
+};
+const $ = (selector) => document.querySelector(selector);
+const PROFILE_MODE_STORAGE_KEY = "skyblock-index-profile-mode";
+let profileMode = (() => {
+    try {
+      return localStorage.getItem(PROFILE_MODE_STORAGE_KEY) === "normal"
+        ? "normal"
+        : "stranded";
+    } catch {
+      return "stranded";
+    }
+  })(),
+  catalogBundles = {},
+  accessories = [],
+  familyUpgrades = {},
+  minions = [],
+  pets = [],
+  attributes = [],
+  villagerTrades = [],
+  textures = {},
+  activeRarity = "ALL",
+  activeMinionCategory = "ALL",
+  activePetRarity = "ALL",
+  activeAttributeRarity = "ALL",
+  activeTradeLevel = "ALL",
+  profile = null,
+  profileOptionsUsername = "",
+  completionAnimationObserver = null;
+const grid = $("#accessoryGrid"),
+  search = $("#searchInput"),
+  sourceFilter = $("#sourceFilter"),
+  statusFilter = $("#statusFilter"),
+  empty = $("#emptyState");
+async function loadCatalog() {
+  const [
+    catalogResponse,
+    minionResponse,
+    petResponse,
+    petUpgradeResponse,
+    attributeResponse,
+    tradeResponse,
+    normalCatalogResponse,
+    normalMinionResponse,
+    normalPetResponse,
+    normalPetUpgradeResponse,
+    normalAttributeResponse,
+    textureResponse,
+    itemTextureResponse,
+    attributeTextureResponse,
+  ] = await Promise.all([
+    fetch("./data/accessories.json"),
+    fetch("./data/minions.json"),
+    fetch("./data/pets.json?v=20260725-orchid-mantis"),
+    fetch("./data/pet-upgrades.json?v=20260729-material-readiness"),
+    fetch("./data/attributes.json"),
+    fetch("./data/villager-trades.json?v=20260725-log-range-54"),
+    fetch("./data/normal-accessories.json?v=20260803"),
+    fetch("./data/normal-minions.json?v=20260803"),
+    fetch("./data/normal-pets.json?v=20260803"),
+    fetch("./data/normal-pet-upgrades.json?v=20260803"),
+    fetch("./data/normal-attributes.json?v=20260803"),
+    fetch("./generated/furfsky/manifest.json?v=20260725-refined-mineral"),
+    fetch("./generated/items/manifest.json"),
+    fetch("./generated/attributes/manifest.json"),
   ]);
-  if(!catalogResponse.ok||!minionResponse.ok||!petResponse.ok||!petUpgradeResponse.ok||!attributeResponse.ok||!tradeResponse.ok)throw new Error('Progression database unavailable');
-  const catalog=await catalogResponse.json(),minionCatalog=await minionResponse.json(),petCatalog=await petResponse.json(),petUpgradeCatalog=await petUpgradeResponse.json(),attributeCatalog=await attributeResponse.json(),tradeCatalog=await tradeResponse.json(),itemTextures=itemTextureResponse.ok?(await itemTextureResponse.json()).icons||{}:{},attributeTextures=attributeTextureResponse.ok?(await attributeTextureResponse.json()).icons||{}:{},furfskyTextures=textureResponse.ok?(await textureResponse.json()).icons||{}:{};
-  accessories=[...(catalog.accessories||[]),...(catalog.legacyAccessories||[]).map(item=>({...item,legacy:true}))];
-  familyUpgrades=catalog.familyUpgrades||{};
-  minions=minionCatalog.minions||[];
-  pets=(petCatalog.pets||[]).map(pet=>({...pet,upgrades:petUpgradeCatalog.upgrades?.[pet.id]||[]}));
-  attributes=(attributeCatalog.attributes||[]).map(item=>({...item,maxLevel:item.maxLevel||attributeCatalog.maxLevel||10}));
-  villagerTrades=tradeCatalog.trades||[];
-  textures={...itemTextures,...attributeTextures,...furfskyTextures};
-  setupFilters();setupMinionFilters();setupPetFilters();setupAttributeFilters();updateTotals();render();renderMinions();renderPets();renderAttributes();renderVillagerTrades()
+  if (
+    !catalogResponse.ok ||
+    !minionResponse.ok ||
+    !petResponse.ok ||
+    !petUpgradeResponse.ok ||
+    !attributeResponse.ok ||
+    !tradeResponse.ok ||
+    !normalCatalogResponse.ok ||
+    !normalMinionResponse.ok ||
+    !normalPetResponse.ok ||
+    !normalPetUpgradeResponse.ok ||
+    !normalAttributeResponse.ok
+  )
+    throw new Error("Progression database unavailable");
+  const [
+      catalog,
+      minionCatalog,
+      petCatalog,
+      petUpgradeCatalog,
+      attributeCatalog,
+      tradeCatalog,
+      normalCatalog,
+      normalMinionCatalog,
+      normalPetCatalog,
+      normalPetUpgradeCatalog,
+      normalAttributeCatalog,
+    ] = await Promise.all([
+      catalogResponse.json(),
+      minionResponse.json(),
+      petResponse.json(),
+      petUpgradeResponse.json(),
+      attributeResponse.json(),
+      tradeResponse.json(),
+      normalCatalogResponse.json(),
+      normalMinionResponse.json(),
+      normalPetResponse.json(),
+      normalPetUpgradeResponse.json(),
+      normalAttributeResponse.json(),
+    ]),
+    itemTextures = itemTextureResponse.ok
+      ? (await itemTextureResponse.json()).icons || {}
+      : {},
+    attributeTextures = attributeTextureResponse.ok
+      ? (await attributeTextureResponse.json()).icons || {}
+      : {},
+    furfskyTextures = textureResponse.ok
+      ? (await textureResponse.json()).icons || {}
+      : {};
+  catalogBundles = {
+    stranded: {
+      accessories: [
+        ...(catalog.accessories || []),
+        ...(catalog.legacyAccessories || []).map((item) => ({
+          ...item,
+          legacy: true,
+        })),
+      ],
+      familyUpgrades: catalog.familyUpgrades || {},
+      minions: minionCatalog.minions || [],
+      pets: (petCatalog.pets || []).map((pet) => ({
+        ...pet,
+        upgrades: petUpgradeCatalog.upgrades?.[pet.id] || [],
+      })),
+      attributes: (attributeCatalog.attributes || []).map((item) => ({
+        ...item,
+        maxLevel: item.maxLevel || attributeCatalog.maxLevel || 10,
+      })),
+      villagerTrades: tradeCatalog.trades || [],
+    },
+    normal: {
+      accessories: [
+        ...(normalCatalog.accessories || []),
+        ...(normalCatalog.legacyAccessories || []).map((item) => ({
+          ...item,
+          legacy: true,
+        })),
+      ],
+      familyUpgrades: normalCatalog.familyUpgrades || {},
+      minions: normalMinionCatalog.minions || [],
+      pets: (normalPetCatalog.pets || []).map((pet) => ({
+        ...pet,
+        upgrades: normalPetUpgradeCatalog.upgrades?.[pet.id] || [],
+      })),
+      attributes: (normalAttributeCatalog.attributes || []).map((item) => ({
+        ...item,
+        maxLevel: item.maxLevel || normalAttributeCatalog.maxLevel || 10,
+      })),
+      villagerTrades: [],
+    },
+  };
+  textures = { ...itemTextures, ...attributeTextures, ...furfskyTextures };
+  applyCatalogMode(profileMode);
 }
-const catalogRarity=item=>item.maxRarity||item.rarity;
-const obtainableAccessories=()=>accessories.filter(item=>!item.legacy);
-function setupFilters(){const obtainable=obtainableAccessories(),rarities=['ALL',...Object.keys(rarityMeta).filter(rarity=>obtainable.some(item=>catalogRarity(item)===rarity))];$('#rarityFilters').innerHTML=rarities.map((rarity,index)=>`<button class="${index===0?'active':''}" data-rarity="${rarity}">${rarity[0]+rarity.slice(1).toLowerCase()}</button>`).join('');[...new Set(obtainable.map(item=>item.source))].sort().forEach(source=>sourceFilter.insertAdjacentHTML('beforeend',`<option value="${source}">${source}</option>`))}
-function setupMinionFilters(){const categories=['ALL',...new Set(minions.map(minion=>minion.category))];$('#minionCategories').innerHTML=categories.map((category,index)=>`<button class="${index===0?'active':''}" data-category="${category}">${category[0]+category.slice(1).toLowerCase()}</button>`).join('')}
-function setupPetFilters(){const rarities=['ALL',...Object.keys(rarityMeta).filter(rarity=>pets.some(pet=>pet.targetRarity===rarity))];$('#petRarities').innerHTML=rarities.map((rarity,index)=>`<button class="${index===0?'active':''}" data-pet-rarity="${rarity}">${rarity[0]+rarity.slice(1).toLowerCase()}</button>`).join('')}
-function setupAttributeFilters(){const rarities=['ALL',...Object.keys(rarityMeta).filter(rarity=>attributes.some(attribute=>attribute.rarity===rarity))];$('#attributeRarities').innerHTML=rarities.map((rarity,index)=>`<button class="${index===0?'active':''}" data-attribute-rarity="${rarity}">${rarity[0]+rarity.slice(1).toLowerCase()}</button>`).join('')}
-function updateTotals(){const obtainable=obtainableAccessories();$('#totalCount').textContent=obtainable.length;$('#familyCount').textContent=new Set(obtainable.map(item=>item.family)).size;const best={};obtainable.forEach(item=>{const current=best[item.family];if(!current||rarityMeta[catalogRarity(item)].rank>rarityMeta[catalogRarity(current)].rank)best[item.family]=item});const familyMaxima=Object.values(best),base=familyMaxima.reduce((sum,item)=>sum+magicalPowerFor(catalogRarity(item)),0),recombined=familyMaxima.reduce((sum,item)=>{const rarity=catalogRarity(item),upgraded=item.canRecombobulate?rarityAfter(rarity):null;return sum+magicalPowerFor(upgraded||rarity)},0);$('#maxMp').textContent=recombined.toLocaleString();$('#maxMpLabel').textContent=`max rarity AP · ${base.toLocaleString()} base`}
-const initials=name=>name.split(/\s+/).filter(word=>!['of','the'].includes(word.toLowerCase())).slice(0,2).map(word=>word[0]).join('').toUpperCase();
-const staticAssetPath=src=>src?.startsWith('/')?`.${src}`:src;
-function textureIcon(item){const custom=textures[item.id],texture=custom||item.fallbackTexture;if(!texture)return `<span>${initials(item.name)}</span>`;const entry=typeof texture==='string'?{src:texture}:texture,src=staticAssetPath(entry.src);if(!entry.animation)return `<img class="${!custom&&item.fallbackTextureType==='head'?'head-render':''}" src="${src}" alt="" loading="lazy"><span>${initials(item.name)}</span>`;return `<canvas class="animated-texture" width="${entry.animation.frameWidth}" height="${entry.animation.frameHeight}" data-src="${src}" data-animation="${encodeURIComponent(JSON.stringify(entry.animation))}"></canvas><span>${initials(item.name)}</span>`}
-function startTextureAnimations(){document.querySelectorAll('.animated-texture').forEach(canvas=>{const image=new Image(),animation=JSON.parse(decodeURIComponent(canvas.dataset.animation)),context=canvas.getContext('2d');context.imageSmoothingEnabled=false;image.onload=()=>{const total=animation.frames.reduce((sum,frame)=>sum+frame.time*50,0),started=performance.now();const paint=now=>{if(!canvas.isConnected)return;let position=(now-started)%total,current=0,elapsed=0;for(let index=0;index<animation.frames.length;index++){const duration=animation.frames[index].time*50;if(position<elapsed+duration){current=index;position-=elapsed;break}elapsed+=duration}const frame=animation.frames[current],next=animation.frames[(current+1)%animation.frames.length];context.clearRect(0,0,canvas.width,canvas.height);context.globalAlpha=1;context.drawImage(image,0,frame.index*animation.frameHeight,animation.frameWidth,animation.frameHeight,0,0,canvas.width,canvas.height);if(animation.interpolate){context.globalAlpha=position/(frame.time*50);context.drawImage(image,0,next.index*animation.frameHeight,animation.frameWidth,animation.frameHeight,0,0,canvas.width,canvas.height);context.globalAlpha=1}requestAnimationFrame(paint)};requestAnimationFrame(paint)};image.src=canvas.dataset.src})}
-function observeCompletionCards(){if(!('IntersectionObserver'in window))return;completionAnimationObserver?.disconnect();completionAnimationObserver=new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('completion-animation-paused',!entry.isIntersecting)),{rootMargin:'180px'});document.querySelectorAll('.completion-gradient').forEach(card=>completionAnimationObserver.observe(card))}
-const familyMembers=family=>accessories.filter(candidate=>candidate.family===family).sort((a,b)=>(a.familyOrder??a.order)-(b.familyOrder??b.order));
-function profileAccessoryDescriptor(id){const normalized=String(id||'').toUpperCase(),direct=accessories.find(item=>(item.profileIds||[item.id]).includes(normalized));if(direct){const members=familyMembers(direct.family);return{family:direct.family,level:members.findIndex(item=>item.id===direct.id),catalogItem:direct,external:false}}for(const [family,ids] of Object.entries(familyUpgrades)){const externalIndex=ids.indexOf(normalized);if(externalIndex<0)continue;const members=familyMembers(family);return{family,level:members.length+externalIndex,catalogItem:members.at(-1)||null,external:true}}return null}
-const activeAccessoryIds=()=>new Set(profile?.items?.accessoryIds||profile?.items?.ids||[]);
-const ownsItem=(item,ids=activeAccessoryIds())=>(item.profileIds||[item.id]).some(id=>ids.has(id));
-const ownedAccessoryRecords=item=>(profile?.items?.accessories||[]).filter(record=>profileAccessoryDescriptor(record.id)?.catalogItem?.id===item.id);
-const canRecombobulateItem=item=>ownedAccessoryRecords(item).some(record=>record.canRecombobulate&&record.unrecombobulatedCount>0);
-const isRecombinedFamilyCompletion=item=>{const record=ownedAccessoryRecords(item).find(candidate=>candidate.recombobulatedCount>0);if(!record)return false;const descriptor=profileAccessoryDescriptor(record.id),maximumLevel=familyMembers(item.family).length+(familyUpgrades[item.family]||[]).length-1;return descriptor?.level===maximumLevel};
-function hidesOwnedLowerFamilyMember(item){if(!profile)return false;const members=familyMembers(item.family),index=members.findIndex(candidate=>candidate.id===item.id),record=(profile.items?.accessories||[]).find(candidate=>profileAccessoryDescriptor(candidate.id)?.family===item.family),descriptor=record&&profileAccessoryDescriptor(record.id);if(!descriptor)return false;return index<Math.min(descriptor.level,members.length-1)}
-const normalizeRarity=rarity=>String(rarity||'').trim().toUpperCase().replaceAll(' ','_');
-const rarityAfter=rarity=>({COMMON:'UNCOMMON',UNCOMMON:'RARE',RARE:'EPIC',EPIC:'LEGENDARY',LEGENDARY:'MYTHIC',SPECIAL:'VERY_SPECIAL'}[normalizeRarity(rarity)]||null);
-const rarityBefore=rarity=>({UNCOMMON:'COMMON',RARE:'UNCOMMON',EPIC:'RARE',LEGENDARY:'EPIC',MYTHIC:'LEGENDARY',VERY_SPECIAL:'SPECIAL'}[normalizeRarity(rarity)]||null);
-const magicalPowerFor=rarity=>rarityMeta[normalizeRarity(rarity)]?.mp||0;
-function familyUpgradeMpGain(item){const family=familyMembers(item.family),index=family.findIndex(candidate=>candidate.id===item.id),previous=index>0?family[index-1]:null;return Math.max(0,magicalPowerFor(catalogRarity(item))-(previous?magicalPowerFor(catalogRarity(previous)):0))}
-function displayedMpGain(item,recombable,completed){if(recombable){const record=ownedAccessoryRecords(item).find(candidate=>candidate.canRecombobulate&&candidate.unrecombobulatedCount>0),next=rarityAfter(record?.rarity||item.rarity);if(next)return Math.max(0,magicalPowerFor(next)-magicalPowerFor(record?.rarity||item.rarity))}if(completed){const record=ownedAccessoryRecords(item).find(candidate=>candidate.recombobulatedCount>0),base=record?.baseRarity||item.rarity;if(record)return Math.max(0,magicalPowerFor(record.rarity)-magicalPowerFor(base))}if(profile){const family=familyMembers(item.family),index=family.findIndex(candidate=>candidate.id===item.id),previous=index>0?family[index-1]:null,record=ownedAccessoryRecords(item).sort((a,b)=>(rarityMeta[b.rarity]?.rank||0)-(rarityMeta[a.rarity]?.rank||0))[0];if(record)return Math.max(0,magicalPowerFor(record.rarity)-(previous?magicalPowerFor(catalogRarity(previous)):0))}return familyUpgradeMpGain(item)}
-const escapeHtml=value=>String(value).replace(/[&<>"']/g,character=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
-const toRoman=number=>['','I','II','III','IV','V','VI','VII','VIII','IX','X','XI'][number]||String(number);
-function collectionGateBlocker(gate){const levels=profile.collectionLevels||{},hasLevel=Object.prototype.hasOwnProperty.call(levels,gate.id),hasAmount=Object.prototype.hasOwnProperty.call(profile.collections,gate.id),level=Number(levels[gate.id]||0),amount=Number(profile.collections[gate.id]||0);if(!hasLevel&&!hasAmount)return `Find ${gate.name} to unlock its collection`;if(hasLevel)return level<gate.tier?`Reach ${gate.name} ${toRoman(gate.tier)} · co-op tier ${level?toRoman(level):'0'}`:null;return amount<gate.amount?`Reach ${gate.name} ${toRoman(gate.tier)} · ${amount.toLocaleString()}/${gate.amount.toLocaleString()}`:null}
-function blocker(item){if(!profile)return null;const ids=activeAccessoryIds(),family=familyMembers(item.family),index=family.findIndex(candidate=>candidate.id===item.id);if(index>0&&!ownsItem(family[index-1],ids))return `Obtain ${family[index-1].name} first`;if(!item.unlock)return null;const gate=item.unlock;if(gate.type==='collection')return collectionGateBlocker(gate);if(gate.type==='slayer'){const level=Number(profile.slayers?.[gate.id]||0);return level<gate.level?`Reach ${gate.name} ${gate.level} · currently ${level}`:null}if(gate.type==='skill'){const xp=Number(profile.skills?.[gate.id]||0);return xp<gate.amount?`Reach ${gate.name} ${gate.level} · ${Math.floor(xp).toLocaleString()}/${gate.amount.toLocaleString()} XP`:null}return null}
-function itemStatus(item){if(!profile)return null;const ids=activeAccessoryIds(),family=familyMembers(item.family),index=family.findIndex(candidate=>candidate.id===item.id),ownsExternalHigher=(familyUpgrades[item.family]||[]).some(id=>ids.has(id));if(ownsItem(item,ids)||family.slice(index+1).some(candidate=>ownsItem(candidate,ids))||ownsExternalHigher)return'owned';if(blocker(item))return'blocked';const earlier=index>0&&family.slice(0,index).some(candidate=>ownsItem(candidate,ids)),requirements=item.requirements||[],materialsReady=requirements.length&&requirements.every(requirement=>requirement.type==='item'?(profile.items.counts[requirement.id]||0)>=requirement.amount:(profile.collections[requirement.id]||0)>=requirement.amount);if(materialsReady&&(index===0||earlier))return'ready';if(earlier)return'upgrade';return'missing'}
-function familyUpgradeProgress(item){const ids=activeAccessoryIds(),family=familyMembers(item.family),highestOwned=family.reduce((highest,candidate,index)=>ownsItem(candidate,ids)?index:highest,-1);return{current:Math.max(0,highestOwned+1),total:family.length}}
-function matchesStatus(item){if(!profile||statusFilter.value==='all')return true;if(statusFilter.value==='recomb')return canRecombobulateItem(item);const status=itemStatus(item);return statusFilter.value==='upgrades'?(status==='upgrade'||status==='ready'):status===statusFilter.value}
-function render(){const query=search.value.trim().toLowerCase();const items=accessories.filter(item=>(!item.legacy||ownsItem(item))&&!hidesOwnedLowerFamilyMember(item)&&(activeRarity==='ALL'||catalogRarity(item)===activeRarity)&&(sourceFilter.value==='all'||item.source===sourceFilter.value)&&matchesStatus(item)&&(!query||`${item.name} ${item.source} ${item.route}`.toLowerCase().includes(query))).sort((a,b)=>rarityMeta[catalogRarity(a)].rank-rarityMeta[catalogRarity(b)].rank||a.name.localeCompare(b.name));if(profile&&statusFilter.value==='all'){const rank={ready:0,upgrade:1,recomb:2,missing:3,blocked:4,owned:5,completed:6},sortState=item=>isRecombinedFamilyCompletion(item)?'completed':canRecombobulateItem(item)?'recomb':itemStatus(item);items.sort((a,b)=>rank[sortState(a)]-rank[sortState(b)])}grid.innerHTML=items.map(item=>{const status=itemStatus(item),recombable=canRecombobulateItem(item),completed=isRecombinedFamilyCompletion(item),mpGain=displayedMpGain(item,recombable,completed),isBase=familyMembers(item.family)[0]?.id===item.id,readyLabel=item.source==='Villager'?'◆ Trade materials ready':item.source==='Events'?'◆ Event materials ready':isBase?'◆ Ready to craft':'◆ Ready to upgrade',upgradeProgress=familyUpgradeProgress(item),label=status==='blocked'?`⊘ ${blocker(item)}`:item.legacy?(completed?'✦ Legacy · recombobulated':recombable?'◇ Legacy · recomb available':'◆ Legacy owned'):completed?'✦ Recombobulated':recombable?'◇ Recomb available':{owned:'✓ Owned',upgrade:`↑ Upgrade (${upgradeProgress.current}/${upgradeProgress.total})`,ready:readyLabel,missing:'Missing'}[status],labelClass=completed?'completed':recombable?'recomb':status,ownedRarity=ownedAccessoryRecords(item).sort((a,b)=>(rarityMeta[normalizeRarity(b.rarity)]?.rank||0)-(rarityMeta[normalizeRarity(a.rarity)]?.rank||0))[0]?.rarity,displayRarity=ownedRarity?ownedRarity.replaceAll('_',' '):item.maxRarity?`${item.rarity}–${item.maxRarity}`:item.rarity;return `<article class="card ${status||''} ${item.legacy?'legacy-card':''} ${recombable?'recombable':''} ${completed?'recombined-complete completion-gradient':''} ${profile?'profiled':''}" style="--rarity-color:${rarityMeta[catalogRarity(item)].color}">${status==='owned'?'<span class="owned-sheen"></span>':''}<div class="card-top"><div class="item-icon furfsky-icon">${textureIcon(item)}</div><span class="rarity">${displayRarity}</span></div><h3>${item.name}</h3><p class="route">${item.route}</p><div class="card-foot"><span class="source">${item.source}</span><span class="mp"><strong>+${mpGain}</strong> AP</span></div>${status?`<span class="card-status ${labelClass}">${label}</span>`:''}</article>`}).join('');startTextureAnimations();observeCompletionCards();$('#resultCount').textContent=items.length;empty.hidden=items.length>0}
-const minionProgress=minion=>{const crafted=new Set(profile?.minions?.crafted||[]),craftedTiers=minion.tiers.filter(tier=>crafted.has(tier.id)),highest=Math.max(0,...craftedTiers.map(tier=>tier.tier)),next=minion.tiers.find(tier=>tier.strandedObtainable!==false&&tier.tier===highest+1)||null,legacyOwned=craftedTiers.reduce((latest,tier)=>tier.legacy&&tier.tier>(latest?.tier||0)?tier:latest,null),maxTier=Math.max(0,...minion.tiers.filter(tier=>tier.strandedObtainable!==false&&!tier.legacy).map(tier=>tier.tier));return{highest,next,legacyOwned,maxTier,atStrandedMax:maxTier>0&&highest>=maxTier,maxed:!next&&highest>0}};
-function minionBlocker(minion,progress){if(!profile)return null;const previousId=`${minion.id}_GENERATOR_${progress.next?.tier-1}`,crafted=new Set(profile.minions?.crafted||[]);if(progress.next?.tier>1&&!crafted.has(previousId))return `Craft ${minion.name} ${toRoman(progress.next.tier-1)} first`;if(progress.next?.acquisition)return progress.next.acquisition;if(progress.next?.tier===1&&minion.acquisition&&!progress.next.requirements.length)return minion.acquisition;const gate=minion.unlockGate;if(!gate||progress.highest)return null;if(gate.type==='collection')return collectionGateBlocker(gate);if(gate.type==='slayer'){const level=Number(profile.slayers?.[gate.id]||0);if(level<gate.level)return `Reach ${gate.name} ${gate.level} · currently ${level}`}return null}
-function minionState(minion){if(!profile)return null;const progress=minionProgress(minion);if(progress.maxed)return'maxed';if(minionBlocker(minion,progress))return progress.highest?'unlocked':'blocked';const ready=progress.next?.requirements.length>0&&progress.next.requirements.every(requirement=>(profile.items.counts[requirement.id]||0)>=requirement.amount);return ready?'ready':'unlocked'}
-const materialNameOverrides={ASSISTANT:'Move Jerry',ENDER_STONE:'End Stone','LOG:1':'Spruce Log','LOG:3':'Jungle Log',MITHRIL_ORE:'Mithril',MUTTON:'Raw Mutton',WOOL:'White Wool',ENCHANTED_MUTTON:'Enchanted Raw Mutton',ENCHANTED_RAW_FISH:'Enchanted Raw Cod',ENCHANTED_COOKED_FISH:'Enchanted Cooked Cod',ENCHANTED_SLIME_BALL:'Enchanted Slimeball',ENCHANTED_COMPOST:'Compost Bundle',PET_ITEM_VAMPIRE_FANG:'Vampire Fang',PET_ITEM_TOY_JERRY:'Jerry 3D Glasses',PET_ITEM_PURE_MITHRIL_GEM:'Pure Mithril Gem',PET_ITEM_CHOCOLATE_SYRINGE:'Chocolate Syringe',UPGRADE_STONE_FROST:'Rare Wisp Upgrade Stone',UPGRADE_STONE_GLACIAL:'Epic Wisp Upgrade Stone'};
-const materialName=id=>materialNameOverrides[id]||id.toLowerCase().replaceAll('_',' ').replace(/\b\w/g,letter=>letter.toUpperCase()),headRenderUrl=url=>{if(!url||!url.includes('textures.minecraft.net/texture/'))return staticAssetPath(url);const hash=url.split('/').filter(Boolean).pop();return `https://mc-heads.net/head/${hash}/64`};
-function renderMinions(){const query=$('#minionSearch').value.trim().toLowerCase(),filter=$('#minionStatus').value,sort=$('#minionSort').value;let list=minions.filter(minion=>(activeMinionCategory==='ALL'||minion.category===activeMinionCategory)&&(!query||`${minion.name} ${minion.category}`.toLowerCase().includes(query))&&(!profile||filter==='all'||minionState(minion)===filter));const rank={ready:0,unlocked:1,blocked:2,maxed:3};list.sort((a,b)=>sort==='lowest-tier'?minionProgress(a).highest-minionProgress(b).highest||a.name.localeCompare(b.name):sort==='name'?a.name.localeCompare(b.name):sort==='category'?a.category.localeCompare(b.category)||a.name.localeCompare(b.name):profile?rank[minionState(a)]-rank[minionState(b)]||a.name.localeCompare(b.name):a.name.localeCompare(b.name));const crafted=new Set(profile?.minions?.crafted||[]);$('#minionGrid').innerHTML=list.map(minion=>{const progress=minionProgress(minion),state=minionState(minion),target=progress.next,block=state==='blocked'||state==='unlocked'?minionBlocker(minion,progress):null,specialRoute=target?.acquisition,label=!profile?minion.unlock||'Craftable on Stranded':state==='ready'?`${target.tier===1?'Craft':'Upgrade to'} tier ${toRoman(target.tier)} now`:progress.legacyOwned?`◆ Legacy tier ${toRoman(progress.legacyOwned.tier)} crafted`:state==='maxed'?'✓ Max Stranded tier crafted':specialRoute?`◆ ${specialRoute}`:block?`⊘ ${block}`:state==='unlocked'?(progress.highest?`Tier ${toRoman(progress.highest)} unlocked`:'Recipe unlocked'):'Not unlocked',requirements=target?.requirements||[];return `<article class="card minion-card ${state||''} ${progress.legacyOwned?'legacy-card':''} ${progress.atStrandedMax?'completion-gradient':''} ${profile?'profiled':''}" style="--rarity-color:#57a6ff">${state==='maxed'?'<span class="owned-sheen"></span>':''}<div class="card-top"><div class="item-icon furfsky-icon">${minion.texture?`<img class="head-render" src="${headRenderUrl(minion.texture)}" alt="" loading="lazy">`:`<span>${initials(minion.name)}</span>`}</div><span class="rarity">${minion.category}</span></div><h3>${minion.name}</h3><p class="route">${progress.highest?`Highest crafted: Tier ${toRoman(progress.highest)}${progress.legacyOwned?' · legacy':''}`:`Unlock: ${minion.unlock||'Special recipe'}`}</p>${target?`<div class="minion-materials">${requirements.map(requirement=>{const have=profile?.items?.counts?.[requirement.id]||0,met=have>=requirement.amount;return `<span class="${met?'met':''}">${profile?`${Math.min(have,requirement.amount).toLocaleString()}/`:''}${requirement.amount.toLocaleString()} ${materialName(requirement.id)}</span>`}).join('')}</div>`:''}<span class="card-status ${state||'missing'}">${label}</span></article>`}).join('');observeCompletionCards();$('#minionResultCount').textContent=list.length;$('#minionEmpty').hidden=list.length>0;if(profile){const progresses=minions.map(minionProgress),states=minions.map(minionState);$('#minionUnlocked').textContent=progresses.filter(item=>item.highest>0).length;$('#minionReady').textContent=states.filter(state=>state==='ready').length;$('#minionUnique').textContent=crafted.size}else{$('#minionUnlocked').textContent='—';$('#minionReady').textContent='—';$('#minionUnique').textContent='—'}}
-const petProfileIds=pet=>pet.profileIds||[pet.id];
-function petRecord(pet){const records=(profile?.pets||[]).filter(record=>petProfileIds(pet).includes(record.id));return records.sort((a,b)=>(rarityMeta[b.tier]?.rank||0)-(rarityMeta[a.tier]?.rank||0)||b.level-a.level)[0]||null}
-const petMaxLevel=pet=>Number(pet.maxLevel)||100;
-function petNextUpgrade(pet){
-  const owned=petRecord(pet);
-  if(!owned||pet.legacy)return null;
-  const targetRank=rarityMeta[pet.targetRarity]?.rank||0;
-  return(pet.upgrades||[]).find(step=>step.from===owned.tier&&(rarityMeta[step.to]?.rank||0)<=targetRank)||null
+const catalogRarity = (item) => item.maxRarity || item.rarity;
+const obtainableAccessories = () => accessories.filter((item) => !item.legacy);
+function setupFilters() {
+  const obtainable = obtainableAccessories(),
+    rarities = [
+      "ALL",
+      ...Object.keys(rarityMeta).filter((rarity) =>
+        obtainable.some((item) => catalogRarity(item) === rarity),
+      ),
+    ];
+  activeRarity = "ALL";
+  sourceFilter.innerHTML = '<option value="all">All sources</option>';
+  $("#rarityFilters").innerHTML = rarities
+    .map(
+      (rarity, index) =>
+        `<button class="${index === 0 ? "active" : ""}" data-rarity="${rarity}">${rarity[0] + rarity.slice(1).toLowerCase()}</button>`,
+    )
+    .join("");
+  [...new Set(obtainable.map((item) => item.source))]
+    .sort()
+    .forEach((source) =>
+      sourceFilter.insertAdjacentHTML(
+        "beforeend",
+        `<option value="${source}">${source}</option>`,
+      ),
+    );
 }
-function petUpgradeMaterialsReady(step){
-  return Boolean(step)&&(step.requirements||[]).every(requirement=>(profile?.items?.counts?.[requirement.id]||0)>=requirement.amount)
+function setupMinionFilters() {
+  const categories = [
+    "ALL",
+    ...new Set(minions.map((minion) => minion.category)),
+  ];
+  $("#minionCategories").innerHTML = categories
+    .map(
+      (category, index) =>
+        `<button class="${index === 0 ? "active" : ""}" data-category="${category}">${category[0] + category.slice(1).toLowerCase()}</button>`,
+    )
+    .join("");
 }
-function petState(pet){
-  if(!profile)return null;
-  const owned=petRecord(pet);
-  if(!owned)return'missing';
-  if(pet.legacy)return'legacy';
-  const ownedRank=rarityMeta[owned.tier]?.rank||0,targetRank=rarityMeta[pet.targetRarity]?.rank||0;
-  if(ownedRank>targetRank)return'legacy';
-  if(ownedRank===targetRank)return'maxed';
-  return petUpgradeMaterialsReady(petNextUpgrade(pet))?'ready':'upgrade'
+function setupPetFilters() {
+  const rarities = [
+    "ALL",
+    ...Object.keys(rarityMeta).filter((rarity) =>
+      pets.some((pet) => pet.targetRarity === rarity),
+    ),
+  ];
+  $("#petRarities").innerHTML = rarities
+    .map(
+      (rarity, index) =>
+        `<button class="${index === 0 ? "active" : ""}" data-pet-rarity="${rarity}">${rarity[0] + rarity.slice(1).toLowerCase()}</button>`,
+    )
+    .join("");
 }
-function petIsFullyMaxed(pet){const owned=petRecord(pet);return Boolean(owned)&&petState(pet)==='maxed'&&owned.level>=petMaxLevel(pet)}
-function formatPetUpgradeTime(seconds){
-  if(!seconds)return'';
-  const units=[[86400,'day'],[3600,'hour'],[60,'minute'],[1,'second']],unit=units.find(([size])=>seconds%size===0)||units.at(-1),value=seconds/unit[0];
-  return`${value.toLocaleString()} ${unit[1]}${value===1?'':'s'}`
+function setupAttributeFilters() {
+  const rarities = [
+    "ALL",
+    ...Object.keys(rarityMeta).filter((rarity) =>
+      attributes.some((attribute) => attribute.rarity === rarity),
+    ),
+  ];
+  $("#attributeRarities").innerHTML = rarities
+    .map(
+      (rarity, index) =>
+        `<button class="${index === 0 ? "active" : ""}" data-attribute-rarity="${rarity}">${rarity[0] + rarity.slice(1).toLowerCase()}</button>`,
+    )
+    .join("");
 }
-function petMatchesStatus(pet,filter){
-  if(!profile||filter==='all')return true;
-  const state=petState(pet);
-  return filter==='upgrade'?(state==='ready'||state==='upgrade'):state===filter
+const profileModeName = () =>
+  profileMode === "normal" ? "Normal" : "Stranded";
+function activateTab(tab = "accessories") {
+  if (profileMode === "normal" && (tab === "trades" || tab === "money"))
+    tab = "accessories";
+  document
+    .querySelectorAll(".feature-tabs button")
+    .forEach((button) =>
+      button.classList.toggle("active", button.dataset.tab === tab),
+    );
+  for (const name of [
+    "accessories",
+    "pets",
+    "attributes",
+    "trades",
+    "minions",
+    "money",
+  ])
+    $(`#${name}Tab`).hidden = name !== tab;
 }
-function renderPets(){
-  const query=$('#petSearch').value.trim().toLowerCase(),filter=$('#petStatus').value,sort=$('#petSort').value,stateRank={ready:0,upgrade:1,missing:2,maxed:3,legacy:4};
-  let list=pets.filter(pet=>(!pet.legacy||petRecord(pet))&&(activePetRarity==='ALL'||pet.targetRarity===activePetRarity)&&(!query||`${pet.name} ${pet.targetRarity} ${pet.note||''}`.toLowerCase().includes(query))&&petMatchesStatus(pet,filter));
-  list.sort((a,b)=>sort==='name'?a.name.localeCompare(b.name):sort==='rarity'?(rarityMeta[a.targetRarity]?.rank||0)-(rarityMeta[b.targetRarity]?.rank||0)||a.name.localeCompare(b.name):profile?stateRank[petState(a)]-stateRank[petState(b)]||a.name.localeCompare(b.name):a.name.localeCompare(b.name));
-  $('#petGrid').innerHTML=list.map(pet=>{
-    const owned=petRecord(pet),state=petState(pet),fullyMaxed=petIsFullyMaxed(pet),step=petNextUpgrade(pet),target=pet.targetRarity.replaceAll('_',' '),nextTarget=step?.to?.replaceAll('_',' ')||target,legacyMax=pet.legacyMaxRarity?.replaceAll('_',' '),rarityLabel=pet.legacy?`${legacyMax||target} LEGACY ONLY`:legacyMax?`${target} CURRENT · ${legacyMax} LEGACY`:target,label=!profile?`Target: ${target}`:state==='missing'?'Missing':state==='ready'?`◆ Item materials ready · ${owned.tier.replaceAll('_',' ')} → ${nextTarget}`:state==='upgrade'?`↑ Upgrade ${owned.tier.replaceAll('_',' ')} → ${nextTarget}`:state==='legacy'?`◆ Legacy ${owned.tier.replaceAll('_',' ')} · Level ${owned.level}`:`✓ ${target} · Level ${owned.level}`,route=pet.note||`Obtainable on Stranded · target ${target}`,displayRarity=state==='legacy'&&owned?.tier?owned.tier:pet.targetRarity,requirements=step?.requirements||[],materials=step?`<div class="minion-materials pet-materials">${requirements.length?requirements.map(requirement=>{const have=profile?.items?.counts?.[requirement.id]||0,met=have>=requirement.amount;return`<span class="${met?'met':''}">${Math.min(have,requirement.amount).toLocaleString()}/${requirement.amount.toLocaleString()} ${escapeHtml(materialName(requirement.id))}</span>`}).join(''):'<span class="met">No item materials required</span>'}</div>`:'',meta=step?[step.method,step.coins?`${step.coins.toLocaleString()} base coins`:null,step.method==='Kat'&&step.timeSeconds?formatPetUpgradeTime(step.timeSeconds):null].filter(Boolean):[];
-    return `<article class="card pet-card ${state||''} ${state==='legacy'?'legacy-card':''} ${fullyMaxed?'completion-gradient':''} ${profile?'profiled':''}" style="--rarity-color:${rarityMeta[displayRarity]?.color||'#aeb7c3'}">${state==='maxed'?'<span class="owned-sheen"></span>':''}<div class="card-top"><div class="item-icon furfsky-icon"><img class="head-render" src="${headRenderUrl(pet.texture)}" alt="" loading="lazy"><span>${initials(pet.name)}</span></div><span class="rarity">${rarityLabel}</span></div><h3>${pet.name}</h3><p class="route">${escapeHtml(route)}</p>${materials}${meta.length?`<div class="pet-upgrade-meta">${meta.map(value=>`<span>${escapeHtml(value)}</span>`).join('')}</div>`:''}<div class="card-foot"><span class="source">${owned?`OWNED ${owned.tier}`:'STRANDED PET'}</span><span class="mp">${owned?`LVL <strong>${owned.level}</strong>`:`MAX <strong>${target}</strong>`}</span></div><span class="card-status ${state||'missing'}">${label}</span></article>`
-  }).join('');
-  observeCompletionCards();
-  $('#petResultCount').textContent=list.length;
-  $('#petEmpty').hidden=list.length>0;
-  if(profile){
-    const shownPets=pets.filter(pet=>!pet.legacy||petRecord(pet)),states=shownPets.map(petState),obtainableStates=pets.filter(pet=>!pet.legacy).map(petState);
-    $('#petOwned').textContent=states.filter(state=>state!=='missing').length;
-    $('#petReady').textContent=states.filter(state=>state==='ready').length;
-    $('#petMaxed').textContent=states.filter(state=>state==='maxed'||state==='legacy').length;
-    $('#petUpgrades').textContent=obtainableStates.filter(state=>state==='missing'||state==='upgrade'||state==='ready').length
-  }else{
-    $('#petOwned').textContent='—';
-    $('#petReady').textContent='—';
-    $('#petMaxed').textContent='—';
-    $('#petUpgrades').textContent='—'
-  }
-}
-const ATTRIBUTE_STORAGE_PREFIX='stranded-attribute-levels';
-const attributeStorageKey=()=>`${ATTRIBUTE_STORAGE_PREFIX}:${profile?.player?.uuid||'local'}:${profile?.profile?.id||'default'}`;
-function storedAttributeLevels(){try{const value=JSON.parse(localStorage.getItem(attributeStorageKey())||'{}');return value&&typeof value==='object'?value:{}}catch{return{}}}
-function attributeLevel(attribute,levels=storedAttributeLevels()){const saved=[levels[attribute.id],...(attribute.levelAliases||[]).map(id=>levels[id])];return Math.max(0,Math.min(attribute.maxLevel,Math.floor(Math.max(0,...saved.map(value=>Number(value)||0)))))}
-function attributeState(attribute,levels){if(attribute.legacy)return'legacy';const level=attributeLevel(attribute,levels);return level<=0?'missing':level>=attribute.maxLevel?'maxed':'upgrade'}
-function setAttributeLevel(id,level){const attribute=attributes.find(item=>item.id===id);if(!attribute)return;const levels=storedAttributeLevels(),next=Math.max(0,Math.min(attribute.maxLevel,Math.floor(Number(level)||0)));if(next)levels[id]=next;else delete levels[id];for(const alias of attribute.levelAliases||[])delete levels[alias];try{localStorage.setItem(attributeStorageKey(),JSON.stringify(levels))}catch{}renderAttributes()}
-function renderAttributes(){
-  const query=$('#attributeSearch').value.trim().toLowerCase(),filter=$('#attributeStatus').value,levels=storedAttributeLevels(),stateRank={upgrade:0,missing:1,maxed:2,legacy:3};
-  let list=attributes.filter(attribute=>(activeAttributeRarity==='ALL'||attribute.rarity===activeAttributeRarity)&&(!query||`${attribute.name} ${attribute.rarity} ${attribute.note||''}`.toLowerCase().includes(query))&&(filter==='all'||attributeState(attribute,levels)===filter));
-  list.sort((a,b)=>stateRank[attributeState(a,levels)]-stateRank[attributeState(b,levels)]||(rarityMeta[a.rarity]?.rank||0)-(rarityMeta[b.rarity]?.rank||0)||a.name.localeCompare(b.name));
-  $('#attributeGrid').innerHTML=list.map(attribute=>{
-    const level=attributeLevel(attribute,levels),state=attributeState(attribute,levels),label=state==='legacy'?`◆ Legacy${level?` · Level ${level}`:' · unobtainable'}`:state==='missing'?'Missing':state==='maxed'?'✓ Level 10 maxed':`↑ Upgrade level ${level} → ${level+1}`;
-    return `<article class="card attribute-card ${state} ${attribute.legacy?'legacy-card':''} ${state==='maxed'?'completion-gradient':''}" style="--rarity-color:${rarityMeta[attribute.rarity]?.color||'#aeb7c3'}">${state==='maxed'?'<span class="owned-sheen"></span>':''}<div class="card-top"><div class="item-icon furfsky-icon attribute-icon">${textureIcon(attribute)}</div><span class="rarity">${attribute.rarity}</span></div><h3>${attribute.name} Shard</h3><p class="route">${escapeHtml(attribute.note||`Hunt ${attribute.name} on Stranded`)}</p><div class="attribute-level"><button type="button" data-attribute-id="${attribute.id}" data-level="${level-1}" aria-label="Decrease ${attribute.name} level">−</button><div><span>LEVEL <strong>${level}</strong> / ${attribute.maxLevel}</span><i><b style="width:${level/attribute.maxLevel*100}%"></b></i></div><button type="button" data-attribute-id="${attribute.id}" data-level="${level+1}" aria-label="Increase ${attribute.name} level">+</button></div><span class="card-status ${state}">${label}</span></article>`
-  }).join('');
-  observeCompletionCards();
-  $('#attributeResultCount').textContent=list.length;
-  $('#attributeEmpty').hidden=list.length>0;
-  const allLevels=attributes.map(attribute=>attributeLevel(attribute,levels)),obtainableAttributes=attributes.filter(attribute=>!attribute.legacy);
-  $('#attributeOwned').textContent=allLevels.filter(level=>level>0).length;
-  $('#attributeMaxed').textContent=allLevels.filter((level,index)=>level>=attributes[index].maxLevel).length;
-  $('#attributeLevelsLeft').textContent=obtainableAttributes.reduce((sum,attribute)=>sum+attribute.maxLevel-attributeLevel(attribute,levels),0)
-}
-const VILLAGER_TRADE_STORAGE_PREFIX='stranded-villager-trades';
-const villagerTradeStorageKey=()=>`${VILLAGER_TRADE_STORAGE_PREFIX}:${profile?.player?.uuid||'local'}:${profile?.profile?.id||'default'}`;
-function storedVillagerTradeProgress(){try{const value=JSON.parse(localStorage.getItem(villagerTradeStorageKey())||'{}');return{obtained:value?.obtained&&typeof value.obtained==='object'?value.obtained:{},amounts:value?.amounts&&typeof value.amounts==='object'?value.amounts:{}}}catch{return{obtained:{},amounts:{}}}}
-function saveVillagerTradeProgress(progress){try{localStorage.setItem(villagerTradeStorageKey(),JSON.stringify(progress))}catch{}}
-function villagerTradeObtained(trade,progress=storedVillagerTradeProgress()){return progress.obtained[trade.id]===true}
-function savedVillagerTradeAmount(trade,progress=storedVillagerTradeProgress()){const value=Number(progress.amounts[trade.id]);return Number.isInteger(value)&&value>0?value:null}
-function villagerTradeState(trade,progress=storedVillagerTradeProgress()){if(!villagerTradeObtained(trade,progress))return'missing';const saved=savedVillagerTradeAmount(trade,progress),lowest=trade.costs[0]?.min;return trade.direction==='item_to_emerald'&&saved!=null&&Number.isFinite(lowest)&&saved>lowest?'upgrade':'obtained'}
-function villagerTradeAmountOutsideKnownRange(trade,amount){const cost=trade?.costs?.[0];return Number.isInteger(amount)&&Number.isFinite(cost?.min)&&Number.isFinite(cost?.max)&&(amount<cost.min||amount>cost.max)}
-function villagerTradePriceOutliers(progress=storedVillagerTradeProgress()){
-  return villagerTrades.flatMap(trade=>{
-    const amount=savedVillagerTradeAmount(trade,progress);
-    return trade.direction==='item_to_emerald'&&villagerTradeAmountOutsideKnownRange(trade,amount)?[{trade,amount}]:[]
-  })
-}
-function villagerTradePriceReportUrl(entries){
-  const rows=entries.map(({trade,amount})=>{const cost=trade.costs[0],position=amount<cost.min?'Below minimum':'Above maximum';return `| ${cost.name.replaceAll('|','\\|')} | ${amount} | ${cost.min}–${cost.max} | ${position} |`}).join('\n');
-  const title=entries.length===1?`Villager trade price: ${entries[0].trade.costs[0].name} costs ${entries[0].amount}`:`Villager trade price range updates (${entries.length} prices)`;
-  const body=`## Out-of-range Villager prices\n\n| Trade input | Entered cost | Current listed range | Result |\n|---|---:|---:|---|\n${rows}\n\nEach cost is for **1 Emerald**. Please attach clear in-game screenshot proof showing every reported Villager trade and price.`;
-  return `https://github.com/TomtomFH/SkyblockStranded/issues/new?${new URLSearchParams({title,body})}`
-}
-function openVillagerTradePriceReport(entries,checkedCount=entries.length){
-  const dialog=$('#tradePriceReportDialog'),kicker=$('#tradePriceReportKicker'),title=$('#tradePriceReportTitle'),message=$('#tradePriceReportMessage'),summary=$('#tradePriceReportSummary'),proof=$('#tradePriceReportProof'),link=$('#tradePriceReportLink'),count=entries.length;
-  if(count){
-    kicker.textContent=count===1?'UNLISTED PRICE FOUND':'UNLISTED PRICES FOUND';
-    title.textContent=count===1?'Help update this trade range':`${count} prices need a range update`;
-    message.textContent=checkedCount===count?`${count===1?'This entered price is':'These entered prices are'} outside the currently known range.`:`Checked ${checkedCount.toLocaleString()} saved ${checkedCount===1?'price':'prices'} and found ${count.toLocaleString()} outside the currently known ranges.`;
-    summary.hidden=false;
-    summary.innerHTML=entries.map(({trade,amount})=>{const cost=trade.costs[0],direction=amount<cost.min?'below':'above';return `<li><strong>${escapeHtml(cost.name)}</strong><span>Entered <b>${amount.toLocaleString()}</b> · known ${cost.min.toLocaleString()}–${cost.max.toLocaleString()} · ${direction} range</span></li>`}).join('');
-    proof.hidden=false;
-    link.hidden=false;
-    link.href=villagerTradePriceReportUrl(entries)
-  }else{
-    kicker.textContent='PRICE CHECK COMPLETE';
-    title.textContent=checkedCount?'All saved prices match the known ranges':'No entered prices to check';
-    message.textContent=checkedCount?`Checked ${checkedCount.toLocaleString()} saved ${checkedCount===1?'price':'prices'}. None are outside the currently listed ranges.`:'Enter your Villagers’ exact resource costs first, then run this check again.';
-    summary.hidden=true;
-    summary.innerHTML='';
-    proof.hidden=true;
-    link.hidden=true
-  }
-  if(typeof dialog.showModal==='function'){if(dialog.open)dialog.close();dialog.showModal()}else alert(count?`${message.textContent}\n\nPlease report them at https://github.com/TomtomFH/SkyblockStranded/issues/new with screenshot proof.`:message.textContent)
-}
-function showVillagerTradePriceReport(trade,amount){openVillagerTradePriceReport([{trade,amount}])}
-function auditVillagerTradePrices(){
-  const progress=storedVillagerTradeProgress(),savedCount=villagerTrades.filter(trade=>trade.direction==='item_to_emerald'&&savedVillagerTradeAmount(trade,progress)!=null).length;
-  openVillagerTradePriceReport(villagerTradePriceOutliers(progress),savedCount)
-}
-function setVillagerTradeAmount(id,rawValue){const trade=villagerTrades.find(item=>item.id===id);if(!trade||trade.direction!=='item_to_emerald')return null;const progress=storedVillagerTradeProgress(),value=Number(rawValue);if(rawValue===''||!Number.isInteger(value)||value<=0)delete progress.amounts[id];else progress.amounts[id]=value;saveVillagerTradeProgress(progress);updateVillagerTradeOverview(progress);return savedVillagerTradeAmount(trade,progress)}
-function toggleVillagerTrade(id){const trade=villagerTrades.find(item=>item.id===id);if(!trade)return;const progress=storedVillagerTradeProgress();if(progress.obtained[id])delete progress.obtained[id];else progress.obtained[id]=true;saveVillagerTradeProgress(progress);renderVillagerTrades()}
-function tradeItemIcon(item){return textureIcon(item)}
-function tradeAmountText(item,trade,progress){if(Number.isFinite(item.amount))return item.amount.toLocaleString();const saved=savedVillagerTradeAmount(trade,progress);return saved?.toLocaleString()||`${item.min.toLocaleString()}–${item.max.toLocaleString()}`}
-function tradeItemMarkup(item,trade,progress,role){return `<div class="trade-item ${role}"><div class="trade-item-icon furfsky-icon">${tradeItemIcon(item)}</div><div><strong class="${item.min!=null?'trade-variable-amount':''}">${tradeAmountText(item,trade,progress)}×</strong><span>${escapeHtml(item.name)}</span></div></div>`}
-function syncVillagerTradeCardState(card,trade,progress=storedVillagerTradeProgress()){if(!card||!trade)return;const state=villagerTradeState(trade,progress),saved=savedVillagerTradeAmount(trade,progress),lowest=trade.costs[0]?.min,label=state==='upgrade'?`UPGRADABLE · ${saved} → ${lowest}`:state==='obtained'?'COMPLETE':'NOT FOUND';card.classList.remove('missing','upgrade','obtained');card.classList.add(state);const stateElement=card.querySelector('.trade-state');if(stateElement)stateElement.textContent=label;const sheen=card.querySelector(':scope > .owned-sheen');if(state==='obtained'&&!sheen)card.insertAdjacentHTML('afterbegin','<span class="owned-sheen"></span>');else if(state!=='obtained'&&sheen)sheen.remove()}
-function updateVillagerTradeOverview(progress=storedVillagerTradeProgress()){const obtained=villagerTrades.filter(trade=>villagerTradeObtained(trade,progress)).length,saved=villagerTrades.filter(trade=>trade.direction==='item_to_emerald'&&savedVillagerTradeAmount(trade,progress)!=null).length;$('#tradeObtained').textContent=obtained;$('#tradeRemaining').textContent=Math.max(0,villagerTrades.length-obtained);$('#tradeAmountsSaved').textContent=saved}
-function renderVillagerTrades(){
-  const query=$('#tradeSearch').value.trim().toLowerCase(),direction=$('#tradeDirection').value,status=$('#tradeStatus').value,progress=storedVillagerTradeProgress();
-  let list=villagerTrades.filter(trade=>(activeTradeLevel==='ALL'||(activeTradeLevel==='RESOURCE'?trade.level==null:trade.level===Number(activeTradeLevel)))&&(direction==='all'||trade.direction===direction)&&(status==='all'||villagerTradeState(trade,progress)===status)&&(!query||`${trade.reward.name} ${trade.costs.map(item=>item.name).join(' ')} ${trade.level==null?'resource offer':`level ${trade.level}`}`.toLowerCase().includes(query)));
-  const stateRank={missing:0,upgrade:1,obtained:2};list.sort((a,b)=>stateRank[villagerTradeState(a,progress)]-stateRank[villagerTradeState(b,progress)]||(a.level??0)-(b.level??0)||a.direction.localeCompare(b.direction)||a.reward.name.localeCompare(b.reward.name));
-  $('#tradeGrid').innerHTML=list.map(trade=>{
-    const obtained=villagerTradeObtained(trade,progress),state=villagerTradeState(trade,progress),variable=trade.direction==='item_to_emerald',directionLabel=variable?'ITEM → EMERALD':'EMERALD → ITEM',title=variable?trade.costs[0].name:trade.reward.name,saved=savedVillagerTradeAmount(trade,progress),lowest=trade.costs[0]?.min,range=variable?`${lowest}–${trade.costs[0].max}`:'',stateLabel=state==='upgrade'?`UPGRADABLE · ${saved} → ${lowest}`:state==='obtained'?'COMPLETE':'NOT FOUND';
-    return `<article class="trade-card ${state}" data-trade-card="${trade.id}">${state==='obtained'?'<span class="owned-sheen"></span>':''}<div class="trade-card-head"><div><span class="trade-level">${trade.level==null?'RESOURCE OFFER':`LEVEL ${trade.level}`}</span><span class="trade-direction ${trade.direction}">${directionLabel}</span></div><span class="trade-state">${stateLabel}</span></div><h3>${escapeHtml(title)}</h3><div class="trade-flow"><div class="trade-side"><small>YOU GIVE</small><div class="trade-item-list">${trade.costs.map(item=>tradeItemMarkup(item,trade,progress,'cost')).join('<span class="trade-plus">+</span>')}</div></div><span class="trade-arrow" aria-hidden="true">→</span><div class="trade-side reward"><small>YOU GET</small><div class="trade-item-list">${tradeItemMarkup(trade.reward,trade,progress,'reward')}</div></div></div>${variable?`<label class="trade-custom-amount"><span>Your Villager's cost</span><small>${range} possible · items for 1 Emerald</small><input type="number" min="1" step="1" inputmode="numeric" data-trade-amount="${trade.id}" value="${saved??''}" placeholder="${range}" aria-label="Exact ${escapeHtml(trade.costs[0].name)} cost"></label>`:''}<button type="button" class="trade-obtained-toggle" data-trade-obtained="${trade.id}" aria-pressed="${obtained}"><span>${obtained?'✓':'+'}</span>${obtained?'Trade obtained':'Mark as obtained'}</button></article>`
-  }).join('');
-  startTextureAnimations();
-  $('#tradeResultCount').textContent=list.length;
-  $('#tradeEmpty').hidden=list.length>0;
-  updateVillagerTradeOverview(progress)
-}
-const nextRarity=rarity=>(rarityAfter(rarity)||'NEXT_RARITY').replaceAll('_',' ');
-function updateRecombobulationSummary(){const records=profile.items?.accessories||[],candidates=records.filter(record=>record.canRecombobulate&&record.unrecombobulatedCount>0).sort((a,b)=>(rarityMeta[a.rarity]?.rank||99)-(rarityMeta[b.rarity]?.rank||99)||a.name.localeCompare(b.name)),ready=candidates.reduce((sum,record)=>sum+record.unrecombobulatedCount,0),recombined=records.reduce((sum,record)=>sum+record.recombobulatedCount,0);$('#recombReadyCount').textContent=ready;$('#recombinedCount').textContent=recombined;$('#recombCandidates').innerHTML=candidates.length?candidates.map(record=>`<span class="recomb-candidate"><strong>${escapeHtml(record.name)}${record.unrecombobulatedCount>1?` ×${record.unrecombobulatedCount}`:''}</strong><small>${escapeHtml(record.rarity||'Unknown')} → ${escapeHtml(nextRarity(record.rarity))}</small></span>`).join(''):'<p>Every eligible owned accessory is already recombobulated.</p>';$('#recombPanel').hidden=!profile.rawSignals?.accessoryMetadataAvailable}
-const PUBLIC_PROFILE_API='https://statsapi.tem.cx';
-const SOOPY_PROFILE_API='https://soopy.dev/api/v2/player_skyblock';
-const PROFILE_ENRICHMENT_TIMEOUT_MS=8000;
-const LAST_PROFILE_STORAGE_KEY='stranded-index-last-profile';
-const collectionAliases={OAK_LOG:'LOG',SPRUCE_LOG:'LOG:1',BIRCH_LOG:'LOG:2',JUNGLE_LOG:'LOG:3',ACACIA_LOG:'LOG_2',DARK_OAK_LOG:'LOG_2:1',COCOA_BEANS:'INK_SACK:3',LAPIS_LAZULI:'INK_SACK:4',POTATO:'POTATO_ITEM',PORKCHOP:'PORK',CHICKEN:'RAW_CHICKEN',COD:'RAW_FISH',END_STONE:'ENDER_STONE',NETHER_WART:'NETHER_STALK',CLAY:'CLAY_BALL',GLOWSTONE:'GLOWSTONE_DUST'};
-const stripFormatting=value=>String(value||'').replace(/§[0-9A-FK-OR]/gi,'');
-const accessoryRarityPattern=/(VERY SPECIAL|SPECIAL|DIVINE|MYTHIC|LEGENDARY|EPIC|RARE|UNCOMMON|COMMON)\s+(?:ACCESSORY|HATC?CESSORY)/i;
-const normalizedName=value=>String(value||'').toLowerCase().replaceAll('_','');
-const normalizedUuid=value=>String(value||'').toLowerCase().replaceAll('-','');
-function addItemCount(counts,id,amount){
-  const normalizedId=String(id||'').toUpperCase(),numericAmount=Number(amount);
-  if(!normalizedId||!Number.isFinite(numericAmount)||numericAmount<=0)return;
-  counts[normalizedId]=(counts[normalizedId]||0)+numericAmount;
-  const legacy=normalizedId.match(/^([A-Z0-9_]+):(\d+)$/);
-  if(legacy)counts[`${legacy[1]}-${legacy[2]}`]=(counts[`${legacy[1]}-${legacy[2]}`]||0)+numericAmount
-}
-const SKYOCEAN_STORAGE_SCHEMA='stranded-index-skyocean-storage',SKYOCEAN_STORAGE_VERSION=1;
-function skyOceanStorageKey(){return profile?`stranded-index-skyocean-storage:${normalizedUuid(profile.player.uuid)}:${String(profile.profile.name||'').toLowerCase()}`:''}
-function validateSkyOceanStorage(input){
-  if(!input||typeof input!=='object'||Array.isArray(input))throw new Error('The pasted value is not a SkyOcean storage export.');
-  if(input.schema!==SKYOCEAN_STORAGE_SCHEMA||Number(input.version)!==SKYOCEAN_STORAGE_VERSION)throw new Error('This SkyOcean export format is not supported.');
-  if(!input.counts||typeof input.counts!=='object'||Array.isArray(input.counts))throw new Error('The export does not contain item totals.');
-  const entries=Object.entries(input.counts);if(entries.length>10000)throw new Error('The export contains too many item entries.');
-  const counts={};for(const [rawId,rawAmount] of entries){const id=String(rawId||'').trim().toUpperCase(),amount=Number(rawAmount);if(!/^[A-Z0-9_.:-]+$/.test(id)||!Number.isSafeInteger(amount)||amount<=0)throw new Error(`Invalid item total for ${id||'an unknown item'}.`);counts[id]=(counts[id]||0)+amount}
-  return{...input,playerUuid:String(input.playerUuid||''),profile:String(input.profile||''),counts,source:input.source&&typeof input.source==='object'?input.source:{}}
-}
-function updateSkyOceanStorageUi(){
-  const imported=profile?.skyOceanStorage,status=$('#skyOceanStorageStatus'),clear=$('#clearSkyOceanImport'),importButton=$('#importSkyOceanStorage');
-  if(!status||!clear||!importButton)return;
-  status.classList.remove('error');
-  if(!imported){status.textContent='Run \\exportstorage, then click Import';clear.disabled=true;return}
-  const itemTypes=Object.keys(imported.counts||{}).length,slots=Number(imported.source?.nonemptySlots)||0,indexedAt=Date.parse(imported.source?.indexedAt||'');
-  status.textContent=`${itemTypes.toLocaleString()} item types · ${slots.toLocaleString()} occupied slots${Number.isFinite(indexedAt)?` · indexed ${new Date(indexedAt).toLocaleString()}`:''}`;
-  clear.disabled=false
-}
-function applySkyOceanStorage(raw,{persist=true,refresh=true}={}){
-  if(!profile)throw new Error('Load the matching Stranded profile first.');
-  const imported=validateSkyOceanStorage(raw),profileUuid=normalizedUuid(profile.player.uuid),exportUuid=normalizedUuid(imported.playerUuid);
-  if(exportUuid&&exportUuid!==profileUuid)throw new Error('This chest export belongs to a different Minecraft account.');
-  if(imported.profile&&imported.profile.toLowerCase()!==String(profile.profile.name||'').toLowerCase())throw new Error(`This export is for the ${imported.profile} profile, not ${profile.profile.name}.`);
-  if(!profile.items.skyOceanBaseCounts)profile.items.skyOceanBaseCounts={...profile.items.counts};
-  profile.items.counts={...profile.items.skyOceanBaseCounts};for(const [id,amount] of Object.entries(imported.counts))addItemCount(profile.items.counts,id,amount);
-  profile.skyOceanStorage=imported;profile.rawSignals.skyOceanStorageAvailable=true;
-  if(persist)try{localStorage.setItem(skyOceanStorageKey(),JSON.stringify(imported))}catch{}
-  if(refresh)updateProfileSummary();
-  return imported
-}
-function restoreSavedSkyOceanStorage(){
-  if(!profile)return false;
-  try{const saved=localStorage.getItem(skyOceanStorageKey());if(!saved)return false;applySkyOceanStorage(JSON.parse(saved),{persist:false,refresh:false});return true}catch{try{localStorage.removeItem(skyOceanStorageKey())}catch{}return false}
-}
-function removeSkyOceanStorage(){
-  if(!profile)return;
-  const key=skyOceanStorageKey();if(profile.items.skyOceanBaseCounts)profile.items.counts={...profile.items.skyOceanBaseCounts};
-  delete profile.items.skyOceanBaseCounts;delete profile.skyOceanStorage;profile.rawSignals.skyOceanStorageAvailable=false;
-  try{localStorage.removeItem(key)}catch{}
-  updateProfileSummary()
-}
-async function importSkyOceanStorageFromClipboard(){
-  const button=$('#importSkyOceanStorage'),status=$('#skyOceanStorageStatus');
-  button.disabled=true;button.textContent='Importing…';status.classList.remove('error');
-  try{
-    const text=(await navigator.clipboard.readText()).trim();
-    if(!text)throw new Error('The clipboard is empty. Run \\exportstorage in Minecraft first.');
-    applySkyOceanStorage(JSON.parse(text))
-  }catch(problem){
-    status.textContent=problem instanceof SyntaxError?'The clipboard does not contain a valid \\exportstorage result.':problem.message;
-    status.classList.add('error')
-  }finally{button.disabled=false;button.textContent='Import'}
-}
-function catalogItemForProfileId(id){const direct=accessories.find(item=>(item.profileIds||[item.id]).includes(id));if(direct)return direct;const family=Object.entries(familyUpgrades).find(([,ids])=>ids.includes(id))?.[0];return family?familyMembers(family).at(-1)||null:null}
-function normalizePublicProfile(data){
-  const member=data.member||{},inventoryGroups=Object.values(member.inventories||{}).filter(Array.isArray),ids=new Set(),counts={};
-  for(const items of inventoryGroups)for(const item of items.filter(Boolean)){const id=String(item.id||'').toUpperCase(),amount=Math.max(1,Number(item.count)||1);if(!id)continue;ids.add(id);addItemCount(counts,id,amount)}
-  const bag=(member.inventories?.accessory_bag||[]).filter(Boolean),rawAccessoryRecords=bag.map(item=>{
-    const id=String(item.id||'').toUpperCase(),lore=item.display?.lore||[],rarityLine=lore.find(line=>accessoryRarityPattern.test(stripFormatting(line)))||'',rarity=stripFormatting(rarityLine).match(accessoryRarityPattern)?.[1]?.replaceAll(' ','_')||null,descriptor=profileAccessoryDescriptor(id),catalogItem=descriptor?.catalogItem||null,magicalPower=Number(stripFormatting(lore.find(line=>stripFormatting(line).includes('Accessory Power'))||'').match(/\+([\d,]+)/)?.[1]?.replaceAll(',','')||0),recombobulated=/§k/i.test(rarityLine)||(catalogItem?.rarity==='SPECIAL'&&rarity==='VERY_SPECIAL'),baseRarity=recombobulated?(rarityBefore(rarity)||catalogItem?.rarity||rarity):(descriptor?.external?rarity:catalogItem?.rarity||rarity),amount=Math.max(1,Number(item.count)||1);
-    return{id,name:stripFormatting(item.display?.name)||catalogItem?.name||id,rarity,baseRarity,count:amount,recombobulated,canRecombobulate:catalogItem?.canRecombobulate===true,magicalPower,familyKey:descriptor?.family||`item:${id}`,familyLevel:descriptor?.level||0}
+function applyModeCopy() {
+  const normal = profileMode === "normal",
+    mode = profileModeName();
+  document.body.dataset.profileMode = profileMode;
+  document.title = `${mode} · SkyBlock Index`;
+  document.querySelectorAll("[data-profile-mode]").forEach((button) => {
+    const active = button.dataset.profileMode === profileMode;
+    button.classList.toggle("active", active);
+    button.setAttribute("aria-pressed", String(active));
   });
-  const activeByFamily=new Map();for(const record of rawAccessoryRecords){const current=activeByFamily.get(record.familyKey),recordRarity=rarityMeta[normalizeRarity(record.rarity)]?.rank||0,currentRarity=rarityMeta[normalizeRarity(current?.rarity)]?.rank||0;if(!current||record.familyLevel>current.familyLevel||(record.familyLevel===current.familyLevel&&(recordRarity>currentRarity||(recordRarity===currentRarity&&record.magicalPower>current.magicalPower))))activeByFamily.set(record.familyKey,record)}
-  const accessoryRecords=[...activeByFamily.values()].map(record=>({...record,count:1,recombobulatedCount:record.recombobulated?1:0,unrecombobulatedCount:record.recombobulated?0:1})),accessoryIds=accessoryRecords.map(record=>record.id);
-  const collections={},collectionLevels={};for(const entry of member.collections||[]){const raw=String(entry.name||'').toUpperCase(),id=collectionAliases[raw]||raw,amount=Number(entry.amount)||0,level=Number(entry.level);collections[raw]=amount;collections[id]=amount;if(Number.isFinite(level)){collectionLevels[raw]=level;collectionLevels[id]=level}}
-  const skills={};for(const entry of member.skills?.list||[]){const id=String(entry.id||'').toUpperCase(),xp=Number(entry.xp)||0;skills[id]=xp;skills[`SKILL_${id}`]=xp}
-  const slayers={};for(const boss of member.slayers?.bosses||[])slayers[String(boss.rawName||boss.name||'').toLowerCase()]=Number(boss.level)||0;
-  const crafted=[],coopMinions=Array.isArray(data.profile?.minions)?data.profile.minions:(member.minions||[]);for(const record of coopMinions){const minion=minions.find(candidate=>normalizedName(candidate.id)===normalizedName(record.name));if(!minion)continue;(record.levels||[]).forEach((done,index)=>{if(done&&minion.tiers[index])crafted.push(minion.tiers[index].id)})}
-  const petRecords=(member.pets?.list||[]).map(pet=>({id:String(pet.id||'').toUpperCase(),tier:normalizeRarity(pet.tier),level:Math.max(1,Number(pet.level)||1),xp:Number(pet.xp)||0,skin:pet.skin||null,item:pet.item||null})).filter(pet=>pet.id&&rarityMeta[pet.tier]);
-  const magicalPower=accessoryRecords.reduce((sum,record)=>sum+(record.magicalPower||magicalPowerFor(record.rarity)),0);
-  return{source:'public-web',player:{username:member.username,uuid:member.uuid},profile:{id:data.profile?.uuid,name:data.profile?.name,mode:data.profile?.mode||'stranded',lastSave:member.lastSave||null,memberUuids:(data.profile?.members||[]).filter(candidate=>candidate.left!==true).map(candidate=>normalizedUuid(candidate.uuid))},stats:{magicalPower},items:{ids:[...ids],accessoryIds,counts,accessories:accessoryRecords},collections,collectionLevels,slayers,skills,minions:{crafted},pets:petRecords,cache:{hit:false,ageSeconds:0},rawSignals:{inventoryAvailable:ids.size>0,accessoryMetadataAvailable:accessoryRecords.length>0,collectionsAvailable:Object.keys(collections).length>0,collectionLevelsAvailable:Object.keys(collectionLevels).length>0,slayersAvailable:Object.keys(slayers).length>0,minionsAvailable:crafted.length>0,petsAvailable:Array.isArray(member.pets?.list),sacksAvailable:false}};
+  document
+    .querySelectorAll("[data-stranded-only]")
+    .forEach((element) => (element.hidden = normal));
+  $("#profileModeHint").textContent = normal
+    ? "Full-game progression across every current accessory, pet, Attribute Shard, and minion."
+    : "Island-only progression and Stranded-specific availability.";
+  $("#heroEyebrow").innerHTML =
+    `<span></span> HYPIXEL SKYBLOCK · ${mode.toUpperCase()}`;
+  $("#heroDescription").textContent = normal
+    ? "Search a Normal profile and track every accessory family, pet rarity and level, Attribute Shard, and minion tier available in SkyBlock."
+    : "Search a Stranded profile and track obtainable accessories, pets, attributes, minion progression, villager trades, and emerald trade income.";
+  $("#profileSearchLabel").textContent = `Analyze a ${mode} profile`;
+  $("#profileChoiceLabel").textContent = `${mode} profile`;
+  $("#profileSelect").setAttribute("aria-label", `Choose a ${mode} profile`);
+  $("#playerProfileType").textContent = `${mode.toUpperCase()} PROFILE`;
+  $("#petSearch").placeholder = `Search ${mode} pets…`;
+  $("#petMaxedLabel").textContent = `at ${mode} max`;
+  $("#petResultLabel").textContent = normal
+    ? "pet families"
+    : "obtainable pet families";
+  const petMaxOption = $("#petStatus").querySelector('option[value="maxed"]');
+  if (petMaxOption) petMaxOption.textContent = `At ${mode} max`;
+  $("#attributeResultLabel").textContent = normal
+    ? "Attribute Shards"
+    : "Stranded Attribute Shards";
+  $("#attributeLegend").lastChild.textContent = normal
+    ? " Complete current Hunting Box catalog"
+    : " Source mobs from Stranded Stuff";
+  const sourceLink = $("#attributeSourceLink");
+  sourceLink.href = normal
+    ? "https://github.com/NotEnoughUpdates/NotEnoughUpdates-REPO"
+    : "https://app.notion.com/p/Attributes-33fb3a8f4549800484e4db47b31fd8e2";
+  sourceLink.textContent = normal
+    ? "Current game data source ↗"
+    : "Stranded Stuff source ↗";
 }
-function mergeSoopyCollections(target,memberEntries){
-  const totals={},levels={};
-  for(const [,member] of memberEntries){
-    const collections=member?.collections;if(collections&&typeof collections==='object'&&!Array.isArray(collections))for(const [rawId,value] of Object.entries(collections)){const id=String(rawId).toUpperCase(),amount=Number(value);if(Number.isFinite(amount))totals[id]=(totals[id]||0)+amount}
-    for(const rawTier of member?.unlocked_coll_tiers||[]){const match=String(rawTier).toUpperCase().match(/^(.*)_(-?\d+)$/);if(!match)continue;const id=match[1],level=Math.max(0,Number(match[2])||0);levels[id]=Math.max(levels[id]||0,level)}
+function applyCatalogMode(mode, rerender = true) {
+  const bundle = catalogBundles[mode];
+  if (!bundle) return;
+  accessories = bundle.accessories;
+  familyUpgrades = bundle.familyUpgrades;
+  minions = bundle.minions;
+  pets = bundle.pets;
+  attributes = bundle.attributes;
+  villagerTrades = bundle.villagerTrades;
+  activeMinionCategory = "ALL";
+  activePetRarity = "ALL";
+  activeAttributeRarity = "ALL";
+  activeTradeLevel = "ALL";
+  statusFilter.value = "all";
+  $("#minionStatus").value = "all";
+  $("#petStatus").value = "all";
+  $("#attributeStatus").value = "all";
+  setupFilters();
+  setupMinionFilters();
+  setupPetFilters();
+  setupAttributeFilters();
+  applyModeCopy();
+  const activeTab = $(".feature-tabs button.active")?.dataset.tab;
+  activateTab(activeTab);
+  updateTotals();
+  if (rerender) {
+    render();
+    renderMinions();
+    renderPets();
+    renderAttributes();
+    if (profileMode === "stranded") renderVillagerTrades();
   }
-  const keysFor=id=>[id,...Object.entries(collectionAliases).filter(([,mapped])=>mapped===id).map(([alias])=>alias)];
-  for(const [id,amount] of Object.entries(totals))for(const key of keysFor(id))target.collections[key]=Math.max(Number(target.collections[key]||0),amount);
-  for(const [id,level] of Object.entries(levels))for(const key of keysFor(id))target.collectionLevels[key]=Math.max(Number(target.collectionLevels[key]||0),level);
-  if(Object.keys(totals).length)target.rawSignals.collectionsAvailable=true;
-  if(Object.keys(levels).length)target.rawSignals.collectionLevelsAvailable=true;
-  return Object.keys(totals).length>0||Object.keys(levels).length>0
 }
-function mergeSoopyProfile(target,data){
-  const profiles=data?.data?.profiles;
-  if(!profiles||typeof profiles!=='object')return target;
-  const entries=Array.isArray(profiles)?profiles.map(candidate=>[candidate.profile_id||candidate.uuid,candidate]):Object.entries(profiles),profileId=normalizedUuid(target.profile.id),profileName=String(target.profile.name||'').toLowerCase();
-  const selected=entries.find(([id])=>normalizedUuid(id)===profileId)?.[1]||entries.find(([,candidate])=>String(candidate?.cute_name||candidate?.name||'').toLowerCase()===profileName)?.[1];
-  if(!selected)return target;
-  const members=selected.members||{},allowedMembers=new Set(target.profile.memberUuids||[]),memberEntries=(Array.isArray(members)?members.map(member=>[member.uuid,member]):Object.entries(members)).filter(([id])=>!allowedMembers.size||allowedMembers.has(normalizedUuid(id))),collectionsMerged=mergeSoopyCollections(target,memberEntries),playerUuid=normalizedUuid(target.player.uuid),member=memberEntries.find(([id])=>normalizedUuid(id)===playerUuid)?.[1],sacks=member?.sack;
-  if(sacks&&typeof sacks==='object'&&!Array.isArray(sacks)){for(const [id,amount] of Object.entries(sacks))addItemCount(target.items.counts,id,amount);target.rawSignals.sacksAvailable=true}
-  if(collectionsMerged||target.rawSignals.sacksAvailable)target.source='public-web+soopy';
-  return target
+async function setProfileMode(mode) {
+  if (!catalogBundles[mode] || mode === profileMode) return;
+  profileMode = mode;
+  try {
+    localStorage.setItem(PROFILE_MODE_STORAGE_KEY, mode);
+  } catch {}
+  profile = null;
+  hideProfileChoices();
+  updateProfileSubmitLabel();
+  $("#profilePanel").hidden = true;
+  $("#recombPanel").hidden = true;
+  statusFilter.hidden = true;
+  statusFilter.value = "all";
+  $("#profileError").hidden = true;
+  applyCatalogMode(mode);
+  await restoreLastProfile();
 }
-async function fetchSoopyProfile(uuid){
-  try{
-    const timeout=globalThis.AbortSignal?.timeout?{signal:AbortSignal.timeout(PROFILE_ENRICHMENT_TIMEOUT_MS)}:{},response=await fetch(`${SOOPY_PROFILE_API}/${encodeURIComponent(normalizedUuid(uuid))}`,timeout);
-    if(!response.ok)return null;
-    return await response.json()
-  }catch{return null}
+function updateTotals() {
+  const obtainable = obtainableAccessories();
+  $("#totalCount").textContent = obtainable.length;
+  $("#familyCount").textContent = new Set(
+    obtainable.map((item) => item.family),
+  ).size;
+  const best = {};
+  obtainable.forEach((item) => {
+    const current = best[item.family];
+    if (
+      !current ||
+      rarityMeta[catalogRarity(item)].rank >
+        rarityMeta[catalogRarity(current)].rank
+    )
+      best[item.family] = item;
+  });
+  const familyMaxima = Object.values(best),
+    base = familyMaxima.reduce(
+      (sum, item) => sum + magicalPowerFor(catalogRarity(item)),
+      0,
+    ),
+    recombined = familyMaxima.reduce((sum, item) => {
+      const rarity = catalogRarity(item),
+        upgraded = item.canRecombobulate ? rarityAfter(rarity) : null;
+      return sum + magicalPowerFor(upgraded || rarity);
+    }, 0);
+  $("#maxMp").textContent = recombined.toLocaleString();
+  $("#maxMpLabel").textContent =
+    `max rarity AP · ${base.toLocaleString()} base`;
 }
-async function fetchPublicStrandedProfile(username,profileName=''){
-  const summaryResponse=await fetch(`${PUBLIC_PROFILE_API}/player/${encodeURIComponent(username)}?customization=true`),summary=await summaryResponse.json().catch(()=>null);
-  if(!summaryResponse.ok)throw new Error(summary?.error||'That Minecraft player could not be found.');
-  const strandedProfiles=(summary.profiles||[]).filter(candidate=>candidate.mode==='stranded');
-  if(!strandedProfiles.length)throw new Error('No Stranded profile was found for that player.');
-  if(!profileName&&strandedProfiles.length>1)return{selectionRequired:true,profiles:strandedProfiles.map(candidate=>({id:candidate.uuid,name:candidate.name}))};
-  const chosen=profileName?strandedProfiles.find(candidate=>candidate.name.toLowerCase()===profileName.toLowerCase()):strandedProfiles[0];
-  if(!chosen)throw new Error('That profile is not a Stranded profile.');
-  const detailRequest=fetch(`${PUBLIC_PROFILE_API}/player/${encodeURIComponent(username)}/${encodeURIComponent(chosen.name)}?customization=true`),soopyRequest=fetchSoopyProfile(summary.player?.uuid);
-  const [detailResponse,soopyData]=await Promise.all([detailRequest,soopyRequest]),detail=await detailResponse.json().catch(()=>null);
-  if(!detailResponse.ok)throw new Error(detail?.error||'The Stranded profile could not be loaded.');
-  return mergeSoopyProfile(normalizePublicProfile(detail),soopyData);
+const initials = (name) =>
+  name
+    .split(/\s+/)
+    .filter((word) => !["of", "the"].includes(word.toLowerCase()))
+    .slice(0, 2)
+    .map((word) => word[0])
+    .join("")
+    .toUpperCase();
+const staticAssetPath = (src) => (src?.startsWith("/") ? `.${src}` : src);
+function textureIcon(item) {
+  const custom = textures[item.id],
+    texture = custom || item.fallbackTexture;
+  if (!texture) return `<span>${initials(item.name)}</span>`;
+  const entry = typeof texture === "string" ? { src: texture } : texture,
+    src = staticAssetPath(entry.src);
+  if (!entry.animation)
+    return `<img class="${!custom && item.fallbackTextureType === "head" ? "head-render" : ""}" src="${src}" alt="" loading="lazy"><span>${initials(item.name)}</span>`;
+  return `<canvas class="animated-texture" width="${entry.animation.frameWidth}" height="${entry.animation.frameHeight}" data-src="${src}" data-animation="${encodeURIComponent(JSON.stringify(entry.animation))}"></canvas><span>${initials(item.name)}</span>`;
 }
-function showProfileChoices(username,profiles){profileOptionsUsername=username.toLowerCase();$('#profileSelect').innerHTML=profiles.map(candidate=>`<option value="${escapeHtml(candidate.name)}">${escapeHtml(candidate.name)}</option>`).join('');$('#profileChoiceField').hidden=false}
-function hideProfileChoices(){profileOptionsUsername='';$('#profileChoiceField').hidden=true;$('#profileSelect').innerHTML=''}
-function updateProfileSubmitLabel(button=$('#profileForm').querySelector('button')){button.innerHTML=$('#profileChoiceField').hidden?'Check profile <span>→</span>':'Load profile <span>→</span>'}
-function updateProfileSummary(){const obtainable=obtainableAccessories(),statuses=obtainable.map(itemStatus),ownedObtainable=statuses.filter(status=>status==='owned').length,ownedLegacy=accessories.filter(item=>item.legacy&&ownsItem(item)).length,ready=statuses.filter(status=>status==='ready').length;$('#ownedCount').textContent=ownedObtainable+ownedLegacy;$('#upgradeCount').textContent=ready;$('#missingCount').textContent=obtainable.length-ownedObtainable;$('#magicPower').textContent=Number.isFinite(profile.stats?.magicalPower)?profile.stats.magicalPower.toLocaleString():'—';const percent=Math.round(ownedObtainable/obtainable.length*100),legacyNote=ownedLegacy?` · ${ownedLegacy} legacy owned`:'';$('#completionText').textContent=`${percent}% of obtainable accessories found${legacyNote}`;$('#completionBar').style.width=`${percent}%`;$('#playerName').textContent=profile.player.username;$('#profileMeta').textContent=`${profile.profile.name} · ${profile.profile.mode} · live web data`;$('#playerAvatar').style.backgroundImage=`url(https://mc-heads.net/avatar/${profile.player.uuid}/64)`;const sackNotice=profile.rawSignals.sacksAvailable?' Sack contents are included through Soopy for material and crafting checks.':' Sack contents could not be loaded, so material and crafting checks may be incomplete.',chestNotice=profile.rawSignals.skyOceanStorageAvailable?' SkyOcean’s cached island-chest materials are also included.':' Island chests are not included unless you import a SkyOcean chest index.';$('#apiNotice').textContent=profile.rawSignals.inventoryAvailable?`Ownership and craft checks use the profile’s API-visible inventory, Ender Chest, Accessory Bag, and Personal Vault.${sackNotice}${chestNotice} Accessory Power and recombobulation use only the highest tier in each family; duplicate and lower-tier copies are ignored. Legacy accessories are excluded from availability totals and appear only when owned. Pet rarity and level come from the live profile. Hunting Box Attribute levels remain user-entered.${profile.rawSignals.accessoryMetadataAvailable?' Recombobulation checks use each accessory’s decoded rarity marker.':''}`:'Inventory data was not returned, so ownership and material checks may be incomplete.';$('#profilePanel').hidden=false;statusFilter.hidden=false;updateSkyOceanStorageUi();updateRecombobulationSummary();render();renderMinions();renderPets();renderAttributes();renderVillagerTrades()}
-async function loadProfile(username,chosenProfile=''){
-  const button=$('#profileForm').querySelector('button'),error=$('#profileError');
-  $('#playerInput').value=username;button.disabled=true;button.textContent='Checking…';error.hidden=true;
-  try{
-    const result=await fetchPublicStrandedProfile(username,chosenProfile);
-    if(result.selectionRequired){showProfileChoices(username,result.profiles);$('#profilePanel').hidden=true;updateProfileSubmitLabel(button);return false}
-    profile=result;hideProfileChoices();restoreSavedSkyOceanStorage();updateProfileSummary();
-    try{localStorage.setItem(LAST_PROFILE_STORAGE_KEY,JSON.stringify({username:profile.player.username,profile:profile.profile.name}))}catch{}
-    return true
-  }catch(problem){error.textContent=problem.message;error.hidden=false;return false}
-  finally{button.disabled=false;updateProfileSubmitLabel(button)}
+function startTextureAnimations() {
+  document.querySelectorAll(".animated-texture").forEach((canvas) => {
+    const image = new Image(),
+      animation = JSON.parse(decodeURIComponent(canvas.dataset.animation)),
+      context = canvas.getContext("2d");
+    context.imageSmoothingEnabled = false;
+    image.onload = () => {
+      const total = animation.frames.reduce(
+          (sum, frame) => sum + frame.time * 50,
+          0,
+        ),
+        started = performance.now();
+      const paint = (now) => {
+        if (!canvas.isConnected) return;
+        let position = (now - started) % total,
+          current = 0,
+          elapsed = 0;
+        for (let index = 0; index < animation.frames.length; index++) {
+          const duration = animation.frames[index].time * 50;
+          if (position < elapsed + duration) {
+            current = index;
+            position -= elapsed;
+            break;
+          }
+          elapsed += duration;
+        }
+        const frame = animation.frames[current],
+          next = animation.frames[(current + 1) % animation.frames.length];
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.globalAlpha = 1;
+        context.drawImage(
+          image,
+          0,
+          frame.index * animation.frameHeight,
+          animation.frameWidth,
+          animation.frameHeight,
+          0,
+          0,
+          canvas.width,
+          canvas.height,
+        );
+        if (animation.interpolate) {
+          context.globalAlpha = position / (frame.time * 50);
+          context.drawImage(
+            image,
+            0,
+            next.index * animation.frameHeight,
+            animation.frameWidth,
+            animation.frameHeight,
+            0,
+            0,
+            canvas.width,
+            canvas.height,
+          );
+          context.globalAlpha = 1;
+        }
+        requestAnimationFrame(paint);
+      };
+      requestAnimationFrame(paint);
+    };
+    image.src = canvas.dataset.src;
+  });
 }
-async function restoreLastProfile(){
-  try{
-    const saved=JSON.parse(localStorage.getItem(LAST_PROFILE_STORAGE_KEY)||'null');
-    if(!saved||!/^[A-Za-z0-9_]{1,16}$/.test(saved.username)||typeof saved.profile!=='string')return false;
-    return await loadProfile(saved.username,saved.profile)
-  }catch{return false}
+function observeCompletionCards() {
+  if (!("IntersectionObserver" in window)) return;
+  completionAnimationObserver?.disconnect();
+  completionAnimationObserver = new IntersectionObserver(
+    (entries) =>
+      entries.forEach((entry) =>
+        entry.target.classList.toggle(
+          "completion-animation-paused",
+          !entry.isIntersecting,
+        ),
+      ),
+    { rootMargin: "180px" },
+  );
+  document
+    .querySelectorAll(".completion-gradient")
+    .forEach((card) => completionAnimationObserver.observe(card));
 }
-$('#profileForm').addEventListener('submit',async event=>{event.preventDefault();const username=$('#playerInput').value.trim(),chosenProfile=profileOptionsUsername===username.toLowerCase()?$('#profileSelect').value:'';await loadProfile(username,chosenProfile)});
-$('#playerInput').addEventListener('input',()=>{if(profileOptionsUsername&&profileOptionsUsername!==$('#playerInput').value.trim().toLowerCase()){hideProfileChoices();updateProfileSubmitLabel()}});
-$('#clearProfile').addEventListener('click',()=>{profile=null;try{localStorage.removeItem(LAST_PROFILE_STORAGE_KEY)}catch{}hideProfileChoices();updateProfileSubmitLabel();$('#profilePanel').hidden=true;$('#recombPanel').hidden=true;statusFilter.hidden=true;statusFilter.value='all';render();renderMinions();renderPets();renderAttributes();renderVillagerTrades()});$('#rarityFilters').addEventListener('click',event=>{if(!event.target.dataset.rarity)return;activeRarity=event.target.dataset.rarity;document.querySelectorAll('#rarityFilters button').forEach(button=>button.classList.toggle('active',button===event.target));render()});[search,sourceFilter,statusFilter].forEach(element=>element.addEventListener('input',render));document.querySelectorAll('.view-toggle button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.view-toggle button').forEach(candidate=>candidate.classList.toggle('active',button===candidate));grid.classList.toggle('list-view',button.dataset.view==='list')}));
-$('#importSkyOceanStorage').addEventListener('click',importSkyOceanStorageFromClipboard);
-$('#clearSkyOceanImport').addEventListener('click',removeSkyOceanStorage);
-$('.feature-tabs').addEventListener('click',event=>{const tab=event.target.dataset.tab;if(!tab)return;document.querySelectorAll('.feature-tabs button').forEach(button=>button.classList.toggle('active',button===event.target));$('#accessoriesTab').hidden=tab!=='accessories';$('#petsTab').hidden=tab!=='pets';$('#attributesTab').hidden=tab!=='attributes';$('#tradesTab').hidden=tab!=='trades';$('#minionsTab').hidden=tab!=='minions';$('#moneyTab').hidden=tab!=='money'});$('#minionCategories').addEventListener('click',event=>{if(!event.target.dataset.category)return;activeMinionCategory=event.target.dataset.category;document.querySelectorAll('#minionCategories button').forEach(button=>button.classList.toggle('active',button===event.target));renderMinions()});[$('#minionSearch'),$('#minionStatus'),$('#minionSort')].forEach(element=>element.addEventListener('input',renderMinions));
-$('#petRarities').addEventListener('click',event=>{if(!event.target.dataset.petRarity)return;activePetRarity=event.target.dataset.petRarity;document.querySelectorAll('#petRarities button').forEach(button=>button.classList.toggle('active',button===event.target));renderPets()});[$('#petSearch'),$('#petStatus'),$('#petSort')].forEach(element=>element.addEventListener('input',renderPets));
-$('#attributeRarities').addEventListener('click',event=>{if(!event.target.dataset.attributeRarity)return;activeAttributeRarity=event.target.dataset.attributeRarity;document.querySelectorAll('#attributeRarities button').forEach(button=>button.classList.toggle('active',button===event.target));renderAttributes()});[$('#attributeSearch'),$('#attributeStatus')].forEach(element=>element.addEventListener('input',renderAttributes));$('#attributeGrid').addEventListener('click',event=>{const button=event.target.closest('[data-attribute-id]');if(button)setAttributeLevel(button.dataset.attributeId,button.dataset.level)});$('#resetAttributes').addEventListener('click',()=>{if(confirm('Reset every saved Attribute level for this profile?')){try{localStorage.removeItem(attributeStorageKey())}catch{}renderAttributes()}});
-$('#tradeLevels').addEventListener('click',event=>{const button=event.target.closest('[data-trade-level]');if(!button)return;activeTradeLevel=button.dataset.tradeLevel;document.querySelectorAll('#tradeLevels button').forEach(candidate=>candidate.classList.toggle('active',candidate===button));renderVillagerTrades()});[$('#tradeSearch'),$('#tradeDirection'),$('#tradeStatus')].forEach(element=>element.addEventListener('input',renderVillagerTrades));$('#tradeGrid').addEventListener('click',event=>{const button=event.target.closest('[data-trade-obtained]');if(button)toggleVillagerTrade(button.dataset.tradeObtained)});$('#tradeGrid').addEventListener('input',event=>{const input=event.target.closest('[data-trade-amount]');if(!input)return;const saved=setVillagerTradeAmount(input.dataset.tradeAmount,input.value),trade=villagerTrades.find(item=>item.id===input.dataset.tradeAmount),card=input.closest('[data-trade-card]'),label=card?.querySelector('.trade-variable-amount'),valid=input.value===''||saved!=null;input.setAttribute('aria-invalid',String(!valid));if(label&&trade)label.textContent=`${saved?.toLocaleString()||`${trade.costs[0].min.toLocaleString()}–${trade.costs[0].max.toLocaleString()}`}×`;syncVillagerTradeCardState(card,trade)});$('#tradeGrid').addEventListener('change',event=>{const input=event.target.closest('[data-trade-amount]');if(!input)return;const trade=villagerTrades.find(item=>item.id===input.dataset.tradeAmount),amount=trade?savedVillagerTradeAmount(trade):null;if(trade&&villagerTradeAmountOutsideKnownRange(trade,amount))showVillagerTradePriceReport(trade,amount);renderVillagerTrades()});$('#tradePriceReportDialog').addEventListener('click',event=>{if(event.target===event.currentTarget)event.currentTarget.close()});$('#checkTradePrices').addEventListener('click',auditVillagerTradePrices);$('#resetTrades').addEventListener('click',()=>{if(confirm('Reset every saved Villager trade and exact price for this profile?')){try{localStorage.removeItem(villagerTradeStorageKey())}catch{}renderVillagerTrades()}});
-const VILLAGER_SALE_ITEMS=[
-  {id:'small-pocket-black-hole',name:'Small Pocket Black Hole',plural:'Small Pocket Black Holes',emeraldCost:16,costLabel:'16 Emeralds',npcSell:50000,tier:1},
-  {id:'hellfire-rod',name:'Hellfire Rod',plural:'Hellfire Rods',emeraldCost:2560,costLabel:'16 Enchanted Emeralds',npcSell:5634000,tier:5},
-  {id:'inferno-rod',name:'Inferno Rod',plural:'Inferno Rods',emeraldCost:640,costLabel:'4 Enchanted Emeralds',npcSell:1028000,tier:3},
-  {id:'medium-pocket-black-hole',name:'Medium Pocket Black Hole',plural:'Medium Pocket Black Holes',emeraldCost:320,costLabel:'2 Enchanted Emeralds',npcSell:500000,tier:3}
+const familyMembers = (family) =>
+  accessories
+    .filter((candidate) => candidate.family === family)
+    .sort((a, b) => (a.familyOrder ?? a.order) - (b.familyOrder ?? b.order));
+function profileAccessoryDescriptor(id) {
+  const normalized = String(id || "").toUpperCase(),
+    direct = accessories.find((item) =>
+      (item.profileIds || [item.id]).includes(normalized),
+    );
+  if (direct) {
+    const members = familyMembers(direct.family);
+    return {
+      family: direct.family,
+      level: members.findIndex((item) => item.id === direct.id),
+      catalogItem: direct,
+      external: false,
+    };
+  }
+  for (const [family, ids] of Object.entries(familyUpgrades)) {
+    const externalIndex = ids.indexOf(normalized);
+    if (externalIndex < 0) continue;
+    const members = familyMembers(family);
+    return {
+      family,
+      level: members.length + externalIndex,
+      catalogItem: members.at(-1) || null,
+      external: true,
+    };
+  }
+  return null;
+}
+const activeAccessoryIds = () =>
+  new Set(profile?.items?.accessoryIds || profile?.items?.ids || []);
+const ownsItem = (item, ids = activeAccessoryIds()) =>
+  (item.profileIds || [item.id]).some((id) => ids.has(id));
+const ownedAccessoryRecords = (item) =>
+  (profile?.items?.accessories || []).filter(
+    (record) =>
+      profileAccessoryDescriptor(record.id)?.catalogItem?.id === item.id,
+  );
+const canRecombobulateItem = (item) =>
+  ownedAccessoryRecords(item).some(
+    (record) => record.canRecombobulate && record.unrecombobulatedCount > 0,
+  );
+const isRecombinedFamilyCompletion = (item) => {
+  const record = ownedAccessoryRecords(item).find(
+    (candidate) => candidate.recombobulatedCount > 0,
+  );
+  if (!record) return false;
+  const descriptor = profileAccessoryDescriptor(record.id),
+    maximumLevel =
+      familyMembers(item.family).length +
+      (familyUpgrades[item.family] || []).length -
+      1;
+  return descriptor?.level === maximumLevel;
+};
+function hidesOwnedLowerFamilyMember(item) {
+  if (!profile) return false;
+  const members = familyMembers(item.family),
+    index = members.findIndex((candidate) => candidate.id === item.id),
+    record = (profile.items?.accessories || []).find(
+      (candidate) =>
+        profileAccessoryDescriptor(candidate.id)?.family === item.family,
+    ),
+    descriptor = record && profileAccessoryDescriptor(record.id);
+  if (!descriptor) return false;
+  return index < Math.min(descriptor.level, members.length - 1);
+}
+const normalizeRarity = (rarity) =>
+  String(rarity || "")
+    .trim()
+    .toUpperCase()
+    .replaceAll(" ", "_");
+const rarityAfter = (rarity) =>
+  ({
+    COMMON: "UNCOMMON",
+    UNCOMMON: "RARE",
+    RARE: "EPIC",
+    EPIC: "LEGENDARY",
+    LEGENDARY: "MYTHIC",
+    SPECIAL: "VERY_SPECIAL",
+  })[normalizeRarity(rarity)] || null;
+const rarityBefore = (rarity) =>
+  ({
+    UNCOMMON: "COMMON",
+    RARE: "UNCOMMON",
+    EPIC: "RARE",
+    LEGENDARY: "EPIC",
+    MYTHIC: "LEGENDARY",
+    VERY_SPECIAL: "SPECIAL",
+  })[normalizeRarity(rarity)] || null;
+const magicalPowerFor = (rarity) =>
+  rarityMeta[normalizeRarity(rarity)]?.mp || 0;
+function familyUpgradeMpGain(item) {
+  const family = familyMembers(item.family),
+    index = family.findIndex((candidate) => candidate.id === item.id),
+    previous = index > 0 ? family[index - 1] : null;
+  return Math.max(
+    0,
+    magicalPowerFor(catalogRarity(item)) -
+      (previous ? magicalPowerFor(catalogRarity(previous)) : 0),
+  );
+}
+function displayedMpGain(item, recombable, completed) {
+  if (recombable) {
+    const record = ownedAccessoryRecords(item).find(
+        (candidate) =>
+          candidate.canRecombobulate && candidate.unrecombobulatedCount > 0,
+      ),
+      next = rarityAfter(record?.rarity || item.rarity);
+    if (next)
+      return Math.max(
+        0,
+        magicalPowerFor(next) - magicalPowerFor(record?.rarity || item.rarity),
+      );
+  }
+  if (completed) {
+    const record = ownedAccessoryRecords(item).find(
+        (candidate) => candidate.recombobulatedCount > 0,
+      ),
+      base = record?.baseRarity || item.rarity;
+    if (record)
+      return Math.max(
+        0,
+        magicalPowerFor(record.rarity) - magicalPowerFor(base),
+      );
+  }
+  if (profile) {
+    const family = familyMembers(item.family),
+      index = family.findIndex((candidate) => candidate.id === item.id),
+      previous = index > 0 ? family[index - 1] : null,
+      record = ownedAccessoryRecords(item).sort(
+        (a, b) =>
+          (rarityMeta[b.rarity]?.rank || 0) - (rarityMeta[a.rarity]?.rank || 0),
+      )[0];
+    if (record)
+      return Math.max(
+        0,
+        magicalPowerFor(record.rarity) -
+          (previous ? magicalPowerFor(catalogRarity(previous)) : 0),
+      );
+  }
+  return familyUpgradeMpGain(item);
+}
+const escapeHtml = (value) =>
+  String(value).replace(
+    /[&<>"']/g,
+    (character) =>
+      ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[
+        character
+      ],
+  );
+const toRoman = (number) =>
+  ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X", "XI", "XII"][
+    number
+  ] || String(number);
+function collectionGateBlocker(gate) {
+  const levels = profile.collectionLevels || {},
+    hasLevel = Object.prototype.hasOwnProperty.call(levels, gate.id),
+    hasAmount = Object.prototype.hasOwnProperty.call(
+      profile.collections,
+      gate.id,
+    ),
+    level = Number(levels[gate.id] || 0),
+    amount = Number(profile.collections[gate.id] || 0);
+  if (!hasLevel && !hasAmount)
+    return `Find ${gate.name} to unlock its collection`;
+  if (hasLevel)
+    return level < gate.tier
+      ? `Reach ${gate.name} ${toRoman(gate.tier)} · co-op tier ${level ? toRoman(level) : "0"}`
+      : null;
+  return amount < gate.amount
+    ? `Reach ${gate.name} ${toRoman(gate.tier)} · ${amount.toLocaleString()}/${gate.amount.toLocaleString()}`
+    : null;
+}
+function blocker(item) {
+  if (!profile) return null;
+  const ids = activeAccessoryIds(),
+    family = familyMembers(item.family),
+    index = family.findIndex((candidate) => candidate.id === item.id);
+  if (index > 0 && !ownsItem(family[index - 1], ids))
+    return `Obtain ${family[index - 1].name} first`;
+  if (!item.unlock) return null;
+  const gate = item.unlock;
+  if (gate.type === "collection") return collectionGateBlocker(gate);
+  if (gate.type === "slayer") {
+    const level = Number(profile.slayers?.[gate.id] || 0);
+    return level < gate.level
+      ? `Reach ${gate.name} ${gate.level} · currently ${level}`
+      : null;
+  }
+  if (gate.type === "skill") {
+    const xp = Number(profile.skills?.[gate.id] || 0);
+    return xp < gate.amount
+      ? `Reach ${gate.name} ${gate.level} · ${Math.floor(xp).toLocaleString()}/${gate.amount.toLocaleString()} XP`
+      : null;
+  }
+  return null;
+}
+function itemStatus(item) {
+  if (!profile) return null;
+  const ids = activeAccessoryIds(),
+    family = familyMembers(item.family),
+    index = family.findIndex((candidate) => candidate.id === item.id),
+    ownsExternalHigher = (familyUpgrades[item.family] || []).some((id) =>
+      ids.has(id),
+    );
+  if (
+    ownsItem(item, ids) ||
+    family.slice(index + 1).some((candidate) => ownsItem(candidate, ids)) ||
+    ownsExternalHigher
+  )
+    return "owned";
+  if (blocker(item)) return "blocked";
+  const earlier =
+      index > 0 &&
+      family.slice(0, index).some((candidate) => ownsItem(candidate, ids)),
+    requirements = item.requirements || [],
+    materialsReady =
+      requirements.length &&
+      requirements.every((requirement) =>
+        requirement.type === "item"
+          ? (profile.items.counts[requirement.id] || 0) >= requirement.amount
+          : (profile.collections[requirement.id] || 0) >= requirement.amount,
+      );
+  if (materialsReady && (index === 0 || earlier)) return "ready";
+  if (earlier) return "upgrade";
+  return "missing";
+}
+function familyUpgradeProgress(item) {
+  const ids = activeAccessoryIds(),
+    family = familyMembers(item.family),
+    highestOwned = family.reduce(
+      (highest, candidate, index) =>
+        ownsItem(candidate, ids) ? index : highest,
+      -1,
+    );
+  return { current: Math.max(0, highestOwned + 1), total: family.length };
+}
+function matchesStatus(item) {
+  if (!profile || statusFilter.value === "all") return true;
+  if (statusFilter.value === "recomb") return canRecombobulateItem(item);
+  const status = itemStatus(item);
+  return statusFilter.value === "upgrades"
+    ? status === "upgrade" || status === "ready"
+    : status === statusFilter.value;
+}
+function render() {
+  const query = search.value.trim().toLowerCase();
+  const items = accessories
+    .filter(
+      (item) =>
+        (!item.legacy || ownsItem(item)) &&
+        !hidesOwnedLowerFamilyMember(item) &&
+        (activeRarity === "ALL" || catalogRarity(item) === activeRarity) &&
+        (sourceFilter.value === "all" || item.source === sourceFilter.value) &&
+        matchesStatus(item) &&
+        (!query ||
+          `${item.name} ${item.source} ${item.route}`
+            .toLowerCase()
+            .includes(query)),
+    )
+    .sort(
+      (a, b) =>
+        rarityMeta[catalogRarity(a)].rank - rarityMeta[catalogRarity(b)].rank ||
+        a.name.localeCompare(b.name),
+    );
+  if (profile && statusFilter.value === "all") {
+    const rank = {
+        ready: 0,
+        upgrade: 1,
+        recomb: 2,
+        missing: 3,
+        blocked: 4,
+        owned: 5,
+        completed: 6,
+      },
+      sortState = (item) =>
+        isRecombinedFamilyCompletion(item)
+          ? "completed"
+          : canRecombobulateItem(item)
+            ? "recomb"
+            : itemStatus(item);
+    items.sort((a, b) => rank[sortState(a)] - rank[sortState(b)]);
+  }
+  grid.innerHTML = items
+    .map((item) => {
+      const status = itemStatus(item),
+        recombable = canRecombobulateItem(item),
+        completed = isRecombinedFamilyCompletion(item),
+        mpGain = displayedMpGain(item, recombable, completed),
+        isBase = familyMembers(item.family)[0]?.id === item.id,
+        readyLabel =
+          item.source === "Villager"
+            ? "◆ Trade materials ready"
+            : item.source === "Events"
+              ? "◆ Event materials ready"
+              : isBase
+                ? "◆ Ready to craft"
+                : "◆ Ready to upgrade",
+        upgradeProgress = familyUpgradeProgress(item),
+        label =
+          status === "blocked"
+            ? `⊘ ${blocker(item)}`
+            : item.legacy
+              ? completed
+                ? "✦ Legacy · recombobulated"
+                : recombable
+                  ? "◇ Legacy · recomb available"
+                  : "◆ Legacy owned"
+              : completed
+                ? "✦ Recombobulated"
+                : recombable
+                  ? "◇ Recomb available"
+                  : {
+                      owned: "✓ Owned",
+                      upgrade: `↑ Upgrade (${upgradeProgress.current}/${upgradeProgress.total})`,
+                      ready: readyLabel,
+                      missing: "Missing",
+                    }[status],
+        labelClass = completed ? "completed" : recombable ? "recomb" : status,
+        ownedRarity = ownedAccessoryRecords(item).sort(
+          (a, b) =>
+            (rarityMeta[normalizeRarity(b.rarity)]?.rank || 0) -
+            (rarityMeta[normalizeRarity(a.rarity)]?.rank || 0),
+        )[0]?.rarity,
+        displayRarity = ownedRarity
+          ? ownedRarity.replaceAll("_", " ")
+          : item.maxRarity
+            ? `${item.rarity}–${item.maxRarity}`
+            : item.rarity;
+      return `<article class="card ${status || ""} ${item.legacy ? "legacy-card" : ""} ${recombable ? "recombable" : ""} ${completed ? "recombined-complete completion-gradient" : ""} ${profile ? "profiled" : ""}" style="--rarity-color:${rarityMeta[catalogRarity(item)].color}">${status === "owned" ? '<span class="owned-sheen"></span>' : ""}<div class="card-top"><div class="item-icon furfsky-icon">${textureIcon(item)}</div><span class="rarity">${displayRarity}</span></div><h3>${item.name}</h3><p class="route">${item.route}</p><div class="card-foot"><span class="source">${item.source}</span><span class="mp"><strong>+${mpGain}</strong> AP</span></div>${status ? `<span class="card-status ${labelClass}">${label}</span>` : ""}</article>`;
+    })
+    .join("");
+  startTextureAnimations();
+  observeCompletionCards();
+  $("#resultCount").textContent = items.length;
+  empty.hidden = items.length > 0;
+}
+const minionProgress = (minion) => {
+  const crafted = new Set(profile?.minions?.crafted || []),
+    craftedTiers = minion.tiers.filter((tier) => crafted.has(tier.id)),
+    highest = Math.max(0, ...craftedTiers.map((tier) => tier.tier)),
+    next =
+      minion.tiers.find(
+        (tier) =>
+          tier.strandedObtainable !== false && tier.tier === highest + 1,
+      ) || null,
+    legacyOwned = craftedTiers.reduce(
+      (latest, tier) =>
+        tier.legacy && tier.tier > (latest?.tier || 0) ? tier : latest,
+      null,
+    ),
+    maxTier = Math.max(
+      0,
+      ...minion.tiers
+        .filter((tier) => tier.strandedObtainable !== false && !tier.legacy)
+        .map((tier) => tier.tier),
+    );
+  return {
+    highest,
+    next,
+    legacyOwned,
+    maxTier,
+    atStrandedMax: maxTier > 0 && highest >= maxTier,
+    maxed: !next && highest > 0,
+  };
+};
+function minionBlocker(minion, progress) {
+  if (!profile) return null;
+  const previousId = `${minion.id}_GENERATOR_${progress.next?.tier - 1}`,
+    crafted = new Set(profile.minions?.crafted || []);
+  if (progress.next?.tier > 1 && !crafted.has(previousId))
+    return `Craft ${minion.name} ${toRoman(progress.next.tier - 1)} first`;
+  if (progress.next?.acquisition) return progress.next.acquisition;
+  if (
+    progress.next?.tier === 1 &&
+    minion.acquisition &&
+    !progress.next.requirements.length
+  )
+    return minion.acquisition;
+  const gate = minion.unlockGate;
+  if (!gate || progress.highest) return null;
+  if (gate.type === "collection") return collectionGateBlocker(gate);
+  if (gate.type === "slayer") {
+    const level = Number(profile.slayers?.[gate.id] || 0);
+    if (level < gate.level)
+      return `Reach ${gate.name} ${gate.level} · currently ${level}`;
+  }
+  return null;
+}
+function minionState(minion) {
+  if (!profile) return null;
+  const progress = minionProgress(minion);
+  if (progress.maxed) return "maxed";
+  if (minionBlocker(minion, progress))
+    return progress.highest ? "unlocked" : "blocked";
+  const ready =
+    progress.next?.requirements.length > 0 &&
+    progress.next.requirements.every(
+      (requirement) =>
+        (profile.items.counts[requirement.id] || 0) >= requirement.amount,
+    );
+  return ready ? "ready" : "unlocked";
+}
+const materialNameOverrides = {
+  ASSISTANT: "Move Jerry",
+  ENDER_STONE: "End Stone",
+  "LOG:1": "Spruce Log",
+  "LOG:3": "Jungle Log",
+  MITHRIL_ORE: "Mithril",
+  MUTTON: "Raw Mutton",
+  WOOL: "White Wool",
+  ENCHANTED_MUTTON: "Enchanted Raw Mutton",
+  ENCHANTED_RAW_FISH: "Enchanted Raw Cod",
+  ENCHANTED_COOKED_FISH: "Enchanted Cooked Cod",
+  ENCHANTED_SLIME_BALL: "Enchanted Slimeball",
+  ENCHANTED_COMPOST: "Compost Bundle",
+  PET_ITEM_VAMPIRE_FANG: "Vampire Fang",
+  PET_ITEM_TOY_JERRY: "Jerry 3D Glasses",
+  PET_ITEM_PURE_MITHRIL_GEM: "Pure Mithril Gem",
+  PET_ITEM_CHOCOLATE_SYRINGE: "Chocolate Syringe",
+  UPGRADE_STONE_FROST: "Rare Wisp Upgrade Stone",
+  UPGRADE_STONE_GLACIAL: "Epic Wisp Upgrade Stone",
+};
+const materialName = (id) =>
+    materialNameOverrides[id] ||
+    id
+      .toLowerCase()
+      .replaceAll("_", " ")
+      .replace(/\b\w/g, (letter) => letter.toUpperCase()),
+  headRenderUrl = (url) => {
+    if (!url || !url.includes("textures.minecraft.net/texture/"))
+      return staticAssetPath(url);
+    const hash = url.split("/").filter(Boolean).pop();
+    return `https://mc-heads.net/head/${hash}/64`;
+  };
+function renderMinions() {
+  const query = $("#minionSearch").value.trim().toLowerCase(),
+    filter = $("#minionStatus").value,
+    sort = $("#minionSort").value;
+  let list = minions.filter(
+    (minion) =>
+      (activeMinionCategory === "ALL" ||
+        minion.category === activeMinionCategory) &&
+      (!query ||
+        `${minion.name} ${minion.category}`.toLowerCase().includes(query)) &&
+      (!profile || filter === "all" || minionState(minion) === filter),
+  );
+  const rank = { ready: 0, unlocked: 1, blocked: 2, maxed: 3 };
+  list.sort((a, b) =>
+    sort === "lowest-tier"
+      ? minionProgress(a).highest - minionProgress(b).highest ||
+        a.name.localeCompare(b.name)
+      : sort === "name"
+        ? a.name.localeCompare(b.name)
+        : sort === "category"
+          ? a.category.localeCompare(b.category) || a.name.localeCompare(b.name)
+          : profile
+            ? rank[minionState(a)] - rank[minionState(b)] ||
+              a.name.localeCompare(b.name)
+            : a.name.localeCompare(b.name),
+  );
+  const crafted = new Set(profile?.minions?.crafted || []);
+  $("#minionGrid").innerHTML = list
+    .map((minion) => {
+      const progress = minionProgress(minion),
+        state = minionState(minion),
+        target = progress.next,
+        block =
+          state === "blocked" || state === "unlocked"
+            ? minionBlocker(minion, progress)
+            : null,
+        specialRoute = target?.acquisition,
+        label = !profile
+          ? minion.unlock || `Craftable on ${profileModeName()}`
+          : state === "ready"
+            ? `${target.tier === 1 ? "Craft" : "Upgrade to"} tier ${toRoman(target.tier)} now`
+            : progress.legacyOwned
+              ? `◆ Legacy tier ${toRoman(progress.legacyOwned.tier)} crafted`
+              : state === "maxed"
+                ? `✓ Max ${profileModeName()} tier crafted`
+                : specialRoute
+                  ? `◆ ${specialRoute}`
+                  : block
+                    ? `⊘ ${block}`
+                    : state === "unlocked"
+                      ? progress.highest
+                        ? `Tier ${toRoman(progress.highest)} unlocked`
+                        : "Recipe unlocked"
+                      : "Not unlocked",
+        requirements = target?.requirements || [];
+      return `<article class="card minion-card ${state || ""} ${progress.legacyOwned ? "legacy-card" : ""} ${progress.atStrandedMax ? "completion-gradient" : ""} ${profile ? "profiled" : ""}" style="--rarity-color:#57a6ff">${state === "maxed" ? '<span class="owned-sheen"></span>' : ""}<div class="card-top"><div class="item-icon furfsky-icon">${minion.texture ? `<img class="head-render" src="${headRenderUrl(minion.texture)}" alt="" loading="lazy">` : `<span>${initials(minion.name)}</span>`}</div><span class="rarity">${minion.category}</span></div><h3>${minion.name}</h3><p class="route">${progress.highest ? `Highest crafted: Tier ${toRoman(progress.highest)}${progress.legacyOwned ? " · legacy" : ""}` : `Unlock: ${minion.unlock || "Special recipe"}`}</p>${
+        target
+          ? `<div class="minion-materials">${requirements
+              .map((requirement) => {
+                const have = profile?.items?.counts?.[requirement.id] || 0,
+                  met = have >= requirement.amount;
+                return `<span class="${met ? "met" : ""}">${profile ? `${Math.min(have, requirement.amount).toLocaleString()}/` : ""}${requirement.amount.toLocaleString()} ${materialName(requirement.id)}</span>`;
+              })
+              .join("")}</div>`
+          : ""
+      }<span class="card-status ${state || "missing"}">${label}</span></article>`;
+    })
+    .join("");
+  observeCompletionCards();
+  $("#minionResultCount").textContent = list.length;
+  $("#minionEmpty").hidden = list.length > 0;
+  if (profile) {
+    const progresses = minions.map(minionProgress),
+      states = minions.map(minionState);
+    $("#minionUnlocked").textContent = progresses.filter(
+      (item) => item.highest > 0,
+    ).length;
+    $("#minionReady").textContent = states.filter(
+      (state) => state === "ready",
+    ).length;
+    $("#minionUnique").textContent = crafted.size;
+  } else {
+    $("#minionUnlocked").textContent = "—";
+    $("#minionReady").textContent = "—";
+    $("#minionUnique").textContent = "—";
+  }
+}
+const petProfileIds = (pet) => pet.profileIds || [pet.id];
+function petRecord(pet) {
+  const records = (profile?.pets || []).filter((record) =>
+    petProfileIds(pet).includes(record.id),
+  );
+  return (
+    records.sort(
+      (a, b) =>
+        (rarityMeta[b.tier]?.rank || 0) - (rarityMeta[a.tier]?.rank || 0) ||
+        b.level - a.level,
+    )[0] || null
+  );
+}
+const petMaxLevel = (pet) => Number(pet.maxLevel) || 100;
+function petNextUpgrade(pet) {
+  const owned = petRecord(pet);
+  if (!owned || pet.legacy) return null;
+  const targetRank = rarityMeta[pet.targetRarity]?.rank || 0;
+  return (
+    (pet.upgrades || []).find(
+      (step) =>
+        step.from === owned.tier &&
+        (rarityMeta[step.to]?.rank || 0) <= targetRank,
+    ) || null
+  );
+}
+function petUpgradeMaterialsReady(step) {
+  return (
+    Boolean(step) &&
+    (step.requirements || []).every(
+      (requirement) =>
+        (profile?.items?.counts?.[requirement.id] || 0) >= requirement.amount,
+    )
+  );
+}
+function petState(pet) {
+  if (!profile) return null;
+  const owned = petRecord(pet);
+  if (!owned) return "missing";
+  if (pet.legacy) return "legacy";
+  const ownedRank = rarityMeta[owned.tier]?.rank || 0,
+    targetRank = rarityMeta[pet.targetRarity]?.rank || 0;
+  if (ownedRank > targetRank) return "legacy";
+  if (ownedRank === targetRank) return "maxed";
+  return petUpgradeMaterialsReady(petNextUpgrade(pet)) ? "ready" : "upgrade";
+}
+function petIsFullyMaxed(pet) {
+  const owned = petRecord(pet);
+  return (
+    Boolean(owned) &&
+    petState(pet) === "maxed" &&
+    owned.level >= petMaxLevel(pet)
+  );
+}
+function formatPetUpgradeTime(seconds) {
+  if (!seconds) return "";
+  const units = [
+      [86400, "day"],
+      [3600, "hour"],
+      [60, "minute"],
+      [1, "second"],
+    ],
+    unit = units.find(([size]) => seconds % size === 0) || units.at(-1),
+    value = seconds / unit[0];
+  return `${value.toLocaleString()} ${unit[1]}${value === 1 ? "" : "s"}`;
+}
+function petMatchesStatus(pet, filter) {
+  if (!profile || filter === "all") return true;
+  const state = petState(pet);
+  return filter === "upgrade"
+    ? state === "ready" || state === "upgrade"
+    : state === filter;
+}
+function renderPets() {
+  const query = $("#petSearch").value.trim().toLowerCase(),
+    filter = $("#petStatus").value,
+    sort = $("#petSort").value,
+    stateRank = { ready: 0, upgrade: 1, missing: 2, maxed: 3, legacy: 4 };
+  let list = pets.filter(
+    (pet) =>
+      (!pet.legacy || petRecord(pet)) &&
+      (activePetRarity === "ALL" || pet.targetRarity === activePetRarity) &&
+      (!query ||
+        `${pet.name} ${pet.targetRarity} ${pet.note || ""}`
+          .toLowerCase()
+          .includes(query)) &&
+      petMatchesStatus(pet, filter),
+  );
+  list.sort((a, b) =>
+    sort === "name"
+      ? a.name.localeCompare(b.name)
+      : sort === "rarity"
+        ? (rarityMeta[a.targetRarity]?.rank || 0) -
+            (rarityMeta[b.targetRarity]?.rank || 0) ||
+          a.name.localeCompare(b.name)
+        : profile
+          ? stateRank[petState(a)] - stateRank[petState(b)] ||
+            a.name.localeCompare(b.name)
+          : a.name.localeCompare(b.name),
+  );
+  $("#petGrid").innerHTML = list
+    .map((pet) => {
+      const owned = petRecord(pet),
+        state = petState(pet),
+        fullyMaxed = petIsFullyMaxed(pet),
+        step = petNextUpgrade(pet),
+        target = pet.targetRarity.replaceAll("_", " "),
+        nextTarget = step?.to?.replaceAll("_", " ") || target,
+        legacyMax = pet.legacyMaxRarity?.replaceAll("_", " "),
+        rarityLabel = pet.legacy
+          ? `${legacyMax || target} LEGACY ONLY`
+          : legacyMax
+            ? `${target} CURRENT · ${legacyMax} LEGACY`
+            : target,
+        label = !profile
+          ? `Target: ${target}`
+          : state === "missing"
+            ? "Missing"
+            : state === "ready"
+              ? `◆ Item materials ready · ${owned.tier.replaceAll("_", " ")} → ${nextTarget}`
+              : state === "upgrade"
+                ? `↑ Upgrade ${owned.tier.replaceAll("_", " ")} → ${nextTarget}`
+                : state === "legacy"
+                  ? `◆ Legacy ${owned.tier.replaceAll("_", " ")} · Level ${owned.level}`
+                  : `✓ ${target} · Level ${owned.level}`,
+        route = pet.note || `Obtainable on ${profileModeName()} · target ${target}`,
+        displayRarity =
+          state === "legacy" && owned?.tier ? owned.tier : pet.targetRarity,
+        requirements = step?.requirements || [],
+        materials = step
+          ? `<div class="minion-materials pet-materials">${
+              requirements.length
+                ? requirements
+                    .map((requirement) => {
+                      const have =
+                          profile?.items?.counts?.[requirement.id] || 0,
+                        met = have >= requirement.amount;
+                      return `<span class="${met ? "met" : ""}">${Math.min(have, requirement.amount).toLocaleString()}/${requirement.amount.toLocaleString()} ${escapeHtml(materialName(requirement.id))}</span>`;
+                    })
+                    .join("")
+                : '<span class="met">No item materials required</span>'
+            }</div>`
+          : "",
+        meta = step
+          ? [
+              step.method,
+              step.coins ? `${step.coins.toLocaleString()} base coins` : null,
+              step.method === "Kat" && step.timeSeconds
+                ? formatPetUpgradeTime(step.timeSeconds)
+                : null,
+            ].filter(Boolean)
+          : [];
+      return `<article class="card pet-card ${state || ""} ${state === "legacy" ? "legacy-card" : ""} ${fullyMaxed ? "completion-gradient" : ""} ${profile ? "profiled" : ""}" style="--rarity-color:${rarityMeta[displayRarity]?.color || "#aeb7c3"}">${state === "maxed" ? '<span class="owned-sheen"></span>' : ""}<div class="card-top"><div class="item-icon furfsky-icon"><img class="head-render" src="${headRenderUrl(pet.texture)}" alt="" loading="lazy"><span>${initials(pet.name)}</span></div><span class="rarity">${rarityLabel}</span></div><h3>${pet.name}</h3><p class="route">${escapeHtml(route)}</p>${materials}${meta.length ? `<div class="pet-upgrade-meta">${meta.map((value) => `<span>${escapeHtml(value)}</span>`).join("")}</div>` : ""}<div class="card-foot"><span class="source">${owned ? `OWNED ${owned.tier}` : `${profileModeName().toUpperCase()} PET`}</span><span class="mp">${owned ? `LVL <strong>${owned.level}</strong>` : `MAX <strong>${target}</strong>`}</span></div><span class="card-status ${state || "missing"}">${label}</span></article>`;
+    })
+    .join("");
+  observeCompletionCards();
+  $("#petResultCount").textContent = list.length;
+  $("#petEmpty").hidden = list.length > 0;
+  if (profile) {
+    const shownPets = pets.filter((pet) => !pet.legacy || petRecord(pet)),
+      states = shownPets.map(petState),
+      obtainableStates = pets.filter((pet) => !pet.legacy).map(petState);
+    $("#petOwned").textContent = states.filter(
+      (state) => state !== "missing",
+    ).length;
+    $("#petReady").textContent = states.filter(
+      (state) => state === "ready",
+    ).length;
+    $("#petMaxed").textContent = states.filter(
+      (state) => state === "maxed" || state === "legacy",
+    ).length;
+    $("#petUpgrades").textContent = obtainableStates.filter(
+      (state) =>
+        state === "missing" || state === "upgrade" || state === "ready",
+    ).length;
+  } else {
+    $("#petOwned").textContent = "—";
+    $("#petReady").textContent = "—";
+    $("#petMaxed").textContent = "—";
+    $("#petUpgrades").textContent = "—";
+  }
+}
+const attributeStorageKey = () =>
+  `${profileMode === "stranded" ? "stranded-attribute-levels" : "normal-attribute-levels"}:${profile?.player?.uuid || "local"}:${profile?.profile?.id || "default"}`;
+function storedAttributeLevels() {
+  try {
+    const value = JSON.parse(
+      localStorage.getItem(attributeStorageKey()) || "{}",
+    );
+    return value && typeof value === "object" ? value : {};
+  } catch {
+    return {};
+  }
+}
+function attributeLevel(attribute, levels = storedAttributeLevels()) {
+  const saved = [
+    levels[attribute.id],
+    ...(attribute.levelAliases || []).map((id) => levels[id]),
+  ];
+  return Math.max(
+    0,
+    Math.min(
+      attribute.maxLevel,
+      Math.floor(Math.max(0, ...saved.map((value) => Number(value) || 0))),
+    ),
+  );
+}
+function attributeState(attribute, levels) {
+  if (attribute.legacy) return "legacy";
+  const level = attributeLevel(attribute, levels);
+  return level <= 0
+    ? "missing"
+    : level >= attribute.maxLevel
+      ? "maxed"
+      : "upgrade";
+}
+function setAttributeLevel(id, level) {
+  const attribute = attributes.find((item) => item.id === id);
+  if (!attribute) return;
+  const levels = storedAttributeLevels(),
+    next = Math.max(
+      0,
+      Math.min(attribute.maxLevel, Math.floor(Number(level) || 0)),
+    );
+  if (next) levels[id] = next;
+  else delete levels[id];
+  for (const alias of attribute.levelAliases || []) delete levels[alias];
+  try {
+    localStorage.setItem(attributeStorageKey(), JSON.stringify(levels));
+  } catch {}
+  renderAttributes();
+}
+function renderAttributes() {
+  const query = $("#attributeSearch").value.trim().toLowerCase(),
+    filter = $("#attributeStatus").value,
+    levels = storedAttributeLevels(),
+    stateRank = { upgrade: 0, missing: 1, maxed: 2, legacy: 3 };
+  let list = attributes.filter(
+    (attribute) =>
+      (activeAttributeRarity === "ALL" ||
+        attribute.rarity === activeAttributeRarity) &&
+      (!query ||
+        `${attribute.name} ${attribute.rarity} ${attribute.note || ""}`
+          .toLowerCase()
+          .includes(query)) &&
+      (filter === "all" || attributeState(attribute, levels) === filter),
+  );
+  list.sort(
+    (a, b) =>
+      stateRank[attributeState(a, levels)] -
+        stateRank[attributeState(b, levels)] ||
+      (rarityMeta[a.rarity]?.rank || 0) - (rarityMeta[b.rarity]?.rank || 0) ||
+      a.name.localeCompare(b.name),
+  );
+  $("#attributeGrid").innerHTML = list
+    .map((attribute) => {
+      const level = attributeLevel(attribute, levels),
+        state = attributeState(attribute, levels),
+        label =
+          state === "legacy"
+            ? `◆ Legacy${level ? ` · Level ${level}` : " · unobtainable"}`
+            : state === "missing"
+              ? "Missing"
+              : state === "maxed"
+                ? "✓ Level 10 maxed"
+                : `↑ Upgrade level ${level} → ${level + 1}`;
+      return `<article class="card attribute-card ${state} ${attribute.legacy ? "legacy-card" : ""} ${state === "maxed" ? "completion-gradient" : ""}" style="--rarity-color:${rarityMeta[attribute.rarity]?.color || "#aeb7c3"}">${state === "maxed" ? '<span class="owned-sheen"></span>' : ""}<div class="card-top"><div class="item-icon furfsky-icon attribute-icon">${textureIcon(attribute)}</div><span class="rarity">${attribute.rarity}</span></div><h3>${attribute.name} Shard</h3><p class="route">${escapeHtml(attribute.note || `Hunt ${attribute.name} on ${profileModeName()}`)}</p><div class="attribute-level"><button type="button" data-attribute-id="${attribute.id}" data-level="${level - 1}" aria-label="Decrease ${attribute.name} level">−</button><div><span>LEVEL <strong>${level}</strong> / ${attribute.maxLevel}</span><i><b style="width:${(level / attribute.maxLevel) * 100}%"></b></i></div><button type="button" data-attribute-id="${attribute.id}" data-level="${level + 1}" aria-label="Increase ${attribute.name} level">+</button></div><span class="card-status ${state}">${label}</span></article>`;
+    })
+    .join("");
+  observeCompletionCards();
+  $("#attributeResultCount").textContent = list.length;
+  $("#attributeEmpty").hidden = list.length > 0;
+  const allLevels = attributes.map((attribute) =>
+      attributeLevel(attribute, levels),
+    ),
+    obtainableAttributes = attributes.filter((attribute) => !attribute.legacy);
+  $("#attributeOwned").textContent = allLevels.filter(
+    (level) => level > 0,
+  ).length;
+  $("#attributeMaxed").textContent = allLevels.filter(
+    (level, index) => level >= attributes[index].maxLevel,
+  ).length;
+  $("#attributeLevelsLeft").textContent = obtainableAttributes.reduce(
+    (sum, attribute) =>
+      sum + attribute.maxLevel - attributeLevel(attribute, levels),
+    0,
+  );
+}
+const VILLAGER_TRADE_STORAGE_PREFIX = "stranded-villager-trades";
+const villagerTradeStorageKey = () =>
+  `${VILLAGER_TRADE_STORAGE_PREFIX}:${profile?.player?.uuid || "local"}:${profile?.profile?.id || "default"}`;
+function storedVillagerTradeProgress() {
+  try {
+    const value = JSON.parse(
+      localStorage.getItem(villagerTradeStorageKey()) || "{}",
+    );
+    return {
+      obtained:
+        value?.obtained && typeof value.obtained === "object"
+          ? value.obtained
+          : {},
+      amounts:
+        value?.amounts && typeof value.amounts === "object"
+          ? value.amounts
+          : {},
+    };
+  } catch {
+    return { obtained: {}, amounts: {} };
+  }
+}
+function saveVillagerTradeProgress(progress) {
+  try {
+    localStorage.setItem(villagerTradeStorageKey(), JSON.stringify(progress));
+  } catch {}
+}
+function villagerTradeObtained(
+  trade,
+  progress = storedVillagerTradeProgress(),
+) {
+  return progress.obtained[trade.id] === true;
+}
+function savedVillagerTradeAmount(
+  trade,
+  progress = storedVillagerTradeProgress(),
+) {
+  const value = Number(progress.amounts[trade.id]);
+  return Number.isInteger(value) && value > 0 ? value : null;
+}
+function villagerTradeState(trade, progress = storedVillagerTradeProgress()) {
+  if (!villagerTradeObtained(trade, progress)) return "missing";
+  const saved = savedVillagerTradeAmount(trade, progress),
+    lowest = trade.costs[0]?.min;
+  return trade.direction === "item_to_emerald" &&
+    saved != null &&
+    Number.isFinite(lowest) &&
+    saved > lowest
+    ? "upgrade"
+    : "obtained";
+}
+function villagerTradeAmountOutsideKnownRange(trade, amount) {
+  const cost = trade?.costs?.[0];
+  return (
+    Number.isInteger(amount) &&
+    Number.isFinite(cost?.min) &&
+    Number.isFinite(cost?.max) &&
+    (amount < cost.min || amount > cost.max)
+  );
+}
+function villagerTradePriceOutliers(progress = storedVillagerTradeProgress()) {
+  return villagerTrades.flatMap((trade) => {
+    const amount = savedVillagerTradeAmount(trade, progress);
+    return trade.direction === "item_to_emerald" &&
+      villagerTradeAmountOutsideKnownRange(trade, amount)
+      ? [{ trade, amount }]
+      : [];
+  });
+}
+function villagerTradePriceReportUrl(entries) {
+  const rows = entries
+    .map(({ trade, amount }) => {
+      const cost = trade.costs[0],
+        position = amount < cost.min ? "Below minimum" : "Above maximum";
+      return `| ${cost.name.replaceAll("|", "\\|")} | ${amount} | ${cost.min}–${cost.max} | ${position} |`;
+    })
+    .join("\n");
+  const title =
+    entries.length === 1
+      ? `Villager trade price: ${entries[0].trade.costs[0].name} costs ${entries[0].amount}`
+      : `Villager trade price range updates (${entries.length} prices)`;
+  const body = `## Out-of-range Villager prices\n\n| Trade input | Entered cost | Current listed range | Result |\n|---|---:|---:|---|\n${rows}\n\nEach cost is for **1 Emerald**. Please attach clear in-game screenshot proof showing every reported Villager trade and price.`;
+  return `https://github.com/TomtomFH/SkyblockStranded/issues/new?${new URLSearchParams({ title, body })}`;
+}
+function openVillagerTradePriceReport(entries, checkedCount = entries.length) {
+  const dialog = $("#tradePriceReportDialog"),
+    kicker = $("#tradePriceReportKicker"),
+    title = $("#tradePriceReportTitle"),
+    message = $("#tradePriceReportMessage"),
+    summary = $("#tradePriceReportSummary"),
+    proof = $("#tradePriceReportProof"),
+    link = $("#tradePriceReportLink"),
+    count = entries.length;
+  if (count) {
+    kicker.textContent =
+      count === 1 ? "UNLISTED PRICE FOUND" : "UNLISTED PRICES FOUND";
+    title.textContent =
+      count === 1
+        ? "Help update this trade range"
+        : `${count} prices need a range update`;
+    message.textContent =
+      checkedCount === count
+        ? `${count === 1 ? "This entered price is" : "These entered prices are"} outside the currently known range.`
+        : `Checked ${checkedCount.toLocaleString()} saved ${checkedCount === 1 ? "price" : "prices"} and found ${count.toLocaleString()} outside the currently known ranges.`;
+    summary.hidden = false;
+    summary.innerHTML = entries
+      .map(({ trade, amount }) => {
+        const cost = trade.costs[0],
+          direction = amount < cost.min ? "below" : "above";
+        return `<li><strong>${escapeHtml(cost.name)}</strong><span>Entered <b>${amount.toLocaleString()}</b> · known ${cost.min.toLocaleString()}–${cost.max.toLocaleString()} · ${direction} range</span></li>`;
+      })
+      .join("");
+    proof.hidden = false;
+    link.hidden = false;
+    link.href = villagerTradePriceReportUrl(entries);
+  } else {
+    kicker.textContent = "PRICE CHECK COMPLETE";
+    title.textContent = checkedCount
+      ? "All saved prices match the known ranges"
+      : "No entered prices to check";
+    message.textContent = checkedCount
+      ? `Checked ${checkedCount.toLocaleString()} saved ${checkedCount === 1 ? "price" : "prices"}. None are outside the currently listed ranges.`
+      : "Enter your Villagers’ exact resource costs first, then run this check again.";
+    summary.hidden = true;
+    summary.innerHTML = "";
+    proof.hidden = true;
+    link.hidden = true;
+  }
+  if (typeof dialog.showModal === "function") {
+    if (dialog.open) dialog.close();
+    dialog.showModal();
+  } else
+    alert(
+      count
+        ? `${message.textContent}\n\nPlease report them at https://github.com/TomtomFH/SkyblockStranded/issues/new with screenshot proof.`
+        : message.textContent,
+    );
+}
+function showVillagerTradePriceReport(trade, amount) {
+  openVillagerTradePriceReport([{ trade, amount }]);
+}
+function auditVillagerTradePrices() {
+  const progress = storedVillagerTradeProgress(),
+    savedCount = villagerTrades.filter(
+      (trade) =>
+        trade.direction === "item_to_emerald" &&
+        savedVillagerTradeAmount(trade, progress) != null,
+    ).length;
+  openVillagerTradePriceReport(
+    villagerTradePriceOutliers(progress),
+    savedCount,
+  );
+}
+function setVillagerTradeAmount(id, rawValue) {
+  const trade = villagerTrades.find((item) => item.id === id);
+  if (!trade || trade.direction !== "item_to_emerald") return null;
+  const progress = storedVillagerTradeProgress(),
+    value = Number(rawValue);
+  if (rawValue === "" || !Number.isInteger(value) || value <= 0)
+    delete progress.amounts[id];
+  else progress.amounts[id] = value;
+  saveVillagerTradeProgress(progress);
+  updateVillagerTradeOverview(progress);
+  return savedVillagerTradeAmount(trade, progress);
+}
+function toggleVillagerTrade(id) {
+  const trade = villagerTrades.find((item) => item.id === id);
+  if (!trade) return;
+  const progress = storedVillagerTradeProgress();
+  if (progress.obtained[id]) delete progress.obtained[id];
+  else progress.obtained[id] = true;
+  saveVillagerTradeProgress(progress);
+  renderVillagerTrades();
+}
+function tradeItemIcon(item) {
+  return textureIcon(item);
+}
+function tradeAmountText(item, trade, progress) {
+  if (Number.isFinite(item.amount)) return item.amount.toLocaleString();
+  const saved = savedVillagerTradeAmount(trade, progress);
+  return (
+    saved?.toLocaleString() ||
+    `${item.min.toLocaleString()}–${item.max.toLocaleString()}`
+  );
+}
+function tradeItemMarkup(item, trade, progress, role) {
+  return `<div class="trade-item ${role}"><div class="trade-item-icon furfsky-icon">${tradeItemIcon(item)}</div><div><strong class="${item.min != null ? "trade-variable-amount" : ""}">${tradeAmountText(item, trade, progress)}×</strong><span>${escapeHtml(item.name)}</span></div></div>`;
+}
+function syncVillagerTradeCardState(
+  card,
+  trade,
+  progress = storedVillagerTradeProgress(),
+) {
+  if (!card || !trade) return;
+  const state = villagerTradeState(trade, progress),
+    saved = savedVillagerTradeAmount(trade, progress),
+    lowest = trade.costs[0]?.min,
+    label =
+      state === "upgrade"
+        ? `UPGRADABLE · ${saved} → ${lowest}`
+        : state === "obtained"
+          ? "COMPLETE"
+          : "NOT FOUND";
+  card.classList.remove("missing", "upgrade", "obtained");
+  card.classList.add(state);
+  const stateElement = card.querySelector(".trade-state");
+  if (stateElement) stateElement.textContent = label;
+  const sheen = card.querySelector(":scope > .owned-sheen");
+  if (state === "obtained" && !sheen)
+    card.insertAdjacentHTML("afterbegin", '<span class="owned-sheen"></span>');
+  else if (state !== "obtained" && sheen) sheen.remove();
+}
+function updateVillagerTradeOverview(progress = storedVillagerTradeProgress()) {
+  const obtained = villagerTrades.filter((trade) =>
+      villagerTradeObtained(trade, progress),
+    ).length,
+    saved = villagerTrades.filter(
+      (trade) =>
+        trade.direction === "item_to_emerald" &&
+        savedVillagerTradeAmount(trade, progress) != null,
+    ).length;
+  $("#tradeObtained").textContent = obtained;
+  $("#tradeRemaining").textContent = Math.max(
+    0,
+    villagerTrades.length - obtained,
+  );
+  $("#tradeAmountsSaved").textContent = saved;
+}
+function renderVillagerTrades() {
+  const query = $("#tradeSearch").value.trim().toLowerCase(),
+    direction = $("#tradeDirection").value,
+    status = $("#tradeStatus").value,
+    progress = storedVillagerTradeProgress();
+  let list = villagerTrades.filter(
+    (trade) =>
+      (activeTradeLevel === "ALL" ||
+        (activeTradeLevel === "RESOURCE"
+          ? trade.level == null
+          : trade.level === Number(activeTradeLevel))) &&
+      (direction === "all" || trade.direction === direction) &&
+      (status === "all" || villagerTradeState(trade, progress) === status) &&
+      (!query ||
+        `${trade.reward.name} ${trade.costs.map((item) => item.name).join(" ")} ${trade.level == null ? "resource offer" : `level ${trade.level}`}`
+          .toLowerCase()
+          .includes(query)),
+  );
+  const stateRank = { missing: 0, upgrade: 1, obtained: 2 };
+  list.sort(
+    (a, b) =>
+      stateRank[villagerTradeState(a, progress)] -
+        stateRank[villagerTradeState(b, progress)] ||
+      (a.level ?? 0) - (b.level ?? 0) ||
+      a.direction.localeCompare(b.direction) ||
+      a.reward.name.localeCompare(b.reward.name),
+  );
+  $("#tradeGrid").innerHTML = list
+    .map((trade) => {
+      const obtained = villagerTradeObtained(trade, progress),
+        state = villagerTradeState(trade, progress),
+        variable = trade.direction === "item_to_emerald",
+        directionLabel = variable ? "ITEM → EMERALD" : "EMERALD → ITEM",
+        title = variable ? trade.costs[0].name : trade.reward.name,
+        saved = savedVillagerTradeAmount(trade, progress),
+        lowest = trade.costs[0]?.min,
+        range = variable ? `${lowest}–${trade.costs[0].max}` : "",
+        stateLabel =
+          state === "upgrade"
+            ? `UPGRADABLE · ${saved} → ${lowest}`
+            : state === "obtained"
+              ? "COMPLETE"
+              : "NOT FOUND";
+      return `<article class="trade-card ${state}" data-trade-card="${trade.id}">${state === "obtained" ? '<span class="owned-sheen"></span>' : ""}<div class="trade-card-head"><div><span class="trade-level">${trade.level == null ? "RESOURCE OFFER" : `LEVEL ${trade.level}`}</span><span class="trade-direction ${trade.direction}">${directionLabel}</span></div><span class="trade-state">${stateLabel}</span></div><h3>${escapeHtml(title)}</h3><div class="trade-flow"><div class="trade-side"><small>YOU GIVE</small><div class="trade-item-list">${trade.costs.map((item) => tradeItemMarkup(item, trade, progress, "cost")).join('<span class="trade-plus">+</span>')}</div></div><span class="trade-arrow" aria-hidden="true">→</span><div class="trade-side reward"><small>YOU GET</small><div class="trade-item-list">${tradeItemMarkup(trade.reward, trade, progress, "reward")}</div></div></div>${variable ? `<label class="trade-custom-amount"><span>Your Villager's cost</span><small>${range} possible · items for 1 Emerald</small><input type="number" min="1" step="1" inputmode="numeric" data-trade-amount="${trade.id}" value="${saved ?? ""}" placeholder="${range}" aria-label="Exact ${escapeHtml(trade.costs[0].name)} cost"></label>` : ""}<button type="button" class="trade-obtained-toggle" data-trade-obtained="${trade.id}" aria-pressed="${obtained}"><span>${obtained ? "✓" : "+"}</span>${obtained ? "Trade obtained" : "Mark as obtained"}</button></article>`;
+    })
+    .join("");
+  startTextureAnimations();
+  $("#tradeResultCount").textContent = list.length;
+  $("#tradeEmpty").hidden = list.length > 0;
+  updateVillagerTradeOverview(progress);
+}
+const nextRarity = (rarity) =>
+  (rarityAfter(rarity) || "NEXT_RARITY").replaceAll("_", " ");
+function updateRecombobulationSummary() {
+  const records = profile.items?.accessories || [],
+    candidates = records
+      .filter(
+        (record) => record.canRecombobulate && record.unrecombobulatedCount > 0,
+      )
+      .sort(
+        (a, b) =>
+          (rarityMeta[a.rarity]?.rank || 99) -
+            (rarityMeta[b.rarity]?.rank || 99) || a.name.localeCompare(b.name),
+      ),
+    ready = candidates.reduce(
+      (sum, record) => sum + record.unrecombobulatedCount,
+      0,
+    ),
+    recombined = records.reduce(
+      (sum, record) => sum + record.recombobulatedCount,
+      0,
+    );
+  $("#recombReadyCount").textContent = ready;
+  $("#recombinedCount").textContent = recombined;
+  $("#recombCandidates").innerHTML = candidates.length
+    ? candidates
+        .map(
+          (record) =>
+            `<span class="recomb-candidate"><strong>${escapeHtml(record.name)}${record.unrecombobulatedCount > 1 ? ` ×${record.unrecombobulatedCount}` : ""}</strong><small>${escapeHtml(record.rarity || "Unknown")} → ${escapeHtml(nextRarity(record.rarity))}</small></span>`,
+        )
+        .join("")
+    : "<p>Every eligible owned accessory is already recombobulated.</p>";
+  $("#recombPanel").hidden = !profile.rawSignals?.accessoryMetadataAvailable;
+}
+const PUBLIC_PROFILE_API = "https://statsapi.tem.cx";
+const SOOPY_PROFILE_API = "https://soopy.dev/api/v2/player_skyblock";
+const PROFILE_ENRICHMENT_TIMEOUT_MS = 8000;
+const lastProfileStorageKey = () =>
+  profileMode === "stranded"
+    ? "stranded-index-last-profile"
+    : "skyblock-index-last-profile:normal";
+const collectionAliases = {
+  OAK_LOG: "LOG",
+  SPRUCE_LOG: "LOG:1",
+  BIRCH_LOG: "LOG:2",
+  JUNGLE_LOG: "LOG:3",
+  ACACIA_LOG: "LOG_2",
+  DARK_OAK_LOG: "LOG_2:1",
+  COCOA_BEANS: "INK_SACK:3",
+  LAPIS_LAZULI: "INK_SACK:4",
+  POTATO: "POTATO_ITEM",
+  PORKCHOP: "PORK",
+  CHICKEN: "RAW_CHICKEN",
+  COD: "RAW_FISH",
+  END_STONE: "ENDER_STONE",
+  NETHER_WART: "NETHER_STALK",
+  CLAY: "CLAY_BALL",
+  GLOWSTONE: "GLOWSTONE_DUST",
+};
+const stripFormatting = (value) =>
+  String(value || "").replace(/§[0-9A-FK-OR]/gi, "");
+const accessoryRarityPattern =
+  /(VERY SPECIAL|SPECIAL|DIVINE|MYTHIC|LEGENDARY|EPIC|RARE|UNCOMMON|COMMON)\s+(?:ACCESSORY|HATC?CESSORY)/i;
+const normalizedName = (value) =>
+  String(value || "")
+    .toLowerCase()
+    .replaceAll("_", "");
+const normalizedUuid = (value) =>
+  String(value || "")
+    .toLowerCase()
+    .replaceAll("-", "");
+function addItemCount(counts, id, amount) {
+  const normalizedId = String(id || "").toUpperCase(),
+    numericAmount = Number(amount);
+  if (!normalizedId || !Number.isFinite(numericAmount) || numericAmount <= 0)
+    return;
+  counts[normalizedId] = (counts[normalizedId] || 0) + numericAmount;
+  const legacy = normalizedId.match(/^([A-Z0-9_]+):(\d+)$/);
+  if (legacy)
+    counts[`${legacy[1]}-${legacy[2]}`] =
+      (counts[`${legacy[1]}-${legacy[2]}`] || 0) + numericAmount;
+}
+const SKYOCEAN_STORAGE_SCHEMA = "stranded-index-skyocean-storage",
+  SKYOCEAN_STORAGE_VERSION = 1;
+function skyOceanStorageKey() {
+  return profile
+    ? `stranded-index-skyocean-storage:${normalizedUuid(profile.player.uuid)}:${String(profile.profile.name || "").toLowerCase()}`
+    : "";
+}
+function validateSkyOceanStorage(input) {
+  if (!input || typeof input !== "object" || Array.isArray(input))
+    throw new Error("The pasted value is not a SkyOcean storage export.");
+  if (
+    input.schema !== SKYOCEAN_STORAGE_SCHEMA ||
+    Number(input.version) !== SKYOCEAN_STORAGE_VERSION
+  )
+    throw new Error("This SkyOcean export format is not supported.");
+  if (
+    !input.counts ||
+    typeof input.counts !== "object" ||
+    Array.isArray(input.counts)
+  )
+    throw new Error("The export does not contain item totals.");
+  const entries = Object.entries(input.counts);
+  if (entries.length > 10000)
+    throw new Error("The export contains too many item entries.");
+  const counts = {};
+  for (const [rawId, rawAmount] of entries) {
+    const id = String(rawId || "")
+        .trim()
+        .toUpperCase(),
+      amount = Number(rawAmount);
+    if (
+      !/^[A-Z0-9_.:-]+$/.test(id) ||
+      !Number.isSafeInteger(amount) ||
+      amount <= 0
+    )
+      throw new Error(`Invalid item total for ${id || "an unknown item"}.`);
+    counts[id] = (counts[id] || 0) + amount;
+  }
+  return {
+    ...input,
+    playerUuid: String(input.playerUuid || ""),
+    profile: String(input.profile || ""),
+    counts,
+    source:
+      input.source && typeof input.source === "object" ? input.source : {},
+  };
+}
+function updateSkyOceanStorageUi() {
+  const imported = profile?.skyOceanStorage,
+    status = $("#skyOceanStorageStatus"),
+    clear = $("#clearSkyOceanImport"),
+    importButton = $("#importSkyOceanStorage");
+  if (!status || !clear || !importButton) return;
+  status.classList.remove("error");
+  if (!imported) {
+    status.textContent = "Run \\exportstorage, then click Import";
+    clear.disabled = true;
+    return;
+  }
+  const itemTypes = Object.keys(imported.counts || {}).length,
+    slots = Number(imported.source?.nonemptySlots) || 0,
+    indexedAt = Date.parse(imported.source?.indexedAt || "");
+  status.textContent = `${itemTypes.toLocaleString()} item types · ${slots.toLocaleString()} occupied slots${Number.isFinite(indexedAt) ? ` · indexed ${new Date(indexedAt).toLocaleString()}` : ""}`;
+  clear.disabled = false;
+}
+function applySkyOceanStorage(raw, { persist = true, refresh = true } = {}) {
+  if (!profile)
+    throw new Error(`Load the matching ${profileModeName()} profile first.`);
+  const imported = validateSkyOceanStorage(raw),
+    profileUuid = normalizedUuid(profile.player.uuid),
+    exportUuid = normalizedUuid(imported.playerUuid);
+  if (exportUuid && exportUuid !== profileUuid)
+    throw new Error(
+      "This chest export belongs to a different Minecraft account.",
+    );
+  if (
+    imported.profile &&
+    imported.profile.toLowerCase() !==
+      String(profile.profile.name || "").toLowerCase()
+  )
+    throw new Error(
+      `This export is for the ${imported.profile} profile, not ${profile.profile.name}.`,
+    );
+  if (!profile.items.skyOceanBaseCounts)
+    profile.items.skyOceanBaseCounts = { ...profile.items.counts };
+  profile.items.counts = { ...profile.items.skyOceanBaseCounts };
+  for (const [id, amount] of Object.entries(imported.counts))
+    addItemCount(profile.items.counts, id, amount);
+  profile.skyOceanStorage = imported;
+  profile.rawSignals.skyOceanStorageAvailable = true;
+  if (persist)
+    try {
+      localStorage.setItem(skyOceanStorageKey(), JSON.stringify(imported));
+    } catch {}
+  if (refresh) updateProfileSummary();
+  return imported;
+}
+function restoreSavedSkyOceanStorage() {
+  if (!profile) return false;
+  try {
+    const saved = localStorage.getItem(skyOceanStorageKey());
+    if (!saved) return false;
+    applySkyOceanStorage(JSON.parse(saved), { persist: false, refresh: false });
+    return true;
+  } catch {
+    try {
+      localStorage.removeItem(skyOceanStorageKey());
+    } catch {}
+    return false;
+  }
+}
+function removeSkyOceanStorage() {
+  if (!profile) return;
+  const key = skyOceanStorageKey();
+  if (profile.items.skyOceanBaseCounts)
+    profile.items.counts = { ...profile.items.skyOceanBaseCounts };
+  delete profile.items.skyOceanBaseCounts;
+  delete profile.skyOceanStorage;
+  profile.rawSignals.skyOceanStorageAvailable = false;
+  try {
+    localStorage.removeItem(key);
+  } catch {}
+  updateProfileSummary();
+}
+async function importSkyOceanStorageFromClipboard() {
+  const button = $("#importSkyOceanStorage"),
+    status = $("#skyOceanStorageStatus");
+  button.disabled = true;
+  button.textContent = "Importing…";
+  status.classList.remove("error");
+  try {
+    const text = (await navigator.clipboard.readText()).trim();
+    if (!text)
+      throw new Error(
+        "The clipboard is empty. Run \\exportstorage in Minecraft first.",
+      );
+    applySkyOceanStorage(JSON.parse(text));
+  } catch (problem) {
+    status.textContent =
+      problem instanceof SyntaxError
+        ? "The clipboard does not contain a valid \\exportstorage result."
+        : problem.message;
+    status.classList.add("error");
+  } finally {
+    button.disabled = false;
+    button.textContent = "Import";
+  }
+}
+function catalogItemForProfileId(id) {
+  const direct = accessories.find((item) =>
+    (item.profileIds || [item.id]).includes(id),
+  );
+  if (direct) return direct;
+  const family = Object.entries(familyUpgrades).find(([, ids]) =>
+    ids.includes(id),
+  )?.[0];
+  return family ? familyMembers(family).at(-1) || null : null;
+}
+function normalizePublicProfile(data) {
+  const member = data.member || {},
+    inventoryGroups = Object.values(member.inventories || {}).filter(
+      Array.isArray,
+    ),
+    ids = new Set(),
+    counts = {};
+  for (const items of inventoryGroups)
+    for (const item of items.filter(Boolean)) {
+      const id = String(item.id || "").toUpperCase(),
+        amount = Math.max(1, Number(item.count) || 1);
+      if (!id) continue;
+      ids.add(id);
+      addItemCount(counts, id, amount);
+    }
+  const bag = (member.inventories?.accessory_bag || []).filter(Boolean),
+    rawAccessoryRecords = bag.map((item) => {
+      const id = String(item.id || "").toUpperCase(),
+        lore = item.display?.lore || [],
+        rarityLine =
+          lore.find((line) =>
+            accessoryRarityPattern.test(stripFormatting(line)),
+          ) || "",
+        rarity =
+          stripFormatting(rarityLine)
+            .match(accessoryRarityPattern)?.[1]
+            ?.replaceAll(" ", "_") || null,
+        descriptor = profileAccessoryDescriptor(id),
+        catalogItem = descriptor?.catalogItem || null,
+        magicalPower = Number(
+          stripFormatting(
+            lore.find((line) =>
+              stripFormatting(line).includes("Accessory Power"),
+            ) || "",
+          )
+            .match(/\+([\d,]+)/)?.[1]
+            ?.replaceAll(",", "") || 0,
+        ),
+        recombobulated =
+          /§k/i.test(rarityLine) ||
+          (catalogItem?.rarity === "SPECIAL" && rarity === "VERY_SPECIAL"),
+        baseRarity = recombobulated
+          ? rarityBefore(rarity) || catalogItem?.rarity || rarity
+          : descriptor?.external
+            ? rarity
+            : catalogItem?.rarity || rarity,
+        amount = Math.max(1, Number(item.count) || 1);
+      return {
+        id,
+        name: stripFormatting(item.display?.name) || catalogItem?.name || id,
+        rarity,
+        baseRarity,
+        count: amount,
+        recombobulated,
+        canRecombobulate: catalogItem?.canRecombobulate === true,
+        magicalPower,
+        familyKey: descriptor?.family || `item:${id}`,
+        familyLevel: descriptor?.level || 0,
+      };
+    });
+  const activeByFamily = new Map();
+  for (const record of rawAccessoryRecords) {
+    const current = activeByFamily.get(record.familyKey),
+      recordRarity = rarityMeta[normalizeRarity(record.rarity)]?.rank || 0,
+      currentRarity = rarityMeta[normalizeRarity(current?.rarity)]?.rank || 0;
+    if (
+      !current ||
+      record.familyLevel > current.familyLevel ||
+      (record.familyLevel === current.familyLevel &&
+        (recordRarity > currentRarity ||
+          (recordRarity === currentRarity &&
+            record.magicalPower > current.magicalPower)))
+    )
+      activeByFamily.set(record.familyKey, record);
+  }
+  const accessoryRecords = [...activeByFamily.values()].map((record) => ({
+      ...record,
+      count: 1,
+      recombobulatedCount: record.recombobulated ? 1 : 0,
+      unrecombobulatedCount: record.recombobulated ? 0 : 1,
+    })),
+    accessoryIds =
+      profileMode === "normal"
+        ? [...ids].filter((id) => profileAccessoryDescriptor(id))
+        : accessoryRecords.map((record) => record.id);
+  const collections = {},
+    collectionLevels = {};
+  for (const entry of member.collections || []) {
+    const raw = String(entry.name || "").toUpperCase(),
+      id = collectionAliases[raw] || raw,
+      amount = Number(entry.amount) || 0,
+      level = Number(entry.level);
+    collections[raw] = amount;
+    collections[id] = amount;
+    if (Number.isFinite(level)) {
+      collectionLevels[raw] = level;
+      collectionLevels[id] = level;
+    }
+  }
+  const skills = {};
+  for (const entry of member.skills?.list || []) {
+    const id = String(entry.id || "").toUpperCase(),
+      xp = Number(entry.xp) || 0;
+    skills[id] = xp;
+    skills[`SKILL_${id}`] = xp;
+  }
+  const slayers = {};
+  for (const boss of member.slayers?.bosses || [])
+    slayers[String(boss.rawName || boss.name || "").toLowerCase()] =
+      Number(boss.level) || 0;
+  const crafted = [],
+    coopMinions = Array.isArray(data.profile?.minions)
+      ? data.profile.minions
+      : member.minions || [];
+  for (const record of coopMinions) {
+    const minion = minions.find(
+      (candidate) =>
+        normalizedName(candidate.id) === normalizedName(record.name),
+    );
+    if (!minion) continue;
+    (record.levels || []).forEach((done, index) => {
+      if (done && minion.tiers[index]) crafted.push(minion.tiers[index].id);
+    });
+  }
+  const petRecords = (member.pets?.list || [])
+    .map((pet) => ({
+      id: String(pet.id || "").toUpperCase(),
+      tier: normalizeRarity(pet.tier),
+      level: Math.max(1, Number(pet.level) || 1),
+      xp: Number(pet.xp) || 0,
+      skin: pet.skin || null,
+      item: pet.item || null,
+    }))
+    .filter((pet) => pet.id && rarityMeta[pet.tier]);
+  const magicalPower = accessoryRecords.reduce(
+    (sum, record) =>
+      sum + (record.magicalPower || magicalPowerFor(record.rarity)),
+    0,
+  );
+  return {
+    source: "public-web",
+    player: { username: member.username, uuid: member.uuid },
+    profile: {
+      id: data.profile?.uuid,
+      name: data.profile?.name,
+      mode: data.profile?.mode || profileMode,
+      lastSave: member.lastSave || null,
+      memberUuids: (data.profile?.members || [])
+        .filter((candidate) => candidate.left !== true)
+        .map((candidate) => normalizedUuid(candidate.uuid)),
+    },
+    stats: { magicalPower },
+    items: {
+      ids: [...ids],
+      accessoryIds,
+      counts,
+      accessories: accessoryRecords,
+    },
+    collections,
+    collectionLevels,
+    slayers,
+    skills,
+    minions: { crafted },
+    pets: petRecords,
+    cache: { hit: false, ageSeconds: 0 },
+    rawSignals: {
+      inventoryAvailable: ids.size > 0,
+      accessoryMetadataAvailable: accessoryRecords.length > 0,
+      collectionsAvailable: Object.keys(collections).length > 0,
+      collectionLevelsAvailable: Object.keys(collectionLevels).length > 0,
+      slayersAvailable: Object.keys(slayers).length > 0,
+      minionsAvailable: crafted.length > 0,
+      petsAvailable: Array.isArray(member.pets?.list),
+      sacksAvailable: false,
+    },
+  };
+}
+function mergeSoopyCollections(target, memberEntries) {
+  const totals = {},
+    levels = {};
+  for (const [, member] of memberEntries) {
+    const collections = member?.collections;
+    if (
+      collections &&
+      typeof collections === "object" &&
+      !Array.isArray(collections)
+    )
+      for (const [rawId, value] of Object.entries(collections)) {
+        const id = String(rawId).toUpperCase(),
+          amount = Number(value);
+        if (Number.isFinite(amount)) totals[id] = (totals[id] || 0) + amount;
+      }
+    for (const rawTier of member?.unlocked_coll_tiers || []) {
+      const match = String(rawTier)
+        .toUpperCase()
+        .match(/^(.*)_(-?\d+)$/);
+      if (!match) continue;
+      const id = match[1],
+        level = Math.max(0, Number(match[2]) || 0);
+      levels[id] = Math.max(levels[id] || 0, level);
+    }
+  }
+  const keysFor = (id) => [
+    id,
+    ...Object.entries(collectionAliases)
+      .filter(([, mapped]) => mapped === id)
+      .map(([alias]) => alias),
+  ];
+  for (const [id, amount] of Object.entries(totals))
+    for (const key of keysFor(id))
+      target.collections[key] = Math.max(
+        Number(target.collections[key] || 0),
+        amount,
+      );
+  for (const [id, level] of Object.entries(levels))
+    for (const key of keysFor(id))
+      target.collectionLevels[key] = Math.max(
+        Number(target.collectionLevels[key] || 0),
+        level,
+      );
+  if (Object.keys(totals).length) target.rawSignals.collectionsAvailable = true;
+  if (Object.keys(levels).length)
+    target.rawSignals.collectionLevelsAvailable = true;
+  return Object.keys(totals).length > 0 || Object.keys(levels).length > 0;
+}
+function mergeSoopyProfile(target, data) {
+  const profiles = data?.data?.profiles;
+  if (!profiles || typeof profiles !== "object") return target;
+  const entries = Array.isArray(profiles)
+      ? profiles.map((candidate) => [
+          candidate.profile_id || candidate.uuid,
+          candidate,
+        ])
+      : Object.entries(profiles),
+    profileId = normalizedUuid(target.profile.id),
+    profileName = String(target.profile.name || "").toLowerCase();
+  const selected =
+    entries.find(([id]) => normalizedUuid(id) === profileId)?.[1] ||
+    entries.find(
+      ([, candidate]) =>
+        String(candidate?.cute_name || candidate?.name || "").toLowerCase() ===
+        profileName,
+    )?.[1];
+  if (!selected) return target;
+  const members = selected.members || {},
+    allowedMembers = new Set(target.profile.memberUuids || []),
+    memberEntries = (
+      Array.isArray(members)
+        ? members.map((member) => [member.uuid, member])
+        : Object.entries(members)
+    ).filter(
+      ([id]) => !allowedMembers.size || allowedMembers.has(normalizedUuid(id)),
+    ),
+    collectionsMerged = mergeSoopyCollections(target, memberEntries),
+    playerUuid = normalizedUuid(target.player.uuid),
+    member = memberEntries.find(
+      ([id]) => normalizedUuid(id) === playerUuid,
+    )?.[1],
+    sacks = member?.sack;
+  if (sacks && typeof sacks === "object" && !Array.isArray(sacks)) {
+    for (const [id, amount] of Object.entries(sacks))
+      addItemCount(target.items.counts, id, amount);
+    target.rawSignals.sacksAvailable = true;
+  }
+  if (collectionsMerged || target.rawSignals.sacksAvailable)
+    target.source = "public-web+soopy";
+  return target;
+}
+async function fetchSoopyProfile(uuid) {
+  try {
+    const timeout = globalThis.AbortSignal?.timeout
+        ? { signal: AbortSignal.timeout(PROFILE_ENRICHMENT_TIMEOUT_MS) }
+        : {},
+      response = await fetch(
+        `${SOOPY_PROFILE_API}/${encodeURIComponent(normalizedUuid(uuid))}`,
+        timeout,
+      );
+    if (!response.ok) return null;
+    return await response.json();
+  } catch {
+    return null;
+  }
+}
+async function fetchPublicProfile(username, profileName = "") {
+  const summaryResponse = await fetch(
+      `${PUBLIC_PROFILE_API}/player/${encodeURIComponent(username)}?customization=true`,
+    ),
+    summary = await summaryResponse.json().catch(() => null);
+  if (!summaryResponse.ok)
+    throw new Error(
+      summary?.error || "That Minecraft player could not be found.",
+    );
+  const matchingProfiles = (summary.profiles || []).filter(
+    (candidate) => candidate.mode === profileMode,
+  );
+  if (!matchingProfiles.length)
+    throw new Error(
+      `No ${profileModeName()} profile was found for that player.`,
+    );
+  if (!profileName && matchingProfiles.length > 1)
+    return {
+      selectionRequired: true,
+      profiles: matchingProfiles.map((candidate) => ({
+        id: candidate.uuid,
+        name: candidate.name,
+      })),
+    };
+  const chosen = profileName
+    ? matchingProfiles.find(
+        (candidate) =>
+          candidate.name.toLowerCase() === profileName.toLowerCase(),
+      )
+    : matchingProfiles[0];
+  if (!chosen)
+    throw new Error(`That profile is not a ${profileModeName()} profile.`);
+  const detailRequest = fetch(
+      `${PUBLIC_PROFILE_API}/player/${encodeURIComponent(username)}/${encodeURIComponent(chosen.name)}?customization=true`,
+    ),
+    soopyRequest = fetchSoopyProfile(summary.player?.uuid);
+  const [detailResponse, soopyData] = await Promise.all([
+      detailRequest,
+      soopyRequest,
+    ]),
+    detail = await detailResponse.json().catch(() => null);
+  if (!detailResponse.ok)
+    throw new Error(
+      detail?.error || `The ${profileModeName()} profile could not be loaded.`,
+    );
+  return mergeSoopyProfile(normalizePublicProfile(detail), soopyData);
+}
+function showProfileChoices(username, profiles) {
+  profileOptionsUsername = username.toLowerCase();
+  $("#profileSelect").innerHTML = profiles
+    .map(
+      (candidate) =>
+        `<option value="${escapeHtml(candidate.name)}">${escapeHtml(candidate.name)}</option>`,
+    )
+    .join("");
+  $("#profileChoiceField").hidden = false;
+}
+function hideProfileChoices() {
+  profileOptionsUsername = "";
+  $("#profileChoiceField").hidden = true;
+  $("#profileSelect").innerHTML = "";
+}
+function updateProfileSubmitLabel(
+  button = $("#profileForm").querySelector("button"),
+) {
+  button.innerHTML = $("#profileChoiceField").hidden
+    ? "Check profile <span>→</span>"
+    : "Load profile <span>→</span>";
+}
+function updateProfileSummary() {
+  const obtainable = obtainableAccessories(),
+    statuses = obtainable.map(itemStatus),
+    ownedObtainable = statuses.filter((status) => status === "owned").length,
+    ownedLegacy = accessories.filter(
+      (item) => item.legacy && ownsItem(item),
+    ).length,
+    ready = statuses.filter((status) => status === "ready").length;
+  $("#ownedCount").textContent = ownedObtainable + ownedLegacy;
+  $("#upgradeCount").textContent = ready;
+  $("#missingCount").textContent = obtainable.length - ownedObtainable;
+  $("#magicPower").textContent = Number.isFinite(profile.stats?.magicalPower)
+    ? profile.stats.magicalPower.toLocaleString()
+    : "—";
+  const percent = Math.round((ownedObtainable / obtainable.length) * 100),
+    legacyNote = ownedLegacy ? ` · ${ownedLegacy} legacy owned` : "";
+  $("#completionText").textContent =
+    `${percent}% of ${profileMode === "normal" ? "current" : "obtainable"} accessories found${legacyNote}`;
+  $("#completionBar").style.width = `${percent}%`;
+  $("#playerName").textContent = profile.player.username;
+  $("#profileMeta").textContent =
+    `${profile.profile.name} · ${profile.profile.mode} · live web data`;
+  $("#playerAvatar").style.backgroundImage =
+    `url(https://mc-heads.net/avatar/${profile.player.uuid}/64)`;
+  const sackNotice = profile.rawSignals.sacksAvailable
+      ? " Sack contents are included through Soopy for material and crafting checks."
+      : " Sack contents could not be loaded, so material and crafting checks may be incomplete.",
+    chestNotice = profile.rawSignals.skyOceanStorageAvailable
+      ? " SkyOcean’s cached island-chest materials are also included."
+      : " Island chests are not included unless you import a SkyOcean chest index.",
+    legacyNotice =
+      profileMode === "stranded"
+        ? " Legacy accessories are excluded from availability totals and appear only when owned."
+        : "";
+  $("#apiNotice").textContent = profile.rawSignals.inventoryAvailable
+    ? `Ownership and craft checks use the profile’s API-visible inventory, Ender Chest, Accessory Bag, and Personal Vault.${sackNotice}${chestNotice} Accessory Power and recombobulation use only the highest tier in each family; duplicate and lower-tier copies are ignored.${legacyNotice} Pet rarity and level come from the live profile. Hunting Box Attribute levels remain user-entered.${profile.rawSignals.accessoryMetadataAvailable ? " Recombobulation checks use each accessory’s decoded rarity marker." : ""}`
+    : "Inventory data was not returned, so ownership and material checks may be incomplete.";
+  $("#profilePanel").hidden = false;
+  statusFilter.hidden = false;
+  updateSkyOceanStorageUi();
+  updateRecombobulationSummary();
+  render();
+  renderMinions();
+  renderPets();
+  renderAttributes();
+  if (profileMode === "stranded") renderVillagerTrades();
+}
+async function loadProfile(username, chosenProfile = "") {
+  const button = $("#profileForm").querySelector("button"),
+    error = $("#profileError");
+  $("#playerInput").value = username;
+  button.disabled = true;
+  button.textContent = "Checking…";
+  error.hidden = true;
+  try {
+    const result = await fetchPublicProfile(username, chosenProfile);
+    if (result.selectionRequired) {
+      showProfileChoices(username, result.profiles);
+      $("#profilePanel").hidden = true;
+      updateProfileSubmitLabel(button);
+      return false;
+    }
+    profile = result;
+    hideProfileChoices();
+    restoreSavedSkyOceanStorage();
+    updateProfileSummary();
+    try {
+      localStorage.setItem(
+        lastProfileStorageKey(),
+        JSON.stringify({
+          username: profile.player.username,
+          profile: profile.profile.name,
+        }),
+      );
+    } catch {}
+    return true;
+  } catch (problem) {
+    error.textContent = problem.message;
+    error.hidden = false;
+    return false;
+  } finally {
+    button.disabled = false;
+    updateProfileSubmitLabel(button);
+  }
+}
+async function restoreLastProfile() {
+  try {
+    const saved = JSON.parse(
+      localStorage.getItem(lastProfileStorageKey()) || "null",
+    );
+    if (
+      !saved ||
+      !/^[A-Za-z0-9_]{1,16}$/.test(saved.username) ||
+      typeof saved.profile !== "string"
+    )
+      return false;
+    return await loadProfile(saved.username, saved.profile);
+  } catch {
+    return false;
+  }
+}
+$("#profileForm").addEventListener("submit", async (event) => {
+  event.preventDefault();
+  const username = $("#playerInput").value.trim(),
+    chosenProfile =
+      profileOptionsUsername === username.toLowerCase()
+        ? $("#profileSelect").value
+        : "";
+  await loadProfile(username, chosenProfile);
+});
+$("#playerInput").addEventListener("input", () => {
+  if (
+    profileOptionsUsername &&
+    profileOptionsUsername !== $("#playerInput").value.trim().toLowerCase()
+  ) {
+    hideProfileChoices();
+    updateProfileSubmitLabel();
+  }
+});
+$("#clearProfile").addEventListener("click", () => {
+  profile = null;
+  try {
+    localStorage.removeItem(lastProfileStorageKey());
+  } catch {}
+  hideProfileChoices();
+  updateProfileSubmitLabel();
+  $("#profilePanel").hidden = true;
+  $("#recombPanel").hidden = true;
+  statusFilter.hidden = true;
+  statusFilter.value = "all";
+  render();
+  renderMinions();
+  renderPets();
+  renderAttributes();
+  if (profileMode === "stranded") renderVillagerTrades();
+});
+document
+  .querySelector(".profile-mode-picker")
+  .addEventListener("click", (event) => {
+    const button = event.target.closest("[data-profile-mode]");
+    if (button) setProfileMode(button.dataset.profileMode);
+  });
+$("#rarityFilters").addEventListener("click", (event) => {
+  if (!event.target.dataset.rarity) return;
+  activeRarity = event.target.dataset.rarity;
+  document
+    .querySelectorAll("#rarityFilters button")
+    .forEach((button) =>
+      button.classList.toggle("active", button === event.target),
+    );
+  render();
+});
+[search, sourceFilter, statusFilter].forEach((element) =>
+  element.addEventListener("input", render),
+);
+document.querySelectorAll(".view-toggle button").forEach((button) =>
+  button.addEventListener("click", () => {
+    document
+      .querySelectorAll(".view-toggle button")
+      .forEach((candidate) =>
+        candidate.classList.toggle("active", button === candidate),
+      );
+    grid.classList.toggle("list-view", button.dataset.view === "list");
+  }),
+);
+$("#importSkyOceanStorage").addEventListener(
+  "click",
+  importSkyOceanStorageFromClipboard,
+);
+$("#clearSkyOceanImport").addEventListener("click", removeSkyOceanStorage);
+$(".feature-tabs").addEventListener("click", (event) => {
+  const tab = event.target.dataset.tab;
+  if (tab) activateTab(tab);
+});
+$("#minionCategories").addEventListener("click", (event) => {
+  if (!event.target.dataset.category) return;
+  activeMinionCategory = event.target.dataset.category;
+  document
+    .querySelectorAll("#minionCategories button")
+    .forEach((button) =>
+      button.classList.toggle("active", button === event.target),
+    );
+  renderMinions();
+});
+[$("#minionSearch"), $("#minionStatus"), $("#minionSort")].forEach((element) =>
+  element.addEventListener("input", renderMinions),
+);
+$("#petRarities").addEventListener("click", (event) => {
+  if (!event.target.dataset.petRarity) return;
+  activePetRarity = event.target.dataset.petRarity;
+  document
+    .querySelectorAll("#petRarities button")
+    .forEach((button) =>
+      button.classList.toggle("active", button === event.target),
+    );
+  renderPets();
+});
+[$("#petSearch"), $("#petStatus"), $("#petSort")].forEach((element) =>
+  element.addEventListener("input", renderPets),
+);
+$("#attributeRarities").addEventListener("click", (event) => {
+  if (!event.target.dataset.attributeRarity) return;
+  activeAttributeRarity = event.target.dataset.attributeRarity;
+  document
+    .querySelectorAll("#attributeRarities button")
+    .forEach((button) =>
+      button.classList.toggle("active", button === event.target),
+    );
+  renderAttributes();
+});
+[$("#attributeSearch"), $("#attributeStatus")].forEach((element) =>
+  element.addEventListener("input", renderAttributes),
+);
+$("#attributeGrid").addEventListener("click", (event) => {
+  const button = event.target.closest("[data-attribute-id]");
+  if (button)
+    setAttributeLevel(button.dataset.attributeId, button.dataset.level);
+});
+$("#resetAttributes").addEventListener("click", () => {
+  if (confirm("Reset every saved Attribute level for this profile?")) {
+    try {
+      localStorage.removeItem(attributeStorageKey());
+    } catch {}
+    renderAttributes();
+  }
+});
+$("#tradeLevels").addEventListener("click", (event) => {
+  const button = event.target.closest("[data-trade-level]");
+  if (!button) return;
+  activeTradeLevel = button.dataset.tradeLevel;
+  document
+    .querySelectorAll("#tradeLevels button")
+    .forEach((candidate) =>
+      candidate.classList.toggle("active", candidate === button),
+    );
+  renderVillagerTrades();
+});
+[$("#tradeSearch"), $("#tradeDirection"), $("#tradeStatus")].forEach(
+  (element) => element.addEventListener("input", renderVillagerTrades),
+);
+$("#tradeGrid").addEventListener("click", (event) => {
+  const button = event.target.closest("[data-trade-obtained]");
+  if (button) toggleVillagerTrade(button.dataset.tradeObtained);
+});
+$("#tradeGrid").addEventListener("input", (event) => {
+  const input = event.target.closest("[data-trade-amount]");
+  if (!input) return;
+  const saved = setVillagerTradeAmount(input.dataset.tradeAmount, input.value),
+    trade = villagerTrades.find(
+      (item) => item.id === input.dataset.tradeAmount,
+    ),
+    card = input.closest("[data-trade-card]"),
+    label = card?.querySelector(".trade-variable-amount"),
+    valid = input.value === "" || saved != null;
+  input.setAttribute("aria-invalid", String(!valid));
+  if (label && trade)
+    label.textContent = `${saved?.toLocaleString() || `${trade.costs[0].min.toLocaleString()}–${trade.costs[0].max.toLocaleString()}`}×`;
+  syncVillagerTradeCardState(card, trade);
+});
+$("#tradeGrid").addEventListener("change", (event) => {
+  const input = event.target.closest("[data-trade-amount]");
+  if (!input) return;
+  const trade = villagerTrades.find(
+      (item) => item.id === input.dataset.tradeAmount,
+    ),
+    amount = trade ? savedVillagerTradeAmount(trade) : null;
+  if (trade && villagerTradeAmountOutsideKnownRange(trade, amount))
+    showVillagerTradePriceReport(trade, amount);
+  renderVillagerTrades();
+});
+$("#tradePriceReportDialog").addEventListener("click", (event) => {
+  if (event.target === event.currentTarget) event.currentTarget.close();
+});
+$("#checkTradePrices").addEventListener("click", auditVillagerTradePrices);
+$("#resetTrades").addEventListener("click", () => {
+  if (
+    confirm(
+      "Reset every saved Villager trade and exact price for this profile?",
+    )
+  ) {
+    try {
+      localStorage.removeItem(villagerTradeStorageKey());
+    } catch {}
+    renderVillagerTrades();
+  }
+});
+const VILLAGER_SALE_ITEMS = [
+  {
+    id: "small-pocket-black-hole",
+    name: "Small Pocket Black Hole",
+    plural: "Small Pocket Black Holes",
+    emeraldCost: 16,
+    costLabel: "16 Emeralds",
+    npcSell: 50000,
+    tier: 1,
+  },
+  {
+    id: "hellfire-rod",
+    name: "Hellfire Rod",
+    plural: "Hellfire Rods",
+    emeraldCost: 2560,
+    costLabel: "16 Enchanted Emeralds",
+    npcSell: 5634000,
+    tier: 5,
+  },
+  {
+    id: "inferno-rod",
+    name: "Inferno Rod",
+    plural: "Inferno Rods",
+    emeraldCost: 640,
+    costLabel: "4 Enchanted Emeralds",
+    npcSell: 1028000,
+    tier: 3,
+  },
+  {
+    id: "medium-pocket-black-hole",
+    name: "Medium Pocket Black Hole",
+    plural: "Medium Pocket Black Holes",
+    emeraldCost: 320,
+    costLabel: "2 Enchanted Emeralds",
+    npcSell: 500000,
+    tier: 3,
+  },
 ];
-const CALCULATOR_STORAGE_KEY='stranded-villager-money-calculator',LEGACY_CALCULATOR_STORAGE_KEY='stranded-small-black-hole-calculator';
-const calculatorNumber=new Intl.NumberFormat('en-US',{maximumFractionDigits:2});
-const calculatorCoins=new Intl.NumberFormat('en-US',{maximumFractionDigits:0});
-const selectedSaleItem=()=>VILLAGER_SALE_ITEMS.find(item=>item.id===$('#saleItem').value)||VILLAGER_SALE_ITEMS[0];
-function updateCalculatorRoute(item){const coinsPerEmerald=item.npcSell/item.emeraldCost;$('#calculatorTitle').textContent=`${item.name} calculator`;$('#calculatorDescription').textContent=`Convert Cocoa Beans into Emeralds, buy a ${item.name} for ${item.costLabel}, then sell it to an NPC for ${calculatorCoins.format(item.npcSell)} coins.`;$('#coinsPerEmerald').textContent=calculatorNumber.format(coinsPerEmerald);$('#routeCost').textContent=item.costLabel;$('#routeItem').textContent=`1 ${item.name}`;$('#routeSell').textContent=`${calculatorCoins.format(item.npcSell)} coins`;$('#itemsPerHourLabel').textContent=`${item.plural} / hour`;$('#calculatorNote').textContent=`Long-run gross value before any NPC sell limit. Partial ${item.plural.toLowerCase()} are treated as average value.`}
-function setCalculatorResults(values){$('#emeraldsPerMinute').textContent=values?calculatorNumber.format(values.emeraldsPerMinute):'—';$('#itemsPerHour').textContent=values?calculatorNumber.format(values.itemsPerHour):'—';$('#coinsPerMinute').textContent=values?calculatorCoins.format(values.coinsPerMinute):'—';$('#coinsPerHour').textContent=values?calculatorCoins.format(values.coinsPerHour):'—';$('#coinsPerDay').textContent=values?calculatorCoins.format(values.coinsPerDay):'—'}
-function calculateMoney(){const item=selectedSaleItem(),cocoaPerEmerald=Number($('#cocoaPerEmerald').value),cocoaPerMinute=Number($('#cocoaPerMinute').value);updateCalculatorRoute(item);const valid=Number.isFinite(cocoaPerEmerald)&&cocoaPerEmerald>0&&Number.isFinite(cocoaPerMinute)&&cocoaPerMinute>=0;$('#calculatorError').hidden=valid;if(!valid){setCalculatorResults(null);return}const emeraldsPerMinute=cocoaPerMinute/cocoaPerEmerald,itemsPerHour=emeraldsPerMinute*60/item.emeraldCost,coinsPerHour=itemsPerHour*item.npcSell;setCalculatorResults({emeraldsPerMinute,itemsPerHour,coinsPerMinute:coinsPerHour/60,coinsPerHour,coinsPerDay:coinsPerHour*24});try{localStorage.setItem(CALCULATOR_STORAGE_KEY,JSON.stringify({saleItem:item.id,cocoaPerEmerald,cocoaPerMinute}))}catch{}}
-function initializeMoneyCalculator(){const saleItem=$('#saleItem');saleItem.innerHTML=VILLAGER_SALE_ITEMS.map((item,index)=>`<option value="${item.id}">#${index+1} · ${item.name} · T${item.tier} · ${calculatorNumber.format(item.npcSell/item.emeraldCost)}/emerald</option>`).join('');try{const saved=JSON.parse(localStorage.getItem(CALCULATOR_STORAGE_KEY)||localStorage.getItem(LEGACY_CALCULATOR_STORAGE_KEY));if(saved&&VILLAGER_SALE_ITEMS.some(item=>item.id===saved.saleItem))saleItem.value=saved.saleItem;if(saved&&Number.isFinite(saved.cocoaPerEmerald)&&saved.cocoaPerEmerald>0)$('#cocoaPerEmerald').value=saved.cocoaPerEmerald;if(saved&&Number.isFinite(saved.cocoaPerMinute)&&saved.cocoaPerMinute>=0)$('#cocoaPerMinute').value=saved.cocoaPerMinute}catch{}[$('#cocoaPerEmerald'),$('#cocoaPerMinute')].forEach(input=>input.addEventListener('input',calculateMoney));saleItem.addEventListener('change',calculateMoney);$('#moneyCalculator').addEventListener('submit',event=>{event.preventDefault();calculateMoney()});calculateMoney()}
-const CAT_VISIBILITY_KEY='stranded-index-cat-hidden';
-function setCornerCatHidden(hidden,persist=true){const cat=$('#cornerCat'),toggle=$('#catToggle');cat.hidden=hidden;toggle.textContent=hidden?'CAT':'×';toggle.setAttribute('aria-pressed',String(hidden));toggle.setAttribute('aria-label',hidden?'Show cat':'Hide cat');toggle.title=hidden?'Show cat':'Hide cat';if(persist)try{localStorage.setItem(CAT_VISIBILITY_KEY,String(hidden))}catch{}}
-function initializeCornerCat(){let hidden=true;try{const saved=localStorage.getItem(CAT_VISIBILITY_KEY);if(saved!==null)hidden=saved==='true'}catch{}setCornerCatHidden(hidden,false);$('#catToggle').addEventListener('click',()=>setCornerCatHidden(!$('#cornerCat').hidden));$('#cornerCat').addEventListener('click',()=>setCornerCatHidden(true))}
+const CALCULATOR_STORAGE_KEY = "stranded-villager-money-calculator",
+  LEGACY_CALCULATOR_STORAGE_KEY = "stranded-small-black-hole-calculator";
+const calculatorNumber = new Intl.NumberFormat("en-US", {
+  maximumFractionDigits: 2,
+});
+const calculatorCoins = new Intl.NumberFormat("en-US", {
+  maximumFractionDigits: 0,
+});
+const selectedSaleItem = () =>
+  VILLAGER_SALE_ITEMS.find((item) => item.id === $("#saleItem").value) ||
+  VILLAGER_SALE_ITEMS[0];
+function updateCalculatorRoute(item) {
+  const coinsPerEmerald = item.npcSell / item.emeraldCost;
+  $("#calculatorTitle").textContent = `${item.name} calculator`;
+  $("#calculatorDescription").textContent =
+    `Convert Cocoa Beans into Emeralds, buy a ${item.name} for ${item.costLabel}, then sell it to an NPC for ${calculatorCoins.format(item.npcSell)} coins.`;
+  $("#coinsPerEmerald").textContent = calculatorNumber.format(coinsPerEmerald);
+  $("#routeCost").textContent = item.costLabel;
+  $("#routeItem").textContent = `1 ${item.name}`;
+  $("#routeSell").textContent = `${calculatorCoins.format(item.npcSell)} coins`;
+  $("#itemsPerHourLabel").textContent = `${item.plural} / hour`;
+  $("#calculatorNote").textContent =
+    `Long-run gross value before any NPC sell limit. Partial ${item.plural.toLowerCase()} are treated as average value.`;
+}
+function setCalculatorResults(values) {
+  $("#emeraldsPerMinute").textContent = values
+    ? calculatorNumber.format(values.emeraldsPerMinute)
+    : "—";
+  $("#itemsPerHour").textContent = values
+    ? calculatorNumber.format(values.itemsPerHour)
+    : "—";
+  $("#coinsPerMinute").textContent = values
+    ? calculatorCoins.format(values.coinsPerMinute)
+    : "—";
+  $("#coinsPerHour").textContent = values
+    ? calculatorCoins.format(values.coinsPerHour)
+    : "—";
+  $("#coinsPerDay").textContent = values
+    ? calculatorCoins.format(values.coinsPerDay)
+    : "—";
+}
+function calculateMoney() {
+  const item = selectedSaleItem(),
+    cocoaPerEmerald = Number($("#cocoaPerEmerald").value),
+    cocoaPerMinute = Number($("#cocoaPerMinute").value);
+  updateCalculatorRoute(item);
+  const valid =
+    Number.isFinite(cocoaPerEmerald) &&
+    cocoaPerEmerald > 0 &&
+    Number.isFinite(cocoaPerMinute) &&
+    cocoaPerMinute >= 0;
+  $("#calculatorError").hidden = valid;
+  if (!valid) {
+    setCalculatorResults(null);
+    return;
+  }
+  const emeraldsPerMinute = cocoaPerMinute / cocoaPerEmerald,
+    itemsPerHour = (emeraldsPerMinute * 60) / item.emeraldCost,
+    coinsPerHour = itemsPerHour * item.npcSell;
+  setCalculatorResults({
+    emeraldsPerMinute,
+    itemsPerHour,
+    coinsPerMinute: coinsPerHour / 60,
+    coinsPerHour,
+    coinsPerDay: coinsPerHour * 24,
+  });
+  try {
+    localStorage.setItem(
+      CALCULATOR_STORAGE_KEY,
+      JSON.stringify({ saleItem: item.id, cocoaPerEmerald, cocoaPerMinute }),
+    );
+  } catch {}
+}
+function initializeMoneyCalculator() {
+  const saleItem = $("#saleItem");
+  saleItem.innerHTML = VILLAGER_SALE_ITEMS.map(
+    (item, index) =>
+      `<option value="${item.id}">#${index + 1} · ${item.name} · T${item.tier} · ${calculatorNumber.format(item.npcSell / item.emeraldCost)}/emerald</option>`,
+  ).join("");
+  try {
+    const saved = JSON.parse(
+      localStorage.getItem(CALCULATOR_STORAGE_KEY) ||
+        localStorage.getItem(LEGACY_CALCULATOR_STORAGE_KEY),
+    );
+    if (saved && VILLAGER_SALE_ITEMS.some((item) => item.id === saved.saleItem))
+      saleItem.value = saved.saleItem;
+    if (
+      saved &&
+      Number.isFinite(saved.cocoaPerEmerald) &&
+      saved.cocoaPerEmerald > 0
+    )
+      $("#cocoaPerEmerald").value = saved.cocoaPerEmerald;
+    if (
+      saved &&
+      Number.isFinite(saved.cocoaPerMinute) &&
+      saved.cocoaPerMinute >= 0
+    )
+      $("#cocoaPerMinute").value = saved.cocoaPerMinute;
+  } catch {}
+  [$("#cocoaPerEmerald"), $("#cocoaPerMinute")].forEach((input) =>
+    input.addEventListener("input", calculateMoney),
+  );
+  saleItem.addEventListener("change", calculateMoney);
+  $("#moneyCalculator").addEventListener("submit", (event) => {
+    event.preventDefault();
+    calculateMoney();
+  });
+  calculateMoney();
+}
+const CAT_VISIBILITY_KEY = "stranded-index-cat-hidden";
+function setCornerCatHidden(hidden, persist = true) {
+  const cat = $("#cornerCat"),
+    toggle = $("#catToggle");
+  cat.hidden = hidden;
+  toggle.textContent = hidden ? "CAT" : "×";
+  toggle.setAttribute("aria-pressed", String(hidden));
+  toggle.setAttribute("aria-label", hidden ? "Show cat" : "Hide cat");
+  toggle.title = hidden ? "Show cat" : "Hide cat";
+  if (persist)
+    try {
+      localStorage.setItem(CAT_VISIBILITY_KEY, String(hidden));
+    } catch {}
+}
+function initializeCornerCat() {
+  let hidden = true;
+  try {
+    const saved = localStorage.getItem(CAT_VISIBILITY_KEY);
+    if (saved !== null) hidden = saved === "true";
+  } catch {}
+  setCornerCatHidden(hidden, false);
+  $("#catToggle").addEventListener("click", () =>
+    setCornerCatHidden(!$("#cornerCat").hidden),
+  );
+  $("#cornerCat").addEventListener("click", () => setCornerCatHidden(true));
+}
 initializeMoneyCalculator();
 initializeCornerCat();
-loadCatalog().then(async()=>{document.documentElement.dataset.appReady='ready';await restoreLastProfile()}).catch(error=>{document.documentElement.dataset.appReady='error';grid.innerHTML=`<div class="profile-error">${error.message}. Reload the page and try again.</div>`});
+loadCatalog()
+  .then(async () => {
+    document.documentElement.dataset.appReady = "ready";
+    await restoreLastProfile();
+  })
+  .catch((error) => {
+    document.documentElement.dataset.appReady = "error";
+    grid.innerHTML = `<div class="profile-error">${error.message}. Reload the page and try again.</div>`;
+  });
