@@ -62,7 +62,7 @@ async function loadCatalog() {
     fetch("./data/pets.json?v=20260725-orchid-mantis"),
     fetch("./data/pet-upgrades.json?v=20260729-material-readiness"),
     fetch("./data/attributes.json"),
-    fetch("./data/villager-trades.json?v=20260725-log-range-54"),
+    fetch("./data/villager-trades.json?v=20260804-community-price-level-updates"),
     fetch("./data/normal-accessories.json?v=20260803"),
     fetch("./data/normal-minions.json?v=20260803"),
     fetch("./data/normal-pets.json?v=20260803"),
@@ -1290,6 +1290,33 @@ function renderAttributes() {
   );
 }
 const VILLAGER_TRADE_STORAGE_PREFIX = "stranded-villager-trades";
+function villagerTradeLevels(trade) {
+  const values = Array.isArray(trade?.levels)
+    ? trade.levels
+    : trade?.level == null
+      ? []
+      : [trade.level];
+  return [...new Set(values.map(Number))]
+    .filter((level) => Number.isInteger(level) && level >= 1 && level <= 5)
+    .sort((a, b) => a - b);
+}
+function villagerTradeLevelLabel(trade) {
+  const levels = villagerTradeLevels(trade);
+  if (!levels.length) return "RESOURCE OFFER";
+  if (levels.length === 1) return `LEVEL ${levels[0]}`;
+  const contiguous = levels.every(
+    (level, index) => index === 0 || level === levels[index - 1] + 1,
+  );
+  return contiguous
+    ? `LEVELS ${levels[0]}–${levels.at(-1)}`
+    : `LEVELS ${levels.join(", ")}`;
+}
+function villagerTradeMatchesLevel(trade, filter) {
+  const levels = villagerTradeLevels(trade);
+  if (filter === "ALL") return true;
+  if (filter === "RESOURCE") return levels.length === 0;
+  return levels.includes(Number(filter));
+}
 const villagerTradeStorageKey = () =>
   `${VILLAGER_TRADE_STORAGE_PREFIX}:${profile?.player?.uuid || "local"}:${profile?.profile?.id || "default"}`;
 function storedVillagerTradeProgress() {
@@ -1524,14 +1551,11 @@ function renderVillagerTrades() {
     progress = storedVillagerTradeProgress();
   let list = villagerTrades.filter(
     (trade) =>
-      (activeTradeLevel === "ALL" ||
-        (activeTradeLevel === "RESOURCE"
-          ? trade.level == null
-          : trade.level === Number(activeTradeLevel))) &&
+      villagerTradeMatchesLevel(trade, activeTradeLevel) &&
       (direction === "all" || trade.direction === direction) &&
       (status === "all" || villagerTradeState(trade, progress) === status) &&
       (!query ||
-        `${trade.reward.name} ${trade.costs.map((item) => item.name).join(" ")} ${trade.level == null ? "resource offer" : `level ${trade.level}`}`
+        `${trade.reward.name} ${trade.costs.map((item) => item.name).join(" ")} ${villagerTradeLevelLabel(trade)}`
           .toLowerCase()
           .includes(query)),
   );
@@ -1540,7 +1564,8 @@ function renderVillagerTrades() {
     (a, b) =>
       stateRank[villagerTradeState(a, progress)] -
         stateRank[villagerTradeState(b, progress)] ||
-      (a.level ?? 0) - (b.level ?? 0) ||
+      (villagerTradeLevels(a)[0] ?? 0) -
+        (villagerTradeLevels(b)[0] ?? 0) ||
       a.direction.localeCompare(b.direction) ||
       a.reward.name.localeCompare(b.reward.name),
   );
@@ -1560,7 +1585,7 @@ function renderVillagerTrades() {
             : state === "obtained"
               ? "COMPLETE"
               : "NOT FOUND";
-      return `<article class="trade-card ${state}" data-trade-card="${trade.id}">${state === "obtained" ? '<span class="owned-sheen"></span>' : ""}<div class="trade-card-head"><div><span class="trade-level">${trade.level == null ? "RESOURCE OFFER" : `LEVEL ${trade.level}`}</span><span class="trade-direction ${trade.direction}">${directionLabel}</span></div><span class="trade-state">${stateLabel}</span></div><h3>${escapeHtml(title)}</h3><div class="trade-flow"><div class="trade-side"><small>YOU GIVE</small><div class="trade-item-list">${trade.costs.map((item) => tradeItemMarkup(item, trade, progress, "cost")).join('<span class="trade-plus">+</span>')}</div></div><span class="trade-arrow" aria-hidden="true">→</span><div class="trade-side reward"><small>YOU GET</small><div class="trade-item-list">${tradeItemMarkup(trade.reward, trade, progress, "reward")}</div></div></div>${variable ? `<label class="trade-custom-amount"><span>Your Villager's cost</span><small>${range} possible · items for 1 Emerald</small><input type="number" min="1" step="1" inputmode="numeric" data-trade-amount="${trade.id}" value="${saved ?? ""}" placeholder="${range}" aria-label="Exact ${escapeHtml(trade.costs[0].name)} cost"></label>` : ""}<button type="button" class="trade-obtained-toggle" data-trade-obtained="${trade.id}" aria-pressed="${obtained}"><span>${obtained ? "✓" : "+"}</span>${obtained ? "Trade obtained" : "Mark as obtained"}</button></article>`;
+      return `<article class="trade-card ${state}" data-trade-card="${trade.id}">${state === "obtained" ? '<span class="owned-sheen"></span>' : ""}<div class="trade-card-head"><div><span class="trade-level">${villagerTradeLevelLabel(trade)}</span><span class="trade-direction ${trade.direction}">${directionLabel}</span></div><span class="trade-state">${stateLabel}</span></div><h3>${escapeHtml(title)}</h3><div class="trade-flow"><div class="trade-side"><small>YOU GIVE</small><div class="trade-item-list">${trade.costs.map((item) => tradeItemMarkup(item, trade, progress, "cost")).join('<span class="trade-plus">+</span>')}</div></div><span class="trade-arrow" aria-hidden="true">→</span><div class="trade-side reward"><small>YOU GET</small><div class="trade-item-list">${tradeItemMarkup(trade.reward, trade, progress, "reward")}</div></div></div>${variable ? `<label class="trade-custom-amount"><span>Your Villager's cost</span><small>${range} possible · items for 1 Emerald</small><input type="number" min="1" step="1" inputmode="numeric" data-trade-amount="${trade.id}" value="${saved ?? ""}" placeholder="${range}" aria-label="Exact ${escapeHtml(trade.costs[0].name)} cost"></label>` : ""}<button type="button" class="trade-obtained-toggle" data-trade-obtained="${trade.id}" aria-pressed="${obtained}"><span>${obtained ? "✓" : "+"}</span>${obtained ? "Trade obtained" : "Mark as obtained"}</button></article>`;
     })
     .join("");
   startTextureAnimations();

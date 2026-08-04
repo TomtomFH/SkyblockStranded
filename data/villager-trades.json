@@ -2,7 +2,7 @@
   "source": {
     "name": "Hypixel SkyBlock Wiki + verified in-game trades",
     "url": "https://hypixelskyblock.minecraft.wiki/w/Stranded#Villager_Trades",
-    "checked": "2026-07-25"
+    "checked": "2026-08-04"
   },
   "trades": [
     {"id":"item-to-emerald-cocoa-beans","level":null,"direction":"item_to_emerald","costs":[{"id":"COCOA_BEANS","name":"Cocoa Beans","min":85,"max":103}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
@@ -29,12 +29,12 @@
     {"id":"item-to-emerald-magma-cream","level":null,"direction":"item_to_emerald","costs":[{"id":"MAGMA_CREAM","name":"Magma Cream","min":22,"max":28}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
     {"id":"item-to-emerald-slimeball","level":null,"direction":"item_to_emerald","costs":[{"id":"SLIME_BALL","name":"Slimeball","min":22,"max":28}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
     {"id":"item-to-emerald-spider-eye","level":null,"direction":"item_to_emerald","costs":[{"id":"SPIDER_EYE","name":"Spider Eye","min":24,"max":30}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
-    {"id":"item-to-emerald-acacia-log","level":null,"direction":"item_to_emerald","costs":[{"id":"LOG_2","name":"Acacia Log","min":36,"max":54}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
-    {"id":"item-to-emerald-birch-log","level":null,"direction":"item_to_emerald","costs":[{"id":"LOG:2","name":"Birch Log","min":36,"max":54}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
-    {"id":"item-to-emerald-dark-oak-log","level":null,"direction":"item_to_emerald","costs":[{"id":"LOG_2:1","name":"Dark Oak Log","min":36,"max":54}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
-    {"id":"item-to-emerald-jungle-log","level":null,"direction":"item_to_emerald","costs":[{"id":"LOG:3","name":"Jungle Log","min":36,"max":54}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
-    {"id":"item-to-emerald-oak-log","level":null,"direction":"item_to_emerald","costs":[{"id":"LOG","name":"Oak Log","min":36,"max":54}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
-    {"id":"item-to-emerald-spruce-log","level":null,"direction":"item_to_emerald","costs":[{"id":"LOG:1","name":"Spruce Log","min":36,"max":54}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
+    {"id":"item-to-emerald-acacia-log","level":null,"direction":"item_to_emerald","costs":[{"id":"LOG_2","name":"Acacia Log","min":36,"max":55}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
+    {"id":"item-to-emerald-birch-log","level":null,"direction":"item_to_emerald","costs":[{"id":"LOG:2","name":"Birch Log","min":36,"max":55}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
+    {"id":"item-to-emerald-dark-oak-log","level":null,"direction":"item_to_emerald","costs":[{"id":"LOG_2:1","name":"Dark Oak Log","min":36,"max":55}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
+    {"id":"item-to-emerald-jungle-log","level":null,"direction":"item_to_emerald","costs":[{"id":"LOG:3","name":"Jungle Log","min":36,"max":55}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
+    {"id":"item-to-emerald-oak-log","level":null,"direction":"item_to_emerald","costs":[{"id":"LOG","name":"Oak Log","min":36,"max":55}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
+    {"id":"item-to-emerald-spruce-log","level":null,"direction":"item_to_emerald","costs":[{"id":"LOG:1","name":"Spruce Log","min":36,"max":55}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
     {"id":"item-to-emerald-clay-ball","level":null,"direction":"item_to_emerald","costs":[{"id":"CLAY_BALL","name":"Clay Ball","min":31,"max":39}],"reward":{"id":"EMERALD","name":"Emerald","amount":1}},
 
     {"id":"emerald-to-item-silent-pearl","level":1,"direction":"emerald_to_item","costs":[{"id":"EMERALD","name":"Emerald","amount":6}],"reward":{"id":"SILENT_PEARL","name":"Silent Pearl","amount":1}},
@@ -96,7 +96,7 @@
     {"id":"emerald-to-item-farming-exp-boost","level":4,"direction":"emerald_to_item","costs":[{"id":"ENCHANTED_EMERALD","name":"Enchanted Emerald","amount":75}],"reward":{"id":"PET_ITEM_FARMING_SKILL_BOOST_EPIC","name":"EPIC Farming Exp Boost","amount":1}},
     {"id":"emerald-to-item-spirit-mask","level":4,"direction":"emerald_to_item","costs":[{"id":"ENCHANTED_EMERALD","name":"Enchanted Emerald","amount":75}],"reward":{"id":"SPIRIT_MASK","name":"Spirit Mask","amount":1}},
     {"id":"emerald-to-item-festive-sinker","level":4,"direction":"emerald_to_item","costs":[{"id":"ENCHANTED_EMERALD","name":"Enchanted Emerald","amount":5}],"reward":{"id":"FESTIVE_SINKER","name":"Festive Sinker","amount":1}},
-    {"id":"emerald-to-item-refined-mineral","level":4,"direction":"emerald_to_item","costs":[{"id":"ENCHANTED_EMERALD","name":"Enchanted Emerald","amount":1}],"reward":{"id":"REFINED_MINERAL","name":"Refined Mineral","amount":1}},
+    {"id":"emerald-to-item-refined-mineral","levels":[3,4],"direction":"emerald_to_item","costs":[{"id":"ENCHANTED_EMERALD","name":"Enchanted Emerald","amount":1}],"reward":{"id":"REFINED_MINERAL","name":"Refined Mineral","amount":1}},
 
     {"id":"emerald-to-item-ender-artifact","level":5,"direction":"emerald_to_item","costs":[{"id":"ENCHANTED_EMERALD","name":"Enchanted Emerald","amount":312}],"reward":{"id":"ENDER_ARTIFACT","name":"Ender Artifact","amount":1}},
     {"id":"emerald-to-item-parrot-pet","level":5,"direction":"emerald_to_item","costs":[{"id":"ENCHANTED_EMERALD","name":"Enchanted Emerald","amount":312}],"reward":{"id":"PARROT;4","name":"LEGENDARY Parrot Pet","amount":1}},
